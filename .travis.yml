@@ -1,0 +1,28 @@
+language: node_js
+node_js:
+  - "9"
+dist: trusty
+sudo: required
+
+branches:
+  only:
+  - master
+
+before_script:
+  - npm install -g @angular/cli angular-cli-ghpages
+  - npm install
+
+script:
+- ng lint
+- ng build --prod
+
+after_success:
+  - if [ "$TRAVIS_BRANCH" == "master" -a "$TRAVIS_PULL_REQUEST" == "false" ] ; then angular-cli-ghpages --dir="dist-ghpages" --repo="https://${GH_TOKEN}@github.com/RaphaelYan/rpg-digital-tools.git" --name="Sr. Travis" --email="hi@travis.org"; fi
+
+deploy:
+  provider: pages
+  skip-cleanup: true
+  github-token: $GITHUB_TOKEN  # Set in the settings page of your repository, as a secure variable
+  keep-history: true
+  on:
+    branch: master
