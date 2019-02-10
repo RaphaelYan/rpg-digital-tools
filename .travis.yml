@@ -1,0 +1,26 @@
+language: node_js
+node_js:
+  - "9"
+dist: trusty
+sudo: required
+
+branches:
+  only:
+  - master
+
+before_script:
+  - npm install -g @angular/cli
+  - npm install
+
+script:
+- ng lint
+- ng build --prod --base-href https://RaphaelYan.github.io/rpg-digital-tools/
+
+deploy:
+  provider: pages
+  skip-cleanup: true
+  github-token: $GITHUB_TOKEN
+  keep-history: true
+  local_dir: dist/rpg-digital-tools
+  on:
+    branch: master
