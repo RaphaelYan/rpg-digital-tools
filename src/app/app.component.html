@@ -1,2 +1,8 @@
 <mat-toolbar>RPG Digital tools</mat-toolbar>
+
+<button mat-button [matMenuTriggerFor]="ddMenu">Dungeons & Dragons</button>
+<mat-menu #ddMenu="matMenu">
+    <a mat-menu-item routerLink="/dd-builder">Builder</a>
+</mat-menu>
+
 <router-outlet></router-outlet>

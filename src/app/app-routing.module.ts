@@ -5,6 +5,9 @@ const routes: Routes = [
   {
     path: 'login',
     loadChildren: './login/login.module#LoginModule'
+  }, {
+    path: 'dd-builder',
+    loadChildren: './dd-builder/dd-builder.module#DdBuilderModule'
   }
 ];
 
