@@ -1,0 +1,46 @@
+.carac-table thead th {
+  border-radius: 0;
+}
+
+.dropdown-content li>span {
+  color: #03a9f4; /*light-blue*/
+}
+.select-dropdown li.optgroup>span {
+  color: #81d4fa; /*light-blue lighten-3*/
+}
+.select-dropdown li.disabled>span {
+  color: #01579b; /*light-blue darken-4*/
+}
+
+.underlined-title {
+  border-bottom: 2px solid;
+  border-color: #01579b; /*light-blue darken-4*/
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+.total-mods {
+  margin-top: 15px;
+}
+.text-bold {
+  font-weight: bold;
+}
+
+.container {
+  position: relative;
+}
+.link-github {
+  display: block;
+  width: 75px;
+  position: absolute;
+}
+.link-github img {
+  width: 100%;
+}
+
+.material-tooltip, .material-tooltip span, .material-tooltip .backdrop {
+  background-color: #03a9f4; /*light-blue*/
+}
+.tooltipped {
+  cursor: pointer;
+}

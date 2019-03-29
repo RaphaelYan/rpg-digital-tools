@@ -1,3 +1,63 @@
-<p>
-  dd-builder works!
-</p>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/css/materialize.min.css">
+
+<div class="container">
+  <div class="row">
+    <h3 class="center-align underlined-title">D&D 5 - Carac builder</h3>
+  </div>
+
+  <div class="row">
+    <div class="input-field col s6">
+      <select id="select-race" class="light-blue-text lighten-1">
+        <option value="" disabled selected>Sélectionnez votre race</option>
+        <ng-template ngFor let-race [ngForOf]="races">
+          <optgroup *ngIf="race.subraces" [attr.label]="race.label">
+            <option *ngFor="let subrace of race.subraces" (click)="selectRace(subrace)" [value]="subrace.racial">{{ subrace.label }} ({{ subrace.bonus }})</option>
+          </optgroup>
+          <option *ngIf="!race.subraces" (click)="selectRace(race)" [value]="race.racial">{{ race.label }} ({{ race.bonus }})</option>
+        </ng-template>
+      </select>
+    </div>
+    <div class="col s6 total-mods">
+      <h5 class="center-align">Total modificateurs : {{ totalMods }}</h5>
+    </div>
+  </div>
+
+  <div class="row">
+
+    <table class="carac-table bordered centered">
+      <thead class="light-blue">
+        <tr>
+          <th data-field="carac">Caractéristiques</th>
+          <th data-field="score">Score</th>
+          <th data-field="mod">Modificateur</th>
+          <th data-field="actions"></th>
+        </tr>
+      </thead>
+      <tbody class="light-blue lighten-5">
+        <tr *ngFor="let line of table; let i = index" class="{{ i % 2 === 1 ? 'blue lighten-4' : '' }}">
+          <td [class.text-bold]="line.score === 15">
+            {{ line.label }}
+            <i class="material-icons tooltipped" data-position="right" data-delay="50" [attr.data-tooltip]="tooltips[line.tooltip]">help</i>
+            <div class="switch" *ngIf="raceWithBonus && (exceptBonus - 1) !== i">
+              <label class="{{ line.bonus ? 'black-text text-bold' : ''}}">
+                <input class="other-bonus" type="checkbox" [disabled]="(line.bonus === 0) && (othersBonus <= 0)" (change)="chooseBonus(line)">
+                <span class="lever"></span>
+                Bonus racial
+              </label>
+            </div>
+          </td>
+          <td [class.text-bold]="line.score === 15">{{ line.value }}</td>
+          <td [class.text-bold]="line.score === 15">{{ line.mod }}</td>
+          <td>
+            <button class="btn-floating waves-effect waves-light btn green" (click)="add(line)" [disabled]="(line.score === 15) || (points < cost(line.score, line.score + 1))"><i class="material-icons left">add</i></button>
+            <button class="btn-floating waves-effect waves-light btn red" (click)="remove(line)" [disabled]="line.score === 8"><i class="material-icons left">remove</i></button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="row">
+    <h4 class="center-align">Points : {{ points }}</h4>
+  </div>
+</div>
