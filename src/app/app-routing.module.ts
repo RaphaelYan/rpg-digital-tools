@@ -8,6 +8,9 @@ const routes: Routes = [
   }, {
     path: 'dd-builder',
     loadChildren: './dd-builder/dd-builder.module#DdBuilderModule'
+  }, {
+    path: 'init',
+    loadChildren: './init/init.module#InitModule'
   }
 ];
 

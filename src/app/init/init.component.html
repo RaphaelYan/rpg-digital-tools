@@ -1,0 +1,18 @@
+<div class="dragula-parent row">
+  <div class="dragula-wrapper col s6">
+    <div id="myList" class="dragula-container">
+      <div class="item" [class.line-checked]="item.checked" *ngFor="let item of tab">
+        <input id="input-' + label + '" type="checkbox" [(ngModel)]="item.checked">
+        <label for="input-' + label + '">
+          {{ item.label }}
+        </label>
+        <i class="material-icons remove" (click)="removeLine(item)">delete</i>
+      </div>
+    </div>
+  </div>
+  <div class="col s6 row">
+    <input [(ngModel)]="add" class="col s12">
+    <button type="submit" class="col s6 offset-s3 waves-effect waves-light btn" (click)="addToList()">Add</button>
+  </div>
+
+</div>
