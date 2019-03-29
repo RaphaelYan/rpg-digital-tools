@@ -1,0 +1,13 @@
+<mat-card>
+  <form #f="ngForm" (submit)="onSubmit(f)" novalidate>
+    <mat-form-field>
+      <input matInput placeholder="Login" name="login" ngModel required>
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput type="password" placeholder="Password" name="password" ngModel required>
+    </mat-form-field>
+
+    <button mat-button>Connect</button>
+  </form>
+</mat-card>
