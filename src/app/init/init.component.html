@@ -1,5 +1,5 @@
 <div class="dragula-parent row">
-  <div class="dragula-wrapper col s6">
+  <div class="dragula-wrapper col s5">
     <div id="myList" class="dragula-container">
       <div class="item" [class.line-checked]="item.checked" *ngFor="let item of tab">
         <input id="input-' + label + '" type="checkbox" [(ngModel)]="item.checked">
@@ -10,9 +10,18 @@
       </div>
     </div>
   </div>
-  <div class="col s6 row">
+  <div class="col s3 row">
     <input [(ngModel)]="add" class="col s12">
     <button type="submit" class="col s6 offset-s3 waves-effect waves-light btn" (click)="addToList()">Add</button>
   </div>
-
+  <div class="col s4 stats">
+    <ul>
+      <li>100% - Intact</li>
+      <li>&gt;75% - Légèrement blessé</li>
+      <li>&gt;50% - Blessé</li>
+      <li>&lt;50% - Bien blessé</li>
+      <li>&lt;25% - Grièvement blessé</li>
+      <li>&lt;5-10% - Agonisant</li>
+    </ul>
+  </div>
 </div>
