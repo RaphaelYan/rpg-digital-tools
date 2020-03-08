@@ -124,6 +124,6 @@ export const races = [
   }, {
     label: 'Kitsune Zenko',
     bonus: '+2dex, +1cha',
-    racial: 9
+    racial: 4
   }
 ];
