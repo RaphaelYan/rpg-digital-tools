@@ -123,7 +123,7 @@ export const races = [
     racial: 20
   }, {
     label: 'Kitsune Zenko',
-    bonus: '+2dex, +1cha',
+    bonus: '+2dex, +1sag',
     racial: 4
   }
 ];
