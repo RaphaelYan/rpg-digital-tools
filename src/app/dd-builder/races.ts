@@ -121,5 +121,9 @@ export const races = [
     label: 'Triton',
     bonus: '+1for, +1con, +1cha',
     racial: 20
+  }, {
+    label: 'Kitsune Zenko',
+    bonus: '+2dex, +1cha',
+    racial: 9
   }
 ];
