@@ -5,10 +5,8 @@
   </a>
 </mat-toolbar>
 
-<button mat-button [matMenuTriggerFor]="ddMenu">Dungeons & Dragons</button>
-<mat-menu #ddMenu="matMenu">
-  <a mat-menu-item routerLink="/dd-builder">Builder</a>
-  <a mat-menu-item routerLink="/init">Init</a>
-</mat-menu>
+<button mat-button><a routerLink="/dd-builder">D&D 5 Builder</a></button>
+<button mat-button><a routerLink="/init">Init</a></button>
+<button mat-button><a routerLink="/resumes">Résumés des parties</a></button>
 
 <router-outlet></router-outlet>

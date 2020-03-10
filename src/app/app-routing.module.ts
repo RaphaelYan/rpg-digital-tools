@@ -11,6 +11,9 @@ const routes: Routes = [
   }, {
     path: 'init',
     loadChildren: './init/init.module#InitModule'
+  }, {
+    path: 'resumes',
+    loadChildren: './resumes/resumes.module#ResumesModule'
   }
 ];
 
