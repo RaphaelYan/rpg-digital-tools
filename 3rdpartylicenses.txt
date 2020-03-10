@@ -207,10 +207,7 @@ Apache-2.0
  
 
 
-@angular/platform-browser
-MIT
-
-@angular/material
+@angular/cdk
 MIT
 The MIT License
 
@@ -235,7 +232,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 
 
-@angular/cdk
+@angular/material
 MIT
 The MIT License
 
@@ -319,6 +316,9 @@ If the Work includes a "NOTICE" text file as part of its distribution, then any 
 END OF TERMS AND CONDITIONS
 
 
+@angular/platform-browser
+MIT
+
 @angular/common
 MIT
 
@@ -331,8 +331,6 @@ MIT
 MIT
 
 @angular/material/toolbar
-
-@angular/material/menu
 
 @angular/core
 MIT
