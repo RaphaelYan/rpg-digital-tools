@@ -3,30 +3,13 @@
     <h3 class="center-align underlined-title">Résumés</h3>
   </div>
 
-  <div class="row center-align">
+  <div class="row center-align" *ngFor="let resume of resumes">
     <h5 class="left-align">
-      <span class="date-game">28 Septembre 2019</span>
-      Le château volant - partie 2
+      <span class="date-game">{{ resume.date }}</span>
+      {{ resume.title }}
     </h5>
-    <a href="assets/resumes/Resume-Partie2.pdf" target="_blank">PDF ici</a>
-    <small>Noelie (8.5), Shinden (8.5), Syccor (8.5), Thibault (8.5), Vador (8.5) : +0.5 niveau</small>
-  </div>
-
-  <div class="row center-align">
-    <h5 class="left-align">
-      <span class="date-game">28 juillet 2018</span>
-      The game - partie 1
-    </h5>
-    <b style="display:block;">Résumé à faire</b>
-    <small>Jean, Pierre, Thomas, Thomas</small>
-  </div>
-
-  <div class="row center-align">
-    <h5 class="left-align">
-      <span class="date-game">6 Avril 2018</span>
-      Le château volant - partie 1
-    </h5>
-    <a href="assets/resumes/Resume-Partie1.pdf" target="_blank">PDF ici</a>
-    <small>Noelie (8), Shinden (8), Syccor (8), Thibault (8), Vador (8), Yann (8) : +0.5 niveau</small>
+    <a *ngIf="resume.pdf" [attr.href]="resume.pdf" target="_blank">PDF ici</a>
+    <b *ngIf="!resume.pdf" style="display:block;">Résumé à faire</b>
+    <small *ngIf="resume.chars">{{ resume.chars }}</small>
   </div>
 </div>
