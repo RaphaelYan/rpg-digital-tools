@@ -1,1 +1,72 @@
-@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+@import "bootstrap/scss/bootstrap.scss";
+
+:root {
+  --light-blue: #03a9f4;
+  --light-blue-5: #e1f5fe;
+  --light-blue-4: #BBDEFB;
+
+  --blue: #007bff;
+  --indigo: #6610f2;
+  --purple: #6f42c1;
+  --pink: #e83e8c;
+  --red: #dc3545;
+  --orange: #fd7e14;
+  --yellow: #ffc107;
+  --green: #28a745;
+  --teal: #20c997;
+  --cyan: #17a2b8;
+  --white: #fff;
+  --gray: #6c757d;
+  --gray-dark: #343a40;
+  --primary: #007bff;
+  --secondary: #6c757d;
+  --success: #28a745;
+  --info: #17a2b8;
+  --warning: #ffc107;
+  --danger: #dc3545;
+  --light: #f8f9fa;
+  --dark: #343a40;
+  --breakpoint-xs: 0;
+  --breakpoint-sm: 576px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 992px;
+  --breakpoint-xl: 1200px;
+  --font-family-sans-serif: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+}
+
+.light-blue {
+  background-color: var(--light-blue);
+}
+.light-blue.lighten-5 {
+  background-color: var(--light-blue-5);
+}
+.blue.lighten-4 {
+  background-color: var(--light-blue-4);
+}
+h3 {
+  font-size: 2.92rem;
+  line-height: 110%;
+  margin: 1.46rem 0 1.168rem 0;
+}
+h4 {
+  font-size: 2.28rem;
+  line-height: 110%;
+  margin: 1.14rem 0 0.912rem 0;
+}
+h5 {
+  font-size: 1.64rem;
+  line-height: 110%;
+  margin: 0.82rem 0 0.656rem 0;
+  font-weight: inherit;
+}
+.container .row {
+  margin-left: -0.75rem;
+  margin-right: -0.75rem;
+}
+.row {
+  margin-bottom: 20px;
+}
+.center-align {
+  text-align: center;
+}

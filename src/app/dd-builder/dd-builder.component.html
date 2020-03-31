@@ -4,8 +4,8 @@
   </div>
 
   <div class="row">
-    <div class="input-field col s6">
-      <select id="select-race" class="light-blue-text lighten-1">
+    <div class="input-field col-6">
+      <select id="select-race" class="custom-select">
         <option value="" disabled selected>Sélectionnez votre race</option>
         <ng-template ngFor let-race [ngForOf]="races">
           <optgroup *ngIf="race.subraces" [attr.label]="race.label">
@@ -15,14 +15,14 @@
         </ng-template>
       </select>
     </div>
-    <div class="col s6 total-mods">
+    <div class="col-6 total-mods">
       <h5 class="center-align">Total modificateurs : {{ totalMods }}</h5>
     </div>
   </div>
 
   <div class="row">
 
-    <table class="carac-table bordered centered">
+    <table class="carac-table bordered centered col-12">
       <thead class="light-blue">
         <tr>
           <th data-field="carac">Caractéristiques</th>
@@ -35,7 +35,7 @@
         <tr *ngFor="let line of table; let i = index" class="{{ i % 2 === 1 ? 'blue lighten-4' : '' }}">
           <td [class.text-bold]="line.score === 15">
             {{ line.label }}
-            <i class="material-icons tooltipped" data-position="right" data-delay="50" [attr.data-tooltip]="tooltips[line.tooltip]">help</i>
+            <i class="material-icons tooltipped" data-placement="right" data-toggle="tooltip" [attr.title]="tooltips[line.tooltip]">help</i>
             <div class="switch" *ngIf="raceWithBonus && (exceptBonus - 1) !== i">
               <label class="{{ line.bonus ? 'black-text text-bold' : ''}}">
                 <input class="other-bonus" type="checkbox" [disabled]="(line.bonus === 0) && (othersBonus <= 0)" (change)="chooseBonus(line)">
@@ -56,6 +56,6 @@
   </div>
 
   <div class="row">
-    <h4 class="center-align">Points : {{ points }}</h4>
+    <h4 class="center-align col">Points : {{ points }}</h4>
   </div>
 </div>

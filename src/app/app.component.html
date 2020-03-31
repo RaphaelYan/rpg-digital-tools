@@ -1,12 +1,20 @@
-<mat-toolbar>
-  <a routerLink="/">RPG Digital tools</a>
-  <a class="link-github tooltipped" target="_blank" href="https://github.com/RaphaelYan/rpg-digital-tools" data-position="left" data-delay="50" data-tooltip="Check me on Github !">
+<nav class="navbar navbar-light bg-light">
+  <a class="navbar-brand" routerLink="/">RPG Digital tools</a>
+  <a class="link-github tooltipped" target="_blank" href="https://github.com/RaphaelYan/rpg-digital-tools" data-placement="left" data-toggle="tooltip" title="Check me on Github !">
     <img src="assets/Octocat.png">
   </a>
-</mat-toolbar>
+</nav>
 
-<button mat-button><a routerLink="/dd-builder">D&D 5 Builder</a></button>
-<button mat-button><a routerLink="/init">Init</a></button>
-<button mat-button><a routerLink="/resumes">Résumés des parties</a></button>
+<ul class="nav">
+  <li class="nav-item">
+    <a class="nav-link" routerLinkActive="active" routerLink="/dd-builder">D&D 5 Builder</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" routerLinkActive="active" routerLink="/init">Init</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" routerLinkActive="active" routerLink="/resumes">Résumés des partie</a>
+  </li>
+</ul>
 
 <router-outlet></router-outlet>

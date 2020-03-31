@@ -1,20 +1,25 @@
 <div class="dragula-parent row">
-  <div class="dragula-wrapper col s5">
+  <div class="dragula-wrapper col-5">
     <div id="myList" class="dragula-container">
-      <div class="item" [class.line-checked]="item.checked" *ngFor="let item of tab">
-        <input id="input-' + label + '" type="checkbox" [(ngModel)]="item.checked">
-        <label for="input-' + label + '">
+
+      <div class="input-group mb-3 item" [class.line-checked]="item.checked" *ngFor="let item of tab">
+        <div class="input-group-prepend">
+          <div class="input-group-text">
+            <input id="input-' + item.label + '" type="checkbox" [(ngModel)]="item.checked">
+          </div>
+        </div>
+        <label for="input-' + item.label + '">
           {{ item.label }}
+          <i class="material-icons remove" (click)="removeLine(item)">delete</i>
         </label>
-        <i class="material-icons remove" (click)="removeLine(item)">delete</i>
       </div>
     </div>
   </div>
-  <div class="col s3 row">
-    <input [(ngModel)]="add" class="col s12">
-    <button type="submit" class="col s6 offset-s3 waves-effect waves-light btn" (click)="addToList()">Add</button>
+  <div class="col-3">
+    <input [(ngModel)]="add" class="form-control">
+    <button type="submit" class="col-6 offset-sm-3 btn" (click)="addToList()">Add</button>
   </div>
-  <div class="col s4 stats">
+  <div class="col-4 stats">
     <ul>
       <li>100% - Intact</li>
       <li>&gt;75% - Légèrement blessé</li>

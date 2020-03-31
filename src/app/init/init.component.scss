@@ -83,13 +83,13 @@
 .line-checked {
   opacity: 0.3;
 }
-label {
-  margin: 10px;
-  width: 100%;
-  color: white;
+.input-group-text {
+  border: none;
+  background: none;
 }
-[type="checkbox"]+label:before, [type="checkbox"]:not(.filled-in)+label:after {
-  border-color: white;
+label {
+  padding: 10px;
+  margin: 0;
 }
 .remove {
   position: absolute;
@@ -100,4 +100,22 @@ label {
   line-height: 25px;
   font-size: 20px;
   color: white;
+}
+
+button {
+  height: 36px;
+  outline: 0;
+  border: none;
+  background-color: #26a69a;
+  border-radius: 2px;
+  margin-top: 20px;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.item {
+  width: calc(100% - 20px);
 }

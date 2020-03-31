@@ -28,9 +28,8 @@ export class DdBuilderComponent implements AfterViewInit {
   };
 
   ngAfterViewInit() {
-    $('select').material_select();
-    $('.tooltipped').tooltip({delay: 50});
     $('#select-race').change(this.onSelectRace.bind(this));
+    $('[data-toggle="tooltip"]').tooltip();
   }
 
   onSelectRace(event: any) {
