@@ -8,19 +8,22 @@ import { Component } from '@angular/core';
 export class ResumesComponent {
   public resumes = [
     {
-      date: '28 Septembre 2019',
+      date: '1 Avril 2020',
+      title: ' Les Foudres du Roi-Tonnerre - partie 5'
+    }, {
+      date: '28 Mars 2020',
       title: ' Les Foudres du Roi-Tonnerre - partie 4',
       pdf: 'assets/resumes/repie/2020-03-28.pdf'
     }, {
-      date: '28 Septembre 2019',
+      date: '25 Mars 2020',
       title: ' Les Foudres du Roi-Tonnerre - partie 3',
       pdf: 'assets/resumes/repie/2020-03-25.pdf'
     }, {
-      date: '28 Septembre 2019',
+      date: '21 Mars 2020',
       title: ' Les Foudres du Roi-Tonnerre - partie 2',
       pdf: 'assets/resumes/repie/2020-03-21.pdf'
     }, {
-      date: '28 Septembre 2019',
+      date: '19 Mars 2020',
       title: ' Les Foudres du Roi-Tonnerre - partie 1',
       pdf: 'assets/resumes/repie/2020-03-19.pdf'
     }, {
@@ -31,7 +34,7 @@ export class ResumesComponent {
     }, {
       date: '28 juillet 2019',
       title: 'The game - partie 1',
-      chars: 'Jean, Pierre, Thomas, Thomas'
+      chars: 'Jean, Pierre, Thomas 1, Thomas 2'
     }, {
       date: '6 Avril 2019',
       title: 'Le château volant - partie 1',

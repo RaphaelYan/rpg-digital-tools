@@ -1,15 +1,17 @@
 <div class="container">
-  <div class="row">
-    <h3 class="center-align underlined-title">Résumés</h3>
-  </div>
-
-  <div class="row center-align" *ngFor="let resume of resumes">
-    <h5 class="left-align">
-      <span class="date-game">{{ resume.date }}</span>
-      {{ resume.title }}
-    </h5>
-    <a *ngIf="resume.pdf" [attr.href]="resume.pdf" target="_blank">PDF ici</a>
-    <b *ngIf="!resume.pdf" style="display:block;">Résumé à faire</b>
-    <small *ngIf="resume.chars">{{ resume.chars }}</small>
-  </div>
+  <ul class="list-group">
+    <li class="list-group-item" *ngFor="let resume of resumes">
+      <p>
+        <span class="date">{{ resume.date }}</span>
+        {{ resume.title }}
+      </p>
+      <p>
+        <a *ngIf="resume.pdf" [attr.href]="resume.pdf" target="_blank">Résumé ici</a>
+        <b *ngIf="!resume.pdf">Résumé à faire</b>
+      </p>
+      <p *ngIf="resume.chars">
+        <small>{{ resume.chars }}</small>
+      </p>
+    </li>
+  </ul>
 </div>

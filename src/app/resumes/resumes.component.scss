@@ -1,17 +1,4 @@
-.underlined-title {
-  border-bottom: 2px solid;
-  border-color: #01579b; /*light-blue darken-4*/
-  margin-left: auto;
-  margin-right: auto;
-  width: 50%;
-}
-
-a {
-  display: block;
-}
-
-.date-game {
-  float: left;
-  width: 240px;
-  margin-left: 200px;
+span.date {
+  display: inline-block;
+  width: 200px;
 }
