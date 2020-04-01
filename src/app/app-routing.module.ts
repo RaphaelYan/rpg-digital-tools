@@ -6,6 +6,9 @@ const routes: Routes = [
     path: 'dd-builder',
     loadChildren: './dd-builder/dd-builder.module#DdBuilderModule'
   }, {
+    path: 'dd-rules',
+    loadChildren: './dd-rules/dd-rules.module#DdRulesModule'
+  }, {
     path: 'init',
     loadChildren: './init/init.module#InitModule'
   }, {

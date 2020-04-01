@@ -6,14 +6,8 @@
 </nav>
 
 <ul class="nav">
-  <li class="nav-item">
-    <a class="nav-link" routerLinkActive="active" routerLink="/dd-builder">D&D 5 Builder</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" routerLinkActive="active" routerLink="/init">Init</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" routerLinkActive="active" routerLink="/resumes">Résumés des partie</a>
+  <li class="nav-item" *ngFor="let menu of menus">
+    <a class="nav-link" routerLinkActive="active" [routerLink]="menu.url">{{ menu.title }}</a>
   </li>
 </ul>
 
