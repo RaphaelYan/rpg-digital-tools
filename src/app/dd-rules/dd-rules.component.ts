@@ -9,9 +9,9 @@ export class DdRulesComponent {
   public rules = [
     {
       title: 'Boire une potion',
-      body: `Boire une potion ne coût qu'une action bonus, à la place de prendre l'action principale`
+      body: `Boire une potion ne coûte qu'une action bonus, à la place de prendre l'action principale`
     }, {
-      title: 'Lanceur de sort versatil',
+      title: 'Lanceur de sort versatile',
       body: `Le personnage peut lancer 1 sort en dépensant 2 emplacements de niveau inférieur
     <br><br>
     Exemple : Lancer un sort de niveau 2 en dépensant 2 emplacement de sort niveau 1`
