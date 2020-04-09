@@ -45,7 +45,7 @@ export class ResumesComponent {
       chars: 'Noelie (8), Shinden (8), Syccor (8), Thibault (8), Vador (8), Yann (8) : +0.5 niveau',
     }, {
       date: '23 février 2019',
-      title: 'Microlite - jeanjean is the master (Pierre, Rémi, Thomas 1, Thomas 2)',
+      title: 'Microlite20 - La cuite', // Jeanjean DM (Pierre, Rémi, Thomas 1, Thomas 2)
     }, {
       date: '17 Novembre 2018',
       title: 'D&D 3.5 - Diplomatie Drow (partie 3)',
