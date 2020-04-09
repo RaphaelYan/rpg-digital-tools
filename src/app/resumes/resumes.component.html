@@ -1,17 +1,21 @@
+<!-- @TODO display DM -->
+<!-- @TODO display short description -->
+<!-- @TODO filter by DM -->
+<!-- @TODO tag Campaigns -->
+
 <div class="container">
-  <ul class="list-group">
-    <li class="list-group-item" *ngFor="let resume of resumes">
-      <p>
-        <span class="date">{{ resume.date }}</span>
-        {{ resume.title }}
-      </p>
-      <p>
+  <div class="list-group">
+    <div class="list-group-item row" *ngFor="let resume of resumes">
+      <div class="col-sm date-resume">
+        <div class="date">{{ resume.date }}</div>
+
         <a *ngIf="resume.pdf" [attr.href]="resume.pdf" target="_blank">Résumé ici</a>
         <b *ngIf="!resume.pdf">Résumé à faire</b>
-      </p>
-      <p *ngIf="resume.chars">
-        <small>{{ resume.chars }}</small>
-      </p>
-    </li>
-  </ul>
+      </div>
+      <div class="col-sm">
+        <div>{{ resume.title }}</div>
+        <small *ngIf="resume.chars">{{ resume.chars }}</small>
+      </div>
+    </div>
+  </div>
 </div>

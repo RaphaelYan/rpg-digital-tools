@@ -1,4 +1,8 @@
-span.date {
-  display: inline-block;
-  width: 200px;
+.list-group-item.row {
+  margin-bottom: 0;
+  display: flex;
+}
+
+.date-resume {
+  max-width: 200px;
 }
