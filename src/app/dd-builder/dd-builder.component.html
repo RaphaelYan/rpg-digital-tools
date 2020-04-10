@@ -33,7 +33,7 @@
       </thead>
       <tbody class="light-blue lighten-5">
         <tr *ngFor="let line of table; let i = index" class="{{ i % 2 === 1 ? 'blue lighten-4' : '' }}">
-          <td [class.text-bold]="line.score === 15">
+          <td [class.text-bold]="mode === 'points' && line.score === 15">
             {{ line.label }}
             <i class="material-icons tooltipped" data-placement="right" data-toggle="tooltip" [attr.title]="tooltips[line.tooltip]">help</i>
             <div class="switch" *ngIf="raceWithBonus && (exceptBonus - 1) !== i">
@@ -44,11 +44,11 @@
               </label>
             </div>
           </td>
-          <td [class.text-bold]="line.score === 15">{{ line.value }}</td>
-          <td [class.text-bold]="line.score === 15">{{ line.mod }}</td>
+          <td [class.text-bold]="mode === 'points' && line.score === 15">{{ line.value }}</td>
+          <td [class.text-bold]="mode === 'points' && line.score === 15">{{ line.mod }}</td>
           <td>
-            <button class="btn-floating waves-effect waves-light btn green" (click)="add(line)" [disabled]="(line.score === 15) || (points < cost(line.score, line.score + 1))"><i class="material-icons left">add</i></button>
-            <button class="btn-floating waves-effect waves-light btn red" (click)="remove(line)" [disabled]="line.score === 8"><i class="material-icons left">remove</i></button>
+            <button class="btn-floating waves-effect waves-light btn green" (click)="add(line)" [disabled]="(mode === 'points' && line.score === 15) || (mode === 'points' && (points < cost(line.score, line.score + 1)))"><i class="material-icons left">add</i></button>
+            <button class="btn-floating waves-effect waves-light btn red" (click)="remove(line)" [disabled]="mode === 'points' && line.score === 8"><i class="material-icons left">remove</i></button>
           </td>
         </tr>
       </tbody>
@@ -56,6 +56,12 @@
   </div>
 
   <div class="row">
-    <h4 class="center-align col">Points : {{ points }}</h4>
+    <div class="text-right col-6">
+      <select class="custom-select mode" [(ngModel)]="mode" (ngModelChange)="reset()">
+        <option value="points" selected>Mode par points (27)</option>
+        <option value="free">Libre</option>
+      </select>
+    </div>
+    <div class="center-align col-6 points" *ngIf="mode === 'points'">Points : {{ points }}</div>
   </div>
 </div>

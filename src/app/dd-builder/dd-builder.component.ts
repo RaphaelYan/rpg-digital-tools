@@ -11,8 +11,9 @@ declare var $: any;
   styleUrls: ['./dd-builder.component.scss']
 })
 export class DdBuilderComponent implements AfterViewInit {
+  mode = 'points';
   races = races;
-  table = table;
+  table = JSON.parse(JSON.stringify((table)));
   points = 27;
   totalMods = -6;
   othersBonus = 0;
@@ -38,7 +39,7 @@ export class DdBuilderComponent implements AfterViewInit {
     const bonuses = racial[racialId - 1].bonus;
 
     for (let i = 0; i < 6; i++) {
-      table[i].racial = 0;
+      this.table[i].racial = 0;
     }
 
     for (let i = 0; i < bonuses.length; i++) {
@@ -48,7 +49,7 @@ export class DdBuilderComponent implements AfterViewInit {
         this.othersBonus = bonus.others;
         this.exceptBonus = bonus.except;
       } else {
-        table[bonus.id - 1].racial = bonus.bonus;
+        this.table[bonus.id - 1].racial = bonus.bonus;
       }
     }
 
@@ -71,6 +72,11 @@ export class DdBuilderComponent implements AfterViewInit {
   }
 
   add(carac: any) {
+    if (this.mode === 'free') {
+      carac.score += 1;
+      return this.valueChanged(carac);
+    }
+
     if (carac.score >= 15 ) {
       return;
     }
@@ -86,6 +92,11 @@ export class DdBuilderComponent implements AfterViewInit {
   }
 
   remove(carac: any) {
+    if (this.mode === 'free') {
+      carac.score -= 1;
+      return this.valueChanged(carac);
+    }
+
     if (carac.score <= 8) {
       return;
     }
@@ -133,5 +144,11 @@ export class DdBuilderComponent implements AfterViewInit {
       this.othersBonus -= 1;
       this.valueChanged(carac);
     }
+  }
+
+  public reset(): void {
+    this.table = JSON.parse(JSON.stringify((table)));
+    this.resetOthersBonus();
+    $('#select-race').val('');
   }
 }
