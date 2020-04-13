@@ -21,6 +21,9 @@ export class AppComponent implements OnInit {
     }, {
       title: 'Résumés des partie',
       url: '/resumes'
+    }, {
+      title: 'D&D 5 Probas',
+      url: '/proba'
     }
   ];
 

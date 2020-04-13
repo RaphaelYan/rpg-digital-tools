@@ -14,6 +14,9 @@ const routes: Routes = [
   }, {
     path: 'resumes',
     loadChildren: './resumes/resumes.module#ResumesModule'
+  }, {
+    path: 'proba',
+    loadChildren: './proba/proba.module#ProbaModule'
   }
 ];
 

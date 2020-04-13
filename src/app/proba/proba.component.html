@@ -1,0 +1,90 @@
+<div class="container">
+  <div class="form-group row">
+    <label for="player-from" class="col-sm-2 col-form-label">PLAYER FROM</label>
+    <div class="col-sm-10">
+      <input class="form-control" id="player-from" [(ngModel)]="playerFrom">
+    </div>
+  </div>
+  <div class="form-group row">
+    <label for="player-to" class="col-sm-2 col-form-label">PLAYER TO</label>
+    <div class="col-sm-10">
+      <input class="form-control" id="player-to" [(ngModel)]="playerTo">
+    </div>
+  </div>
+  <div class="form-group row">
+    <label for="dc-from" class="col-sm-2 col-form-label">DC FROM</label>
+    <div class="col-sm-10">
+      <input class="form-control" id="dc-from" [(ngModel)]="dcFrom">
+    </div>
+  </div>
+  <div class="form-group row">
+    <label for="dc-to" class="col-sm-2 col-form-label">DC TO</label>
+    <div class="col-sm-10">
+      <input class="form-control" id="dc-to" [(ngModel)]="dcTo">
+    </div>
+  </div>
+  <button type="button" class="btn btn-primary mb-2" (click)="updateTables()">Redo tables</button>
+
+  <h5 class="center-align">Normal</h5>
+
+  <table class="table table-bordered table-hover table-sm">
+    <thead>
+      <tr>
+        <th *ngFor="let item of tableNormal.head; let i = index" style="width: {{ i === 0 ? 5 : 95/tableNormal.head.length }}%;">{{ item.label }}</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr *ngFor="let line of tableNormal.body">
+        <ng-template ngFor let-item [ngForOf]="line" let-i="index">
+          <th *ngIf="i === 0" class="text-bold text-center">{{ item.label }}</th>
+          <td *ngIf="i !== 0">
+            {{ item.label }}
+          </td>
+        </ng-template>
+      </tr>
+    </tbody>
+  </table>
+
+  <h5 class="center-align">Avec Avantage</h5>
+
+  <table class="table table-bordered table-hover table-sm">
+    <thead>
+      <tr>
+        <th *ngFor="let item of tableAdvantage.head; let i = index" style="width: {{ i === 0 ? 5 : 95/tableNormal.head.length }}%;">{{ item.label }}</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr *ngFor="let line of tableAdvantage.body">
+        <ng-template ngFor let-item [ngForOf]="line" let-i="index">
+          <th *ngIf="i === 0" class="text-bold text-center">{{ item.label }}</th>
+          <td *ngIf="i !== 0">
+            {{ item.label }}
+          </td>
+        </ng-template>
+      </tr>
+    </tbody>
+  </table>
+
+  <h5 class="center-align">Avec Désavantage</h5>
+
+  <table class="table table-bordered table-hover table-sm">
+    <thead>
+      <tr>
+        <th *ngFor="let item of tableDisadvantage.head; let i = index" style="width: {{ i === 0 ? 5 : 95/tableNormal.head.length }}%;">{{ item.label }}</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr *ngFor="let line of tableDisadvantage.body">
+        <ng-template ngFor let-item [ngForOf]="line" let-i="index">
+          <th *ngIf="i === 0" class="text-bold text-center">{{ item.label }}</th>
+          <td *ngIf="i !== 0">
+            {{ item.label }}
+          </td>
+        </ng-template>
+      </tr>
+    </tbody>
+  </table>
+</div>
