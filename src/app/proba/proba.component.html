@@ -27,7 +27,7 @@
 
   <h5 class="center-align">Normal</h5>
 
-  <table class="table table-bordered table-hover table-sm" *ngIf="tableNormal?.length">
+  <table class="table table-bordered table-hover table-sm" *ngIf="tableNormal">
     <thead>
       <tr>
         <th *ngFor="let item of tableNormal.head; let i = index" style="width: {{ i === 0 ? 5 : 95/tableNormal.head.length }}%;">{{ item.label }}</th>
@@ -48,7 +48,7 @@
 
   <h5 class="center-align">Avec Avantage</h5>
 
-  <table class="table table-bordered table-hover table-sm" *ngIf="tableAdvantage?.length">
+  <table class="table table-bordered table-hover table-sm" *ngIf="tableAdvantage">
     <thead>
       <tr>
         <th *ngFor="let item of tableAdvantage.head; let i = index" style="width: {{ i === 0 ? 5 : 95/tableNormal.head.length }}%;">{{ item.label }}</th>
@@ -69,7 +69,7 @@
 
   <h5 class="center-align">Avec Désavantage</h5>
 
-  <table class="table table-bordered table-hover table-sm" *ngIf="tableDisadvantage?.length">
+  <table class="table table-bordered table-hover table-sm" *ngIf="tableDisadvantage">
     <thead>
       <tr>
         <th *ngFor="let item of tableDisadvantage.head; let i = index" style="width: {{ i === 0 ? 5 : 95/tableNormal.head.length }}%;">{{ item.label }}</th>

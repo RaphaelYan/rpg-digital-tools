@@ -10,18 +10,18 @@ export class ProbaComponent {
   public playerTo = 9;
   public dcFrom = 5;
   public dcTo = 20;
-  public tableNormal = [];
-  public tableAdvantage = [];
-  public tableDisadvantage = [];
+  public tableNormal;
+  public tableAdvantage;
+  public tableDisadvantage;
 
   constructor() {
     this.updateTables();
   }
 
   public updateTables() {
-    this.tableNormal = [];
-    this.tableAdvantage = [];
-    this.tableDisadvantage = [];
+    this.tableNormal = null;
+    this.tableAdvantage = null;
+    this.tableDisadvantage = null;
 
     setTimeout(() => {
       this.tableNormal = this.buildTable();
