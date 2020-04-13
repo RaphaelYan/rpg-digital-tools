@@ -59,10 +59,10 @@ export class ProbaComponent {
   }
 
   private calcProba(you, dc, advantage) {
-    const mult = 1000;
+    const mult = 2000;
     const res = this.makeRolls(100 * mult, you, dc, advantage);
     const nb: any = res / mult;
-    if (nb === 100 || nb === 0) {
+    if (nb >= 100 || nb <= 0) {
       return '';
     }
 
