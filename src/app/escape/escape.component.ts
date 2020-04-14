@@ -11,6 +11,7 @@ export class EscapeComponent {
     {
       title: 'Unlock',
       slug: 'unlock',
+      rules: 'https://print-and-play.asmodee.fun/files/unlock/unlock_rules_fr.pdf',
       games: [
         {
           title: 'Le temple de RA',

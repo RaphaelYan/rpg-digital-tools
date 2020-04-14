@@ -1,16 +1,17 @@
 <div class="container">
   <h2>Quel jeu ?</h2>
   <ng-template [ngIf]="!selectedEscape">
-    <ul *ngFor="let escape of escapes">
-      <li (click)="selectEscape(escape)">
+    <ul>
+      <li (click)="selectEscape(escape)" *ngFor="let escape of escapes">
         {{ escape.title }}
       </li>
     </ul>
   </ng-template>
 
   <ng-template [ngIf]="selectedEscape && !selectedGame">
-    <ul *ngFor="let game of selectedEscape.games">
-      <li (click)="selectGame(game)">
+    <ul>
+      <li *ngIf="selectedEscape.rules"><a [attr.href]="selectedEscape.rules" target="_blank">Les règles ici !</a></li>
+      <li (click)="selectGame(game)" *ngFor="let game of selectedEscape.games">
         {{ game.title }}
       </li>
     </ul>
