@@ -21,9 +21,20 @@
 
   <ng-template [ngIf]="selectedGame">
     <h2><i class="fa fa-arrow-left clickable" (click)="selectedGame = null"></i> {{ selectedGame.title }}</h2>
-    <div class="escape-card" *ngFor="let card of selectedGame.cards" (click)="cardClicked(card)">
+    <div class="escape-card" *ngFor="let card of selectedGame.cards">
+      <div *ngIf="cardsTrashed[card]" class="trash"></div>
       <img src="assets/escape/{{selectedGame.slug}}/{{card}}-b.png" [hidden]="cardsClicked[card]">
       <img src="assets/escape/{{selectedGame.slug}}/{{card}}-f.png" [hidden]="!cardsClicked[card]">
+      <div class="actions">
+        <i class="fa fa-eye{{ cardsClicked[card] ? '-slash': ''}}" (click)="cardClicked(card)"></i>
+        <i class="fa fa-search-plus" (click)="currentZoom = card"></i>
+        <i class="fa fa-trash" (click)="cardTrashed(card)"></i>
+      </div>
     </div>
   </ng-template>
+
+  <div class="zoom" *ngIf="currentZoom" (click)="currentZoom = null">
+    <img src="assets/escape/{{selectedGame.slug}}/{{currentZoom}}-b.png" [hidden]="cardsClicked[currentZoom]">
+    <img src="assets/escape/{{selectedGame.slug}}/{{currentZoom}}-f.png" [hidden]="!cardsClicked[currentZoom]">
+  </div>
 </div>

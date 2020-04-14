@@ -7,7 +7,9 @@ import { Component } from '@angular/core';
 })
 export class EscapeComponent {
   public cardsClicked = {};
+  public cardsTrashed = {};
   public selectedGame = null;
+  public currentZoom = null;
   public games = [
     {
       title: 'Le temple de RA',
@@ -29,10 +31,7 @@ export class EscapeComponent {
         const find = this.games.find((game) => game.slug === selectedGameSlug);
         if (find) {
           this.selectedGame = find;
-          const cardsClicked = localStorage.getItem('escape.cardsClicked.' + this.selectedGame.slug);
-          if (cardsClicked) {
-            this.cardsClicked = JSON.parse(cardsClicked);
-          }
+          this.retriedStoredCard();
         }
       }
     } catch {}
@@ -42,16 +41,32 @@ export class EscapeComponent {
     this.selectedGame = game;
     localStorage.setItem('escape.selectedGame', game.slug);
 
-    const cardsClicked = localStorage.getItem('escape.cardsClicked.' + this.selectedGame.slug);
-    if (cardsClicked) {
-      this.cardsClicked = JSON.parse(cardsClicked);
-    } else {
-      this.cardsClicked = {};
-    }
+    this.retriedStoredCard();
   }
 
   public cardClicked(card: any) {
     this.cardsClicked[card] = !this.cardsClicked[card];
     localStorage.setItem('escape.cardsClicked.' + this.selectedGame.slug, JSON.stringify(this.cardsClicked));
+  }
+
+  public cardTrashed(card: any) {
+    this.cardsTrashed[card] = !this.cardsTrashed[card];
+    localStorage.setItem('escape.cardsTrashed.' + this.selectedGame.slug, JSON.stringify(this.cardsTrashed));
+  }
+
+  private retriedStoredCard() {
+    const cardsClicked = localStorage.getItem('escape.cardsClicked.' + this.selectedGame.slug);
+    if (cardsClicked) {
+      try { this.cardsClicked = JSON.parse(cardsClicked); } catch {}
+    } else {
+      this.cardsClicked = {};
+    }
+
+    const cardsTrashed = localStorage.getItem('escape.cardsTrashed.' + this.selectedGame.slug);
+    if (cardsTrashed) {
+      try { this.cardsTrashed = JSON.parse(cardsTrashed); } catch {}
+    } else {
+      this.cardsClicked = {};
+    }
   }
 }
