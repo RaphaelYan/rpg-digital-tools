@@ -15,7 +15,7 @@ export class EscapeComponent {
       title: 'Le temple de RA',
       slug: 'temple-ra',
       difficulty: 3,
-      cards: ['init', '55', '24', 'A', 'R', '88', '20', '30', '6', '37', '8', '15', '66', '22', '91', '60', '9', '23', '28', '85', 'B', 'H', '39', '42']
+      cards: ['init', '6', '8', '9', '15', '20', '22', '23', '24', '28', '30', '37', '39', '42', '55', '60', '66', '85', '88', '91', 'A', 'B', 'H', 'R']
     }, {
       title: 'A la poursuite de cabrakan',
       slug: 'cabrakan',
