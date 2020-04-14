@@ -5,3 +5,13 @@ img {
 .escape-card {
   float: left;
 }
+i + i {
+  margin-left: 5px;
+}
+li {
+  margin-top: 20px;
+  cursor: pointer;
+  &:hover {
+    text-decoration: underline;
+  }
+}

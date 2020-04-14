@@ -1,4 +1,6 @@
 @import "bootstrap/scss/bootstrap.scss";
+$fa-font-path: "//netdna.bootstrapcdn.com/font-awesome/4.7.0/fonts"; // for referencing Bootstrap CDN font files directly
+@import '~font-awesome/scss/font-awesome';
 
 :root {
   --light-blue: #03a9f4;
@@ -69,4 +71,8 @@ h5 {
 }
 .center-align {
   text-align: center;
+}
+
+.clickable {
+  cursor: pointer;
 }
