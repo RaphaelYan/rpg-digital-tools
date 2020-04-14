@@ -17,6 +17,9 @@ const routes: Routes = [
   }, {
     path: 'proba',
     loadChildren: './proba/proba.module#ProbaModule'
+  }, {
+    path: 'escape',
+    loadChildren: './escape/escape.module#EscapeModule'
   }
 ];
 

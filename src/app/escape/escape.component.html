@@ -1,0 +1,25 @@
+<div class="container">
+  <h2>Quel jeu ?</h2>
+  <ng-template [ngIf]="!selectedEscape">
+    <ul *ngFor="let escape of escapes">
+      <li (click)="selectEscape(escape)">
+        {{ escape.title }}
+      </li>
+    </ul>
+  </ng-template>
+
+  <ng-template [ngIf]="selectedEscape && !selectedGame">
+    <ul *ngFor="let game of selectedEscape.games">
+      <li (click)="selectGame(game)">
+        {{ game.title }}
+      </li>
+    </ul>
+  </ng-template>
+
+  <ng-template [ngIf]="selectedGame">
+    <div class="escape-card" *ngFor="let card of selectedGame.cards" (click)="cardClicked(card)">
+      <img src="assets/escape/{{selectedEscape.slug}}/{{selectedGame.slug}}/{{card}}-b.png" [hidden]="cardsClicked[card]">
+      <img src="assets/escape/{{selectedEscape.slug}}/{{selectedGame.slug}}/{{card}}-f.png" [hidden]="!cardsClicked[card]">
+    </div>
+  </ng-template>
+</div>

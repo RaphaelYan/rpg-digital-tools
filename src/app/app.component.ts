@@ -24,6 +24,9 @@ export class AppComponent implements OnInit {
     }, {
       title: 'D&D 5 Probas',
       url: '/proba'
+    }, {
+      title: 'Escape games',
+      url: '/escape'
     }
   ];
 
