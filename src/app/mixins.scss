@@ -1,0 +1,32 @@
+@mixin transition($value...) {
+  -webkit-transition: $value;
+  -moz-transition: $value;
+  transition: $value;
+}
+
+@mixin transform($value) {
+  -webkit-transform: $value;
+  -ms-transform: $value;
+  transform: $value;
+}
+
+@mixin transform-origin($value) {
+  -webkit-transform-origin: $value;
+  -ms-transform-origin: $value;
+  transform-origin: $value;
+}
+
+@mixin fix-webkit-transition($value) {
+  -webkit-transition: -webkit-transform $value;
+  transition: transform $value;
+}
+
+@mixin animation($value) {
+  -webkit-animation: $value;
+  animation: $value;
+}
+
+@mixin animation-fill-mode($value) {
+  -webkit-animation-fill-mode: $value;
+  animation-fill-mode: $value;
+}

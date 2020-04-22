@@ -1,0 +1,193 @@
+@import '../../mixins';
+@import './keyframes';
+
+$menu-width: 250px;
+$menu-icon-color: black;
+$menu-icon-color-active: red;
+$transition-aside: 0.5s;
+$transition-icon: 1s;
+$menu-route-active: #BBDEFB;
+$icon-size: 40px;
+$icon-margin: 7px;
+$icon-stroke-width: 2px;
+
+// TRANSITIONS & TRANSFORMS & ANIMATIONS
+.side-nav {
+  @include transition(transform $transition-aside);
+}
+.menu-icon {
+  @include transition(left $transition-aside);
+  span {
+    @include transition(background $transition-icon steps(1, end));
+    @include transform(translateX(-50%) translateY(-50%));
+    &::before, &::after {
+      @include transform(translateY(-6px));
+      @include fix-webkit-transition($transition-icon);
+      @include transform-origin(100% 50%);
+    }
+    &::after {
+      @include transform(translateY(6px));
+    }
+  }
+  svg {
+    @include transition(opacity $transition-icon steps(1, end));
+  }
+  &.is-opened {
+    span {
+      @include transition(background $transition-icon steps(1, start));
+      &::before {
+        @include transition(background $transition-icon, transform $transition-icon);
+        @include transform(translateX(-3px) translateY(-8px) rotate(-45deg));
+      }
+      &::after {
+        @include transition(background $transition-icon, transform $transition-icon);
+        @include transform(translateX(-3px) translateY(8px) rotate(45deg));
+      }
+    }
+    svg {
+      @include transition(opacity $transition-icon steps(1, start));
+      @include animation(pathanimation $transition-icon linear);
+      @include animation-fill-mode(forwards);
+    }
+  }
+  &.is-closed {
+    span::before, span::after {
+      @include transition(background $transition-icon, transform $transition-icon);
+    }
+    svg {
+      @include animation(pathanimation-out $transition-icon linear);
+    }
+    &:hover span {
+      &::before {
+        @include transition(transform $transition-aside);
+        @include transform(translateY(-10px));
+      }
+      &::after {
+        @include transition(transform $transition-aside);
+        @include transform(translateY(10px));
+      }
+    }
+  }
+}
+
+// STYLES
+.side-nav {
+  width: $menu-width;
+  position: fixed;
+  left: 0;
+  top: 0;
+  margin: 0;
+  height: calc(100% + 60px);
+  height: 100%;
+  padding-bottom: 60px;
+  background-color: #fff;
+  z-index: 999;
+  overflow-y: auto;
+  will-change: transform;
+  backface-visibility: hidden;
+  @include transform(translateX(-105%));
+
+  &.fixed {
+    left: 0;
+    transform: translateX(0);
+    position: fixed;
+  }
+
+  .router-link-active {
+    background-color: $menu-route-active;
+  }
+}
+.menu-icon {
+  position: absolute;
+  left: 0;
+  z-index: 99;
+  &.is-opened {
+    left: $menu-width;
+    span::before, span::after {
+      background-color: $menu-icon-color-active;
+    }
+  }
+  cursor: pointer;
+  font-size: 42px;
+  svg {
+    margin: $icon-margin;
+    width: $icon-size;
+    height: $icon-size;
+    vertical-align: inherit;
+  }
+}
+
+.menu-icon {
+  width: $icon-size + $icon-margin * 2;
+  height: $icon-size + $icon-margin * 2;
+  border-radius: 50%;
+  span, span::before, span::after {
+    position: absolute;
+    display: block;
+    width: 22px;
+    height: $icon-stroke-width;
+    background-color: $menu-icon-color;
+  }
+  span {
+    top: 50%;
+    left: 50%;
+    &::before, &::after {
+      content: '';
+      top: 0;
+      left: 0;
+    }
+  }
+  svg {
+    opacity: 0;
+    fill: transparent;
+    stroke-width: $icon-stroke-width;
+    stroke: $menu-icon-color;
+    stroke-dasharray: 22 230;
+  }
+  &.is-opened {
+    span {
+      background-color: transparent;
+    }
+    svg {
+      opacity: 1;
+    }
+  }
+}
+
+ul {
+  padding-left: 0;
+  list-style-type: none;
+  li {
+    cursor: pointer;
+    float: none;
+    line-height: 48px;
+    list-style-type: none;
+    a {
+      text-decoration: none;
+      color: rgba(0,0,0,.87);
+      display: block;
+      font-size: 14px;
+      font-weight: 500;
+      height: 48px;
+      line-height: 48px;
+      padding: 0 32px;
+      &:hover {
+        background-color: rgba(0,0,0,.05);
+      }
+      &:active,
+      &:hover {
+        outline: 0;
+      }
+    }
+    &.active a {
+      background-color: rgba(0,0,0,.20);
+    }
+  }
+}
+
+.nav-bottom {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}

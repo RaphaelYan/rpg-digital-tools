@@ -1,14 +1,11 @@
-<nav class="navbar navbar-light bg-light">
-  <a class="navbar-brand" routerLink="/">RPG Digital tools</a>
-  <a class="link-github tooltipped" target="_blank" href="https://github.com/RaphaelYan/rpg-digital-tools" data-placement="left" data-toggle="tooltip" title="Check me on Github !">
-    <img src="assets/Octocat.png">
-  </a>
-</nav>
+<a class="link-github tooltipped" target="_blank" href="https://github.com/RaphaelYan/rpg-digital-tools" data-placement="left" data-toggle="tooltip" title="Check me on Github !">
+  <img src="assets/Octocat.png">
+</a>
 
-<ul class="nav">
-  <li class="nav-item" *ngFor="let menu of menus">
-    <a class="nav-link" routerLinkActive="active" [routerLink]="menu.url">{{ menu.title }}</a>
-  </li>
-</ul>
+<header>
+  <app-side-nav></app-side-nav>
+</header>
 
-<router-outlet></router-outlet>
+<main class="container">
+  <router-outlet></router-outlet>
+</main>

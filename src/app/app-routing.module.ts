@@ -20,6 +20,9 @@ const routes: Routes = [
   }, {
     path: 'escape',
     loadChildren: () => import('./escape/escape.module').then(m => m.EscapeModule)
+  }, {
+    path: '',
+    loadChildren: () => import('./home/home.module').then(m => m.HomeModule)
   }
 ];
 
