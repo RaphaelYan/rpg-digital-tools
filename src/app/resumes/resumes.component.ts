@@ -8,6 +8,9 @@ import { Component } from '@angular/core';
 export class ResumesComponent {
   public resumes = [
     {
+      date: '25 Avril 2020',
+      title: 'Les Foudres du Roi-Tonnerre - partie 9'
+    }, {
       date: '17 Avril 2020',
       title: 'Les Foudres du Roi-Tonnerre - partie 8'
     }, {
