@@ -12,20 +12,30 @@ export class EscapeComponent {
   public currentZoom = null;
   public games = [
     {
-      title: 'Le temple de RA',
-      slug: 'temple-ra',
-      difficulty: 3,
-      cards: ['init', '6', '8', '9', '15', '20', '22', '23', '24', '28', '30', '37', '39', '42', '55', '60', '66', '85', '88', '91', 'A', 'B', 'H', 'R']
+      title: 'La 5ème avenue',
+      slug: 'avenue',
+      difficulty: 1,
+      cards: ['tuto', 'init', '8', '11', '15', '22', '25', '30', '37', '42', '43', '44', '52', '58', '66', '73', '86', '88', '92', 'C', 'F', 'G', 'H', 'R', 'V', 'W']
+    }, {
+      title: 'Le donjon de Doo-Arann',
+      slug: 'donjon-doo-arann',
+      difficulty: 2,
+      cards: ['intro', 'init', '18', '21', '22', '24', '29', '31', '39', '43', '46', '48', '50', '60', '64', '68', '73', '78', '82', '84', '88', '92', '94']
+    }, {
+      title: 'L\'élite',
+      slug: 'elite',
+      difficulty: 2,
+      cards: ['init', '4', '15', '21', '22', '32', '35', '42', '47', '50', '60', '63', '67', '73', '79', '80', '85', 'C', 'K', 'M']
     }, {
       title: 'A la poursuite de cabrakan',
       slug: 'cabrakan',
       difficulty: 2,
       cards: ['tuto', 'title', 'init', '6', '10', '12', '15', '18', '20', '24', '26', '30', '35', '38', '43', '46', '54', '59', '60', '75', '85', '95']
     }, {
-      title: 'La 5ème avenue',
-      slug: 'avenue',
-      difficulty: 1,
-      cards: ['tuto', 'init', '8', '11', '15', '22', '25', '30', '37', '42', '43', '44', '52', '58', '66', '73', '86', '88', '92', 'C', 'F', 'G', 'H', 'R', 'V', 'W']
+      title: 'Le temple de RA',
+      slug: 'temple-ra',
+      difficulty: 3,
+      cards: ['init', '6', '8', '9', '15', '20', '22', '23', '24', '28', '30', '37', '39', '42', '55', '60', '66', '85', '88', '91', 'A', 'B', 'H', 'R']
     }
   ];
 
