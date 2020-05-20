@@ -10,7 +10,7 @@ export class ResumesComponent {
     {
       date: '20 Mai 2020',
       title: 'Les tréfonds aux mille dragons - Team 2',
-      pdf: 'assets/resumes/repie/les-trefonds-aux-mille-dragons-book.pdf',
+      pdf: 'assets/resumes/les-trefonds-aux-mille-dragons-book.pdf',
     }, {
       date: '16 Mai 2020',
       title: 'Les Foudres du Roi-Tonnerre - partie 12',
@@ -18,7 +18,7 @@ export class ResumesComponent {
     }, {
       date: '14 Mai 2020',
       title: 'Les tréfonds aux mille dragons - Team 1',
-      pdf: 'assets/resumes/repie/les-trefonds-aux-mille-dragons-book.pdf',
+      pdf: 'assets/resumes/les-trefonds-aux-mille-dragons-book.pdf',
     }, {
       date: '9 Mai 2020',
       title: 'Les Foudres du Roi-Tonnerre - partie 11',
