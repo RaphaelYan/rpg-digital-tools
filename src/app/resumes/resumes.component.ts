@@ -8,6 +8,9 @@ import { Component } from '@angular/core';
 export class ResumesComponent {
   public resumes = [
     {
+      date: '22 Mai 2020',
+      title: 'Les Foudres du Roi-Tonnerre - partie 13'
+    }, {
       date: '20 Mai 2020',
       title: 'Les tréfonds aux mille dragons - Team 2',
       pdf: 'assets/resumes/les-trefonds-aux-mille-dragons-book.pdf',
