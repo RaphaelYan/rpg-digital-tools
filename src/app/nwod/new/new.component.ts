@@ -85,11 +85,15 @@ export class NwodNewComponent {
       this.form[dotName]--;
     }
 
-    this.formChanged(dotName);
+    this.formChanged();
   }
 
-  public formChanged(fieldName: string): void {
-
+  public formChanged(): void {
+    this.form.speed = this.form.strength + this.form.dexterity + 5;
+    this.form.initiative = this.form.dexterity + this.form.composure;
+    this.form.defense = Math.min(this.form.dexterity, this.form.wits);
+    this.form.health = this.form.size + this.form.stamina;
+    this.form.willpower = this.form.resolve + this.form.composure;
   }
 
   private resetSheet(): void {
@@ -104,13 +108,9 @@ export class NwodNewComponent {
     }
 
     this.form.size = 5;
-    this.form.speed = 0;
-    this.form.initiative = 0;
-    this.form.defense = 0;
     this.form.armor = 0;
-
-    this.form.health = 0;
-    this.form.willpower = 0;
     this.form.morality = 7;
+
+    this.formChanged();
   }
 }

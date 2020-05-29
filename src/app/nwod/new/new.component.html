@@ -28,7 +28,7 @@
   </ng-template>
 
   <ng-template ngFor let-trait [ngForOf]="arrayOfTraits">
-    <input type="number" [attr.name]="trait" [(ngModel)]="form[trait]" (ngModelChange)="formChanged(trait)">
+    <input type="number" [attr.name]="trait" [(ngModel)]="form[trait]" (ngModelChange)="formChanged()">
   </ng-template>
 
   <ng-template ngFor let-score [ngForOf]="arrayOfTwelve">
