@@ -1,60 +1,53 @@
-<div class="sheet-container">
+<button type="button" (click)="debug = !debug">DEBUG MODE</button>
+
+<div class="sheet-container" [class.debug]="debug">
   <img class="sheet" src="assets/nwod/nwod-sheet.jpg">
 
-  <input type="text" maxlength="18" name="character-name" class="border-bottom">
-  <input type="text" maxlength="18" name="character-age" class="border-bottom">
-  <input type="text" maxlength="18" name="character-player" class="border-bottom">
+  <ng-template ngFor let-item [ngForOf]="arrayOfCharacter">
+    <input type="text" maxlength="18" [attr.name]="item" class="border-bottom" [(ngModel)]="form[item]">
+  </ng-template>
 
-  <input type="text" maxlength="18" name="character-concept" class="border-bottom">
-  <input type="text" maxlength="18" name="character-virtue" class="border-bottom">
-  <input type="text" maxlength="18" name="character-vice" class="border-bottom">
+  <ng-template ngFor let-atttribute [ngForOf]="arrayOfAttributes">
+    <ng-template ngFor let-score [ngForOf]="arrayOfFive">
+      <ng-template [ngIf]="score > 1">
+        <div [class.filled]="form[atttribute] >= score"
+             (click)="clickDot(atttribute, score)"
+             class="dot {{atttribute}}-{{score}}"
+         ></div>
+      </ng-template>
+    </ng-template>
+  </ng-template>
 
-  <input type="text" maxlength="18" name="character-chronicle" class="border-bottom">
-  <input type="text" maxlength="18" name="character-faction" class="border-bottom">
-  <input type="text" maxlength="18" name="character-group-name" class="border-bottom">
+  <ng-template ngFor let-skill [ngForOf]="arrayOfSkills">
+    <ng-template ngFor let-score [ngForOf]="arrayOfFive">
+      <div [class.filled]="form[skill] >= score"
+           (click)="clickDot(skill, score)"
+           class="dot {{skill}}-{{score}}"
+       ></div>
+    </ng-template>
+  </ng-template>
 
-  <div [class.filled]="filled" (click)="filled = !filled" class="dot intelligence-2"></div>
-  <div [class.filled]="filled" (click)="filled = !filled" class="dot intelligence-3"></div>
-  <div [class.filled]="filled" (click)="filled = !filled" class="dot intelligence-4"></div>
-  <div [class.filled]="filled" (click)="filled = !filled" class="dot intelligence-5"></div>
+  <ng-template ngFor let-trait [ngForOf]="arrayOfTraits">
+    <input type="number" [attr.name]="trait" [(ngModel)]="form[trait]" (ngModelChange)="formChanged(trait)">
+  </ng-template>
 
-  <div [class.filled]="filled" (click)="filled = !filled" class="dot wits-2"></div>
-  <div [class.filled]="filled" (click)="filled = !filled" class="dot wits-3"></div>
-  <div [class.filled]="filled" (click)="filled = !filled" class="dot wits-4"></div>
-  <div [class.filled]="filled" (click)="filled = !filled" class="dot wits-5"></div>
+  <ng-template ngFor let-score [ngForOf]="arrayOfTwelve">
+    <div [class.filled]="form.health >= score"
+         class="dot health-{{score}}"
+     ></div>
+  </ng-template>
 
-  <div [class.filled]="filled" (click)="filled = !filled" class="dot resolve-2"></div>
-  <div [class.filled]="filled" (click)="filled = !filled" class="dot resolve-3"></div>
-  <div [class.filled]="filled" (click)="filled = !filled" class="dot resolve-4"></div>
-  <div [class.filled]="filled" (click)="filled = !filled" class="dot resolve-5"></div>
+  <ng-template ngFor let-score [ngForOf]="arrayOfTen">
+    <div [class.filled]="form.willpower >= score"
+         class="dot willpower-{{score}}"
+     ></div>
+  </ng-template>
 
-  <div [class.filled]="filled" (click)="filled = !filled" class="dot strength-2"></div>
-  <div [class.filled]="filled" (click)="filled = !filled" class="dot strength-3"></div>
-  <div [class.filled]="filled" (click)="filled = !filled" class="dot strength-4"></div>
-  <div [class.filled]="filled" (click)="filled = !filled" class="dot strength-5"></div>
+  <ng-template ngFor let-score [ngForOf]="arrayOfTen">
+    <div [class.filled]="form.morality >= score"
+         (click)="clickDot('morality', score)"
+         class="dot morality-{{score}}"
+     ></div>
+  </ng-template>
 
-  <div [class.filled]="filled" (click)="filled = !filled" class="dot dexterity-2"></div>
-  <div [class.filled]="filled" (click)="filled = !filled" class="dot dexterity-3"></div>
-  <div [class.filled]="filled" (click)="filled = !filled" class="dot dexterity-4"></div>
-  <div [class.filled]="filled" (click)="filled = !filled" class="dot dexterity-5"></div>
-
-  <div [class.filled]="filled" (click)="filled = !filled" class="dot stamina-2"></div>
-  <div [class.filled]="filled" (click)="filled = !filled" class="dot stamina-3"></div>
-  <div [class.filled]="filled" (click)="filled = !filled" class="dot stamina-4"></div>
-  <div [class.filled]="filled" (click)="filled = !filled" class="dot stamina-5"></div>
-
-  <div [class.filled]="filled" (click)="filled = !filled" class="dot presence-2"></div>
-  <div [class.filled]="filled" (click)="filled = !filled" class="dot presence-3"></div>
-  <div [class.filled]="filled" (click)="filled = !filled" class="dot presence-4"></div>
-  <div [class.filled]="filled" (click)="filled = !filled" class="dot presence-5"></div>
-
-  <div [class.filled]="filled" (click)="filled = !filled" class="dot manipulation-2"></div>
-  <div [class.filled]="filled" (click)="filled = !filled" class="dot manipulation-3"></div>
-  <div [class.filled]="filled" (click)="filled = !filled" class="dot manipulation-4"></div>
-  <div [class.filled]="filled" (click)="filled = !filled" class="dot manipulation-5"></div>
-
-  <div [class.filled]="filled" (click)="filled = !filled" class="dot composure-2"></div>
-  <div [class.filled]="filled" (click)="filled = !filled" class="dot composure-3"></div>
-  <div [class.filled]="filled" (click)="filled = !filled" class="dot composure-4"></div>
-  <div [class.filled]="filled" (click)="filled = !filled" class="dot composure-5"></div>
 </div>

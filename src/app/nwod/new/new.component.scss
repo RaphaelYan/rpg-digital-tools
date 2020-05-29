@@ -1,3 +1,13 @@
+.debug {
+  // @TODO TMP
+  input {
+    border: 1px solid red;
+  }
+  .dot {
+    background: red;
+  }
+}
+
 .sheet-container {
   position: relative;
 }
@@ -8,9 +18,9 @@
 
 input {
   z-index: 10;
-	position: absolute;
-	width: 140px;
-	padding: 0 2px;
+  position: absolute;
+  width: 140px;
+  padding: 0 2px;
   border: none;
   background-color: rgba(0,0,0, 0);
   cursor: text;
@@ -31,61 +41,231 @@ input {
   width: 8px;
   height: 11px;
   border-radius: 50%;
-  // background: red; // @TODO TMP
   cursor: pointer;
   &:hover {
-    background-color: rgba(0,0,0, 0.1);
+    background-color: rgba(0,0,0, 0.3);
   }
   &.filled {
     background: black;
   }
 }
 
-input[name=character-name] {        top: 157px; left: 187px; width: 165px; }
-input[name=character-age] {         top: 180px; left: 187px; width: 165px; }
-input[name=character-player] {      top: 203px; left: 187px; width: 165px; }
-input[name=character-concept] {     top: 157px; left: 423px; width: 164px; }
-input[name=character-virtue] {      top: 180px; left: 423px; width: 164px; }
-input[name=character-vice] {        top: 203px; left: 423px; width: 164px; }
-input[name=character-chronicle] {   top: 157px; left: 682px; width: 153px; }
-input[name=character-faction] {     top: 180px; left: 682px; width: 153px; }
-input[name=character-group-name] {  top: 203px; left: 682px; width: 153px; }
+input[name=name] { top: 160px; left: 187px; width: 165px; }
+input[name=age] { top: 183px; left: 187px; width: 165px; }
+input[name=player] { top: 206px; left: 187px; width: 165px; }
+input[name=concept] { top: 160px; left: 423px; width: 164px; }
+input[name=virtue] { top: 183px; left: 423px; width: 164px; }
+input[name=vice] { top: 206px; left: 423px; width: 164px; }
+input[name=chronicle] { top: 160px; left: 682px; width: 153px; }
+input[name=faction] { top: 183px; left: 682px; width: 153px; }
+input[name=groupname] { top: 206px; left: 682px; width: 153px; }
+
+// ATTRIBUTES
 
 .intelligence-2 { top: 275px; left: 389px; }
 .intelligence-3 { top: 275px; left: 400px; }
 .intelligence-4 { top: 275px; left: 410px; }
 .intelligence-5 { top: 275px; left: 421px; }
-.wits-2 {         top: 316px; left: 390px; }
-.wits-3 {         top: 316px; left: 400px; }
-.wits-4 {         top: 316px; left: 410px; }
-.wits-5 {         top: 316px; left: 421px; }
-.resolve-2 {      top: 355px; left: 389px; }
-.resolve-3 {      top: 355px; left: 400px; }
-.resolve-4 {      top: 355px; left: 410px; }
-.resolve-5 {      top: 355px; left: 421px; }
+.wits-2 { top: 316px; left: 390px; }
+.wits-3 { top: 316px; left: 400px; }
+.wits-4 { top: 316px; left: 410px; }
+.wits-5 { top: 316px; left: 421px; }
+.resolve-2 { top: 355px; left: 389px; }
+.resolve-3 { top: 355px; left: 400px; }
+.resolve-4 { top: 355px; left: 410px; }
+.resolve-5 { top: 355px; left: 421px; }
 
-.strength-2 {  top: 276px; left: 587px; }
-.strength-3 {  top: 276px; left: 597px; }
-.strength-4 {  top: 276px; left: 606px; }
-.strength-5 {  top: 276px; left: 617px; }
+.strength-2 { top: 276px; left: 587px; }
+.strength-3 { top: 276px; left: 597px; }
+.strength-4 { top: 276px; left: 606px; }
+.strength-5 { top: 276px; left: 617px; }
 .dexterity-2 { top: 316px; left: 589px; }
 .dexterity-3 { top: 316px; left: 599px; }
 .dexterity-4 { top: 316px; left: 609px; }
 .dexterity-5 { top: 316px; left: 619px; }
-.stamina-2 {   top: 355px; left: 589px; }
-.stamina-3 {   top: 355px; left: 598px; }
-.stamina-4 {   top: 355px; left: 608px; }
-.stamina-5 {   top: 355px; left: 619px; }
+.stamina-2 { top: 355px; left: 589px; }
+.stamina-3 { top: 355px; left: 598px; }
+.stamina-4 { top: 355px; left: 608px; }
+.stamina-5 { top: 355px; left: 619px; }
 
-.presence-2 {     top: 275px; left: 783px; }
-.presence-3 {     top: 275px; left: 793px; }
-.presence-4 {     top: 275px; left: 803px; }
-.presence-5 {     top: 275px; left: 813px; }
+.presence-2 { top: 275px; left: 783px; }
+.presence-3 { top: 275px; left: 793px; }
+.presence-4 { top: 275px; left: 803px; }
+.presence-5 { top: 275px; left: 813px; }
 .manipulation-2 { top: 318px; left: 783px; }
 .manipulation-3 { top: 318px; left: 793px; }
 .manipulation-4 { top: 318px; left: 803px; }
 .manipulation-5 { top: 318px; left: 813px; }
-.composure-2 {    top: 357px; left: 784px; }
-.composure-3 {    top: 357px; left: 794px; }
-.composure-4 {    top: 357px; left: 804px; }
-.composure-5 {    top: 357px; left: 813px; }
+.composure-2 { top: 357px; left: 784px; }
+.composure-3 { top: 357px; left: 794px; }
+.composure-4 { top: 357px; left: 804px; }
+.composure-5 { top: 357px; left: 813px; }
+
+// SKILLS
+
+.academics-1 { top: 494px; left: 309px; }
+.academics-2 { top: 494px; left: 318px; }
+.academics-3 { top: 494px; left: 328px; }
+.academics-4 { top: 494px; left: 338px; }
+.academics-5 { top: 494px; left: 348px; }
+.computer-1 { top: 516px; left: 308px; }
+.computer-2 { top: 516px; left: 318px; }
+.computer-3 { top: 516px; left: 328px; }
+.computer-4 { top: 516px; left: 338px; }
+.computer-5 { top: 516px; left: 348px; }
+.crafts-1 { top: 539px; left: 309px; }
+.crafts-2 { top: 539px; left: 318px; }
+.crafts-3 { top: 539px; left: 328px; }
+.crafts-4 { top: 539px; left: 338px; }
+.crafts-5 { top: 539px; left: 348px; }
+.investigation-1 { top: 561px; left: 308px; }
+.investigation-2 { top: 561px; left: 318px; }
+.investigation-3 { top: 561px; left: 328px; }
+.investigation-4 { top: 561px; left: 338px; }
+.investigation-5 { top: 561px; left: 348px; }
+.medecine-1 { top: 583px; left: 309px; }
+.medecine-2 { top: 583px; left: 318px; }
+.medecine-3 { top: 583px; left: 328px; }
+.medecine-4 { top: 583px; left: 338px; }
+.medecine-5 { top: 583px; left: 347px; }
+.occult-1 { top: 605px; left: 308px; }
+.occult-2 { top: 605px; left: 318px; }
+.occult-3 { top: 605px; left: 328px; }
+.occult-4 { top: 605px; left: 338px; }
+.occult-5 { top: 605px; left: 348px; }
+.politics-1 { top: 627px; left: 308px; }
+.politics-2 { top: 627px; left: 318px; }
+.politics-3 { top: 627px; left: 328px; }
+.politics-4 { top: 627px; left: 338px; }
+.politics-5 { top: 627px; left: 348px; }
+.science-1 { top: 649px; left: 308px; }
+.science-2 { top: 649px; left: 318px; }
+.science-3 { top: 649px; left: 328px; }
+.science-4 { top: 649px; left: 338px; }
+.science-5 { top: 649px; left: 348px; }
+
+.athletics-1 { top: 732px; left: 308px; }
+.athletics-2 { top: 732px; left: 318px; }
+.athletics-3 { top: 732px; left: 328px; }
+.athletics-4 { top: 732px; left: 338px; }
+.athletics-5 { top: 732px; left: 347px; }
+.brawl-1 { top: 754px; left: 308px; }
+.brawl-2 { top: 754px; left: 318px; }
+.brawl-3 { top: 754px; left: 328px; }
+.brawl-4 { top: 754px; left: 338px; }
+.brawl-5 { top: 754px; left: 347px; }
+.drive-1 { top: 777px; left: 308px; }
+.drive-2 { top: 777px; left: 318px; }
+.drive-3 { top: 777px; left: 328px; }
+.drive-4 { top: 777px; left: 338px; }
+.drive-5 { top: 777px; left: 348px; }
+.firearms-1 { top: 799px; left: 308px; }
+.firearms-2 { top: 799px; left: 318px; }
+.firearms-3 { top: 799px; left: 328px; }
+.firearms-4 { top: 799px; left: 338px; }
+.firearms-5 { top: 799px; left: 348px; }
+.larceny-1 { top: 821px; left: 308px; }
+.larceny-2 { top: 821px; left: 318px; }
+.larceny-3 { top: 821px; left: 328px; }
+.larceny-4 { top: 821px; left: 338px; }
+.larceny-5 { top: 821px; left: 348px; }
+.stealth-1 { top: 843px; left: 307px; }
+.stealth-2 { top: 843px; left: 318px; }
+.stealth-3 { top: 843px; left: 328px; }
+.stealth-4 { top: 843px; left: 338px; }
+.stealth-5 { top: 843px; left: 347px; }
+.survival-1 { top: 865px; left: 308px; }
+.survival-2 { top: 865px; left: 318px; }
+.survival-3 { top: 865px; left: 328px; }
+.survival-4 { top: 865px; left: 338px; }
+.survival-5 { top: 865px; left: 347px; }
+.weaponry-1 { top: 887px; left: 309px; }
+.weaponry-2 { top: 887px; left: 318px; }
+.weaponry-3 { top: 887px; left: 328px; }
+.weaponry-4 { top: 887px; left: 338px; }
+.weaponry-5 { top: 887px; left: 347px; }
+
+.animalken-1 { top: 970px; left: 311px; }
+.animalken-2 { top: 970px; left: 321px; }
+.animalken-3 { top: 970px; left: 331px; }
+.animalken-4 { top: 970px; left: 341px; }
+.animalken-5 { top: 970px; left: 351px; }
+.empathy-1 { top: 992px; left: 311px; }
+.empathy-2 { top: 992px; left: 321px; }
+.empathy-3 { top: 992px; left: 331px; }
+.empathy-4 { top: 992px; left: 341px; }
+.empathy-5 { top: 992px; left: 351px; }
+.expression-1 { top: 1014px; left: 312px; }
+.expression-2 { top: 1014px; left: 321px; }
+.expression-3 { top: 1014px; left: 331px; }
+.expression-4 { top: 1014px; left: 341px; }
+.expression-5 { top: 1014px; left: 351px; }
+.intimidation-1 { top: 1036px; left: 311px; }
+.intimidation-2 { top: 1036px; left: 321px; }
+.intimidation-3 { top: 1036px; left: 331px; }
+.intimidation-4 { top: 1036px; left: 341px; }
+.intimidation-5 { top: 1036px; left: 351px; }
+.persuasion-1 { top: 1058px; left: 312px; }
+.persuasion-2 { top: 1058px; left: 321px; }
+.persuasion-3 { top: 1058px; left: 331px; }
+.persuasion-4 { top: 1058px; left: 341px; }
+.persuasion-5 { top: 1058px; left: 351px; }
+.socialize-1 { top: 1081px; left: 312px; }
+.socialize-2 { top: 1081px; left: 321px; }
+.socialize-3 { top: 1081px; left: 331px; }
+.socialize-4 { top: 1081px; left: 341px; }
+.socialize-5 { top: 1081px; left: 351px; }
+.streetwise-1 { top: 1103px; left: 312px; }
+.streetwise-2 { top: 1103px; left: 321px; }
+.streetwise-3 { top: 1103px; left: 331px; }
+.streetwise-4 { top: 1103px; left: 341px; }
+.streetwise-5 { top: 1103px; left: 351px; }
+.subterfuge-1 { top: 1125px; left: 311px; }
+.subterfuge-2 { top: 1125px; left: 321px; }
+.subterfuge-3 { top: 1125px; left: 331px; }
+.subterfuge-4 { top: 1125px; left: 341px; }
+.subterfuge-5 { top: 1125px; left: 351px; }
+
+// STATS
+
+.health-1 {  top: 477px; left: 627px; }
+.health-2 {  top: 477px; left: 644px; }
+.health-3 {  top: 477px; left: 660px; }
+.health-4 {  top: 477px; left: 677px; }
+.health-5 {  top: 477px; left: 694px; }
+.health-6 {  top: 477px; left: 710px; }
+.health-7 {  top: 477px; left: 727px; }
+.health-8 {  top: 477px; left: 744px; }
+.health-9 {  top: 477px; left: 760px; }
+.health-10 { top: 477px; left: 777px; }
+.health-11 { top: 477px; left: 794px; }
+.health-12 { top: 477px; left: 810px; }
+
+.willpower-1 {  top: 561px; left: 643px; }
+.willpower-2 {  top: 561px; left: 660px; }
+.willpower-3 {  top: 561px; left: 677px; }
+.willpower-4 {  top: 561px; left: 693px; }
+.willpower-5 {  top: 561px; left: 710px; }
+.willpower-6 {  top: 561px; left: 727px; }
+.willpower-7 {  top: 561px; left: 743px; }
+.willpower-8 {  top: 561px; left: 760px; }
+.willpower-9 {  top: 561px; left: 777px; }
+.willpower-10 { top: 561px; left: 793px; }
+
+.morality-1 {  top: 838px; left: 794px; }
+.morality-2 {  top: 815px; left: 794px; }
+.morality-3 {  top: 793px; left: 794px; }
+.morality-4 {  top: 771px; left: 794px; }
+.morality-5 {  top: 749px; left: 794px; }
+.morality-6 {  top: 727px; left: 794px; }
+.morality-7 {  top: 704px; left: 794px; }
+.morality-8 {  top: 682px; left: 794px; }
+.morality-9 {  top: 660px; left: 794px; }
+.morality-10 { top: 638px; left: 794px; }
+
+
+input[name=size] { top: 793px; left: 421px; width: 176px; }
+input[name=speed] { top: 819px; left: 430px; width: 167px; }
+input[name=initiative] { top: 849px; left: 484px; width: 113px; }
+input[name=defense] { top: 879px; left: 446px; width: 151px; }
+input[name=armor] { top: 909px; left: 434px; width: 163px; }
