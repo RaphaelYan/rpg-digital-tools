@@ -1,0 +1,31 @@
+.sheet-container {
+  position: relative;
+}
+
+.sheet {
+  width: 970px;
+}
+
+input:hover {
+  background-color: rgba(0,0,0, 0.1);
+}
+
+input {
+	position: absolute;
+	width: 140px;
+	padding: 0 2px;
+  border: none;
+  background-color: rgba(0,0,0, 0);
+  cursor: text;
+  outline: none;
+}
+
+.border-bottom {
+  border-bottom: 1px solid;
+}
+
+input[name=character-name] {
+  top: 160px;
+  left: 174px;
+  width: 175px;
+}

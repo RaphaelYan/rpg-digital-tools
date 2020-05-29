@@ -32,6 +32,9 @@ export class SideNavComponent {
     }, {
       title: 'Escape games',
       url: '/escape'
+    }, {
+      title: 'Chronicles of Darkness',
+      url: '/nwod'
     }
   ];
 

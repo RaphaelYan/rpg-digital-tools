@@ -21,6 +21,9 @@ const routes: Routes = [
     path: 'escape',
     loadChildren: () => import('./escape/escape.module').then(m => m.EscapeModule)
   }, {
+    path: 'nwod',
+    loadChildren: () => import('./nwod/nwod.module').then(m => m.NwodModule)
+  }, {
     path: '',
     loadChildren: () => import('./home/home.module').then(m => m.HomeModule)
   }
