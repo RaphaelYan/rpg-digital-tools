@@ -59,18 +59,6 @@ export class NwodNewComponent {
     'streetwise',
     'subterfuge'
   ];
-  public arrayOfTraits: string[] = [
-    'size',
-    'speed',
-    'initiative',
-    'defense',
-    'armor'
-  ];
-  public arrayOfStats: string[] = [
-    'health',
-    'willpower',
-    'morality'
-  ];
 
   public debug: boolean = false; // @TODO TMP
 

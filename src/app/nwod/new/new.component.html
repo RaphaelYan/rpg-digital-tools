@@ -27,9 +27,11 @@
     </ng-template>
   </ng-template>
 
-  <ng-template ngFor let-trait [ngForOf]="arrayOfTraits">
-    <input type="number" [attr.name]="trait" [(ngModel)]="form[trait]" (ngModelChange)="formChanged()">
-  </ng-template>
+  <input type="number" name="size" [(ngModel)]="form['size']" (ngModelChange)="formChanged()">
+  <input type="number" name="speed" [(ngModel)]="form['speed']" (ngModelChange)="formChanged()" disabled>
+  <input type="number" name="initiative" [(ngModel)]="form['initiative']" (ngModelChange)="formChanged()" disabled>
+  <input type="number" name="defense" [(ngModel)]="form['defense']" (ngModelChange)="formChanged()" disabled>
+  <input type="number" name="armor" [(ngModel)]="form['armor']" (ngModelChange)="formChanged()">
 
   <ng-template ngFor let-score [ngForOf]="arrayOfTwelve">
     <div [class.filled]="form.health >= score"
