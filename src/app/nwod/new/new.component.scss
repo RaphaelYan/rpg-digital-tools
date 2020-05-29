@@ -6,11 +6,8 @@
   width: 970px;
 }
 
-input:hover {
-  background-color: rgba(0,0,0, 0.1);
-}
-
 input {
+  z-index: 10;
 	position: absolute;
 	width: 140px;
 	padding: 0 2px;
@@ -18,14 +15,77 @@ input {
   background-color: rgba(0,0,0, 0);
   cursor: text;
   outline: none;
+  font-size: 14px;
+  &:hover {
+    background-color: rgba(0,0,0, 0.1);
+  }
 }
 
 .border-bottom {
   border-bottom: 1px solid;
 }
 
-input[name=character-name] {
-  top: 160px;
-  left: 174px;
-  width: 175px;
+.dot {
+  z-index: 10;
+  position: absolute;
+  width: 8px;
+  height: 11px;
+  border-radius: 50%;
+  // background: red; // @TODO TMP
+  cursor: pointer;
+  &:hover {
+    background-color: rgba(0,0,0, 0.1);
+  }
+  &.filled {
+    background: black;
+  }
 }
+
+input[name=character-name] {        top: 157px; left: 187px; width: 165px; }
+input[name=character-age] {         top: 180px; left: 187px; width: 165px; }
+input[name=character-player] {      top: 203px; left: 187px; width: 165px; }
+input[name=character-concept] {     top: 157px; left: 423px; width: 164px; }
+input[name=character-virtue] {      top: 180px; left: 423px; width: 164px; }
+input[name=character-vice] {        top: 203px; left: 423px; width: 164px; }
+input[name=character-chronicle] {   top: 157px; left: 682px; width: 153px; }
+input[name=character-faction] {     top: 180px; left: 682px; width: 153px; }
+input[name=character-group-name] {  top: 203px; left: 682px; width: 153px; }
+
+.intelligence-2 { top: 275px; left: 389px; }
+.intelligence-3 { top: 275px; left: 400px; }
+.intelligence-4 { top: 275px; left: 410px; }
+.intelligence-5 { top: 275px; left: 421px; }
+.wits-2 {         top: 316px; left: 390px; }
+.wits-3 {         top: 316px; left: 400px; }
+.wits-4 {         top: 316px; left: 410px; }
+.wits-5 {         top: 316px; left: 421px; }
+.resolve-2 {      top: 355px; left: 389px; }
+.resolve-3 {      top: 355px; left: 400px; }
+.resolve-4 {      top: 355px; left: 410px; }
+.resolve-5 {      top: 355px; left: 421px; }
+
+.strength-2 {  top: 276px; left: 587px; }
+.strength-3 {  top: 276px; left: 597px; }
+.strength-4 {  top: 276px; left: 606px; }
+.strength-5 {  top: 276px; left: 617px; }
+.dexterity-2 { top: 316px; left: 589px; }
+.dexterity-3 { top: 316px; left: 599px; }
+.dexterity-4 { top: 316px; left: 609px; }
+.dexterity-5 { top: 316px; left: 619px; }
+.stamina-2 {   top: 355px; left: 589px; }
+.stamina-3 {   top: 355px; left: 598px; }
+.stamina-4 {   top: 355px; left: 608px; }
+.stamina-5 {   top: 355px; left: 619px; }
+
+.presence-2 {     top: 275px; left: 783px; }
+.presence-3 {     top: 275px; left: 793px; }
+.presence-4 {     top: 275px; left: 803px; }
+.presence-5 {     top: 275px; left: 813px; }
+.manipulation-2 { top: 318px; left: 783px; }
+.manipulation-3 { top: 318px; left: 793px; }
+.manipulation-4 { top: 318px; left: 803px; }
+.manipulation-5 { top: 318px; left: 813px; }
+.composure-2 {    top: 357px; left: 784px; }
+.composure-3 {    top: 357px; left: 794px; }
+.composure-4 {    top: 357px; left: 804px; }
+.composure-5 {    top: 357px; left: 813px; }
