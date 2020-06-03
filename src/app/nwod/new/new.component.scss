@@ -269,3 +269,8 @@ input[name=speed] { top: 819px; left: 430px; width: 167px; }
 input[name=initiative] { top: 849px; left: 484px; width: 113px; }
 input[name=defense] { top: 879px; left: 446px; width: 151px; }
 input[name=armor] { top: 909px; left: 434px; width: 163px; }
+
+.li-empty {
+  list-style: none;
+  height: 15px;
+}
