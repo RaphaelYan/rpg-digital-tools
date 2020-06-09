@@ -6,7 +6,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./new.component.scss']
 })
 export class NwodMageNewComponent {
-  public form: any = {};
+  public form: any = {
+    skillRotes: {},
+    merits: {}
+  };
 
   public arrayOfCharacter: string[] = [
     'name',
@@ -20,6 +23,7 @@ export class NwodMageNewComponent {
     'cabal',
   ];
   public arrayOfFive: number[] = [1, 2, 3, 4, 5];
+  public arrayOfEight: number[] = [1, 2, 3, 4, 5, 6, 7, 8];
   public arrayOfTen: number[] = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
   public arrayOfFifteen: number[] = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15];
   public arrayOfTwenty: number[] = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20];
@@ -110,6 +114,11 @@ export class NwodMageNewComponent {
     }
     for (const arcana of this.arrayOfArcanas) {
       this.form[arcana] = 0;
+    }
+
+    this.form.merits = {};
+    for (const nb of this.arrayOfEight) {
+      this.form['merits-' + nb] = 0;
     }
 
     this.form.skillRotes = {};

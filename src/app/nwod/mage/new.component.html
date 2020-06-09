@@ -160,6 +160,7 @@
 
 <div class="sheet-container" [class.debug]="debug">
   <img class="sheet" src="assets/nwod/mage_eveil_vf-1.jpg">
+  <img class="sheet" src="assets/nwod/mage_eveil_vf-2.jpg">
 
   <ng-template ngFor let-item [ngForOf]="arrayOfCharacter">
     <input type="text" maxlength="18" [attr.name]="item" class="border-bottom" [(ngModel)]="form[item]">
@@ -187,6 +188,20 @@
        ></div>
     </ng-template>
   </ng-template>
+
+  <ng-template ngFor let-nb [ngForOf]="arrayOfEight">
+    <input type="text" [attr.name]="'merit-' + nb" [(ngModel)]="form.merits[nb + '-name']">
+    <ng-template ngFor let-score [ngForOf]="arrayOfFive">
+      <div [class.filled]="form['merits-' + nb] >= score"
+           (click)="clickDot('merits-' + nb, score)"
+           class="dot merit-{{nb}}-{{score}}"
+       ></div>
+    </ng-template>
+  </ng-template>
+
+  <input type="text" name="flaw-1" [(ngModel)]="form['flaw-1']">
+  <input type="text" name="flaw-2" [(ngModel)]="form['flaw-2']">
+  <input type="text" name="flaw-3" [(ngModel)]="form['flaw-3']">
 
   <input type="number" name="size" [(ngModel)]="form['size']" (ngModelChange)="formChanged()">
   <input type="number" name="defense" [(ngModel)]="form['defense']" (ngModelChange)="formChanged()" disabled>
