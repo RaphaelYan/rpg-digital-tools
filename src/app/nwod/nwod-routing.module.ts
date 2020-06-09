@@ -1,15 +1,19 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { NwodComponent } from './nwod.component';
-import { NwodNewComponent } from './new/new.component';
+import { NwodMortalNewComponent } from './mortal/new.component';
+import { NwodMageNewComponent } from './mage/new.component';
 
 const routes: Routes = [
   {
     path: '',
     component:  NwodComponent
   }, {
-    path: 'new',
-    component:  NwodNewComponent
+    path: 'mortal/new',
+    component:  NwodMortalNewComponent
+  }, {
+    path: 'mage/new',
+    component:  NwodMageNewComponent
   }
 ];
 

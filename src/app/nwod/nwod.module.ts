@@ -4,12 +4,14 @@ import { FormsModule } from '@angular/forms';
 
 import { NwodRoutingModule } from './nwod-routing.module';
 import { NwodComponent } from './nwod.component';
-import { NwodNewComponent } from './new/new.component';
+import { NwodMortalNewComponent } from './mortal/new.component';
+import { NwodMageNewComponent } from './mage/new.component';
 
 @NgModule({
   declarations: [
     NwodComponent,
-    NwodNewComponent
+    NwodMortalNewComponent,
+    NwodMageNewComponent,
   ],
   imports: [
     CommonModule,

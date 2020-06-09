@@ -136,4 +136,16 @@ export class ResumesComponent {
       title: 'HOTQ - Partie 1 : Les flammes du culte',
     },
   ];
+
+  /*
+  Dragonia Guilds
+  Partie I (Dimanche 21 Juillet 2013) :  Azrael  Aldaric  Vador Syccor Gibli
+  Partie II (Lundi 22 juillet 2013):  Syccor  Azrael  Gibli  Aldaric  Vador  
+  Partie III (dimanche 04 aout 2013)  Syccor  Aldaric  Vador  
+  Partie IV (dimanche 25 aout 2013):  Syccor  Fiboot Aldaric  Gibli Bazhul
+  Partie V (dimanche 1er septembre 2013):  Syccor  Fiboot  Shinden  Gibli  Azrael  Vador
+
+  Jeudi 11 Aout 2011 : 2eme partie de la campagne de mage (syccor / bazuhl / vadoo)
+  Dimanche 24 Aout 2011 : surement la 1ere partie de la campagne de mage
+  */
 }

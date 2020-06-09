@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-nwod-new',
+  selector: 'app-nwod-mortal-new',
   templateUrl: './new.component.html',
   styleUrls: ['./new.component.scss']
 })
-export class NwodNewComponent {
+export class NwodMortalNewComponent {
   public form: any = {};
 
   public arrayOfCharacter: string[] = [

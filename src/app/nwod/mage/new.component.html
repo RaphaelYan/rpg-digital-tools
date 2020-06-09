@@ -33,7 +33,7 @@
     <h2>Etape 5</h2>
     <ul>
       <li>Choisir un "vice" et une "vertue"</li>
-      <li>Vertues : Charité, Foi, Force d'âme, Esport, Jsttice, Prudence, Tempérance</li>
+      <li>Vertues : Charité, Foi, Force d'âme, Espoir, Justice, Prudence, Tempérance</li>
       <li>Vices : Envie, Gourmandise, Avidité, Luxure, Orgueil, Paresse, Colère</li>
     </ul>
     -->
@@ -50,41 +50,69 @@
     <h2>Lexique</h2>
     <ul>
       <li>Intelligence : capacités cognitives</li>
+      <!-- => memory : intell + compo -->
       <li>Wits : capacités de réflexion</li>
+      <!-- => perception : wits + compo -->
       <li>Resolve : concentration, détermination</li>
+      <!-- => resist : reso+wits / reso+stam -->
       <li>Strength : puissance physique</li>
       <li>Dexterity : rapidité, finesse</li>
       <li>Stamina : vigueur, résistance physique</li>
       <li>Presence : prestance, stature, attrait</li>
       <li>Manipulation : charme, persuasion</li>
       <li>Composure : calme, assurance</li>
-      <!--
+      <!-- => meditation : compo + wits -->
       <li class="li-empty"></li>
-      <li>Academics : </li>
-      <li>Computer : </li>
-      <li>Crafts : </li>
-      <li>Investigation : </li>
-      <li>Medecine : </li>
-      <li>Occult : </li>
-      <li>Politics : </li>
-      <li>Science : </li>
-      <li>Athletics : </li>
-      <li>Brawl : </li>
-      <li>Drive : </li>
-      <li>Firearms : </li>
-      <li>Larceny : </li>
-      <li>Stealth : </li>
-      <li>Survival : </li>
-      <li>Weaponry : </li>
-      <li>Animalken : </li>
-      <li>Empathy : </li>
-      <li>Expression : </li>
-      <li>Intimidation : </li>
-      <li>Persuasion : </li>
-      <li>Socialize : </li>
-      <li>Streetwise : </li>
-      <li>Subterfuge : </li>
-      -->
+      <li>Academics : érudition, connaissances</li>
+      <!-- => research : intell -->
+      <li>Computer : informatique, programmation</li>
+      <!-- => hacking : intell -->
+      <li>Crafts : artisanat, réparations</li>
+      <!-- => art : intell -->
+      <!-- => repair : dex -->
+      <li>Investigation : recherche, énigmes</li>
+      <!-- => examine : wits -->
+      <!-- => enigma : intell -->
+      <li>Medecine : physiologie humaine, blessures</li>
+      <!-- => healing : dex/intell -->
+      <li>Occult : surnaturel, légendes</li>
+      <li>Politics : bureaucratie, contacts</li>
+      <li>Science : physique, chimie, biologie, ...</li>
+      <li>Athletics : escalade, course, jeter un truc</li>
+      <!-- => climbing : str -->
+      <!-- => run : stam -->
+      <!-- => jump : str -->
+      <!-- => throw : dex -->
+      <li>Brawl : combat à mains nues</li>
+      <li>Drive : voitures, bateaux, course poursuite</li>
+      <!-- => pursuit : dex -->
+      <!-- => filature : wits -->
+      <li>Firearms : pistolets, fusils d'assault</li>
+      <li>Larceny : crochetage, vol à la tire</li>
+      <!-- => bypass : dex -->
+      <!-- => lock : dex -->
+      <!-- => sleight of hand : dex -->
+      <li>Stealth : discrétion, déplacement silencieux</li>
+      <!-- => shadowing : wits -->
+      <li>Survival : trouver à manger, un refuge</li>
+      <!-- => foraging : wits -->
+      <li>Weaponry : armes blanches</li>
+      <li>Animal ken : comportement des animaux</li>
+      <!-- => training : compo -->
+      <li>Empathy : intuition, lire les émotions</li>
+      <li>Expression : art de la communication</li>
+      <li>Intimidation : via la peur, la force</li>
+      <!-- => interrogation : wits -->
+      <li>Persuasion : via le charme, la diplomatie</li>
+      <!-- => deal : manip -->
+      <!-- => fast talk : manip -->
+      <!-- => oratory : pres -->
+      <!-- => seduction : pres -->
+      <li>Socialize : étiquette, sociabilité</li>
+      <li>Streetwise : connaissance de la rue, marché noir</li>
+      <!-- => black market : manip -->
+      <li>Subterfuge : mensonges, cacher des émotions</li>
+      <!-- => disguise : wits -->
       <li class="li-empty"></li>
       <li>Health : vos "points de vie"</li>
       <li>Willpower : votre "volonté"; dépenser 1 point ajoute 3 dés à un jet</li>
@@ -131,7 +159,7 @@
 <button type="button" (click)="debug = !debug">DEBUG MODE</button>
 
 <div class="sheet-container" [class.debug]="debug">
-  <img class="sheet" src="assets/nwod/nwod-sheet.jpg">
+  <img class="sheet" src="assets/nwod/mage_eveil_vf-1.jpg">
 
   <ng-template ngFor let-item [ngForOf]="arrayOfCharacter">
     <input type="text" maxlength="18" [attr.name]="item" class="border-bottom" [(ngModel)]="form[item]">
@@ -149,6 +177,9 @@
   </ng-template>
 
   <ng-template ngFor let-skill [ngForOf]="arrayOfSkills">
+    <div [class.filled]="form.skillRotes[skill]"
+         class="square rote {{skill}}-rote"
+     ></div>
     <ng-template ngFor let-score [ngForOf]="arrayOfFive">
       <div [class.filled]="form[skill] >= score"
            (click)="clickDot(skill, score)"
@@ -158,20 +189,40 @@
   </ng-template>
 
   <input type="number" name="size" [(ngModel)]="form['size']" (ngModelChange)="formChanged()">
-  <input type="number" name="speed" [(ngModel)]="form['speed']" (ngModelChange)="formChanged()" disabled>
-  <input type="number" name="initiative" [(ngModel)]="form['initiative']" (ngModelChange)="formChanged()" disabled>
   <input type="number" name="defense" [(ngModel)]="form['defense']" (ngModelChange)="formChanged()" disabled>
-  <input type="number" name="armor" [(ngModel)]="form['armor']" (ngModelChange)="formChanged()">
+  <input type="number" name="initiative" [(ngModel)]="form['initiative']" (ngModelChange)="formChanged()" disabled>
+  <input type="number" name="speed" [(ngModel)]="form['speed']" (ngModelChange)="formChanged()" disabled>
 
-  <ng-template ngFor let-score [ngForOf]="arrayOfTwelve">
+  <ng-template ngFor let-arcana [ngForOf]="arrayOfArcanas">
+    <ng-template ngFor let-score [ngForOf]="arrayOfFive">
+      <div [class.filled]="form[arcana] >= score"
+           (click)="clickDot(arcana, score)"
+           class="dot {{arcana}}-{{score}}"
+       ></div>
+    </ng-template>
+  </ng-template>
+
+  <ng-template ngFor let-score [ngForOf]="arrayOfFifteen">
     <div [class.filled]="form.health >= score"
-         class="dot health-{{score}}"
+         class="dot health health-{{score}}"
      ></div>
   </ng-template>
 
   <ng-template ngFor let-score [ngForOf]="arrayOfTen">
     <div [class.filled]="form.willpower >= score"
-         class="dot willpower-{{score}}"
+         class="dot willpower willpower-{{score}}"
+     ></div>
+  </ng-template>
+
+  <ng-template ngFor let-score [ngForOf]="arrayOfTwenty">
+    <div [class.filled]="form.mana >= score"
+         class="square mana mana-{{score}}"
+     ></div>
+  </ng-template>
+
+  <ng-template ngFor let-score [ngForOf]="arrayOfTen">
+    <div [class.filled]="form.gnosis >= score"
+         class="dot gnosis gnosis-{{score}}"
      ></div>
   </ng-template>
 
