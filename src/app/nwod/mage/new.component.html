@@ -48,7 +48,7 @@
   </div>
   <div class="col-6">
     <h2>Lexique</h2>
-    <ul>
+    <ul class="scrollable">
       <li>Intelligence : capacités cognitives</li>
       <!-- => memory : intell + compo -->
       <li>Wits : capacités de réflexion</li>
@@ -157,13 +157,17 @@
 <hr>
 
 <button type="button" (click)="debug = !debug">DEBUG MODE</button>
+<button type="button" (click)="eraseSheet()">Reset sheet</button>
+
+<!-- @TODO select path -->
+<!-- @TODO select orders -->
 
 <div class="sheet-container" [class.debug]="debug">
   <img class="sheet" src="assets/nwod/mage_eveil_vf-1.jpg">
   <img class="sheet" src="assets/nwod/mage_eveil_vf-2.jpg">
 
   <ng-template ngFor let-item [ngForOf]="arrayOfCharacter">
-    <input type="text" maxlength="18" [attr.name]="item" class="border-bottom" [(ngModel)]="form[item]">
+    <input type="text" maxlength="18" [attr.name]="item" class="border-bottom" [(ngModel)]="form[item]" (ngModelChange)="formChanged()">
   </ng-template>
 
   <ng-template ngFor let-atttribute [ngForOf]="arrayOfAttributes">
@@ -190,7 +194,7 @@
   </ng-template>
 
   <ng-template ngFor let-nb [ngForOf]="arrayOfEight">
-    <input type="text" [attr.name]="'merit-' + nb" [(ngModel)]="form.merits[nb + '-name']">
+    <input type="text" [attr.name]="'merit-' + nb" [(ngModel)]="form.merits[nb + '-name']" (ngModelChange)="formChanged()">
     <ng-template ngFor let-score [ngForOf]="arrayOfFive">
       <div [class.filled]="form['merits-' + nb] >= score"
            (click)="clickDot('merits-' + nb, score)"
@@ -199,14 +203,14 @@
     </ng-template>
   </ng-template>
 
-  <input type="text" name="flaw-1" [(ngModel)]="form['flaw-1']">
-  <input type="text" name="flaw-2" [(ngModel)]="form['flaw-2']">
-  <input type="text" name="flaw-3" [(ngModel)]="form['flaw-3']">
+  <input type="text" name="flaw-1" [(ngModel)]="form['flaw-1']" (ngModelChange)="formChanged()">
+  <input type="text" name="flaw-2" [(ngModel)]="form['flaw-2']" (ngModelChange)="formChanged()">
+  <input type="text" name="flaw-3" [(ngModel)]="form['flaw-3']" (ngModelChange)="formChanged()">
 
   <input type="number" name="size" [(ngModel)]="form['size']" (ngModelChange)="formChanged()">
-  <input type="number" name="defense" [(ngModel)]="form['defense']" (ngModelChange)="formChanged()" disabled>
-  <input type="number" name="initiative" [(ngModel)]="form['initiative']" (ngModelChange)="formChanged()" disabled>
-  <input type="number" name="speed" [(ngModel)]="form['speed']" (ngModelChange)="formChanged()" disabled>
+  <input type="number" name="defense" [ngModel]="form['defense']" disabled>
+  <input type="number" name="initiative" [ngModel]="form['initiative']" disabled>
+  <input type="number" name="speed" [ngModel]="form['speed']" disabled>
 
   <ng-template ngFor let-arcana [ngForOf]="arrayOfArcanas">
     <ng-template ngFor let-score [ngForOf]="arrayOfFive">
@@ -237,6 +241,7 @@
 
   <ng-template ngFor let-score [ngForOf]="arrayOfTen">
     <div [class.filled]="form.gnosis >= score"
+        (click)="clickDot('gnosis', score)"
          class="dot gnosis gnosis-{{score}}"
      ></div>
   </ng-template>

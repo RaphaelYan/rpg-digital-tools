@@ -17,6 +17,11 @@
   width: 970px;
 }
 
+.scrollable {
+  height: 293px;
+  overflow-y: scroll;
+}
+
 input {
   z-index: 10;
   position: absolute;

@@ -77,10 +77,16 @@ export class NwodMageNewComponent {
     'vie',
   ];
 
-  public debug: boolean = true; // @TODO TMP
+  public debug: boolean = false; // @TODO TMP
 
   constructor() {
     this.resetSheet();
+
+    if (localStorage.getItem('sheet-mage')) {
+      const values = JSON.parse(localStorage.getItem('sheet-mage'));
+      this.form = Object.assign(this.form, values);
+      this.formChanged();
+    }
   }
 
   public clickDot(dotName: string, score: number): void {
@@ -93,13 +99,23 @@ export class NwodMageNewComponent {
     this.formChanged();
   }
 
-  public formChanged(): void {
+  public formChanged(fromReset: boolean = false): void {
     this.form.speed = this.form.strength + this.form.dexterity + 5;
     this.form.initiative = this.form.dexterity + this.form.composure;
     this.form.defense = Math.min(this.form.dexterity, this.form.wits);
     this.form.health = this.form.size + this.form.stamina;
     this.form.willpower = this.form.resolve + this.form.composure;
     this.form.mana = this.form.morality;
+
+    if (!fromReset) {
+      const values = JSON.stringify(this.form);
+      localStorage.setItem('sheet-mage', values);
+    }
+  }
+
+  public eraseSheet(): void {
+    this.resetSheet();
+    this.formChanged(false);
   }
 
   private resetSheet(): void {
@@ -126,6 +142,6 @@ export class NwodMageNewComponent {
     this.form.morality = 7;
     this.form.gnosis = 1;
 
-    this.formChanged();
+    this.formChanged(true);
   }
 }
