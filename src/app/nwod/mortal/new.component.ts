@@ -38,7 +38,7 @@ export class NwodMortalNewComponent {
     'computer',
     'crafts',
     'investigation',
-    'medecine',
+    'medicine',
     'occult',
     'politics',
     'science',

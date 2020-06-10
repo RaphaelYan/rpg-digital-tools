@@ -1,6 +1,7 @@
 .debug {
   // @TODO TMP
-  input {
+  input,
+  select {
     border: 1px solid red;
   }
   .dot:not(.filled),
@@ -22,19 +23,25 @@
   overflow-y: scroll;
 }
 
-input {
+input,
+select {
   z-index: 10;
   position: absolute;
   width: 140px;
   padding: 0 2px;
   border: none;
   background-color: rgba(0,0,0, 0);
-  cursor: text;
   outline: none;
   font-size: 14px;
   &:hover {
     background-color: rgba(0,0,0, 0.1);
   }
+}
+input {
+  cursor: text;
+}
+select {
+  border-bottom: 1px solid #ddd;
 }
 
 .border-bottom {
@@ -60,6 +67,9 @@ input {
 .dot.gnosis {
   width: 13px;
   height: 16px;
+}
+.dot.favored {
+  background-color: lightcoral;
 }
 
 .square {
@@ -87,8 +97,8 @@ input[name=chronicle] { top: 295px; left: 187px; width: 165px; }
 input[name=concept] { top: 215px; left: 503px; width: 164px; }
 input[name=virtue] { top: 255px; left: 503px; width: 164px; }
 input[name=vice] { top: 295px; left: 503px; width: 164px; }
-input[name=path] { top: 215px; left: 773px; width: 153px; }
-input[name=order] { top: 255px; left: 773px; width: 153px; }
+select[name=path] { top: 215px; left: 773px; width: 153px; }
+select[name=order] { top: 255px; left: 773px; width: 153px; }
 input[name=cabal] { top: 295px; left: 773px; width: 153px; }
 
 // ATTRIBUTES
@@ -165,12 +175,12 @@ $right5: 281px;
 .investigation-3 { top: 676px; left: $right3; }
 .investigation-4 { top: 676px; left: $right4; }
 .investigation-5 { top: 676px; left: $right5; }
-.medecine-rote { top: 697px; left: 51px; }
-.medecine-1 { top: 703px; left: $right1; }
-.medecine-2 { top: 703px; left: $right2; }
-.medecine-3 { top: 703px; left: $right3; }
-.medecine-4 { top: 703px; left: $right4; }
-.medecine-5 { top: 703px; left: $right5; }
+.medicine-rote { top: 697px; left: 51px; }
+.medicine-1 { top: 703px; left: $right1; }
+.medicine-2 { top: 703px; left: $right2; }
+.medicine-3 { top: 703px; left: $right3; }
+.medicine-4 { top: 703px; left: $right4; }
+.medicine-5 { top: 703px; left: $right5; }
 .occult-rote { top: 723px; left: 51px; }
 .occult-1 { top: 730px; left: $right1; }
 .occult-2 { top: 730px; left: $right2; }

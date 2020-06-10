@@ -18,8 +18,6 @@ export class NwodMageNewComponent {
     'concept',
     'virtue',
     'vice',
-    'path',
-    'order',
     'cabal',
   ];
   public arrayOfFive: number[] = [1, 2, 3, 4, 5];
@@ -43,7 +41,7 @@ export class NwodMageNewComponent {
     'computer',
     'crafts',
     'investigation',
-    'medecine',
+    'medicine',
     'occult',
     'politics',
     'science',
@@ -77,7 +75,7 @@ export class NwodMageNewComponent {
     'vie',
   ];
 
-  public debug: boolean = false; // @TODO TMP
+  public debug: boolean = false;
 
   constructor() {
     this.resetSheet();
@@ -90,10 +88,59 @@ export class NwodMageNewComponent {
   }
 
   public clickDot(dotName: string, score: number): void {
+    if (this.form.favoredAttribute === dotName) {
+      if (this.form[dotName] === 1 && score <= 2) {
+        return; // Can't be less than 2
+      }
+
+      score -= 1;
+    }
+
     if (this.form[dotName] < score) {
       this.form[dotName]++;
     } else {
       this.form[dotName]--;
+    }
+
+    this.formChanged();
+  }
+
+  public selectChanged(): void {
+    if (this.form.path) {
+      const composure = ['acanthus', 'moros', 'thyrsus'];
+      const resolve = ['mastigos', 'obrimos'];
+
+      if (composure.includes(this.form.path)) {
+        this.form.favoredAttribute = 'composure';
+      } else if (resolve.includes(this.form.path)) {
+        this.form.favoredAttribute = 'resolve';
+      }
+    }
+
+    if (this.form.order) {
+      this.form.skillRotes = {};
+
+      if (this.form.order === 'adamantine_arrow') {
+        this.form.skillRotes['athletics'] = true;
+        this.form.skillRotes['intimidation'] = true;
+        this.form.skillRotes['medicine'] = true;
+      } else if (this.form.order === 'free_council') {
+        this.form.skillRotes['crafts'] = true;
+        this.form.skillRotes['persuasion'] = true;
+        this.form.skillRotes['science'] = true;
+      } else if (this.form.order === 'guardians_of_the__veil') {
+        this.form.skillRotes['investigation'] = true;
+        this.form.skillRotes['stealth'] = true;
+        this.form.skillRotes['subterfuge'] = true;
+      } else if (this.form.order === 'mysterium') {
+        this.form.skillRotes['investigation'] = true;
+        this.form.skillRotes['occult'] = true;
+        this.form.skillRotes['survival'] = true;
+      } else if (this.form.order === 'silver_ldder') {
+        this.form.skillRotes['expression'] = true;
+        this.form.skillRotes['persuasion'] = true;
+        this.form.skillRotes['subterfuge'] = true;
+      }
     }
 
     this.formChanged();
@@ -137,10 +184,13 @@ export class NwodMageNewComponent {
       this.form['merits-' + nb] = 0;
     }
 
+    this.form.path = '';
+    this.form.order = '';
     this.form.skillRotes = {};
     this.form.size = 5;
     this.form.morality = 7;
     this.form.gnosis = 1;
+    this.form.favoredAttribute = '';
 
     this.formChanged(true);
   }

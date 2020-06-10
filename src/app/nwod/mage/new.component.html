@@ -73,7 +73,7 @@
       <li>Investigation : recherche, énigmes</li>
       <!-- => examine : wits -->
       <!-- => enigma : intell -->
-      <li>Medecine : physiologie humaine, blessures</li>
+      <li>Medicine : physiologie humaine, blessures</li>
       <!-- => healing : dex/intell -->
       <li>Occult : surnaturel, légendes</li>
       <li>Politics : bureaucratie, contacts</li>
@@ -159,9 +159,6 @@
 <button type="button" (click)="debug = !debug">DEBUG MODE</button>
 <button type="button" (click)="eraseSheet()">Reset sheet</button>
 
-<!-- @TODO select path -->
-<!-- @TODO select orders -->
-
 <div class="sheet-container" [class.debug]="debug">
   <img class="sheet" src="assets/nwod/mage_eveil_vf-1.jpg">
   <img class="sheet" src="assets/nwod/mage_eveil_vf-2.jpg">
@@ -170,12 +167,29 @@
     <input type="text" maxlength="18" [attr.name]="item" class="border-bottom" [(ngModel)]="form[item]" (ngModelChange)="formChanged()">
   </ng-template>
 
-  <ng-template ngFor let-atttribute [ngForOf]="arrayOfAttributes">
+  <select name="path" [(ngModel)]="form.path" (ngModelChange)="selectChanged()">
+    <option value="acanthus">Acanthus</option>
+    <option value="mastigos">Mastigos</option>
+    <option value="moros">Moros</option>
+    <option value="obrimos">Obrimos</option>
+    <option value="thyrsus">Thyrsus</option>
+  </select>
+
+  <select name="order" [(ngModel)]="form.order" (ngModelChange)="selectChanged()">
+    <option value="adamantine_arrow">Flèche d'adamantine</option>
+    <option value="free_council">Conseil libre</option>
+    <option value="guardians_of_the__veil">Gardiens du voile</option>
+    <option value="mysterium">Mysterium</option>
+    <option value="silver_ldder">Echelle d'argent</option>
+  </select>
+
+  <ng-template ngFor let-attribute [ngForOf]="arrayOfAttributes">
     <ng-template ngFor let-score [ngForOf]="arrayOfFive">
       <ng-template [ngIf]="score > 1">
-        <div [class.filled]="form[atttribute] >= score"
-             (click)="clickDot(atttribute, score)"
-             class="dot {{atttribute}}-{{score}}"
+        <div [class.filled]="form[attribute] + (form.favoredAttribute === attribute ? 1 : 0) >= score"
+             [class.favored]="form.favoredAttribute === attribute && score === 2"
+             (click)="clickDot(attribute, score)"
+             class="dot {{attribute}}-{{score}}"
          ></div>
       </ng-template>
     </ng-template>
