@@ -8,6 +8,16 @@ import { Component } from '@angular/core';
 export class ResumesComponent {
   public resumes = [
     {
+      date: '12 Juin 2020',
+      title: 'Les Foudres du Roi-Tonnerre - partie 15'
+    }, {
+      date: '6 Juin 2020',
+      title: 'Initiation au Monde des Ténèbres',
+      chars: 'Jean, Repié, Thamos, Roro, Rémi'
+    }, {
+      date: '30 Mai 2020',
+      title: 'Les Foudres du Roi-Tonnerre - partie 14'
+    }, {
       date: '22 Mai 2020',
       title: 'Les Foudres du Roi-Tonnerre - partie 13'
     }, {

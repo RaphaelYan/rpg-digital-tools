@@ -6,12 +6,14 @@ import { NwodRoutingModule } from './nwod-routing.module';
 import { NwodComponent } from './nwod.component';
 import { NwodMortalNewComponent } from './mortal/new.component';
 import { NwodMageNewComponent } from './mage/new.component';
+import { NwodMagePreludeComponent } from './mage/prelude.component';
 
 @NgModule({
   declarations: [
     NwodComponent,
     NwodMortalNewComponent,
     NwodMageNewComponent,
+    NwodMagePreludeComponent,
   ],
   imports: [
     CommonModule,

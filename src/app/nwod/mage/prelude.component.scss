@@ -1,0 +1,22 @@
+.card {
+  font-size: 0.8rem;
+  .card-body {
+    p {
+      margin-bottom: 0.6rem;
+    }
+    p:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+.card + .card {
+  margin-top: 1rem;
+}
+
+section {
+  border-left: 1px solid;
+  padding-left: 15px;
+  &:hover {
+    background: #e9ecef;
+  }
+}

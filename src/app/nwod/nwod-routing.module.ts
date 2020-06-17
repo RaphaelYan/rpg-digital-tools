@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { NwodComponent } from './nwod.component';
 import { NwodMortalNewComponent } from './mortal/new.component';
 import { NwodMageNewComponent } from './mage/new.component';
+import { NwodMagePreludeComponent } from './mage/prelude.component';
 
 const routes: Routes = [
   {
@@ -14,6 +15,9 @@ const routes: Routes = [
   }, {
     path: 'mage/new',
     component:  NwodMageNewComponent
+  }, {
+    path: 'mage/prelude',
+    component:  NwodMagePreludeComponent
   }
 ];
 
