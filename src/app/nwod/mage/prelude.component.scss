@@ -24,3 +24,9 @@ section {
 .red {
   color: red;
 }
+
+@media (max-width: 576px) {
+  ul {
+    padding-left: 20px;
+  }
+}
