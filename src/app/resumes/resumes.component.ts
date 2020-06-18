@@ -103,8 +103,8 @@ export class ResumesComponent {
       description: `
 - un mago qui ne prépare pas les bons sorts sauf pour fuir
 - un élu divin fanatique qui boit du lait avec une masse qui brille
-- un corbeau fufu qui répète tout ce qu’on dit et trop curieux
-- un croisé qui rêvait d’être barbare pour lancer des sorts
+- un corbeau fufu qui répète tout ce qu'on dit et trop curieux
+- un croisé qui rêvait d'être barbare pour lancer des sorts
 - un druide maitre de la lumière qui aime les rhinocéros
 - un barde qui veut rendre sourd les autres et qui apprend le ukulélé
 `
