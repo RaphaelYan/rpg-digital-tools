@@ -16,8 +16,6 @@ export class NwodMageNewComponent {
     'player',
     'chronicle',
     'concept',
-    'virtue',
-    'vice',
     'cabal',
   ];
   public arrayOfFive: number[] = [1, 2, 3, 4, 5];
@@ -184,6 +182,8 @@ export class NwodMageNewComponent {
       this.form['merits-' + nb] = 0;
     }
 
+    this.form.vice = '';
+    this.form.virtue = '';
     this.form.path = '';
     this.form.order = '';
     this.form.skillRotes = {};

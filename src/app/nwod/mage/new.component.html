@@ -22,29 +22,6 @@
       <li>Vous ne pouvez prendre la compétence "occult"</li>
     </ul>
 
-    <!--
-    <h2>Etape 4</h2>
-    <ul>
-      <li>Choisir 3 spécialisation de compétences</li>
-    </ul>
-    -->
-
-    <!--
-    <h2>Etape 5</h2>
-    <ul>
-      <li>Choisir un "vice" et une "vertue"</li>
-      <li>Vertues : Charité, Foi, Force d'âme, Espoir, Justice, Prudence, Tempérance</li>
-      <li>Vices : Envie, Gourmandise, Avidité, Luxure, Orgueil, Paresse, Colère</li>
-    </ul>
-    -->
-
-    <!--
-    <h2>Etape 6</h2>
-    <ul>
-      <li>Dépenser 7 points  d'atout</li>
-    </ul>
-    -->
-
   </div>
   <div class="col-12 col-sm-6">
     <h2>Lexique</h2>
@@ -166,6 +143,26 @@
   <ng-template ngFor let-item [ngForOf]="arrayOfCharacter">
     <input type="text" maxlength="18" [attr.name]="item" class="border-bottom" [(ngModel)]="form[item]" (ngModelChange)="formChanged()">
   </ng-template>
+
+  <select name="virtue" [(ngModel)]="form.virtue">
+    <option value="charite">Charité</option>
+    <option value="foi">Foi</option>
+    <option value="force_d_ame">Force d'âme</option>
+    <option value="espoir">Espoir</option>
+    <option value="justice">Justice</option>
+    <option value="prudence">Prudence</option>
+    <option value="temperance">Tempérance</option>
+  </select>
+
+  <select name="vice" [(ngModel)]="form.vice">
+    <option value="envie">Envie</option>
+    <option value="gourmandise">Gourmandise</option>
+    <option value="avidite">Avidité</option>
+    <option value="luxure">Luxure</option>
+    <option value="orgueil">Orgueil</option>
+    <option value="paresse">Paresse</option>
+    <option value="colere">Colère</option>
+  </select>
 
   <select name="path" [(ngModel)]="form.path" (ngModelChange)="selectChanged()">
     <option value="acanthus">Acanthus</option>
