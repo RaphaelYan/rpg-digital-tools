@@ -1,3 +1,14 @@
+<div class="login">
+  <div *ngIf="angularFireAuth.user | async as user; else showLogin">
+    {{ user.displayName }}
+    <button type="button" class="btn btn-secondary" (click)="logout()">Logout</button>
+  </div>
+
+  <ng-template #showLogin>
+    <button type="button" class="btn btn-primary" (click)="login()">Login with Google</button>
+  </ng-template>
+</div>
+
 <a class="link-github tooltipped" target="_blank" href="https://github.com/RaphaelYan/rpg-digital-tools" data-placement="left" data-toggle="tooltip" title="Check me on Github !">
   <img src="assets/Octocat.png">
 </a>

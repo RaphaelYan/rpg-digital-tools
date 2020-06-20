@@ -5,6 +5,7 @@ import { NwodMortalNewComponent } from './mortal/new.component';
 import { NwodMageNewComponent } from './mage/new.component';
 import { NwodMagePreludeComponent } from './mage/prelude.component';
 import { NwodMageLeaderComponent } from './mage/leader.component';
+import { NwodMageParadoxComponent } from './mage/paradox.component';
 
 const routes: Routes = [
   {
@@ -22,6 +23,12 @@ const routes: Routes = [
   }, {
     path: 'mage/leader',
     component:  NwodMageLeaderComponent
+  }, {
+    path: 'mage/paradox',
+    component:  NwodMageParadoxComponent
+  }, {
+    path: 'mage/:id',
+    component:  NwodMageNewComponent
   }
 ];
 

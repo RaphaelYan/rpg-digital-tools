@@ -1,4 +1,16 @@
 import { Component } from '@angular/core';
+import { AngularFirestoreDocument } from '@angular/fire/firestore';
+import { Observable } from 'rxjs';
+import { ActivatedRoute, Router } from '@angular/router';
+import { AngularFireAuth } from '@angular/fire/auth';
+import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/firestore';
+import { map } from 'rxjs/operators';
+
+export interface Character {
+  name: string;
+  userid: string;
+  timestamp: number;
+}
 
 @Component({
   selector: 'app-nwod-mage-new',
@@ -75,14 +87,64 @@ export class NwodMageNewComponent {
 
   public debug: boolean = false;
 
-  constructor() {
+  private characterDoc: AngularFirestoreDocument<any>;
+  private character: Observable<any>;
+  private user: any;
+  private charactersCollection: AngularFirestoreCollection<Character>;
+
+  constructor(
+    private activatedRoute: ActivatedRoute,
+    private router: Router,
+    public auth: AngularFireAuth,
+    afs: AngularFirestore,
+  ) {
     this.resetSheet();
 
-    if (localStorage.getItem('sheet-mage')) {
-      const values = JSON.parse(localStorage.getItem('sheet-mage'));
-      this.form = Object.assign(this.form, values);
-      this.formChanged();
-    }
+    auth.authState.subscribe((user) => {
+      if (!user) {
+        return;
+      }
+
+      this.user = user;
+
+      const routeParams = this.activatedRoute.snapshot.params;
+
+      if (!routeParams.id) {
+        if (localStorage.getItem('sheet-mage')) {
+          this.charactersCollection = afs.collection<Character>('characters', (ref) => {
+            return ref.where('userid', '==', user.uid)
+              .orderBy('timestamp', 'asc');
+          });
+
+          const values = JSON.parse(localStorage.getItem('sheet-mage'));
+          const char = Object.assign(values, {
+            name: values.name || 'Personnage sans nom',
+            userid: this.user.uid,
+            timestamp: Date.now()
+          });
+
+          this.charactersCollection.add(char);
+
+          localStorage.removeItem('sheet-mage');
+        }
+
+        this.router.navigateByUrl('/nwod');
+        return;
+      }
+
+
+      this.characterDoc = afs.doc<any>('characters/' + routeParams.id); // @TODO typage
+      this.character = this.characterDoc.snapshotChanges();
+
+      this.character.subscribe((a) => {
+        this.form = Object.assign(this.form, a.payload.data());
+        this.formChanged();
+      });
+    });
+  }
+
+  public saveSheet(): void {
+    this.characterDoc.update(this.form);
   }
 
   public clickDot(dotName: string, score: number): void {

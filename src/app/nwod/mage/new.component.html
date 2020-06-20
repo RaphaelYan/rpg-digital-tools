@@ -28,52 +28,56 @@
     <ul class="scrollable">
       <li>Intelligence : capacités cognitives</li>
       <!-- => memory : intell + compo -->
-      <li>Wits : capacités de réflexion</li>
+      <li>Astuce : capacités de réflexion</li>
       <!-- => perception : wits + compo -->
-      <li>Resolve : concentration, détermination</li>
+      <li>Résolution : concentration, détermination</li>
       <!-- => resist : reso+wits / reso+stam -->
-      <li>Strength : puissance physique</li>
-      <li>Dexterity : rapidité, finesse</li>
-      <li>Stamina : vigueur, résistance physique</li>
-      <li>Presence : prestance, stature, attrait</li>
+      <li>Force : puissance physique</li>
+      <li>Dextérité : rapidité, finesse</li>
+      <li>Vigueur : vigueur, résistance physique</li>
+      <li>Présence : prestance, stature, attrait</li>
       <li>Manipulation : charme, persuasion</li>
-      <li>Composure : calme, assurance</li>
+      <li>Calme : calme, assurance</li>
       <!-- => meditation : compo + wits -->
+
       <li class="li-empty"></li>
-      <li>Academics : érudition, connaissances</li>
-      <!-- => research : intell -->
-      <li>Computer : informatique, programmation</li>
-      <!-- => hacking : intell -->
-      <li>Crafts : artisanat, réparations</li>
+
+      <li>Artisanat : réparations</li>
       <!-- => art : intell -->
       <!-- => repair : dex -->
+      <li>Erudition : connaissances</li>
+      <!-- => research : intell -->
+      <li>Informatique : informatique, programmation</li>
+      <!-- => hacking : intell -->
       <li>Investigation : recherche, énigmes</li>
       <!-- => examine : wits -->
       <!-- => enigma : intell -->
-      <li>Medicine : physiologie humaine, blessures</li>
+      <li>Médicine : physiologie humaine, blessures</li>
       <!-- => healing : dex/intell -->
-      <li>Occult : surnaturel, légendes</li>
-      <li>Politics : bureaucratie, contacts</li>
+      <li>Occulte : surnaturel, légendes</li>
+      <li>Politique : bureaucratie, contacts</li>
       <li>Science : physique, chimie, biologie, ...</li>
-      <li>Athletics : escalade, course, jeter un truc</li>
+
+      <li>Armes à feu : pistolets, fusils d'assault</li>
+      <li>Armes blanches</li>
+      <li>Athlétisme : escalade, course, jeter un truc</li>
       <!-- => climbing : str -->
       <!-- => run : stam -->
       <!-- => jump : str -->
       <!-- => throw : dex -->
-      <li>Brawl : combat à mains nues</li>
-      <li>Drive : voitures, bateaux, course poursuite</li>
+      <li>Bagarre : combat à mains nues</li>
+      <li>Conduite : voitures, bateaux, course poursuite</li>
       <!-- => pursuit : dex -->
       <!-- => filature : wits -->
-      <li>Firearms : pistolets, fusils d'assault</li>
-      <li>Larceny : crochetage, vol à la tire</li>
+      <li>Furtivité : discrétion, déplacement silencieux</li>
+      <!-- => shadowing : wits -->
+      <li>Larcin : crochetage, vol à la tire</li>
       <!-- => bypass : dex -->
       <!-- => lock : dex -->
       <!-- => sleight of hand : dex -->
-      <li>Stealth : discrétion, déplacement silencieux</li>
-      <!-- => shadowing : wits -->
       <li>Survival : trouver à manger, un refuge</li>
       <!-- => foraging : wits -->
-      <li>Weaponry : armes blanches</li>
+
       <li>Animal ken : comportement des animaux</li>
       <!-- => training : compo -->
       <li>Empathy : intuition, lire les émotions</li>
@@ -133,8 +137,9 @@
 
 <hr>
 
-<button type="button" (click)="debug = !debug">DEBUG MODE</button>
+<button type="button" (click)="debug = !debug">toggle DEBUG mode</button>
 <button type="button" (click)="eraseSheet()">Reset sheet</button>
+<button type="button" class="btn btn-primary" (click)="saveSheet()">SAUVEGARDER</button>
 
 <div class="sheet-container" [class.debug]="debug">
   <img class="sheet" src="assets/nwod/mage_eveil_vf-1.jpg">
@@ -147,7 +152,7 @@
   <select name="virtue" [(ngModel)]="form.virtue">
     <option value="charite">Charité</option>
     <option value="foi">Foi</option>
-    <option value="force_d_ame">Force d'âme</option>
+    <option value="courage">Courage</option>
     <option value="espoir">Espoir</option>
     <option value="justice">Justice</option>
     <option value="prudence">Prudence</option>

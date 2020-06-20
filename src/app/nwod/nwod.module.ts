@@ -8,6 +8,7 @@ import { NwodMortalNewComponent } from './mortal/new.component';
 import { NwodMageNewComponent } from './mage/new.component';
 import { NwodMagePreludeComponent } from './mage/prelude.component';
 import { NwodMageLeaderComponent } from './mage/leader.component';
+import { NwodMageParadoxComponent } from './mage/paradox.component';
 
 @NgModule({
   declarations: [
@@ -16,6 +17,7 @@ import { NwodMageLeaderComponent } from './mage/leader.component';
     NwodMageNewComponent,
     NwodMagePreludeComponent,
     NwodMageLeaderComponent,
+    NwodMageParadoxComponent,
   ],
   imports: [
     CommonModule,

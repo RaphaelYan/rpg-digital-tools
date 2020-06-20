@@ -2,7 +2,24 @@
 
 <ul>
   <li><a routerLink="/nwod/mortal/new">Créer un mortel</a></li>
-  <li><a routerLink="/nwod/mage/new">Créer un mage</a></li>
+  <li><a routerLink="/nwod" (click)="createMage()">Créer un mage</a></li>
   <li></li>
   <li><a routerLink="/nwod/mage/prelude">Prélude</a></li>
 </ul>
+
+<div *ngIf="auth.user | async as user; else notAuth">
+  <h2>Vos personnages</h2>
+  <ul>
+    <li *ngFor="let character of characters | async">
+      <a [routerLink]="'mage/' + character.id">{{ character.name }}</a>
+    </li>
+
+    <li *ngIf="(characters | async)?.length === 0">
+      Aucun personnage en base de donnée !
+    </li>
+  </ul>
+</div>
+
+<ng-template #notAuth>
+  Connectez-vous pour accéder à vos persos !
+</ng-template>

@@ -5,6 +5,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SideNavComponent } from './components/side-nav/side-nav.component';
+import { AngularFireModule } from '@angular/fire';
+
+import { environment } from '../environments/environment';
 
 @NgModule({
   declarations: [
@@ -15,6 +18,7 @@ import { SideNavComponent } from './components/side-nav/side-nav.component';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+    AngularFireModule.initializeApp(environment.firebase)
   ],
   providers: [],
   bootstrap: [AppComponent]
