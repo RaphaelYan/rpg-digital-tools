@@ -102,6 +102,8 @@ export class NwodMageNewComponent {
 
     auth.authState.subscribe((user) => {
       if (!user) {
+
+        window.alert('Va sur https://raphaelyan.github.io/rpg-digital-tools et connecte toi !');
         return;
       }
 
