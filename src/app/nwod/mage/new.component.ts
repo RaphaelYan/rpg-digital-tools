@@ -127,7 +127,7 @@ export class NwodMageNewComponent {
 
           this.charactersCollection.add(char);
 
-          localStorage.removeItem('sheet-mage');
+          // localStorage.removeItem('sheet-mage');
         }
 
         this.router.navigateByUrl('/nwod');
