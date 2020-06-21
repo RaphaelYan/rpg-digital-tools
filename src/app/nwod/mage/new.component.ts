@@ -85,6 +85,7 @@ export class NwodMageNewComponent {
   private user: any;
   private charactersCollection: AngularFirestoreCollection<Character>;
   private timeout = null;
+  private lastUpdate = null;
 
   constructor(
     private activatedRoute: ActivatedRoute,
@@ -284,10 +285,18 @@ export class NwodMageNewComponent {
     this.form.gnosis = 1;
     this.form.favoredAttribute = '';
 
+    this.form['experience'] = 0;
+    this.form['experience-arcana'] = 0;
+
     this.formChanged(true);
   }
 
   private saveSheet(): void {
+    if (this.lastUpdate === null || JSON.stringify(this.form) === this.lastUpdate) {
+      this.lastUpdate = JSON.stringify(this.form);
+      return;
+    }
+
     if (this.timeout) {
       clearTimeout(this.timeout);
     }
