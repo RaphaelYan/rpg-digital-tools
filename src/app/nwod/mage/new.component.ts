@@ -108,23 +108,23 @@ export class NwodMageNewComponent {
 
       if (!routeParams.id) {
         // @TODO remove this after all characters created
-        if (localStorage.getItem('sheet-mage')) {
-          this.charactersCollection = afs.collection<Character>('characters', (ref) => {
-            return ref.where('userid', '==', user.uid)
-              .orderBy('timestamp', 'asc');
-          });
-
-          const values = JSON.parse(localStorage.getItem('sheet-mage'));
-          const char = Object.assign(values, {
-            name: values.name || 'Personnage sans nom',
-            userid: this.user.uid,
-            timestamp: Date.now()
-          });
-
-          this.charactersCollection.add(char);
-
-          // localStorage.removeItem('sheet-mage');
-        }
+        // if (localStorage.getItem('sheet-mage')) {
+        //   this.charactersCollection = afs.collection<Character>('characters', (ref) => {
+        //     return ref.where('userid', '==', user.uid)
+        //       .orderBy('timestamp', 'asc');
+        //   });
+        //
+        //   const values = JSON.parse(localStorage.getItem('sheet-mage'));
+        //   const char = Object.assign(values, {
+        //     name: values.name || 'Personnage sans nom',
+        //     userid: this.user.uid,
+        //     timestamp: Date.now()
+        //   });
+        //
+        //   this.charactersCollection.add(char);
+        //
+        //   // localStorage.removeItem('sheet-mage');
+        // }
 
         this.router.navigateByUrl('/nwod');
         return;
