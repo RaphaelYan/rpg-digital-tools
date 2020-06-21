@@ -20,6 +20,19 @@
   </ul>
 </div>
 
+<div *ngIf="isAdmin()">
+  <h2>Les autres personnages</h2>
+  <ul>
+    <li *ngFor="let character of otherCharacters | async">
+      <a [routerLink]="'mage/' + character.id">{{ character.name }}</a>
+    </li>
+
+    <li *ngIf="(characters | async)?.length === 0">
+      Aucun autre personnage en base de donnée !
+    </li>
+  </ul>
+</div>
+
 <ng-template #notAuth>
   Connectez-vous pour accéder à vos persos !
 </ng-template>

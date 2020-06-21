@@ -17,9 +17,11 @@ export interface Character {
 })
 export class NwodComponent {
   public characters: Observable<Character[]>;
+  public otherCharacters: Observable<Character[]>;
 
   private user: any;
   private charactersCollection: AngularFirestoreCollection<Character>;
+  private otherCharactersCollection: AngularFirestoreCollection<Character>;
 
   constructor(
     public auth: AngularFireAuth,
@@ -43,6 +45,19 @@ export class NwodComponent {
           return { id, ...data };
         }))
       );
+
+      if (this.isAdmin()) {
+        this.otherCharactersCollection = afs.collection<Character>('characters', (ref) => {
+          return ref.orderBy('timestamp', 'asc');
+        });
+        this.otherCharacters = this.otherCharactersCollection.snapshotChanges().pipe(
+          map(actions => actions.map(a => {
+            const data = a.payload.doc.data() as Character;
+            const id = a.payload.doc.id;
+            return { id, ...data };
+          }))
+        );
+      }
     });
   }
 
@@ -52,5 +67,9 @@ export class NwodComponent {
       userid: this.user.uid,
       timestamp: Date.now()
     });
+  }
+
+  public isAdmin(): boolean {
+    return this.user && this.user.email === 'maferyt@gmail.com';
   }
 }

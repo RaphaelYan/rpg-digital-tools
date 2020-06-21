@@ -267,7 +267,11 @@ export class NwodMageNewComponent {
     this.timeout = setTimeout(() => {
       clearTimeout(this.timeout);
 
-      this.characterDoc.update(this.form);
+      const doc = Object.assign(this.form, {
+        lastUpdate: Date.now()
+      });
+
+      this.characterDoc.update(doc);
     }, 1000);
   }
 }
