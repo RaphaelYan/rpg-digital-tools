@@ -258,6 +258,7 @@ export class NwodMageNewComponent {
     }
     for (const arcana of this.arrayOfArcanas) {
       this.form[arcana] = 0;
+      this.form['arcana-' + arcana] = 0;
     }
 
     this.form.merits = {};

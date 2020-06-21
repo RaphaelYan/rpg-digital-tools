@@ -236,6 +236,7 @@
   <input type="number" name="speed" [ngModel]="form['speed']" disabled>
 
   <ng-template ngFor let-arcana [ngForOf]="arrayOfArcanas">
+    <input type="number" [attr.name]="'arcana-' + arcana" [(ngModel)]="form['arcana-' + arcana]" (ngModelChange)="formChanged()">
     <ng-template ngFor let-score [ngForOf]="arrayOfFive">
       <div [class.filled]="form[arcana] >= score"
            (click)="clickDot(arcana, score)"
