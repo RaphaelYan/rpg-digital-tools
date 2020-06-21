@@ -51,6 +51,10 @@ input {
 select {
   border-bottom: 1px solid #ddd;
 }
+input.small {
+  font-size: 12px;
+  padding-top: 3px;
+}
 
 .border-bottom {
   border-bottom: 1px solid;
@@ -99,15 +103,15 @@ select {
 }
 
 
-input[name=name] { top: 215px; left: 187px; width: 165px; }
-input[name=player] { top: 255px; left: 187px; width: 165px; }
-input[name=chronicle] { top: 295px; left: 187px; width: 165px; }
+input[name=name] { top: 215px; left: 175px; width: 203px; }
+input[name=player] { top: 255px; left: 175px; width: 203px; }
+input[name=chronicle] { top: 295px; left: 175px; width: 203px; }
 input[name=concept] { top: 215px; left: 503px; width: 164px; }
 select[name=virtue] { top: 255px; left: 503px; width: 164px; }
 select[name=vice] { top: 295px; left: 503px; width: 164px; }
-select[name=path] { top: 215px; left: 773px; width: 153px; }
-select[name=order] { top: 255px; left: 773px; width: 153px; }
-input[name=cabal] { top: 295px; left: 773px; width: 153px; }
+select[name=path] { top: 215px; left: 773px; width: 170px; }
+select[name=order] { top: 255px; left: 773px; width: 170px; }
+input[name=cabal] { top: 295px; left: 773px; width: 170px; }
 
 // ATTRIBUTES
 

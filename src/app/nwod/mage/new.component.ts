@@ -23,13 +23,6 @@ export class NwodMageNewComponent {
     merits: {}
   };
 
-  public arrayOfCharacter: string[] = [
-    'name',
-    'player',
-    'chronicle',
-    'concept',
-    'cabal',
-  ];
   public arrayOfFive: number[] = [1, 2, 3, 4, 5];
   public arrayOfEight: number[] = [1, 2, 3, 4, 5, 6, 7, 8];
   public arrayOfTen: number[] = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
@@ -228,9 +221,6 @@ export class NwodMageNewComponent {
   }
 
   private resetSheet(): void {
-    for (const item of this.arrayOfCharacter) {
-      this.form[item] = '';
-    }
     for (const attribute of this.arrayOfAttributes) {
       this.form[attribute] = 1;
     }
@@ -245,6 +235,12 @@ export class NwodMageNewComponent {
     for (const nb of this.arrayOfEight) {
       this.form['merits-' + nb] = 0;
     }
+
+    this.form.name = '';
+    this.form.player = '';
+    this.form.chronicle = '';
+    this.form.concept = '';
+    this.form.cabal = '';
 
     this.form.vice = '';
     this.form.virtue = '';
