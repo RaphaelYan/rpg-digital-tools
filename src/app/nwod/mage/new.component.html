@@ -145,7 +145,6 @@
 
 <button type="button" (click)="debug = !debug">toggle DEBUG mode</button>
 <button type="button" (click)="eraseSheet()">Reset sheet</button>
-<button type="button" class="btn btn-primary" (click)="saveSheet()">SAUVEGARDER</button>
 
 <div class="sheet-container" [class.debug]="debug">
   <img class="sheet" src="assets/nwod/mage_eveil_vf-1.jpg">
@@ -157,7 +156,7 @@
   <input type="text" maxlength="21" name="concept" class="border-bottom" [(ngModel)]="form.concept" (ngModelChange)="formChanged()">
   <input type="text" maxlength="24" name="cabal" class="border-bottom" [(ngModel)]="form.cabal" (ngModelChange)="formChanged()" [class.small]="form.cabal && form.cabal.length > 20">
 
-  <select name="virtue" [(ngModel)]="form.virtue">
+  <select name="virtue" [(ngModel)]="form.virtue" (ngModelChange)="formChanged()">
     <option value="charite">Charité</option>
     <option value="foi">Foi</option>
     <option value="courage">Courage</option>
@@ -167,7 +166,7 @@
     <option value="temperance">Tempérance</option>
   </select>
 
-  <select name="vice" [(ngModel)]="form.vice">
+  <select name="vice" [(ngModel)]="form.vice" (ngModelChange)="formChanged()">
     <option value="envie">Envie</option>
     <option value="gourmandise">Gourmandise</option>
     <option value="avidite">Avidité</option>

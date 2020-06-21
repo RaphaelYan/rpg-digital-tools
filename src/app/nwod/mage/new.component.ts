@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
 import { AngularFirestoreDocument } from '@angular/fire/firestore';
 import { Observable } from 'rxjs';
+import { first } from 'rxjs/operators';
 import { ActivatedRoute, Router } from '@angular/router';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/firestore';
-import { map } from 'rxjs/operators';
 
 export interface Character {
   name: string;
@@ -84,6 +84,7 @@ export class NwodMageNewComponent {
   private character: Observable<any>;
   private user: any;
   private charactersCollection: AngularFirestoreCollection<Character>;
+  private timeout = null;
 
   constructor(
     private activatedRoute: ActivatedRoute,
@@ -105,6 +106,7 @@ export class NwodMageNewComponent {
       const routeParams = this.activatedRoute.snapshot.params;
 
       if (!routeParams.id) {
+        // @TODO remove this after all characters created
         if (localStorage.getItem('sheet-mage')) {
           this.charactersCollection = afs.collection<Character>('characters', (ref) => {
             return ref.where('userid', '==', user.uid)
@@ -127,19 +129,14 @@ export class NwodMageNewComponent {
         return;
       }
 
-
       this.characterDoc = afs.doc<any>('characters/' + routeParams.id); // @TODO typage
       this.character = this.characterDoc.snapshotChanges();
 
-      this.character.subscribe((a) => {
+      this.character.pipe(first()).subscribe((a) => {
         this.form = Object.assign(this.form, a.payload.data());
         this.formChanged();
       });
     });
-  }
-
-  public saveSheet(): void {
-    this.characterDoc.update(this.form);
   }
 
   public clickDot(dotName: string, score: number): void {
@@ -210,12 +207,15 @@ export class NwodMageNewComponent {
     this.form.mana = this.form.morality;
 
     if (!fromReset) {
-      const values = JSON.stringify(this.form);
-      localStorage.setItem('sheet-mage', values);
+      this.saveSheet();
     }
   }
 
   public eraseSheet(): void {
+    if (!window.confirm('Tu es sûr de vouloir tout remettre à 0 ?')) {
+      return;
+    }
+
     this.resetSheet();
     this.formChanged(false);
   }
@@ -242,6 +242,10 @@ export class NwodMageNewComponent {
     this.form.concept = '';
     this.form.cabal = '';
 
+    this.form['flaw-1'] = '';
+    this.form['flaw-2'] = '';
+    this.form['flaw-3'] = '';
+
     this.form.vice = '';
     this.form.virtue = '';
     this.form.path = '';
@@ -253,5 +257,17 @@ export class NwodMageNewComponent {
     this.form.favoredAttribute = '';
 
     this.formChanged(true);
+  }
+
+  private saveSheet(): void {
+    if (this.timeout) {
+      clearTimeout(this.timeout);
+    }
+
+    this.timeout = setTimeout(() => {
+      clearTimeout(this.timeout);
+
+      this.characterDoc.update(this.form);
+    }, 1000);
   }
 }
