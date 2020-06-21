@@ -262,6 +262,8 @@
      ></div>
   </ng-template>
 
+  <input type="number" name="mana-per-turn" [ngModel]="form['mana-per-turn']" disabled>
+
   <ng-template ngFor let-score [ngForOf]="arrayOfTen">
     <div [class.filled]="form.gnosis >= score"
         (click)="clickDot('gnosis', score)"

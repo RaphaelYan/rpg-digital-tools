@@ -140,6 +140,10 @@ export class NwodMageNewComponent {
   }
 
   public clickDot(dotName: string, score: number): void {
+    if (dotName === 'gnosis' && score === 1 && this.form.gnosis === 1) {
+      return;
+    }
+
     if (this.form.favoredAttribute === dotName) {
       if (this.form[dotName] === 1 && score <= 2) {
         return; // Can't be less than 2
@@ -205,6 +209,14 @@ export class NwodMageNewComponent {
     this.form.health = this.form.size + this.form.stamina;
     this.form.willpower = this.form.resolve + this.form.composure;
     this.form.mana = this.form.morality;
+
+    let manaPerTurn = this.form.gnosis;
+    if (this.form.gnosis === 9) {
+      manaPerTurn = 10;
+    } else if (this.form.gnosis === 10) {
+      manaPerTurn = 15;
+    }
+    this.form['mana-per-turn'] = manaPerTurn;
 
     if (!fromReset) {
       this.saveSheet();
