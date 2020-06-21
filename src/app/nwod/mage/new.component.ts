@@ -223,6 +223,22 @@ export class NwodMageNewComponent {
     }
   }
 
+  public hasManaAccess(score): boolean {
+    if (this.form.gnosis <= 6) {
+      return score <= +this.form.gnosis + 9;
+    } else if (this.form.gnosis === 7) {
+      return score <= 20;
+    } else if (this.form.gnosis === 8) {
+      return score <= 30;
+    } else if (this.form.gnosis === 9) {
+      return score <= 50;
+    } else if (this.form.gnosis === 10) {
+      return score <= 100;
+    }
+
+    return false;
+  }
+
   public eraseSheet(): void {
     if (!window.confirm('Tu es sûr de vouloir tout remettre à 0 ?')) {
       return;

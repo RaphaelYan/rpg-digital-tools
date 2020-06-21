@@ -258,6 +258,7 @@
 
   <ng-template ngFor let-score [ngForOf]="arrayOfTwenty">
     <div [class.filled]="form.mana >= score"
+         [class.white]="!hasManaAccess(score)"
          class="square mana mana-{{score}}"
      ></div>
   </ng-template>
