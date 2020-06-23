@@ -5,6 +5,7 @@
   <li><a routerLink="/nwod" (click)="createMage()">Créer un mage</a></li>
   <li></li>
   <li><a routerLink="/nwod/mage/prelude">Prélude</a></li>
+  <li><a routerLink="/nwod/mage/rotes">Routines</a></li>
 </ul>
 
 <div *ngIf="auth.user | async as user; else notAuth">

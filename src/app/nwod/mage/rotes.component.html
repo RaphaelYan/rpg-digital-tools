@@ -1,0 +1,47 @@
+Quel ordre ?
+
+<select name="order" [(ngModel)]="order">
+  <option value="adamantine_arrow">Flèche d'adamantine</option>
+  <option value="free_council">Conseil libre</option>
+  <option value="guardians_of_the__veil">Gardiens du voile</option>
+  <option value="mysterium">Mysterium</option>
+  <option value="silver_ladder">Echelle d'argent</option>
+</select>
+
+Quelle arcane ?
+
+<select name="arcana" [(ngModel)]="arcana">
+  <option value="destin">Destin</option>
+  <option value="espace">Espace</option>
+  <option value="esprit">Esprit</option>
+  <option value="forces">Forces</option>
+  <option value="matiere">Matière</option>
+  <option value="mort">Mort</option>
+  <option value="prime">Prime</option>
+  <option value="psyche">Psyché</option>
+  <option value="temps">Temps</option>
+  <option value="vie">Vie</option>
+</select>
+
+<br>
+<br>
+<br>
+<br>
+
+<ng-template [ngIf]="order && arcana">
+  <ng-template ngFor let-nb [ngForOf]="arrayOfFive">
+    <h2 *ngIf="rotes[order][arcana]['rotes_' + nb]">Routines rang {{ nb }}</h2>
+    <ng-template ngFor let-rote [ngForOf]="rotes[order][arcana]['rotes_' + nb]">
+      Nom : {{ rote.name }}<br>
+      Jet : {{ rote.roll }}<br>
+      <ng-template [ngIf]="rote.cost">
+        Coût : {{ rote.cost }}<br>
+      </ng-template>
+      Description : {{ rote.description }}<br>
+      Durée : {{ rote.duration }}<br>
+      <br>
+    </ng-template>
+    <br>
+    <br>
+  </ng-template>
+</ng-template>

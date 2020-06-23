@@ -9,6 +9,7 @@ import { NwodMageNewComponent } from './mage/new.component';
 import { NwodMagePreludeComponent } from './mage/prelude.component';
 import { NwodMageLeaderComponent } from './mage/leader.component';
 import { NwodMageParadoxComponent } from './mage/paradox.component';
+import { NwodMageRotesComponent } from './mage/rotes.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { NwodMageParadoxComponent } from './mage/paradox.component';
     NwodMagePreludeComponent,
     NwodMageLeaderComponent,
     NwodMageParadoxComponent,
+    NwodMageRotesComponent,
   ],
   imports: [
     CommonModule,
