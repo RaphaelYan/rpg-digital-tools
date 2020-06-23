@@ -536,3 +536,13 @@ input[name=experience-arcana] { top: 2765px; left: 149px; width: 75px; font-size
   list-style: none;
   height: 15px;
 }
+
+.tmp-hide-rotes {
+  position: absolute;
+  top: 560px;
+  left: 47px;
+  width: 24px;
+  height: 760px;
+  background: white;
+  z-index: 999;
+}
