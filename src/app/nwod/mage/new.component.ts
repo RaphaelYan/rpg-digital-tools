@@ -219,7 +219,7 @@ export class NwodMageNewComponent {
     this.form.initiative = this.form.dexterity + this.form.composure;
     this.form.defense = Math.min(this.form.dexterity, this.form.wits);
     this.form.health = this.form.size + this.form.stamina;
-    this.form.willpower = this.form.resolve + this.form.composure;
+    this.form.willpower = this.form.resolve + this.form.composure + (!!this.form.path ? 1 : 0);
     this.form.mana = this.form.morality;
 
     let manaPerTurn = this.form.gnosis;
