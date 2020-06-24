@@ -1,4 +1,4 @@
-<div class="row">
+<div class="row" [hidden]="displayPrintMode">
   <div class="col-12 col-sm-6">
     <h2>Etape 1</h2>
     <ul>
@@ -108,9 +108,9 @@
   </div>
 </div>
 
-<hr>
+<hr [hidden]="displayPrintMode">
 
-<div class="row">
+<div class="row" [hidden]="displayPrintMode">
   <div class="col-12 col-sm-4">
     <h4>Attributs</h4>
     <ul>
@@ -141,10 +141,11 @@
   </div>
 </div>
 
-<hr>
+<hr [hidden]="displayPrintMode">
 
-<button type="button" (click)="debug = !debug">toggle DEBUG mode</button>
-<button type="button" (click)="eraseSheet()">Reset sheet</button>
+<button type="button" (click)="debug = !debug" [hidden]="displayPrintMode">toggle DEBUG mode</button>
+<button type="button" (click)="eraseSheet()" [hidden]="displayPrintMode">Reset sheet</button>
+<button type="button" (click)="printMode()" [hidden]="displayPrintMode">Print mode</button>
 
 <div class="sheet-container" [class.debug]="debug">
   <img class="sheet" src="assets/nwod/mage_eveil_vf-1.jpg">

@@ -79,6 +79,7 @@ export class NwodMageNewComponent {
   ];
 
   public debug: boolean = false;
+  public displayPrintMode: boolean = false;
 
   private characterDoc: AngularFirestoreDocument<any>;
   private character: Observable<any>;
@@ -138,6 +139,16 @@ export class NwodMageNewComponent {
         this.formChanged();
       });
     });
+  }
+
+  public printMode(): void {
+    document.getElementsByClassName('login')[0].classList.add('hidden');
+    document.getElementsByClassName('link-github')[0].classList.add('hidden');
+    document.getElementsByTagName('header')[0].classList.add('hidden');
+    document.getElementsByTagName('main')[0].classList.remove('container');
+
+    this.displayPrintMode = true;
+    this.debug = false;
   }
 
   public clickDot(dotName: string, score: number): void {
