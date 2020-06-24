@@ -23,6 +23,28 @@ export class NwodMageRotesComponent {
 
     free_council: {
       destin: {
+        rotes_1: [
+          {
+            name: 'Flux quantique',
+            roll: 'Astuce + Occulte + Destin',
+            description: 'Lit les probabilités et mitige les actions imparfaites.<br>Réduit de 1 les malus d\'une action pour chaque tour de "concentration".',
+            duration: 'Scène'
+          }
+        ], rotes_2: [
+          {
+            name: 'Chance exceptionnelle',
+            roll: 'Manipulation + Occulte + Destin',
+            cost: '1 mana',
+            description: 'Tu peux relancer les dés sur 9 à la place de 10',
+            duration: 'Scène'
+          }, {
+            name: 'Protection de chance',
+            roll: 'Résolution + Athlétisme + Destin',
+            cost: '1 mana optionnel, pour faire durer 24h',
+            description: 'Bouclier, tu évites les attaques au bon moment',
+            duration: 'Scène'
+          }
+        ]
       }, espace: {
       }, esprit: {
       }, forces: {
@@ -31,7 +53,56 @@ export class NwodMageRotesComponent {
       }, prime: {
       }, psyche: {
       }, temps: {
+        rotes_1: [
+          {
+            name: 'Tourbillons temporels',
+            roll: 'Astuce + Investigation + Temps',
+            description: 'Vision du mage, détecte les influences de temps aux alentours',
+            duration: 'Scène'
+          }, {
+            name: 'Timing parfait',
+            roll: 'Intelligence + Calme + Temps',
+            cost: '1 mana',
+            description: 'Effectue une action au moment parfait, chaque succès sera un dé bonus sur l\'action suivante',
+            duration: 'Réaction'
+          }
+        ], rotes_2: [
+          {
+            name: 'Pile ou face',
+            roll: 'Astuce + Investigation + Temps',
+            cost: '1 mana',
+            description: 'Regarde vers l\'avenir et entrevoie l\'issue d\'une action, avec 2 variables',
+            duration: 'Concentration'
+          }, {
+            name: 'Esquive temporelle',
+            roll: 'Dextérité + Athlétisme + Temps',
+            cost: '1 mana optionnel, pour faire durer 24h',
+            description: 'Bouclier, manipule légèrement le temps autour de toi pour te protéger des attaques',
+            duration: 'Scène'
+          }
+        ], rotes_3: [
+          {
+            name: 'Accélération',
+            roll: 'Vigueur + Athlétisme + Temps',
+            cost: 'VULGAIRE',
+            description: 'Boost tes capacités de vitesse et d\'actions.<br>Donne un malus de {Temps} à tes attaquants, ajoute {Temps} initiative, multiplie ta vitesse par {Temps}',
+            duration: 'Scène'
+          }
+        ]
       }, vie: {
+        rotes_1: [
+          {
+            name: 'Pulsation de la vie',
+            roll: 'Astuce + (Médecine ou Science) + Vie',
+            description: 'Vision du mage, détecte les énergies vitales magiques',
+            duration: 'Scène'
+          }, {
+            name: 'Pas de repos',
+            roll: 'Résolution + Artisanat + Vie',
+            description: 'Chaque succès permet de rester en forme 6H supplémentaires',
+            duration: 'Maximum {Vigueur} ou {Résolution} Jours (le plus petit score)'
+          }
+        ]
       }
     },
 
@@ -197,7 +268,7 @@ export class NwodMageRotesComponent {
         rotes_1: [
           {
             name: 'Pulsation de la vie',
-            roll: 'Intelligence + (Médecine ou Science) + Life',
+            roll: 'Intelligence + (Médecine ou Science) + Vie',
             description: 'Vision du mage, détecte les énergies vitales magiques',
             duration: 'Scène'
           }, {
@@ -209,35 +280,35 @@ export class NwodMageRotesComponent {
         ], rotes_2: [
           {
             name: 'Résilience organique',
-            roll: 'Résolution + Athletisme + Life',
+            roll: 'Résolution + Athletisme + Vie',
             cost: '1 mana optionnel, pour faire durer 24h',
             description: 'Bouclier qui protège des éléments physiques (couteau, feu, ...)',
             duration: 'Scène'
           }, {
             name: 'Purification du corps',
-            roll: 'Intelligence + Médecine + Life',
+            roll: 'Intelligence + Médecine + Vie',
             description: 'Purifie des drogues, toxines, poisons',
             duration: 'Instantané'
           }, {
             name: 'Auto-purge',
-            roll: 'Stamina + Médecine + Life',
+            roll: 'Stamina + Médecine + Vie',
             description: 'Soigne les maladies du mage',
             duration: 'Rituel'
           }, {
             name: 'Visions du monde vivant',
-            roll: 'Manipulation + (Animaux or Survie) + Life',
+            roll: 'Manipulation + (Animaux or Survie) + Vie',
             description: 'Donner la vision du mage',
             duration: 'Scène'
           }
         ], rotes_3: [
           {
             name: 'Banissement des maladies',
-            roll: 'Astuce + Médecine + Life',
+            roll: 'Astuce + Médecine + Vie',
             description: 'Soigne les maladies d\'une personne',
             duration: 'Rituel'
           }, {
             name: 'Guérison du coeur',
-            roll: 'Calme + Médecine + Life',
+            roll: 'Calme + Médecine + Vie',
             cost: '1 mana',
             description: 'Soigne les blessures d\'une personne, 1 dégât contondant ou léthal par succès',
             duration: 'Instantané'
@@ -251,9 +322,99 @@ export class NwodMageRotesComponent {
       }, espace: {
       }, esprit: {
       }, forces: {
+        rotes_1: [
+          {
+            name: 'Influencer la lumière',
+            roll: 'Intelligence + (Occulte ou Science) + Forces',
+            description: 'Redirige un flux de lumière',
+            duration: 'Scène'
+          }, {
+            name: 'Influence le son',
+            roll: 'Intelligence + (Occulte ou Science) + Forces',
+            description: 'Redirige un flux de son',
+            duration: 'Scène'
+          }
+        ], rotes_2: [
+          {
+            name: 'Contrôler le son',
+            roll: 'Intelligence + (Occulte ou Science) + Forces',
+            description: 'Augmenter ou diminuer le son',
+            duration: 'Scène'
+          }, {
+            name: 'Oeils de la Matrice',
+            roll: 'Présence + Science + Forces',
+            description: 'Vision du mage, détecte les énergies (chaleur, gravité, magnétisme, radiations, ...)<br>Ce sort peut être lancé sur une autre personne',
+            duration: 'Scène'
+          }, {
+            name: 'Objet invisible',
+            roll: 'Manipulation + Subterfuge + Forces',
+            cost: '1 mana & VULGAIRE',
+            description: 'Rend invisible un objet inanimé',
+            duration: 'Scène'
+          }
+        ]
       }, matiere: {
+        rotes_1: [
+          {
+            name: 'Detection de substance',
+            roll: 'Astuce + Calme + Matière',
+            description: 'Détecte les substances aux alentours (métal, eau, plastique, poudre, ...)',
+            duration: 'Concentration'
+          }
+        ]
       }, mort: {
       }, prime: {
+        rotes_1: [
+          {
+            name: 'Percer les illusions',
+            roll: 'Astuce + Occulte + Prime',
+            description: 'Détecte les illusions crées à partir de mana',
+            duration: 'Concentration'
+          }, {
+            name: 'Inscription de Grimoire',
+            roll: 'Intelligence + Expression + Prime',
+            description: 'Oublie une routine pour l\'inscrire dans un grimoire, afin que d\'autres puissent l\'apprendre',
+            duration: 'Rituel'
+          }, {
+            name: 'Vision céleste',
+            roll: 'Astuce + Occulte + Prime',
+            description: 'Vision du mage, détecte tout ce qui est lié à la magie',
+            duration: 'Scène'
+          }
+        ], rotes_2: [
+          {
+            name: 'Contresort primaire',
+            roll: 'Résolution + Occulte + Prime',
+            cost: '1 mana',
+            description: 'Peut contrer un sort de n\'importe quelle arcane', // Counterspell, p. 123
+            duration: 'Instantané'
+          }, {
+            name: 'Bouclier magique',
+            roll: 'Résolution + Occulte + Prime',
+            cost: '1 mana optionnel, pour faire durer 24h',
+            description: 'Armure contre tout ce qui est magique',
+            duration: 'Scène'
+          }, {
+            name: 'Quadrature du cercle',
+            roll: 'Résolution + Occulte + Prime',
+            cost: '1 mana',
+            description: 'Trace un espace où 2 mages peuvent effectuer un "duel d\'arcane"', // Duel Arcane,” p. 286
+            duration: 'Scène'
+          }
+        ], rotes_3: [
+          {
+            name: 'Canalisation de mana',
+            roll: 'Manipulation + Occulte + Prime',
+            description: 'Siphonne {Succès} (max {Prime}) points de mana d\'une fontaine de mana, de mana solide ou d\'un objet magique',
+            duration: 'Insantané'
+          }, {
+            name: 'Illusion',
+            roll: 'Intelligence + Artisanat + Prime',
+            cost: '1 mana & VULGAIRE',
+            description: 'Créé une illusion solide (mais fragile) inanimée, qui peut aller jusqu\'à une taille humaine',
+            duration: 'Scène'
+          }
+        ]
       }, psyche: {
       }, temps: {
       }, vie: {
