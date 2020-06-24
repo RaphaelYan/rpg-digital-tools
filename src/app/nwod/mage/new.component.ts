@@ -4,7 +4,7 @@ import { Observable } from 'rxjs';
 import { first } from 'rxjs/operators';
 import { ActivatedRoute, Router } from '@angular/router';
 import { AngularFireAuth } from '@angular/fire/auth';
-import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/firestore';
+import { AngularFirestore } from '@angular/fire/firestore';
 
 export interface Character {
   name: string;
@@ -83,8 +83,6 @@ export class NwodMageNewComponent {
 
   private characterDoc: AngularFirestoreDocument<any>;
   private character: Observable<any>;
-  private user: any;
-  private charactersCollection: AngularFirestoreCollection<Character>;
   private timeout = null;
   private lastUpdate = null;
 
@@ -103,30 +101,9 @@ export class NwodMageNewComponent {
         return;
       }
 
-      this.user = user;
-
       const routeParams = this.activatedRoute.snapshot.params;
 
       if (!routeParams.id) {
-        // @TODO remove this after all characters created
-        // if (localStorage.getItem('sheet-mage')) {
-        //   this.charactersCollection = afs.collection<Character>('characters', (ref) => {
-        //     return ref.where('userid', '==', user.uid)
-        //       .orderBy('timestamp', 'asc');
-        //   });
-        //
-        //   const values = JSON.parse(localStorage.getItem('sheet-mage'));
-        //   const char = Object.assign(values, {
-        //     name: values.name || 'Personnage sans nom',
-        //     userid: this.user.uid,
-        //     timestamp: Date.now()
-        //   });
-        //
-        //   this.charactersCollection.add(char);
-        //
-        //   // localStorage.removeItem('sheet-mage');
-        // }
-
         this.router.navigateByUrl('/nwod');
         return;
       }
@@ -235,7 +212,7 @@ export class NwodMageNewComponent {
     }
   }
 
-  public hasManaAccess(score): boolean {
+  public hasManaAccess(score: number): boolean {
     if (this.form.gnosis <= 6) {
       return score <= +this.form.gnosis + 9;
     } else if (this.form.gnosis === 7) {
