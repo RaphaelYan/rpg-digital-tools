@@ -1,26 +1,19 @@
-Quel ordre ?
+Filter :
 
-<select name="order" [(ngModel)]="order">
-  <option value="adamantine_arrow">Flèche d'adamantine</option>
-  <option value="free_council">Conseil libre</option>
-  <option value="guardians_of_the__veil">Gardiens du voile</option>
-  <option value="mysterium">Mysterium</option>
-  <option value="silver_ladder">Echelle d'argent</option>
+<br>
+
+Par ordre :
+<select name="order" [(ngModel)]="selectedOrder">
+  <option value=""></option>
+  <option *ngFor="let order of orders" [value]="order.value">{{ order.label }}</option>
 </select>
 
-Quelle arcane ?
+<br>
 
-<select name="arcana" [(ngModel)]="arcana">
-  <option value="destin">Destin</option>
-  <option value="espace">Espace</option>
-  <option value="esprit">Esprit</option>
-  <option value="forces">Forces</option>
-  <option value="matiere">Matière</option>
-  <option value="mort">Mort</option>
-  <option value="prime">Prime</option>
-  <option value="psyche">Psyché</option>
-  <option value="temps">Temps</option>
-  <option value="vie">Vie</option>
+Par arcane :
+<select name="arcana" [(ngModel)]="selectedArcana">
+  <option value=""></option>
+  <option *ngFor="let arcana of arcanas" [value]="arcana.value">{{ arcana.label }}</option>
 </select>
 
 <br>
@@ -28,20 +21,26 @@ Quelle arcane ?
 <br>
 <br>
 
-<ng-template [ngIf]="order && arcana">
-  <ng-template ngFor let-nb [ngForOf]="arrayOfFive">
-    <h2 *ngIf="rotes[order][arcana]['rotes_' + nb]">Routines rang {{ nb }}</h2>
-    <ng-template ngFor let-rote [ngForOf]="rotes[order][arcana]['rotes_' + nb]">
-      Nom : {{ rote.name }}<br>
-      Jet : {{ rote.roll }}<br>
-      <ng-template [ngIf]="rote.cost">
-        Coût : {{ rote.cost }}<br>
+<ng-template ngFor let-order [ngForOf]="orders">
+  <ng-template [ngIf]="!selectedOrder || selectedOrder === order.value">
+    <ng-template ngFor let-arcana [ngForOf]="arcanas">
+      <ng-template [ngIf]="!selectedArcana || selectedArcana === arcana.value">
+        <ng-template ngFor let-nb [ngForOf]="arrayOfFive">
+          <ng-template [ngIf]="rotes[order.value][arcana.value]['rotes_' + nb]">
+            <h2>Routines rang {{ nb }} ({{ order.label }} - {{ arcana .label}})</h2>
+            <ng-template ngFor let-rote [ngForOf]="rotes[order.value][arcana.value]['rotes_' + nb]">
+              Nom : {{ rote.name }}<br>
+              Jet : {{ rote.roll }}<br>
+              <ng-template [ngIf]="rote.cost">
+                Coût : {{ rote.cost }}<br>
+              </ng-template>
+              Description : <span [innerHtml]="rote.description"></span><br>
+              Durée : {{ rote.duration }}<br>
+              <br>
+            </ng-template>
+          </ng-template>
+        </ng-template>
       </ng-template>
-      Description : {{ rote.description }}<br>
-      Durée : {{ rote.duration }}<br>
-      <br>
     </ng-template>
-    <br>
-    <br>
   </ng-template>
 </ng-template>

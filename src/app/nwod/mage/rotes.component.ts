@@ -6,6 +6,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./rotes.component.scss']
 })
 export class NwodMageRotesComponent {
+  public selectedOrder: string = '';
+  public selectedArcana: string = '';
   public rotes = {
     adamantine_arrow: {
       destin: {
@@ -421,7 +423,57 @@ export class NwodMageRotesComponent {
       }
     }
   };
-  public order = '';
-  public arcana = '';
+
+  public orders = [
+    {
+      label: 'Flèche d\'adamantine',
+      value: 'adamantine_arrow'
+    }, {
+      label: 'Conseil libre',
+      value: 'free_council'
+    }, {
+      label: 'Gardiens du voile',
+      value: 'guardians_of_the__veil'
+    }, {
+      label: 'Mysterium',
+      value: 'mysterium'
+    }, {
+      label: 'Echelle d\'argent',
+      value: 'silver_ladder'
+    },
+  ];
+  public arcanas = [
+    {
+      label: 'Destin',
+      value: 'destin'
+    }, {
+      label: 'Espace',
+      value: 'espace'
+    }, {
+      label: 'Esprit',
+      value: 'esprit'
+    }, {
+      label: 'Forces',
+      value: 'forces'
+    }, {
+      label: 'Matière',
+      value: 'matiere'
+    }, {
+      label: 'Mort',
+      value: 'mort'
+    }, {
+      label: 'Prime',
+      value: 'prime'
+    }, {
+      label: 'Psyché',
+      value: 'psyche'
+    }, {
+      label: 'Temps',
+      value: 'temps'
+    }, {
+      label: 'Vie',
+      value: 'vie'
+    },
+  ];
   public arrayOfFive = [1, 2, 3, 4, 5];
 }
