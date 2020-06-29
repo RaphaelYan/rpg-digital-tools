@@ -40,7 +40,7 @@ export class NwodMageRotesComponent {
             description: 'Tu peux relancer les dés sur 9 à la place de 10',
             duration: 'Scène'
           }, {
-            name: 'Protection de chance',
+            name: 'Protection de chance', // Fortune’s Protection
             roll: 'Résolution + Athlétisme + Destin',
             cost: '1 mana optionnel, pour faire durer 24h',
             description: 'Bouclier, tu évites les attaques au bon moment',
@@ -57,7 +57,7 @@ export class NwodMageRotesComponent {
       }, temps: {
         rotes_1: [
           {
-            name: 'Tourbillons temporels',
+            name: 'Tourbillons temporels', // Temporal Eddies
             roll: 'Astuce + Investigation + Temps',
             description: 'Vision du mage, détecte les influences de temps aux alentours',
             duration: 'Scène'
@@ -84,7 +84,7 @@ export class NwodMageRotesComponent {
           }
         ], rotes_3: [
           {
-            name: 'Accélération',
+            name: 'Accélération', // Acceleration
             roll: 'Vigueur + Athlétisme + Temps',
             cost: 'VULGAIRE',
             description: 'Boost tes capacités de vitesse et d\'actions.<br>Donne un malus de {Temps} à tes attaquants, ajoute {Temps} initiative, multiplie ta vitesse par {Temps}',
@@ -94,7 +94,7 @@ export class NwodMageRotesComponent {
       }, vie: {
         rotes_1: [
           {
-            name: 'Pulsation de la vie',
+            name: 'Pulsation de la vie', // Pulse of the Living World
             roll: 'Astuce + (Médecine ou Science) + Vie',
             description: 'Vision du mage, détecte les énergies vitales magiques',
             duration: 'Scène'
@@ -378,7 +378,7 @@ export class NwodMageRotesComponent {
             description: 'Oublie une routine pour l\'inscrire dans un grimoire, afin que d\'autres puissent l\'apprendre',
             duration: 'Rituel'
           }, {
-            name: 'Vision céleste',
+            name: 'Vision céleste', // Supernal Vision
             roll: 'Astuce + Occulte + Prime',
             description: 'Vision du mage, détecte tout ce qui est lié à la magie',
             duration: 'Scène'
@@ -391,7 +391,7 @@ export class NwodMageRotesComponent {
             description: 'Peut contrer un sort de n\'importe quelle arcane', // Counterspell, p. 123
             duration: 'Instantané'
           }, {
-            name: 'Bouclier magique',
+            name: 'Bouclier magique', // Magic Shield
             roll: 'Résolution + Occulte + Prime',
             cost: '1 mana optionnel, pour faire durer 24h',
             description: 'Armure contre tout ce qui est magique',

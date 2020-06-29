@@ -26,6 +26,7 @@
   <ul>
     <li *ngFor="let character of otherCharacters | async">
       <a [routerLink]="'mage/' + character.id">{{ character.name }}</a>
+      (Mise à jour le {{ character.lastUpdateStr }})
     </li>
 
     <li *ngIf="(characters | async)?.length === 0">

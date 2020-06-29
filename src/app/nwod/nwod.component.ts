@@ -54,7 +54,10 @@ export class NwodComponent {
           map(actions => actions.map(a => {
             const data = a.payload.doc.data() as Character;
             const id = a.payload.doc.id;
-            return { id, ...data };
+            const date = new Date(data['lastUpdate']);
+
+            const lastUpdateStr = date.getDate() + '/' + (1 + date.getMonth());
+            return { id, lastUpdateStr, ...data };
           }))
         );
       }
