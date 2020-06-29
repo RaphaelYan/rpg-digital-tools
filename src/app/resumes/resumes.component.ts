@@ -12,7 +12,8 @@ export class ResumesComponent {
       title: 'Les Foudres du Roi-Tonnerre - partie 16'
     }, {
       date: '24 Juin 2020',
-      title: 'Mage - Le mythe de la Reine détrônée - partie 1'
+      title: 'Mage - Le mythe de la Reine détrônée - partie 1',
+      pdf: 'assets/resumes/mage/mage-partie1.pdf',
     }, {
       date: '12 Juin 2020',
       title: 'Les Foudres du Roi-Tonnerre - partie 15'
