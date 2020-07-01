@@ -47,6 +47,10 @@ export class AppComponent implements OnInit {
         }))
       );
 
+      if (this.isAdmin()) {
+        return;
+      }
+
       this.logsCollection.add({
         uid: user.uid,
         email: user.email,
