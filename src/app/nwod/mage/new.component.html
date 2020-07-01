@@ -281,16 +281,16 @@
      ></div>
   </ng-template>
 
-  <input type="text" name="routine_1" [(ngModel)]="form.routine_1" (ngModelChange)="formChanged()">
-  <input type="text" name="routine_2" [(ngModel)]="form.routine_2" (ngModelChange)="formChanged()">
-  <input type="text" name="routine_3" [(ngModel)]="form.routine_3" (ngModelChange)="formChanged()">
-  <input type="text" name="routine_4" [(ngModel)]="form.routine_4" (ngModelChange)="formChanged()">
-  <input type="text" name="routine_5" [(ngModel)]="form.routine_5" (ngModelChange)="formChanged()">
-  <input type="text" name="routine_6" [(ngModel)]="form.routine_6" (ngModelChange)="formChanged()">
-  <input type="text" name="routine_7" [(ngModel)]="form.routine_7" (ngModelChange)="formChanged()">
-  <input type="text" name="routine_8" [(ngModel)]="form.routine_8" (ngModelChange)="formChanged()">
-  <input type="text" name="routine_9" [(ngModel)]="form.routine_9" (ngModelChange)="formChanged()">
-  <input type="text" name="routine_10" [(ngModel)]="form.routine_10" (ngModelChange)="formChanged()">
+  <input type="text" name="routine_1" [(ngModel)]="form.routine_1" (ngModelChange)="formChanged()" [class.small]="form.routine_1 && form.routine_1.length > 80">
+  <input type="text" name="routine_2" [(ngModel)]="form.routine_2" (ngModelChange)="formChanged()" [class.small]="form.routine_2 && form.routine_2.length > 80">
+  <input type="text" name="routine_3" [(ngModel)]="form.routine_3" (ngModelChange)="formChanged()" [class.small]="form.routine_3 && form.routine_3.length > 80">
+  <input type="text" name="routine_4" [(ngModel)]="form.routine_4" (ngModelChange)="formChanged()" [class.small]="form.routine_4 && form.routine_4.length > 80">
+  <input type="text" name="routine_5" [(ngModel)]="form.routine_5" (ngModelChange)="formChanged()" [class.small]="form.routine_5 && form.routine_5.length > 80">
+  <input type="text" name="routine_6" [(ngModel)]="form.routine_6" (ngModelChange)="formChanged()" [class.small]="form.routine_6 && form.routine_6.length > 80">
+  <input type="text" name="routine_7" [(ngModel)]="form.routine_7" (ngModelChange)="formChanged()" [class.small]="form.routine_7 && form.routine_7.length > 80">
+  <input type="text" name="routine_8" [(ngModel)]="form.routine_8" (ngModelChange)="formChanged()" [class.small]="form.routine_8 && form.routine_8.length > 80">
+  <input type="text" name="routine_9" [(ngModel)]="form.routine_9" (ngModelChange)="formChanged()" [class.small]="form.routine_9 && form.routine_9.length > 80">
+  <input type="text" name="routine_10" [(ngModel)]="form.routine_10" (ngModelChange)="formChanged()" [class.small]="form.routine_10 && form.routine_10.length > 80">
 
   <input type="text" name="weapon_1" [(ngModel)]="form.weapon_1" (ngModelChange)="formChanged()">
   <input type="text" name="weapon_2" [(ngModel)]="form.weapon_2" (ngModelChange)="formChanged()">
