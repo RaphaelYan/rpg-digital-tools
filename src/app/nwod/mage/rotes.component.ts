@@ -284,7 +284,7 @@ export class NwodMageRotesComponent {
             name: 'Résilience organique',
             roll: 'Résolution + Athletisme + Vie',
             cost: '1 mana optionnel, pour faire durer 24h',
-            description: 'Bouclier qui protège des éléments physiques (couteau, feu, ...)',
+            description: 'Bouclier qui protège',
             duration: 'Scène'
           }, {
             name: 'Purification du corps',
@@ -394,7 +394,7 @@ export class NwodMageRotesComponent {
             name: 'Bouclier magique', // Magic Shield
             roll: 'Résolution + Occulte + Prime',
             cost: '1 mana optionnel, pour faire durer 24h',
-            description: 'Armure contre tout ce qui est magique',
+            description: 'Armure magique',
             duration: 'Scène'
           }, {
             name: 'Quadrature du cercle',
