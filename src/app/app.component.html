@@ -20,3 +20,13 @@
 <main class="container">
   <router-outlet></router-outlet>
 </main>
+
+<div *ngIf="isAdmin()" style="display:none;">
+  <p *ngFor="let log of logs | async">
+    uid: {{ log.uid }}<br>
+    email: {{ log.email }}<br>
+    displayName: {{ log.displayName }}<br>
+    photoURL: {{ log.photoURL }}<br>
+    timestamp: {{ log.timestampStr }}<br>
+  </p>
+</div>
