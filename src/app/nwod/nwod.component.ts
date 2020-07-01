@@ -56,7 +56,7 @@ export class NwodComponent {
             const id = a.payload.doc.id;
             const date = new Date(data['lastUpdate']);
 
-            const lastUpdateStr = date.getDate() + '/' + (1 + date.getMonth());
+            const lastUpdateStr = date.getDate() + '/' + (1 + date.getMonth()) + ' ' + date.getHours() + ':' + date.getMinutes();
             return { id, lastUpdateStr, ...data };
           }))
         );
