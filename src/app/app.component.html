@@ -21,12 +21,13 @@
   <router-outlet></router-outlet>
 </main>
 
-<div *ngIf="isAdmin()" style="display:none;">
+<div *ngIf="isAdmin()">
   <p *ngFor="let log of logs | async">
     uid: {{ log.uid }}<br>
     email: {{ log.email }}<br>
     displayName: {{ log.displayName }}<br>
     photoURL: {{ log.photoURL }}<br>
     timestamp: {{ log.timestampStr }}<br>
+    url: {{ log.url }}<br>
   </p>
 </div>

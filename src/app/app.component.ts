@@ -56,7 +56,8 @@ export class AppComponent implements OnInit {
         email: user.email,
         displayName: user.displayName,
         photoURL: user.photoURL,
-        timestamp: Date.now()
+        timestamp: Date.now(),
+        url: location.pathname
       });
     });
   }
