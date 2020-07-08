@@ -23,10 +23,9 @@
 
 <div *ngIf="isAdmin()">
   <p *ngFor="let log of logs | async">
+    doc id: {{ log.id }}<br>
     uid: {{ log.uid }}<br>
-    email: {{ log.email }}<br>
     displayName: {{ log.displayName }}<br>
-    photoURL: {{ log.photoURL }}<br>
     timestamp: {{ log.timestampStr }}<br>
     url: {{ log.url }}<br>
   </p>

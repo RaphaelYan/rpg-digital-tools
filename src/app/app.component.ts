@@ -4,6 +4,7 @@ import { auth } from 'firebase/app';
 import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/firestore';
 import { map } from 'rxjs/operators';
 import { Observable } from 'rxjs';
+import { Router, NavigationEnd, Event } from '@angular/router';
 
 declare var $: any;
 
@@ -16,10 +17,12 @@ export class AppComponent implements OnInit {
   private logsCollection: AngularFirestoreCollection<any>;
   public logs: Observable<any[]>;
   private user: any;
+  private trackInit: boolean = false;
 
   constructor(
     public angularFireAuth: AngularFireAuth,
     private afs: AngularFirestore,
+    private router: Router,
   ) {
   }
 
@@ -47,18 +50,8 @@ export class AppComponent implements OnInit {
         }))
       );
 
-      if (this.isAdmin()) {
-        return;
-      }
-
-      this.logsCollection.add({
-        uid: user.uid,
-        email: user.email,
-        displayName: user.displayName,
-        photoURL: user.photoURL,
-        timestamp: Date.now(),
-        url: location.pathname
-      });
+      this.logUserAction();
+      this.trackRouteChange();
     });
   }
 
@@ -72,5 +65,35 @@ export class AppComponent implements OnInit {
 
   public isAdmin(): boolean {
     return this.user && this.user.email === 'maferyt@gmail.com';
+  }
+
+  private trackRouteChange(): void {
+    if (this.trackInit) {
+      return;
+    }
+    this.trackInit = true;
+
+    this.router.events.subscribe((event: Event) => {
+      if (!(event instanceof NavigationEnd)) {
+        return;
+      }
+
+      this.logUserAction();
+    });
+  }
+
+  private logUserAction(): void {
+    if (!this.user || this.isAdmin()) {
+      return;
+    }
+
+    this.logsCollection.add({
+      uid: this.user.uid,
+      email: this.user.email,
+      displayName: this.user.displayName,
+      photoURL: this.user.photoURL,
+      timestamp: Date.now(),
+      url: location.pathname
+    });
   }
 }

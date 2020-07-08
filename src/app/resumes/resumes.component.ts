@@ -10,6 +10,7 @@ export class ResumesComponent {
     {
       date: '02 Juillet 2020',
       title: 'Mage - Le mythe de la Reine détrônée - partie 2',
+      chars: 'Clem, Mélo, Repié',
       pdf: 'assets/resumes/mage/mage-partie2.pdf',
     }, {
       date: '26 Juin 2020',
@@ -17,6 +18,7 @@ export class ResumesComponent {
     }, {
       date: '24 Juin 2020',
       title: 'Mage - Le mythe de la Reine détrônée - partie 1',
+      chars: 'Clem, Mélo, Repié, Thamos',
       pdf: 'assets/resumes/mage/mage-partie1.pdf',
     }, {
       date: '12 Juin 2020',
@@ -121,7 +123,8 @@ export class ResumesComponent {
 `
     }, {
       date: '7 Octobre 2017',
-      title: 'Savage World - Les 6 nains de la main ( Julien, Darth, Noëlie, Baptiste, clément, Yann)',
+      title: 'Savage World - Les 6 nains de la main',
+      chars: 'Julien, Darth, Noëlie, Baptiste, clément, Yann'
     }, {
       date: '29 Avril 2017',
       title: 'HOTQ - Partie 5 : la fin du chateau volant, combat pour reprendre le truc',
