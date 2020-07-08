@@ -1,20 +1,34 @@
-<!-- @TODO display DM -->
 <!-- @TODO display short description -->
 <!-- @TODO filter by DM -->
 <!-- @TODO tag Campaigns -->
 
 <div class="container">
   <div class="list-group">
+
+    <div class="list-group-item row text-bold">
+      <div class="col-sm date-resume">
+        DATE
+      </div>
+      <div class="col-sm">
+        Titre
+      </div>
+      <div class="col-sm-2">
+        Maître du jeu
+      </div>
+    </div>
+
     <div class="list-group-item row" *ngFor="let resume of resumes">
       <div class="col-sm date-resume">
         <div class="date">{{ resume.date }}</div>
 
         <a *ngIf="resume.pdf" [attr.href]="resume.pdf" target="_blank">Résumé ici</a>
-        <b *ngIf="!resume.pdf">Résumé à faire</b>
       </div>
       <div class="col-sm">
         <div>{{ resume.title }}</div>
         <small *ngIf="resume.chars">{{ resume.chars }}</small>
+      </div>
+      <div class="col-sm-2">
+        {{ resume.dm }}
       </div>
     </div>
   </div>
