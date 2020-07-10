@@ -158,7 +158,7 @@ export class ResumesComponent {
       dm: 'MaFeRyT',
     }, {
       date: '29 Avril 2017',
-      title: 'HOTQ - Partie 5 : la fin du chateau volant, combat pour reprendre le truc',
+      title: 'HOTQ - Partie 10 : la fin du chateau volant, combat pour reprendre le truc',
       dm: 'MaFeRyT',
     }, {
       date: '12 Mars 2017',
@@ -231,13 +231,28 @@ export class ResumesComponent {
       dm: 'MaFeRyT',
       chars: 'Azrael, Aldaric, Vador, Syccor, Gibli',
     }, {
-      date: '22 Mai 2011',
-      title: 'Ambre - Partie 2',
-      dm: 'Beldom',
-      chars: 'Kilsen, Lasanis, Syccor, Harold, Maferyt, Lasanis',
+      date: 'Février - Mars 2013',
+      title: 'Hellfrost',
+      dm: 'Nemesis',
+      chars: 'Lama, Glarf, Nounours, Bazuhl, MaFeRyT, Mekap',
     }, {
-      date: '3 Février 2011',
-      title: 'Ambre - Partie 1',
+      date: 'Décembre 2012',
+      title: 'D&D',
+      dm: 'Idriss',
+      chars: 'MaFeRyT, Noëlie, Vador, Denis, Syccor',
+    }, {
+      date: 'Août - Octobre 2011',
+      title: 'Mage - Le mythe de la Reine détrônée',
+      dm: 'MaFeRyT',
+      chars: 'Syccor, Bazuhl, Vador, Fiboot, Shinden',
+    }, {
+      date: 'Avril - Mai 2011',
+      title: 'StarWars',
+      dm: 'Aralicia',
+      chars: 'Harold, Vador, Kilsen, Ali, MaFeRyT, Têtu',
+    }, {
+      date: 'Février - Mai 2011',
+      title: 'Ambre',
       dm: 'Beldom',
       chars: 'Kilsen, Lasanis, Syccor, Harold, Maferyt, Lasanis',
     }, {

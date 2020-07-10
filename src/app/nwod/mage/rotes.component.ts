@@ -215,6 +215,19 @@ export class NwodMageRotesComponent {
 
     mysterium: {
       destin: {
+        rotes_1: [
+          {
+            name: 'Flux quantique',
+            roll: 'Résolution + Occulte + Destin',
+            description: 'Lit les probabilités et mitige les actions imparfaites.<br>Réduit de 1 les malus d\'une action pour chaque tour de "concentration".',
+            duration: 'Scène'
+          }, {
+            name: 'Vision de la Sybile',
+            roll: 'Astuce + Occulte + Destin',
+            description: 'Vision du mage',
+            duration: 'Scène'
+          }
+        ]
       }, espace: {
       }, esprit: {
         rotes_1: [
@@ -246,6 +259,19 @@ export class NwodMageRotesComponent {
             description: 'Voir à travers le gantelet (avec malus de la force du gantelet)',
             duration: 'Scène'
           }
+        ], rotes_3: [
+          {
+            name: 'Contrôle d\'esprit',
+            roll: 'Présence + Intimidation + Esprit',
+            description: 'Donne un ordre simple (attaque, fui, ...)',
+            duration: 'Scène'
+          }, {
+            name: 'Restauration du Corpus',
+            roll: 'Résolution + Empathue + Esprit',
+            cost: 'VULGAIRE',
+            description: 'Soigne {Succès} Corpus à l\'esprit',
+            duration: 'Instantané'
+          }
         ]
       }, forces: {
       }, matiere: {
@@ -260,6 +286,24 @@ export class NwodMageRotesComponent {
             name: 'Parler avec les morts',
             roll: 'Astuce + Occulte + Mort',
             description: 'Parler avec les morts',
+            duration: 'Scène'
+          }
+        ], rotes_2: [
+          {
+            name: 'Animation d\'ombres',
+            roll: 'Astuce + Occulte + Mort',
+            cost: 'VULGAIRE',
+            description: 'Déplace une ombre, même sous une lumière',
+            duration: 'Scène'
+          }, {
+            name: 'Suppression d\'aura',
+            roll: 'Manipulation + Subterfuge + Mort',
+            description: 'Chaque succès donne -1 pour percevoir l\'aura',
+            duration: 'Scène'
+          }, {
+            name: 'Touché de la tombe',
+            roll: 'Dextérité + Survie + Mort',
+            description: 'Peut physiquement intéragir avec les fantômes et leur monde',
             duration: 'Scène'
           }
         ]
@@ -314,6 +358,14 @@ export class NwodMageRotesComponent {
             cost: '1 mana',
             description: 'Soigne les blessures d\'une personne, 1 dégât contondant ou léthal par succès',
             duration: 'Instantané'
+          }
+        ], rotes_4: [
+          {
+            name: 'Visages multiples',
+            roll: 'Changer l\'apparence physique d\'une personne',
+            cost: 'VULGAIRE',
+            description: 'Manipulation + Subterfuge + Vie',
+            duration: 'Scène'
           }
         ]
       }
