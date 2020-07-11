@@ -8,6 +8,12 @@ import { Component } from '@angular/core';
 export class ResumesComponent {
   public resumes = [
     {
+      date: '10 Juillet 2020',
+      title: 'Mage - Le mythe de la Reine détrônée - partie 3',
+      chars: 'Clem, Mélo, Repié',
+      pdf: 'assets/resumes/mage/mage-partie3.pdf',
+      dm: 'MaFeRyT',
+    }, {
       date: '02 Juillet 2020',
       title: 'Mage - Le mythe de la Reine détrônée - partie 2',
       chars: 'Clem, Mélo, Repié',
@@ -263,4 +269,13 @@ export class ResumesComponent {
       pdf: 'assets/resumes/2010-12-17.pdf',
     },
   ];
+
+  /*
+
+  TAGS ROLEPLAY A FAIRE
+  - d&d - maferyt
+  - d&d -- Syccor
+  - Dragonia - Chronicles
+  - Dragonia - Legend of the Silver Dragon
+  */
 }

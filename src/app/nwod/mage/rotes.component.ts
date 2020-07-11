@@ -528,4 +528,1202 @@ export class NwodMageRotesComponent {
     },
   ];
   public arrayOfFive = [1, 2, 3, 4, 5];
+
+
+  public allSpells = [
+    [
+      'Arcane',
+      'Routine ?',
+      'Description',
+    ], [
+      'Mort 1',
+      '',
+      'Détermine les causes de la mort',
+    ], [
+      'Mort 1',
+      'Echelle d\'argent',
+      'Vision du mage',
+    ], [
+      'Mort 1',
+      'Gardien du voile',
+      'Altère la forme d\'une ombre',
+    ], [
+      'Mort 1',
+      '',
+      'Détecte les âmes dérangées (ex: paranoia)',
+    ], [
+      'Mort 1',
+      'Mysterium',
+      'Parler avec les morts',
+    ],
+    ['LEVEL'],
+    [
+      'Mort 2',
+      'Mysterium',
+      'Anime les ombres, même sous la lumière',
+    ], [
+      'Mort 2',
+      'Gardien du voile',
+      'Masquer les causes de la mort',
+    ], [
+      'Mort 2',
+      'Gardien du voile',
+      'Corroderr, rouiller un objet',
+    ], [
+      'Mort 2',
+      '',
+      'Bouclier',
+    ], [
+      'Mort 2',
+      'Echelle d\'argent',
+      'Convocation de fantome',
+    ], [
+      'Mort 2',
+      'Echelle d\'argent',
+      'Créer une jarre, pour y accueilir une âme',
+    ], [
+      'Mort 2',
+      'Gardien du voile / Mysterium',
+      'Supprime son aura',
+    ], [
+      'Mort 2',
+      'Mysterium',
+      'Interagir avec les fantomes et leur monde',
+    ],
+    ['LEVEL'],
+    [
+      'Mort 3',
+      'Echelle d\'argent / Mysterium',
+      'Donner un ordre à un fantome',
+    ], [
+      'Mort 3',
+      'Gardien du voile',
+      'Détruit un objet',
+    ], [
+      'Mort 3',
+      'Mysterium',
+      'Ouvre une porte vers le monde des fantomes',
+    ], [
+      'Mort 3',
+      'Echelle d\'argent',
+      'Animer un cadavre #zombie',
+    ], [
+      'Mort 3',
+      '',
+      'Soigner les fanttomes',
+    ], [
+      'Mort 3',
+      'Gardien du voile',
+      'Voler une âme',
+    ], [
+      'Mort 3',
+      '',
+      'Invocation d\'ombres',
+    ], [
+      'Mort 3',
+      'Gardien du voile / Echelle d\'argent',
+      'Supprime sa vie (temporairement)',
+    ],
+    ['LEVEL'],
+    [
+      'Mort 4',
+      'Mysterium',
+      'Draine la force d\'une cible',
+    ], [
+      'Mort 4',
+      '',
+      'Pourrie la chair de la cible (dégâts + malus sociaux)',
+    ], [
+      'Mort 4',
+      '',
+      'Détruit son aura pour un moment',
+    ], [
+      'Mort 4',
+      'Mysterium',
+      'Se téléporte sans portail dans le monde des fantomes',
+    ],
+    ['LEVEL'],
+    [
+      'Mort 5',
+      '',
+      'Détruit la mana',
+    ], [
+      'Mort 5',
+      'Gardien du voile',
+      'Contrecart un sort de nimporte quelle arcane',
+    ], [
+      'Mort 5',
+      'Mysterium / Gardien du voile',
+      'Améliorer un fantome',
+    ], [
+      'Mort 5',
+      'Mysterium / Echelle d\'argent',
+      'Siphonner des années de vie',
+    ], [
+      'Mort 5',
+      'Mysterium / Echelle d\'argent',
+      'Invocation de fantome',
+    ],
+    ['SEPARATOR'],
+    [
+      'Destin 1',
+      'Mysterium',
+      'Réduit les malus en se concentrant',
+    ], [
+      'Destin 1',
+      'Mysterium',
+      'Vision du mage',
+    ],
+    ['LEVEL'],
+    [
+      'Destin 2',
+      '',
+      'Relance les dés sur 9+',
+    ], [
+      'Destin 2',
+      'Echelle d\'argent / Gardien du voile',
+      'Donner des malus à une cible',
+    ], [
+      'Destin 2',
+      'Gardien du voile',
+      'Bouclier',
+    ],
+    ['LEVEL'],
+    [
+      'Destin 3',
+      '',
+      'Donner à qulqun la rrelance de dés sur 9+',
+    ], [
+      'Destin 3',
+      'Mysterium',
+      'Bonus d\'utilisation d\'objet',
+    ], [
+      'Destin 3',
+      '',
+      'Malus d\'utilisation d\'objet',
+    ], [
+      'Destin 3',
+      'Gardien du voile / Echelle d\'argent',
+      'Cacher sa destinée',
+    ], [
+      'Destin 3',
+      'Echelle d\'argent',
+      'Relance les dés sur 8+',
+    ],
+    ['LEVEL'],
+    [
+      'Destin 4',
+      'Gardien du voile',
+      'Détruit l\'attache d\'une âme',
+    ],
+    ['LEVEL'],
+    [
+      'Destin 5',
+      'Gardien du voile / Mysterium',
+      'Se forger une destinée',
+    ], [
+      'Destin 5',
+      '',
+      'Forger un destin funeste',
+    ], [
+      'Destin 5',
+      'Mysterium',
+      'Protection divine',
+    ], [
+      'Destin 5',
+      '',
+      'Maudit la cible',
+    ],
+
+    ['SEPARATOR'],
+    [
+      'Force 1',
+      'Mysterium',
+      'Influencer la chaleur',
+    ], [
+      'Force 1',
+      'Echelle d\'argent',
+      'Influencer la lumière',
+    ], [
+      'Force 1',
+      '',
+      'Vision dans le noir',
+    ], [
+      'Force 1',
+      'Mysterium',
+      'Vision du mage',
+    ], [
+      'Force 1',
+      'Gardien du voile / Mysterium',
+      'Ecouter les hautes fréquences (comme les chien)',
+    ], [
+      'Force 1',
+      '',
+      'Ecouter les ondes radio',
+    ],
+    ['LEVEL'],
+    [
+      'Force 2',
+      'Mysterium',
+      'Controler la chaleur',
+    ], [
+      'Force 2',
+      'Gardien du voile',
+      'Controler la lumière',
+    ], [
+      'Force 2',
+      'Echelle d\'argent',
+      'Controler le son',
+    ], [
+      'Force 2',
+      '',
+      'Influencer l\'electricité',
+    ], [
+      'Force 2',
+      'Gardien du voile',
+      'Influencer le feu',
+    ], [
+      'Force 2',
+      'Gardien du voile / Echelle d\'argent',
+      'Rendre invisible un objet',
+    ], [
+      'Force 2',
+      '',
+      'Coup de poing kinetic à distance',
+    ], [
+      'Force 2',
+      'Mysterium / Gardien du voile',
+      'Transmettre oralement sur une fréquence radio',
+    ], [
+      'Force 2',
+      '',
+      'Bouclier',
+    ],
+    ['LEVEL'],
+    [
+      'Force 3',
+      'Gardien du voile',
+      'Appel la foudre et la fait s\'abatre sur une cible',
+    ], [
+      'Force 3',
+      'Mysterium',
+      'Controler l\'electricité',
+    ], [
+      'Force 3',
+      '',
+      'Controler le feu',
+    ], [
+      'Force 3',
+      'Mysterium',
+      'Créer de la lumière',
+    ], [
+      'Force 3',
+      'Gardien du voile',
+      'Se rendre invisible',
+    ], [
+      'Force 3',
+      'Gardien du voile',
+      'Créer un son ou un silence',
+    ], [
+      'Force 3',
+      'Echelle d\'argent',
+      'Bouger un objet par telekinesie',
+    ], [
+      'Force 3',
+      '',
+      'Lancer une boule de Force telekinetic',
+    ], [
+      'Force 3',
+      '',
+      'Redirige des projectiles rapide',
+    ],
+    ['LEVEL'],
+    [
+      'Force 4',
+      'Gardien du voile / Echelle d\'argent',
+      'Rendre quelqun invisible',
+    ], [
+      'Force 4',
+      'Mysterium / Gardien du voile',
+      'Augmenter sa propre vitesse',
+    ], [
+      'Force 4',
+      'Mysterium',
+      'Modifier la météo',
+    ], [
+      'Force 4',
+      '',
+      'Controler la vélocité d\'un objet',
+    ], [
+      'Force 4',
+      'Echelle d\'argent',
+      'Augmente les forces de friction de l\'air afin de trancher quelqun',
+    ], [
+      'Force 4',
+      'Gardien du voile',
+      'Lévitation',
+    ], [
+      'Force 4',
+      '',
+      'Lancer des éclairs de ses mains',
+    ], [
+      'Force 4',
+      'Gardien du voile',
+      'Transformer une énergie en une autre, comme du feu en électricité',
+    ], [
+      'Force 4',
+      '',
+      'Soulever une cible vivante par telekinesie',
+    ],
+    ['LEVEL'],
+    [
+      'Force 5',
+      'Gardien du voile',
+      'Créer un changement de météo majeur, comme un tsunami ou une mousson',
+    ], [
+      'Force 5',
+      'Echelle d\'argent',
+      'Augmenter la vitesse de la cible',
+    ], [
+      'Force 5',
+      'Mysterium',
+      'Faire léviter un être vivant',
+    ], [
+      'Force 5',
+      'Gardien du voile',
+      'Devient invisible, sans besoin de rester concentrer',
+    ], [
+      'Force 5',
+      'Mysterium',
+      'Contrôler la gravié',
+    ], [
+      'Force 5',
+      'Echelle d\'argent',
+      'Créer un mini-soleil',
+    ], [
+      'Force 5',
+      'Gardien du voile',
+      'Créer un tremblement de terre',
+    ], [
+      'Force 5',
+      'Mysterium',
+      'Créer un EMP',
+    ], [
+      'Force 5',
+      '',
+      'Eradiquer les radiations',
+    ], [
+      'Force 5',
+      'Mysterium',
+      'Voler dans les airs comme superman',
+    ], [
+      'Force 5',
+      'Mysterium',
+      'Annuler la gravité',
+    ], [
+      'Force 5',
+      '',
+      'Créer des radiations',
+    ], [
+      'Force 5',
+      'Echelle d\'argent',
+      'Maitrise la vélocité environnante, peut arreter les balles comme dans matrix',
+    ],
+
+    ['SEPARATOR'],
+    [
+      'Vie 1',
+      'Echelle d\'argent',
+      'Identifier une espèce',
+    ], [
+      'Vie 1',
+      '',
+      'Purifier des drogues, toxines et poison',
+    ], [
+      'Vie 1',
+      'Gardien du voile',
+      'Analyser l\'état de vie',
+    ], [
+      'Vie 1',
+      'Mysterium',
+      'Vision du mage',
+    ], [
+      'Vie 1',
+      'Mystetrium',
+      'Détecter la vie',
+    ],
+    ['LEVEL'],
+    [
+      'Vie 2',
+      '',
+      'Controler son corps : souffle, reflexes, matabolisme et coeur',
+    ], [
+      'Vie 2',
+      'Gardien du voile',
+      'Soigner les animaux et plantes',
+    ], [
+      'Vie 2',
+      'Gardien du voile / Mysterium',
+      'Bouclier',
+    ], [
+      'Vie 2',
+      '',
+      'Transformer une plante en une autre',
+    ], [
+      'Vie 2',
+      'Mysterium',
+      'Puurifier une cible des drogues, toxines et poisons',
+    ], [
+      'Vie 2',
+      '',
+      'Se soigner',
+    ], [
+      'Vie 2',
+      'Mysterium',
+      'Se purger des maladies',
+    ],
+    ['LEVEL'],
+    [
+      'Vie 3',
+      'Mysterium',
+      'Purger les autres des maladies',
+    ], [
+      'Vie 3',
+      'Echelle d\'argent / Gardien du voile',
+      'Donner un ordre à un animal',
+    ], [
+      'Vie 3',
+      'Mysterium / Gardien du voile',
+      'Soigner les autres',
+    ], [
+      'Vie 3',
+      '',
+      'Améliorer ses attributs physique',
+    ], [
+      'Vie 3',
+      '',
+      'Transformer un animal en un autre',
+    ], [
+      'Vie 3',
+      '',
+      'Transformer des parties de son corps en plante ou animal',
+    ], [
+      'Vie 3',
+      'Gardien du voile',
+      'Transformer ses yeux, sa couleur de peau, de cheveux, ...',
+    ],
+    ['LEVEL'],
+    [
+      'Vie 4',
+      '',
+      'Dégrader les attributs physique d\'une plante ou animal',
+    ], [
+      'Vie 4',
+      '',
+      'Déclenche une maladie',
+    ], [
+      'Vie 4',
+      'Gardien du voile',
+      'Copie tout le physique de la cible (doppelganger)',
+    ], [
+      'Vie 4',
+      'Echelle d\'argent',
+      'Dégrader les attributs physique d\'une personne',
+    ], [
+      'Vie 4',
+      '',
+      'Améliorer les attributs physique de la cible',
+    ], [
+      'Vie 4',
+      '',
+      'Attaque la force vitale de la cible',
+    ], [
+      'Vie 4',
+      'Mysterium',
+      'Transformer les yeux, la couleur de peau, de cheveux, ... d\'une personne',
+    ], [
+      'Vie 4',
+      'Echelle d\'argent',
+      'Améliorer plusieurs de ses attributs physique',
+    ],
+    ['LEVEL'],
+    [
+      'Vie 5',
+      'Gardien du voile',
+      'Créer une forme de vie',
+    ], [
+      'Vie 5',
+      '',
+      'Changer une plante ou animal en humain',
+    ], [
+      'Vie 5',
+      'Echelle d\'argent',
+      'Créer une bête mystique',
+    ], [
+      'Vie 5',
+      'Echelle d\'argent / Gardien du voile',
+      'Contrôle le corps de la cible',
+    ], [
+      'Vie 5',
+      '',
+      'Régénération',
+    ], [
+      'Vie 5',
+      '',
+      'Dégrader plusieurs attributs physiques de la cible',
+    ], [
+      'Vie 5',
+      '',
+      'Améliorer plusieurs attribts physiques de la cible',
+    ],
+
+    ['SEPARATOR'],
+    [
+      'Matière 1',
+      '',
+      'Altérer la conductivité',
+    ], [
+      'Matière 1',
+      'Mysterium',
+      'Découvrir le mode de fonctionnement d\'un objet',
+    ], [
+      'Matière 1',
+      'Gardien du voile',
+      'Vision du mage',
+    ], [
+      'Matière 1',
+      'Echelle d\'argent',
+      'Déetcter les substances',
+    ], [
+      'Matière 1',
+      'Mysterium',
+      'Trouver des compartiments secrets',
+    ],
+    ['LEVEL'],
+    [
+      'Matière 2',
+      '',
+      'Altérer la précision d\'un objet, il peut relancer les dés sur 9+',
+    ], [
+      'Matière 2',
+      'Mysterium',
+      'Faconner un liquide',
+    ], [
+      'Matière 2',
+      'Gardien du voile',
+      'Transmuter un liquide en un autre',
+    ], [
+      'Matière 2',
+      'Gardien du voile',
+      'Rend transparent un objet',
+    ], [
+      'Matière 2',
+      'Mysterium',
+      'Bouclier',
+    ],
+    ['LEVEL'],
+    [
+      'Matière 3',
+      'Echelle d\'argent',
+      'Renforcer ou dégrader la durabilité d\'un objet',
+    ], [
+      'Matière 3',
+      'Gardien du voile',
+      'Donner des bonus sur la prochaine action',
+    ], [
+      'Matière 3',
+      'Mysterium',
+      'Altère la substance d\'un objet, comme rende une route "plastique"',
+    ], [
+      'Matière 3',
+      'Mysterium',
+      'Réparer un objet',
+    ], [
+      'Matière 3',
+      'Echelle d\'argent',
+      'Transmuter un solide en un autre, comme du bois en pierre',
+    ],
+    ['LEVEL'],
+    [
+      'Matière 4',
+      'Gardien du voile',
+      'Altérer l\'efficacité d\'un objet',
+    ], [
+      'Matière 4',
+      '',
+      'Détruire une matière',
+    ], [
+      'Matière 4',
+      'Echelle d\'argent',
+      'Transmuter ue liquide en solide et vice-versa',
+    ], [
+      'Matière 4',
+      'Echelle d\'argent',
+      'Reconfigurer un objet, comme une batte de baseball en épée',
+    ], [
+      'Matière 4',
+      '',
+      'Altérer l\'air et les gaz',
+    ], [
+      'Matière 4',
+      'Mysterium',
+      'Transmuter un gaz en un autre, comme du gaz sarin en oxygène',
+    ], [
+      'Matière 4',
+      'Gardien du voile',
+      'Transmutter unue matière précieuse en une autre, comme de l\'or en bois',
+    ],
+    ['LEVEL'],
+    [
+      'Matière 5',
+      '',
+      'Altérer la taille d\'un objet',
+    ], [
+      'Matière 5',
+      '',
+      'Détruit la matière, même magique',
+    ], [
+      'Matière 5',
+      'Gardien du voile',
+      'Transmuter les gaz en solide ou en liquide, vice-versa',
+    ], [
+      'Matière 5',
+      'Echelle d\'argent',
+      'Créer un objet à partir de rien',
+    ], [
+      'Matière 5',
+      'Mysterium / Echelle d\'argent',
+      'Donne à un objet la capacité de se réparer tout seul',
+    ],
+
+    [
+      'Psyché 1',
+      'Echelle d\'argent',
+      'Discener l\'état émotionnel d\'une personne',
+    ], [
+      'Psyché 1',
+      'Mysterium / Gardien du voile',
+      'Détecter les conciensce autour de soi',
+    ], [
+      'Psyché 1',
+      'Gardien du voile',
+      'Vision du mage',
+    ],
+    ['LEVEL'],
+    [
+      'Psyché 2',
+      'Gardien du voile / Echelle d\'argent',
+      'Altérer son aura',
+    ], [
+      'Psyché 2',
+      'Echelle d\'argent',
+      'Manipuler l\'esprit d\'un animal',
+    ], [
+      'Psyché 2',
+      'Mysterium / Gardien du voile',
+      'Suggérer un état émotionnel',
+    ], [
+      'Psyché 2',
+      'Gardien du voile',
+      'Présence incognito',
+    ], [
+      'Psyché 2',
+      'Echelle d\'argent',
+      'Bouclier mental',
+    ], [
+      'Psyché 2',
+      '',
+      'Bouclier',
+    ],
+    ['LEVEL'],
+    [
+      'Psyché 3',
+      'Gardien du voile',
+      'Augmenter l\'une de ses capacité mentale ou sociale',
+    ], [
+      'Psyché 3',
+      'Mysterium / Gardien du voile',
+      'Altérer l\'aura d\'une autre personne',
+    ], [
+      'Psyché 3',
+      'Gardien du voile',
+      'Faire croire à une personne que l\'on est une autre personne',
+    ], [
+      'Psyché 3',
+      '',
+      'Assaut psychique',
+    ], [
+      'Psyché 3',
+      '',
+      'Parler par télépathie',
+    ],
+    ['LEVEL'],
+    [
+      'Psyché 4',
+      'Echelle d\'argent',
+      'Augmenter une des capacité mentale ou sociale d\'une autre personne',
+    ], [
+      'Psyché 4',
+      'Echelle d\'argent',
+      'Dégrader une des capacité mentale ou sociale d\'une autre personne',
+    ], [
+      'Psyché 4',
+      'Gardien du voile / Echelle d\'argent',
+      'Altérer la mémoie d\'une personne',
+    ], [
+      'Psyché 4',
+      'Mysterium',
+      'Entrer dans le rêve de quelqun',
+    ], [
+      'Psyché 4',
+      'Gardien du voile',
+      'Créer une hallucination sensitive',
+    ], [
+      'Psyché 4',
+      'Echelle d\'argent',
+      'Entrer dans la conscience de la cible',
+    ], [
+      'Psyché 4',
+      'Mysterium',
+      'Projeter son esprit dans le monde des fantomes',
+    ], [
+      'Psyché 4',
+      'Gardien du voile',
+      'Assaut psychic supérieur (léthal)',
+    ], [
+      'Psyché 4',
+      'Mysterium',
+      'Augmenter plusieurs de ses attributs mentaux et sociaux',
+    ], [
+      'Psyché 4',
+      'Echelle d\'argent',
+      'Donne des ordres téléphatique à une personne',
+    ],
+    ['LEVEL'],
+    [
+      'Psyché 5',
+      '',
+      'Créer un canal multiple de téléphatie',
+    ], [
+      'Psyché 5',
+      'Echelle d\'argent',
+      'Prendre posssession d\'une personne',
+    ], [
+      'Psyché 5',
+      'Gardien du voile',
+      'Créer une conscience',
+    ], [
+      'Psyché 5',
+      'Gardien du voile',
+      'Reprogrammer psychiquement une personne',
+    ], [
+      'Psyché 5',
+      'Mysterium',
+      'Projeter sa conscience à travers le Gantelet',
+    ], [
+      'Psyché 5',
+      '',
+      'Créer un temple psychique dans le monde des fantome',
+    ],
+
+    ['SEPARATOR'],
+    [
+      'Prime 1',
+      '',
+      'Analyser un enchantement',
+    ], [
+      'Prime 1',
+      'Echelle d\'argent',
+      'Percevoir les illusions',
+    ], [
+      'Prime 1',
+      'Gardien du voile',
+      'Dissipation de la magie (il faut posséder l\'arcane à dissiper)',
+    ], [
+      'Prime 1',
+      'Echelle d\'argent',
+      'Inscription de routine dans un grimoire',
+    ], [
+      'Prime 1',
+      'Mysterium / Echelle d\'argent',
+      'Vision du mage',
+    ],
+    ['LEVEL'],
+    [
+      'Prime 2',
+      'Gardien du voile / Echelle d\'argent',
+      'Contresort primaire',
+    ], [
+      'Prime 2',
+      'Echelle d\'argent',
+      'Bouclier',
+    ], [
+      'Prime 2',
+      'Gardien du voile / Echelle d\'argent',
+      'Tracer le cercle pour un duel magique',
+    ], [
+      'Prime 2',
+      'Gardien du voile',
+      'Transformer son aura',
+    ], [
+      'Prime 2',
+      'Gardien du voile',
+      'Se cacher des détection magiques',
+    ],
+    ['LEVEL'],
+    [
+      'Prime 3',
+      'Gardien du voile',
+      'Bouclier qui protège son âme',
+    ], [
+      'Prime 3',
+      '',
+      'Attaque au feu céleste',
+    ], [
+      'Prime 3',
+      'Echelle d\'argent',
+      'Canaliser du mana depuis une cible, comme une fontaine',
+    ], [
+      'Prime 3',
+      '',
+      'Créer de la mana solide',
+    ], [
+      'Prime 3',
+      'Mysterium',
+      'Camoufler les auras magique',
+    ], [
+      'Prime 3',
+      'Gardien du voile',
+      'Dissoudre la mana solide',
+    ], [
+      'Prime 3',
+      'Mysterium',
+      'Echanter un objet pour attaquer ou se défendre dans le monde des fantomes et des esprits',
+    ], [
+      'Prime 3',
+      'Mysterium / Echelle d\'argent',
+      'Echanter un objet pour lui ajouter des pouvoirs magiques',
+    ], [
+      'Prime 3',
+      'Echelle d\'argent',
+      'Créer une illusion inanimée',
+    ], [
+      'Prime 3',
+      '',
+      'Transformer l\'aura d\'une personne',
+    ],
+    ['LEVEL'],
+    [
+      'Prime 4',
+      'Mysterium',
+      'Réveiller une fontainer de mana endormie',
+    ], [
+      'Prime 4',
+      'Echelle d\'argent',
+      'Créer une illusion qui peut faire des actions mondaines',
+    ], [
+      'Prime 4',
+      'Gardien du voile',
+      'Siphonner l\'essence d\'un esprit, fantome ou locus, en la transformant en mana',
+    ], [
+      'Prime 4',
+      'Gardien du voile',
+      'Dissipation suprème, sans avoir besoin de connaitre les arcanes',
+    ], [
+      'Prime 4',
+      'Gardien du voile',
+      'Désactiver une fontaine de mana',
+    ],
+    ['LEVEL'],
+    [
+      'Prime 5',
+      'Mysterium',
+      'Créer une illusion complexe, qui peut copier une personne',
+    ], [
+      'Prime 5',
+      'Mysterium / Echelle d\'argent',
+      'Créer une fontaine de mana',
+    ], [
+      'Prime 5',
+      'Gardien du voile',
+      'Créer une zone d\'anti-magie',
+    ], [
+      'Prime 5',
+      'Echelle d\'argent / Gardien du voile',
+      'Siphonner la mana à distance',
+    ],
+
+    ['SEPARATOR'],
+    [
+      'Espace 1',
+      'Gardien du voile',
+      'Analyser les connections entre les objets, personnes, lieux',
+    ], [
+      'Espace 1',
+      'Mysterium',
+      'Trouver un objet proche',
+    ], [
+      'Espace 1',
+      '',
+      'Voir à 360°',
+    ], [
+      'Espace 1',
+      'Echelle d\'argent / Mysterium',
+      'Vision du mage',
+    ],
+    ['LEVEL'],
+    [
+      'Espace 2',
+      'Mysterium',
+      'Traverser un portail récemment créé',
+    ], [
+      'Espace 2',
+      'Gardien du voile / Mysterium',
+      'Voir à distance',
+    ], [
+      'Espace 2',
+      'Echelle d\'argent',
+      'Bouclier',
+    ], [
+      'Espace 2',
+      'Echelle d\'argent',
+      'Barrière magique contre l\'arcane d\'Espace',
+    ],
+    ['LEVEL'],
+    [
+      'Espace 3',
+      'Echelle d\'argent / Gardien du voile',
+      'Barrière magique améliorée, qui combinée avec une autre arcane, bloque ce qui y est lié, exemple avec Vie bloque les humains',
+    ], [
+      'Espace 3',
+      '',
+      'Voir plusieurs endroits à distance en même temps',
+    ], [
+      'Espace 3',
+      'Mysterium / Echelle d\'argent',
+      'Créer un portail',
+    ], [
+      'Espace 3',
+      '',
+      'Utiliser "Bagarre" à distance',
+    ],
+    ['LEVEL'],
+    [
+      'Espace 4',
+      'Gardien du voile',
+      'Être à 2 endroits en même temps',
+    ], [
+      'Espace 4',
+      '',
+      'Cacher des objets dans un "sac sans fond"',
+    ], [
+      'Espace 4',
+      'Mysterium / Echelle d\'argent',
+      'Se téléporte, sans portail',
+    ],
+    ['LEVEL'],
+    [
+      'Espace 5',
+      'Mysterium / Gardien du voile',
+      'Cacher un lieu',
+    ], [
+      'Espace 5',
+      'Gardien du voile',
+      'Transformer le lie en labyrinthe',
+    ],
+
+    ['SEPARATOR'],
+    [
+      'Esprit 1',
+      'Gardien du voile / Mysterium',
+      'Détecter les esprits',
+    ], [
+      'Esprit 1',
+      'Echelle d\'argent / Mysterium',
+      'Vision du mage',
+    ], [
+      'Esprit 1',
+      'Mysterium / Echelle d\'argent',
+      'Parler aux esprits',
+    ],
+    ['LEVEL'],
+    [
+      'Esprit 2',
+      'Gardien du voile',
+      'Bouclier',
+    ], [
+      'Esprit 2',
+      '',
+      'Peut physiquement interagir avec les esprits dans le monde des fantomes',
+    ], [
+      'Esprit 2',
+      'Echelle d\'argent / Mysterium',
+      'Convocation d\'esprit',
+    ], [
+      'Esprit 2',
+      'Mysterium',
+      'Voir à travers le Gantelet',
+    ],
+    ['LEVEL'],
+    [
+      'Esprit 3',
+      'Mysterium',
+      'Donner un ordre à un esprit',
+    ], [
+      'Esprit 3',
+      'Echelle d\'argent / Gardien du voile',
+      'Convocation d\'esprit supérieur',
+    ], [
+      'Esprit 3',
+      'Gardien du voile',
+      'Endommager un esprit dans le monde des morts',
+    ], [
+      'Esprit 3',
+      'Echelle d\'argent',
+      'Bouclier contre les pouvoirs des esprits',
+    ], [
+      'Esprit 3',
+      'Mysterium',
+      'Soigner un esprit',
+    ], [
+      'Esprit 3',
+      'Gardien du voile',
+      'Restaurer une âme perdue',
+    ],
+    ['LEVEL'],
+    [
+      'Esprit 4',
+      'Gardien du voile / Mysterium',
+      'Créer un objet pour y stocker de l\'essence',
+    ], [
+      'Esprit 4',
+      'Mysterium',
+      'Canalise de l\'essence d\'une source vers une autre',
+    ], [
+      'Esprit 4',
+      'Mysterium',
+      'Appel un esprit gardien pour protéger le mage',
+    ], [
+      'Esprit 4',
+      'Gardien du voile',
+      'Controler la force du Gantelet',
+    ],
+    ['LEVEL'],
+    [
+      'Esprit 5',
+      'Echelle d\'argent',
+      'Créer une nouvelle lignée d\'esprit dont le mage en est le parent',
+    ], [
+      'Esprit 5',
+      'Mysterium',
+      'Créer un sanctuaire dans le monde des esprits',
+    ],
+
+    ['SEPARATOR'],
+    [
+      'Temps 1',
+      '',
+      'Effectue une action au moment parfait, bonus sur l\'action suivante',
+    ], [
+      'Temps 1',
+      '',
+      'Vision du mage',
+    ],
+    ['LEVEL'],
+    [
+      'Temps 2',
+      'Echelle d\'argent',
+      'Entrevoi un avenir potentiel',
+    ], [
+      'Temps 2',
+      '',
+      'Regarde vers l\'avenir et entrevoie l\'issue d\'une action, avec 2 variables',
+    ], [
+      'Temps 2',
+      'Mysterium / Gardien du voile',
+      'Voir ce qu\'il s\'est passé',
+    ], [
+      'Temps 2',
+      'Gardien du voile / Echelle d\'argent',
+      'Bouclier',
+    ],
+    ['LEVEL'],
+    [
+      'Temps 3',
+      '',
+      'Boost tes capacités de vitesse et d\'actions.',
+    ], [
+      'Temps 3',
+      'Gardien du voile, Echelle d\'argent',
+      'Entrevoi un avenir potentiel, avec + de détails',
+    ], [
+      'Temps 3',
+      'Echelle d\'argent',
+      'Revenir 1 tour en arrière',
+    ],
+    ['LEVEL'],
+    [
+      'Temps 4',
+      'Echelle d\'argent / Mysterium',
+      'Ralenti une personne (defense, vitesse, anticipation)',
+    ], [
+      'Temps 4',
+      'Echelle d\'argent',
+      'Prévoir le futur proche avec grande précision',
+    ],
+    ['LEVEL'],
+    [
+      'Temps 5',
+      '',
+      'Envoyer un objet dans le futur',
+    ], [
+      'Temps 5',
+      'Echelle d\'argent',
+      'Réécrire l\'histoire',
+    ], [
+      'Temps 5',
+      '',
+      'Arrêt du temps',
+    ],
+
+    ['SEPARATOR'],
+    [
+      'Destin 1 + Espace 1 + Vie 1',
+      'Gardien du voile',
+      'Vise un être vivant à la perfection, quelque soit la distance',
+    ], [
+      'Forces 3 + Psyché 1-5',
+      '',
+      'Créé un automate magique qui peut effectuer des actions magique de Force',
+    ], [
+      'Forces 4 + Vie 4',
+      'Mysterium',
+      'Se métamorpphoser en un être d\'énergie, comme un élémentaire de feu',
+    ], [
+      'Matière 5 + Prime 3',
+      'Echelle d\'argent',
+      'Créer la matière la plus précieuse au monde, à base d\'orichalque, de lunargent et de mercure, qui brille au contact de la magie',
+    ], [
+      'Prime 2 + Espace 2',
+      '',
+      'Détecter toute utilisation de magie dans les environs',
+    ], [
+      'Espace 2 + ARCANE',
+      '',
+      'Lancer un sort à distance',
+    ], [
+      'Espace 5 + Forces 3 + Psyché 4 + temps 4',
+      'Mysterium, Gardien du voile',
+      'Efface complétement une mémoire',
+    ], [
+      'Esprit 4 + Prime 4',
+      'Mysterium',
+      'Conveti de la mana en essence et peut la donner à un esprit',
+    ], [
+      '',
+      '',
+      '',
+    ],
+
+  ];
 }

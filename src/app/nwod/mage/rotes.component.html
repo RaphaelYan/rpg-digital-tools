@@ -1,4 +1,4 @@
-Filter :
+<!-- Filter :
 
 <br>
 
@@ -19,9 +19,9 @@ Par arcane :
 <br>
 <br>
 <br>
-<br>
+<br> -->
 
-<ng-template ngFor let-order [ngForOf]="orders">
+<!-- <ng-template ngFor let-order [ngForOf]="orders">
   <ng-template [ngIf]="!selectedOrder || selectedOrder === order.value">
     <ng-template ngFor let-arcana [ngForOf]="arcanas">
       <ng-template [ngIf]="!selectedArcana || selectedArcana === arcana.value">
@@ -43,4 +43,22 @@ Par arcane :
       </ng-template>
     </ng-template>
   </ng-template>
-</ng-template>
+</ng-template> -->
+
+<table>
+  <ng-template ngFor let-spell [ngForOf]="allSpells">
+    <tr *ngIf="spell[0] === 'LEVEL'">
+      <td></td>
+      <td>----- ----- -----</td>
+      <td></td>
+    </tr>
+    <tr *ngIf="spell[0] === 'SEPARATOR'" style="height: 75px;">
+      <td></td>
+    </tr>
+    <tr *ngIf="spell[0] !== 'LEVEL' && spell[0] !== 'SEPARATOR'">
+      <td *ngFor="let item of spell">
+        {{ item }}
+      </td>
+    </tr>
+  </ng-template>
+</table>

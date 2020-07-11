@@ -15,6 +15,9 @@ const routes: Routes = [
     path: 'resumes',
     loadChildren: () => import('./resumes/resumes.module').then(m => m.ResumesModule)
   }, {
+    path: 'backgrounds',
+    loadChildren: () => import('./backgrounds/backgrounds.module').then(m => m.BackgroundsModule)
+  }, {
     path: 'proba',
     loadChildren: () => import('./proba/proba.module').then(m => m.ProbaModule)
   }, {
