@@ -23,48 +23,27 @@ Par arcane :
   Nombre de Routines : {{ spells.length }}
 </p>
 
-<!-- <ng-template ngFor let-order [ngForOf]="orders">
-  <ng-template [ngIf]="!selectedOrder || selectedOrder === order.value">
-    <ng-template ngFor let-arcana [ngForOf]="arcanas">
-      <ng-template [ngIf]="!selectedArcana || selectedArcana === arcana.value">
-        <ng-template ngFor let-nb [ngForOf]="arrayOfFive">
-          <ng-template [ngIf]="rotes[order.value][arcana.value]['rotes_' + nb]">
-            <h2>Routines rang {{ nb }} ({{ order.label }} - {{ arcana .label}})</h2>
-            <ng-template ngFor let-rote [ngForOf]="rotes[order.value][arcana.value]['rotes_' + nb]">
-              Nom : {{ rote.name }}<br>
-              Jet : {{ rote.roll }}<br>
-              <ng-template [ngIf]="rote.cost">
-                Coût : {{ rote.cost }}<br>
-              </ng-template>
-              Description : <span [innerHtml]="rote.description"></span><br>
-              Durée : {{ rote.duration }}<br>
-              <br>
-            </ng-template>
-          </ng-template>
-        </ng-template>
-      </ng-template>
-    </ng-template>
-  </ng-template>
-</ng-template> -->
-
 <table class="table table-striped">
   <thead>
     <tr>
       <th>Arcane</th>
       <th>Routine ?</th>
       <th>Description</th>
+      <th>Spécial</th>
     </tr>
   </thead>
   <tbody>
     <ng-template ngFor let-spell [ngForOf]="spells">
-      <tr *ngIf="spell[0] === 'SEPARATOR'" style="height: 75px;">
-        <td></td>
-        <td></td>
-        <td></td>
-      </tr>
-      <tr *ngIf="spell[0] !== 'LEVEL' && spell[0] !== 'SEPARATOR'">
-        <td *ngFor="let item of spell">
-          {{ item }}
+      <tr>
+        <td>{{ spell.arcana }}</td>
+        <td>{{ spell.rote }}</td>
+        <td>{{ spell.description }}</td>
+        <td class="special">
+          <span class="text-danger" *ngIf="spell.vulgar">Vulgaire</span>
+          <span class="text-success" *ngIf="spell.alreadyOwned">Possédé</span>
+          <span class="text-info" *ngIf="spell.costReduced">XP réduit</span>
+          <span class="text-primary" *ngIf="spell.costMana">1 mana</span>
+          <span class="text-warning" *ngIf="spell.rote === 'Artefact'">Artefact</span>
         </td>
       </tr>
     </ng-template>
