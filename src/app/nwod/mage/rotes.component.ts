@@ -571,6 +571,7 @@ export class NwodMageRotesComponent implements OnInit {
       arcana: 'Vie 4',
       rote: '',
       description: 'Déclenche une maladie',
+      costMana: true,
     }, {
       arcana: 'Vie 4',
       rote: 'Gardiens du voile',
