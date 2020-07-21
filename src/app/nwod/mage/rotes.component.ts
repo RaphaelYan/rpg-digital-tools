@@ -527,6 +527,11 @@ export class NwodMageRotesComponent implements OnInit {
       rote: 'Mysterium',
       description: 'Se purger des maladies',
     }, {
+      arcana: 'Vie 2',
+      rote: 'Mysterium',
+      description: 'Améliorer une compétence physique',
+      roll: 'Dextérité + Médecine + Vie',
+    }, {
       arcana: 'Vie 3',
       rote: 'Mysterium',
       description: 'Purger les autres des maladies',
@@ -1172,6 +1177,18 @@ export class NwodMageRotesComponent implements OnInit {
       arcana: 'Esprit 2',
       rote: 'Mysterium',
       description: 'Voir à travers le Gantelet',
+    }, {
+      arcana: 'Esprit 2',
+      rote: 'Mysterium',
+      description: 'Analyser un esprit pour connaitre ses forces / faiblesses / pouvoirs',
+      roll: 'Intelligence + Occulte + Esprit',
+      details: `
+<ul>
+  <li>1 = Rang + Influence majeure + ~Essence</li>
+  <li>2 = Attributs + Influences</li>
+  <li>3+ = Numina</li>
+</ul>
+      `,
     }, {
       arcana: 'Esprit 3',
       rote: 'Mysterium',
