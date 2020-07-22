@@ -5,6 +5,7 @@ import { first } from 'rxjs/operators';
 import { ActivatedRoute, Router } from '@angular/router';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { AngularFirestore } from '@angular/fire/firestore';
+import { Title } from '@angular/platform-browser';
 
 export interface Character {
   name: string;
@@ -90,7 +91,8 @@ export class NwodMageNewComponent {
     private activatedRoute: ActivatedRoute,
     private router: Router,
     public auth: AngularFireAuth,
-    afs: AngularFirestore,
+    private afs: AngularFirestore,
+    private titleService: Title,
   ) {
     this.resetSheet();
 
@@ -108,7 +110,7 @@ export class NwodMageNewComponent {
         return;
       }
 
-      this.characterDoc = afs.doc<any>('characters/' + routeParams.id); // @TODO typage
+      this.characterDoc = this.afs.doc<any>('characters/' + routeParams.id); // @TODO typage
       this.character = this.characterDoc.snapshotChanges();
 
       this.character.pipe(first()).subscribe((a) => {
@@ -210,6 +212,8 @@ export class NwodMageNewComponent {
     if (!fromReset) {
       this.saveSheet();
     }
+
+    this.titleService.setTitle('Mage - ' + this.form.name);
   }
 
   public hasManaAccess(score: number): boolean {
