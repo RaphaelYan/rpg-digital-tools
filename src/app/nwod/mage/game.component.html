@@ -7,27 +7,42 @@
 </div>
 
 <div class="row">
-  <div class="col-4" *ngFor="let player of players | async">
+  <div class="col-sm-4 col-xs-12" *ngFor="let player of players | async">
     <div class="card">
       <h2 class="text-center">{{ player.name }}</h2>
 
       <div class="col-12 text-center">Santé</div>
-      <div class="col-12">
-        <div class="box {{ box }}" *ngFor="let box of player.health; let i = index" (click)="openModal(player, player.health, i)">
+      <div class="col-12 boxes">
+        <div class="box {{ box }}" *ngFor="let box of player.health; let i = index; let last = last" (click)="openModal(player, player.health, i)">
+
+          <div class="health_malus" *ngIf="last">
+            <span>-1</span>
+            <span>-2</span>
+            <span *ngIf="!player.steel_vigor">-3</span>
+          </div>
+
         </div>
       </div>
 
       <div class="col-12 text-center">Volonté</div>
-      <div class="col-12">
+      <div class="col-12 boxes">
         <div class="box {{ box }}" *ngFor="let box of player.willpower; let i = index" (click)="toggleBox(player, player.willpower, i)">
         </div>
       </div>
 
       <div class="col-12 text-center">Mana</div>
-      <div class="col-12">
+      <div class="col-12 boxes">
         <div class="box {{ box }}" *ngFor="let box of player.mana; let i = index" (click)="toggleBox(player, player.mana, i)">
         </div>
       </div>
+
+      <ng-container *ngIf="player.destinee">
+        <div class="col-12 text-center">Destinée</div>
+        <div class="col-12 boxes">
+          <div class="box {{ box }}" *ngFor="let box of player.destinee; let i = index" (click)="toggleBox(player, player.destinee, i)">
+          </div>
+        </div>
+      </ng-container>
     </div>
   </div>
 </div>

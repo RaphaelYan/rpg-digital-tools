@@ -5,6 +5,7 @@
   display: inline-block;
   border-radius: 5px;
   cursor: pointer;
+  position: relative;
 }
 
 .box + .box {
@@ -14,4 +15,20 @@
 .modal .btn {
   min-height: 38px;
   min-width: 40px;;
+}
+
+.health_malus {
+  position: absolute;
+  right: 3px;
+  width: 70px;
+  text-align: right;
+  font-size: 12px;
+  top: 18px;
+  span + span {
+    margin-left: 12px;
+  }
+}
+
+.boxes {
+  margin-bottom: 15px;
 }
