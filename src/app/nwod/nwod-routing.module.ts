@@ -7,6 +7,7 @@ import { NwodMagePreludeComponent } from './mage/prelude.component';
 import { NwodMageLeaderComponent } from './mage/leader.component';
 import { NwodMageParadoxComponent } from './mage/paradox.component';
 import { NwodMageRotesComponent } from './mage/rotes.component';
+import { NwodMageGameComponent } from './mage/game.component';
 
 const routes: Routes = [
   {
@@ -30,6 +31,9 @@ const routes: Routes = [
   }, {
     path: 'mage/rotes',
     component:  NwodMageRotesComponent
+  }, {
+    path: 'mage/game',
+    component:  NwodMageGameComponent
   }, {
     path: 'mage/:id',
     component:  NwodMageNewComponent

@@ -1,0 +1,57 @@
+import { Component } from '@angular/core';
+import { Observable } from 'rxjs';
+import { AngularFireAuth } from '@angular/fire/auth';
+import { AngularFirestore } from '@angular/fire/firestore';
+import { Title } from '@angular/platform-browser';
+
+declare var $: any;
+
+@Component({
+  selector: 'app-nwod-mage-game',
+  templateUrl: './game.component.html',
+  styleUrls: ['./game.component.scss']
+})
+export class NwodMageGameComponent {
+  public players: Observable<any>;
+
+  private currentPlayer: any;
+  private currentBox: string[];
+  private currentIndex: number;
+
+  constructor(
+    public auth: AngularFireAuth,
+    private afs: AngularFirestore,
+    private titleService: Title,
+  ) {
+    this.titleService.setTitle('Mage - Partie en cours');
+
+    auth.authState.subscribe((user) => {
+      if (!user) {
+        window.alert('Va sur https://raphaelyan.github.io/rpg-digital-tools et connecte toi !');
+        return;
+      }
+
+      const playersCollection = this.afs.collection('game');
+      this.players = playersCollection.valueChanges();
+    });
+  }
+
+  public toggleBox(player: any, box: string[], index: number): void {
+    box[index] = box[index] === '' ? 'bg-primary' : '';
+
+    this.afs.doc('game/' + player.id).update(player);
+  }
+
+  public openModal(player: any, box: string[], index: number): void {
+    this.currentBox = box;
+    this.currentIndex = index;
+    this.currentPlayer = player;
+    $('#staticBackdrop').modal('show');
+  }
+
+  public setBox(value: string): void {
+    this.currentBox[this.currentIndex] = value;
+    this.afs.doc('game/' + this.currentPlayer.id).update(this.currentPlayer);
+    $('#staticBackdrop').modal('hide');
+  }
+}

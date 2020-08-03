@@ -1,0 +1,17 @@
+.box {
+  width: 20px;
+  height: 20px;
+  border: 2px solid black;
+  display: inline-block;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.box + .box {
+  margin-left: 5px;
+}
+
+.modal .btn {
+  min-height: 38px;
+  min-width: 40px;;
+}

@@ -8,14 +8,24 @@ import { Component } from '@angular/core';
 export class ResumesComponent {
   public resumes = [
     {
+      date: '31 Juillet 2020',
+      title: 'Les Foudres du Roi-Tonnerre - partie 17',
+      dm: 'Repié',
+    }, {
+      date: '24 Juillet 2020',
+      title: 'Mage - Le mythe de la Reine détrônée - Chapitre 2, Acte 1',
+      chars: 'Clem, Mélo, Repié',
+      pdf: 'assets/resumes/mage/mage-partie4.pdf',
+      dm: 'MaFeRyT',
+    }, {
       date: '10 Juillet 2020',
-      title: 'Mage - Le mythe de la Reine détrônée - partie 3',
+      title: 'Mage - Le mythe de la Reine détrônée - Chapitre 1, Acte 4',
       chars: 'Clem, Mélo, Repié',
       pdf: 'assets/resumes/mage/mage-partie3.pdf',
       dm: 'MaFeRyT',
     }, {
       date: '02 Juillet 2020',
-      title: 'Mage - Le mythe de la Reine détrônée - partie 2',
+      title: 'Mage - Le mythe de la Reine détrônée - Chapitre 1, Acte 2 & 3',
       chars: 'Clem, Mélo, Repié',
       pdf: 'assets/resumes/mage/mage-partie2.pdf',
       dm: 'MaFeRyT',
@@ -25,7 +35,7 @@ export class ResumesComponent {
       dm: 'Repié',
     }, {
       date: '24 Juin 2020',
-      title: 'Mage - Le mythe de la Reine détrônée - partie 1',
+      title: 'Mage - Le mythe de la Reine détrônée - Chapitre 1, Acte 1',
       chars: 'Clem, Mélo, Repié, Thamos',
       pdf: 'assets/resumes/mage/mage-partie1.pdf',
       dm: 'MaFeRyT',

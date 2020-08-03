@@ -10,6 +10,7 @@ import { NwodMagePreludeComponent } from './mage/prelude.component';
 import { NwodMageLeaderComponent } from './mage/leader.component';
 import { NwodMageParadoxComponent } from './mage/paradox.component';
 import { NwodMageRotesComponent } from './mage/rotes.component';
+import { NwodMageGameComponent } from './mage/game.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { NwodMageRotesComponent } from './mage/rotes.component';
     NwodMageLeaderComponent,
     NwodMageParadoxComponent,
     NwodMageRotesComponent,
+    NwodMageGameComponent,
   ],
   imports: [
     CommonModule,

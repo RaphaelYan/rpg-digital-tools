@@ -1,0 +1,52 @@
+<div class="row">
+  <div class="col-12">
+    <div class="box bg-success"></div> Contondant
+    <div class="box bg-warning"></div> Léthal
+    <div class="box bg-danger"></div> Aggravé
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-4" *ngFor="let player of players | async">
+    <div class="card">
+      <h2 class="text-center">{{ player.name }}</h2>
+
+      <div class="col-12 text-center">Santé</div>
+      <div class="col-12">
+        <div class="box {{ box }}" *ngFor="let box of player.health; let i = index" (click)="openModal(player, player.health, i)">
+        </div>
+      </div>
+
+      <div class="col-12 text-center">Volonté</div>
+      <div class="col-12">
+        <div class="box {{ box }}" *ngFor="let box of player.willpower; let i = index" (click)="toggleBox(player, player.willpower, i)">
+        </div>
+      </div>
+
+      <div class="col-12 text-center">Mana</div>
+      <div class="col-12">
+        <div class="box {{ box }}" *ngFor="let box of player.mana; let i = index" (click)="toggleBox(player, player.mana, i)">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="staticBackdropLabel">Modifier la case</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-light" (click)="setBox('')">Vider</button>
+        <button type="button" class="btn btn-success" (click)="setBox('bg-success')">Contondant</button>
+        <button type="button" class="btn btn-warning" (click)="setBox('bg-warning')">Léthal</button>
+        <button type="button" class="btn btn-danger" (click)="setBox('bg-danger')">Aggravé</button>
+      </div>
+    </div>
+  </div>
+</div>

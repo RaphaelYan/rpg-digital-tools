@@ -425,6 +425,7 @@ export class NwodMageRotesComponent implements OnInit {
       description: 'Devient invisible, sans besoin de rester concentrer',
       vulgar: true,
       costMana: true,
+      alreadyOwned: true,
     }, {
       arcana: 'Forces 5',
       rote : 'Mysterium',
@@ -1273,6 +1274,7 @@ export class NwodMageRotesComponent implements OnInit {
       arcana: 'Temps 2',
       rote: 'Mysterium / Gardiens du voile',
       description: 'Voir ce qu\'il s\'est passé',
+      alreadyOwned: true,
     }, {
       arcana: 'Temps 2',
       rote: 'Gardiens du voile / Echelle d\'argent',
@@ -1377,6 +1379,7 @@ export class NwodMageRotesComponent implements OnInit {
       rote: 'Artefact',
       description: 'Capacité étrange de l\'artefact, sans que cela déchire l\'âme du mage',
       costMana: true,
+      alreadyOwned: true,
     }
   ];
 
