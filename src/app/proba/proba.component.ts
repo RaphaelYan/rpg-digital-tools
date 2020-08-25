@@ -8,7 +8,7 @@ import { Component } from '@angular/core';
 export class ProbaComponent {
   public playerFrom = -1;
   public playerTo = 7;
-  public dcFrom = 8;
+  public dcFrom = 10;
   public dcTo = 20;
   public tableNormal;
   public tableAdvantage;

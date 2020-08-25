@@ -1,14 +1,11 @@
 <ul class="side-nav" [class.fixed]="toggleSideMenu">
-  <li routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}" (click)="toggleSideMenu = false" *ngFor="let menu of menus">
-    <a [routerLink]="menu.url">{{ menu.title }}</a>
-  </li>
-
-  <!-- @TODO -->
-  <!-- <li class="nav-bottom">
-    <ul>
-      <li (click)="logout()"><a>Déconnexion</a></li>
-    </ul>
-  </li> -->
+  <ng-template ngFor let-menu [ngForOf]="menus">
+    <li *ngIf="menu.separator" class="separator">
+    </li>
+    <li routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}" (click)="toggleSideMenu = false" *ngIf="!menu.separator">
+      <a [routerLink]="menu.url">{{ menu.title }}</a>
+    </li>
+  </ng-template>
 </ul>
 <div class="menu-icon"[class.is-closed]="!toggleSideMenu" [class.is-opened]="toggleSideMenu" (click)="toggleSideMenu = !toggleSideMenu">
   <span></span>

@@ -1,8 +1,5 @@
 import { Component } from '@angular/core';
 
-// @TODO
-// import { AuthService } from '../../common/services';
-
 @Component({
   selector: 'app-side-nav',
   styleUrls: [ './side-nav.component.scss' ],
@@ -15,34 +12,34 @@ export class SideNavComponent {
       title: 'Accueil',
       url: ''
     }, {
-      title: 'D&D 5 Builder',
+      separator: true
+    }, {
+      title: 'D&D 5 - Builder',
       url: '/dd-builder'
     }, {
-      title: 'D&D 5 Règles custom',
+      title: 'D&D 5 - Règles custom',
       url: '/dd-rules'
     }, {
-      title: 'Init',
+      title: 'D&D 5 - Init',
       url: '/init'
+    }, {
+      title: 'D&D 5 - Probas',
+      url: '/proba'
+    }, {
+      separator: true
+    }, {
+      title: 'Chronicles of Darkness',
+      url: '/nwod'
+    }, {
+      separator: true
     }, {
       title: 'Résumés des partie',
       url: '/resumes'
     }, {
-      title: 'D&D 5 Probas',
-      url: '/proba'
+      separator: true
     }, {
       title: 'Escape games',
       url: '/escape'
-    }, {
-      title: 'Chronicles of Darkness',
-      url: '/nwod'
     }
   ];
-
-  // constructor(private auth: AuthService) {
-  // }
-
-  // @TODO
-  // public logout() {
-  //   this.auth.signOut();
-  // }
 }
