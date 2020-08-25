@@ -22,6 +22,7 @@
         <div class="date">{{ resume.date }}</div>
 
         <a *ngIf="resume.pdf" [attr.href]="resume.pdf" target="_blank">Résumé ici</a>
+        <a *ngIf="resume.youtube" [attr.href]="resume.youtube" target="_blank">Replay vidéo ici</a>
       </div>
       <div class="col-sm">
         <div>{{ resume.title }}</div>

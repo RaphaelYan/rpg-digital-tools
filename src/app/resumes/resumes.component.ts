@@ -8,6 +8,12 @@ import { Component } from '@angular/core';
 export class ResumesComponent {
   public resumes = [
     {
+      date: '22 Août 2020',
+      title: 'Les Foudres du Roi-Tonnerre - partie 18',
+      chars: 'Clem, Mélo, Raph, Coran, Rémi',
+      dm: 'Repié',
+      youtube: 'https://www.youtube.com/watch?v=6inn_M5hEfY'
+    }, {
       date: '31 Juillet 2020',
       title: 'Les Foudres du Roi-Tonnerre - partie 17',
       dm: 'Repié',
@@ -17,18 +23,21 @@ export class ResumesComponent {
       chars: 'Clem, Mélo, Repié',
       pdf: 'assets/resumes/mage/mage-partie4.pdf',
       dm: 'MaFeRyT',
+      youtube: 'https://youtu.be/YMjRM-vSruQ'
     }, {
       date: '10 Juillet 2020',
       title: 'Mage - Le mythe de la Reine détrônée - Chapitre 1, Acte 4',
       chars: 'Clem, Mélo, Repié',
       pdf: 'assets/resumes/mage/mage-partie3.pdf',
       dm: 'MaFeRyT',
+      youtube: 'https://youtu.be/6n4SyGCa1Ko'
     }, {
       date: '02 Juillet 2020',
       title: 'Mage - Le mythe de la Reine détrônée - Chapitre 1, Acte 2 & 3',
       chars: 'Clem, Mélo, Repié',
       pdf: 'assets/resumes/mage/mage-partie2.pdf',
       dm: 'MaFeRyT',
+      youtube: 'https://youtu.be/AFDfhlr0PrQ'
     }, {
       date: '26 Juin 2020',
       title: 'Les Foudres du Roi-Tonnerre - partie 16',
@@ -39,6 +48,7 @@ export class ResumesComponent {
       chars: 'Clem, Mélo, Repié, Thamos',
       pdf: 'assets/resumes/mage/mage-partie1.pdf',
       dm: 'MaFeRyT',
+      youtube: 'https://youtu.be/XgmJegM8bcE'
     }, {
       date: '12 Juin 2020',
       title: 'Les Foudres du Roi-Tonnerre - partie 15',
@@ -48,6 +58,7 @@ export class ResumesComponent {
       title: 'Initiation au Monde des Ténèbres',
       chars: 'Jean, Repié, Thamos, Roro, Rémi',
       dm: 'MaFeRyT',
+      youtube: 'https://youtu.be/JHuRavxKhN8'
     }, {
       date: '30 Mai 2020',
       title: 'Les Foudres du Roi-Tonnerre - partie 14',
