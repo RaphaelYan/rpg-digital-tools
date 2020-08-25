@@ -17,6 +17,7 @@ export class ResumesComponent {
       date: '31 Juillet 2020',
       title: 'Les Foudres du Roi-Tonnerre - partie 17',
       dm: 'Repié',
+      youtube: 'https://www.youtube.com/watch?v=NQFjC5tNnkU&feature=youtu.be'
     }, {
       date: '24 Juillet 2020',
       title: 'Mage - Le mythe de la Reine détrônée - Chapitre 2, Acte 1',
