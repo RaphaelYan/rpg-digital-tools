@@ -16,12 +16,6 @@ export class EscapeComponent {
       slug: 'avenue',
       difficulty: 1,
       cards: ['tuto', 'init', '8', '11', '15', '22', '25', '30', '37', '42', '43', '44', '52', '58', '66', '73', '86', '88', '92', 'C', 'F', 'G', 'H', 'R', 'V', 'W']
-    // Celui là n'est pas super en ligne :
-    // }, {
-    //   title: 'Le donjon de Doo-Arann',
-    //   slug: 'donjon-doo-arann',
-    //   difficulty: 2,
-    //   cards: ['intro', 'init', '18', '21', '22', '24', '29', '31', '39', '43', '46', '48', '50', '60', '64', '68', '73', '78', '82', '84', '88', '92', '94']
     }, {
       title: 'L\'élite',
       slug: 'elite',
