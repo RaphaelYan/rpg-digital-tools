@@ -33,7 +33,7 @@ export class SideNavComponent {
     }, {
       separator: true
     }, {
-      title: 'Résumés des partie',
+      title: 'Résumés des parties',
       url: '/resumes'
     }, {
       separator: true
