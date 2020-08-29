@@ -110,7 +110,7 @@ export class NwodMageNewComponent {
         return;
       }
 
-      this.characterDoc = this.afs.doc<any>('characters/' + routeParams.id); // @TODO typage
+      this.characterDoc = this.afs.doc<any>('characters/' + routeParams.id);
       this.character = this.characterDoc.snapshotChanges();
 
       this.character.pipe(first()).subscribe((a) => {

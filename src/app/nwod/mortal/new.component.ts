@@ -60,7 +60,7 @@ export class NwodMortalNewComponent {
     'subterfuge'
   ];
 
-  public debug: boolean = false; // @TODO TMP
+  public debug: boolean = false;
 
   constructor() {
     this.resetSheet();

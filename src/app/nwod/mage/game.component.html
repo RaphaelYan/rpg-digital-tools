@@ -9,7 +9,12 @@
 <div class="row">
   <div class="col-sm-4 col-xs-12" *ngFor="let player of players | async">
     <div class="card">
-      <h2 class="text-center">{{ player.name }}</h2>
+      <h2 class="text-center">
+        {{ player.name }}
+        <ng-template [ngIf]="hasAccessToSheet(player)">
+          (<a [attr.href]="'/nwod/mage/' + player.ownerUrl" target="_blank">lien</a>)
+        </ng-template>
+      </h2>
 
       <div class="col-12 text-center">Santé</div>
       <div class="col-12 boxes">
@@ -45,6 +50,15 @@
       </ng-container>
     </div>
   </div>
+</div>
+
+<div class="row">
+  <div class="col-6 offset-3">
+    <div [innerHtml]="(text | async)?.text"></div>
+  </div>
+
+  <textarea *ngIf="isAdmin()" class="col-6 offset-3" rows="5" [ngModel]="currentText" (ngModelChange)="updateText($event)">
+  </textarea>
 </div>
 
 <div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">

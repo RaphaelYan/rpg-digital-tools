@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
 import { Observable } from 'rxjs';
 import { AngularFireAuth } from '@angular/fire/auth';
-import { AngularFirestore } from '@angular/fire/firestore';
+import { AngularFirestore, AngularFirestoreDocument } from '@angular/fire/firestore';
 import { Title } from '@angular/platform-browser';
+import { first } from 'rxjs/operators';
 
 declare var $: any;
 
@@ -13,10 +14,14 @@ declare var $: any;
 })
 export class NwodMageGameComponent {
   public players: Observable<any>;
+  public currentUser: any;
+  public text: Observable<any>;
+  public currentText: string;
 
   private currentPlayer: any;
   private currentBox: string[];
   private currentIndex: number;
+  private textDoc: AngularFirestoreDocument<any>;
 
   constructor(
     public auth: AngularFireAuth,
@@ -31,8 +36,17 @@ export class NwodMageGameComponent {
         return;
       }
 
+      this.currentUser = user;
+
       const playersCollection = this.afs.collection('game');
       this.players = playersCollection.valueChanges();
+
+      this.textDoc = this.afs.doc<any>('texts/mage-2');
+      this.text = this.textDoc.valueChanges();
+
+      this.text.pipe(first()).subscribe((a) => {
+        this.currentText = a.text;
+      });
     });
   }
 
@@ -53,5 +67,17 @@ export class NwodMageGameComponent {
     this.currentBox[this.currentIndex] = value;
     this.afs.doc('game/' + this.currentPlayer.id).update(this.currentPlayer);
     $('#staticBackdrop').modal('hide');
+  }
+
+  public hasAccessToSheet(player: any): boolean {
+    return this.currentUser.uid === player.ownerUid || this.isAdmin();
+  }
+
+  public isAdmin(): boolean {
+    return this.currentUser && this.currentUser.email === 'maferyt@gmail.com';
+  }
+
+  public updateText(text: string) {
+    this.textDoc.update({ text });
   }
 }
