@@ -17,6 +17,7 @@ export class NwodMageGameComponent {
   public currentUser: any;
   public text: Observable<any>;
   public currentText: string;
+  public staticData = [];
 
   private currentPlayer: any;
   private currentBox: string[];
@@ -40,6 +41,9 @@ export class NwodMageGameComponent {
 
       const playersCollection = this.afs.collection('game');
       this.players = playersCollection.valueChanges();
+      this.players.pipe(first()).subscribe((a) => {
+        this.staticData = a;
+      });
 
       this.textDoc = this.afs.doc<any>('texts/mage-2');
       this.text = this.textDoc.valueChanges();
@@ -77,7 +81,11 @@ export class NwodMageGameComponent {
     return this.currentUser && this.currentUser.email === 'maferyt@gmail.com';
   }
 
-  public updateText(text: string) {
+  public updateText(text: string): void {
     this.textDoc.update({ text });
+  }
+
+  public updatePlayerText(player: any, text: string): void {
+    this.afs.doc('game/' + player.id).update({ text});
   }
 }

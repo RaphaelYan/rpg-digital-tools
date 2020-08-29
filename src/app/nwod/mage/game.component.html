@@ -53,11 +53,26 @@
 </div>
 
 <div class="row">
-  <div class="col-6 offset-3">
-    <div [innerHtml]="(text | async)?.text"></div>
+  <div class="col-6" [class.offset-3]="!isAdmin()">
+    <h2>Notes du DM</h2>
+    <div class="notes" [innerHtml]="(text | async)?.text"></div>
   </div>
+  <textarea *ngIf="isAdmin()" class="col-6" rows="5" [ngModel]="currentText" (ngModelChange)="updateText($event)">
+  </textarea>
+</div>
 
-  <textarea *ngIf="isAdmin()" class="col-6 offset-3" rows="5" [ngModel]="currentText" (ngModelChange)="updateText($event)">
+<div class="row">
+  <div class="col-sm-4 col-xs-12" *ngFor="let player of players | async; let i = index">
+    <h2>Notes de {{ player.name }}</h2>
+    <div class="notes" [innerHtml]="player.text"></div>
+  </div>
+</div>
+<div class="row">
+  <textarea *ngIf="staticData[0] && hasAccessToSheet(staticData[0])" class="col-12" rows="5" [(ngModel)]="staticData[0].text" (ngModelChange)="updatePlayerText(staticData[0], $event)">
+  </textarea>
+  <textarea *ngIf="staticData[1] && hasAccessToSheet(staticData[1])" class="col-12" rows="5" [(ngModel)]="staticData[1].text" (ngModelChange)="updatePlayerText(staticData[1], $event)">
+  </textarea>
+  <textarea *ngIf="staticData[2] && hasAccessToSheet(staticData[2])" class="col-12" rows="5" [(ngModel)]="staticData[2].text" (ngModelChange)="updatePlayerText(staticData[2], $event)">
   </textarea>
 </div>
 
