@@ -7,7 +7,7 @@
 </div>
 
 <div class="row">
-  <div class="col-sm-4 col-xs-12" *ngFor="let player of players | async">
+  <div class="col-sm-3 col-xs-12" *ngFor="let player of players | async">
     <div class="card">
       <h2 class="text-center">
         {{ player.name }}
@@ -62,7 +62,7 @@
 </div>
 
 <div class="row">
-  <div class="col-sm-4 col-xs-12" *ngFor="let player of players | async; let i = index">
+  <div class="col-sm-3 col-xs-12" *ngFor="let player of players | async; let i = index">
     <h2>Notes de {{ player.name }}</h2>
     <div class="notes" [innerHtml]="player.text"></div>
   </div>
@@ -73,6 +73,8 @@
   <textarea *ngIf="staticData[1] && hasAccessToSheet(staticData[1])" class="col-12" rows="5" [(ngModel)]="staticData[1].text" (ngModelChange)="updatePlayerText(staticData[1], $event)">
   </textarea>
   <textarea *ngIf="staticData[2] && hasAccessToSheet(staticData[2])" class="col-12" rows="5" [(ngModel)]="staticData[2].text" (ngModelChange)="updatePlayerText(staticData[2], $event)">
+  </textarea>
+  <textarea *ngIf="staticData[3] && hasAccessToSheet(staticData[3])" class="col-12" rows="5" [(ngModel)]="staticData[3].text" (ngModelChange)="updatePlayerText(staticData[3], $event)">
   </textarea>
 </div>
 
