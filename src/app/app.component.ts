@@ -78,7 +78,9 @@ export class AppComponent implements OnInit {
         return;
       }
 
-      this.logUserAction();
+      setTimeout(() => {
+        this.logUserAction();
+      }, 1000);
     });
   }
 
