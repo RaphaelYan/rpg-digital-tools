@@ -1,11 +1,15 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, ErrorHandler } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SideNavComponent } from './components/side-nav/side-nav.component';
 import { AngularFireModule } from '@angular/fire';
+
+import { HttpClientModule } from '@angular/common/http';
+
+import { SentryErrorHandler, initSentry } from './sentry';
 
 import { environment } from '../environments/environment';
 
@@ -18,9 +22,16 @@ import { environment } from '../environments/environment';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    AngularFireModule.initializeApp(environment.firebase)
+    AngularFireModule.initializeApp(environment.firebase),
+    HttpClientModule,
   ],
-  providers: [],
+  providers: [
+    { provide: ErrorHandler, useClass: SentryErrorHandler },
+  ],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+  constructor() {
+    initSentry();
+  }
+}

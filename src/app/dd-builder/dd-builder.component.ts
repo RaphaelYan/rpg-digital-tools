@@ -29,6 +29,8 @@ export class DdBuilderComponent implements AfterViewInit {
   };
 
   ngAfterViewInit() {
+    let aze = this.mode['aze']['qsd'];
+    aze = 42;
     $('#select-race').change(this.onSelectRace.bind(this));
     $('[data-toggle="tooltip"]').tooltip();
   }
