@@ -425,7 +425,6 @@ export class NwodMageRotesComponent implements OnInit {
       description: 'Devient invisible, sans besoin de rester concentrer',
       vulgar: true,
       costMana: true,
-      alreadyOwned: true,
     }, {
       arcana: 'Forces 5',
       rote : 'Mysterium',
