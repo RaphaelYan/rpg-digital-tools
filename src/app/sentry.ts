@@ -9,6 +9,10 @@ const beforeSend = (event: any, hint: any) => {
 };
 
 export function initSentry() {
+  if (!environment.production) {
+    return;
+  }
+
   Sentry.init({
     dsn: 'https://a06fcd68143b41588286bf0e86dd55ff@o443697.ingest.sentry.io/5417793',
     integrations: [
