@@ -19,6 +19,7 @@ export interface Character {
   styleUrls: ['./new.component.scss']
 })
 export class NwodMageNewComponent {
+  public infosDisplayed: boolean = false;
   public form: any = {
     skillRotes: {},
     merits: {}

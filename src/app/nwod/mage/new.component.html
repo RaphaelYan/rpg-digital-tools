@@ -1,4 +1,6 @@
-<div class="row" [hidden]="displayPrintMode">
+<button type="button" class="btn btn-primary" (click)="infosDisplayed = !infosDisplayed" [hidden]="displayPrintMode">{{ infosDisplayed ? 'Cacher' : 'Afficher' }} infos</button>
+
+<div class="row" [hidden]="displayPrintMode || !infosDisplayed">
   <div class="col-12 col-sm-6">
     <h2>Etape 1</h2>
     <ul>
@@ -108,9 +110,9 @@
   </div>
 </div>
 
-<hr [hidden]="displayPrintMode">
+<hr [hidden]="displayPrintMode || !infosDisplayed">
 
-<div class="row" [hidden]="displayPrintMode">
+<div class="row" [hidden]="displayPrintMode || !infosDisplayed">
   <div class="col-12 col-sm-4">
     <h4>Attributs</h4>
     <ul>
