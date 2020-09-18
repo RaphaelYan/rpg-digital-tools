@@ -276,7 +276,8 @@
      ></div>
   </ng-template>
 
-  <ng-template ngFor let-score [ngForOf]="arrayOfTen">
+  <ng-template ngFor let-score [ngForOf]="arrayOfTen" let-index="index">
+    <input type="text" [attr.name]="'morality_' + index" [(ngModel)]="form['morality_' + index]" (ngModelChange)="formChanged()" [class.small]="form['morality_' + index] && form['morality_' + index].length > 80">
     <div [class.filled]="form.morality >= score"
          (click)="clickDot('morality', score)"
          class="dot morality-{{score}}"
