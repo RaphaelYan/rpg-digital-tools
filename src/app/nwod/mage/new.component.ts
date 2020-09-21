@@ -1,11 +1,12 @@
 import { Component } from '@angular/core';
-import { AngularFirestoreDocument } from '@angular/fire/firestore';
 import { Observable } from 'rxjs';
 import { first } from 'rxjs/operators';
 import { ActivatedRoute, Router } from '@angular/router';
 import { AngularFireAuth } from '@angular/fire/auth';
-import { AngularFirestore } from '@angular/fire/firestore';
+import { AngularFirestore, AngularFirestoreCollection, AngularFirestoreDocument } from '@angular/fire/firestore';
 import { Title } from '@angular/platform-browser';
+import { map } from 'rxjs/operators';
+import { environment } from '../../../environments/environment';
 
 export interface Character {
   name: string;
@@ -20,6 +21,11 @@ export interface Character {
 })
 export class NwodMageNewComponent {
   public infosDisplayed: boolean = false;
+
+  public resumesDisplayed: boolean = false;
+  public resumesCollection: AngularFirestoreCollection<any>;
+  public resumes: Observable<any[]>;
+
   public form: any = {
     skillRotes: {},
     merits: {}
@@ -118,6 +124,22 @@ export class NwodMageNewComponent {
         this.form = Object.assign(this.form, a.payload.data());
         this.formChanged();
       });
+
+      this.resumesCollection = afs.collection<any>('resumes', (ref) => {
+        return ref.where('character', '==', routeParams.id)
+          .orderBy('timestamp', 'desc');
+      });
+      this.resumes = this.resumesCollection.snapshotChanges().pipe(
+        map(actions => actions.map(a => {
+          const data = a.payload.doc.data() as any;
+          const id = a.payload.doc.id;
+          const date = new Date(data['timestamp']);
+
+          const timestampStr = date.getDate() + '/' + (1 + date.getMonth());
+          const resumeUrl = `${environment.baseUrl}resumes/${id}`;
+          return { id, timestampStr, resumeUrl, ...data };
+        }))
+      );
     });
   }
 

@@ -1,5 +1,6 @@
 export const environment = {
   production: true,
+  baseUrl: 'https://raphaelyan.github.io/rpg-digital-tools/',
   firebase: {
     apiKey: 'AIzaSyDdpDIFSxmlqRuPuGwy3Hp0cNFG5dzmVhU',
     authDomain: 'rpg-digital-tools.firebaseapp.com',

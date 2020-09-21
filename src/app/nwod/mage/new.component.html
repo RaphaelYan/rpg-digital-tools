@@ -145,6 +145,18 @@
 
 <hr [hidden]="displayPrintMode">
 
+<button type="button" class="btn btn-primary" (click)="resumesDisplayed = !resumesDisplayed" [hidden]="displayPrintMode">{{ resumesDisplayed ? 'Cacher' : 'Afficher' }} résumés</button>
+
+<ul [hidden]="displayPrintMode || !resumesDisplayed">
+  <li *ngFor="let resume of resumes | async">
+    <a [attr.href]="resume.resumeUrl" target="_blank">
+      {{ resume.title }} ({{ resume.timestampStr }})
+    </a>
+  </li>
+</ul>
+
+<hr [hidden]="displayPrintMode">
+
 <button type="button" (click)="debug = !debug" [hidden]="displayPrintMode">toggle DEBUG mode</button>
 <button type="button" (click)="eraseSheet()" [hidden]="displayPrintMode">Reset sheet</button>
 <button type="button" (click)="printMode()" [hidden]="displayPrintMode">Print mode</button>
