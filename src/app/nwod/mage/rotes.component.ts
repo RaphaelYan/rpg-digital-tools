@@ -794,7 +794,7 @@ export class NwodMageRotesComponent implements OnInit {
     {},
     {
       arcana: 'Psyché 1',
-      rote: 'Echelle d\'argent',
+      rote: 'Echelle d\'argent / Conseil Libre',
       description: 'Discener l\'état émotionnel d\'une personne',
     }, {
       arcana: 'Psyché 1',
