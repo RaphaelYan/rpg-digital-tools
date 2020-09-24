@@ -13,6 +13,7 @@ export class NwodMageRotesComponent implements OnInit {
     'Gardiens du voile',
     'Mysterium',
     'Echelle d\'argent',
+    'Conseil Libre',
   ];
   public arcanas = [
     'Destin',
@@ -170,7 +171,11 @@ export class NwodMageRotesComponent implements OnInit {
     },
     {},
     {
-      arcana: 'Destin 1',
+      arcana: 'Destin 1', // Winds of Chance
+      rote: 'Conseil Libre', // Wits + Subterfuge + Fate
+      description: 'Attire un léger vent de chance',
+    }, {
+      arcana: 'Destin 1', // Quantum Flux
       rote: 'Mysterium',
       description: 'Réduit les malus en se concentrant',
     }, {
@@ -178,7 +183,12 @@ export class NwodMageRotesComponent implements OnInit {
       rote: 'Mysterium / Gawain',
       description: 'Vision du mage',
       costReduced: true,
-    },  {
+    }, {
+      arcana: 'Destin 2', // Shifting the Odds
+      rote: 'Conseil Libre', // Wits + Subterfuge + Fate
+      description: 'Attire une bonne fortune',
+      // Wits + Occult or Sci- ence + Fate
+    }, {
       arcana: 'Destin 2',
       rote: '',
       description: 'Relance les dés sur 9+',
@@ -193,10 +203,11 @@ export class NwodMageRotesComponent implements OnInit {
       rote: 'Gardiens du voile',
       description: 'Bouclier',
     },  {
-      arcana: 'Destin 3',
-      rote: '',
+      arcana: 'Destin 3', // Bestow Exceptional Luck
+      rote: 'Conseil Libre',
       description: 'Donner à quelqun la relance de dés sur 9+',
       costMana: true,
+      // Manipulation + Persuasion + Fate
     },  {
       arcana: 'Destin 3',
       rote: 'Mysterium',
@@ -791,10 +802,11 @@ export class NwodMageRotesComponent implements OnInit {
       description: 'Détecter les conciensce autour de soi',
       alreadyOwned: true,
     }, {
-      arcana: 'Psyché 1',
-      rote: 'Gardiens du voile',
+      arcana: 'Psyché 1', // Third Eye
+      rote: 'Gardiens du voile / Conseil Libre',
       description: 'Vision du mage',
       alreadyOwned: true,
+      // Wits + Empathy + Mind
     }, {
       arcana: 'Psyché 2',
       rote: 'Gardiens du voile / Echelle d\'argent',
@@ -1253,10 +1265,11 @@ export class NwodMageRotesComponent implements OnInit {
       description: 'Effectue une action au moment parfait, bonus sur l\'action suivante',
       costMana: true,
     }, {
-      arcana: 'Temps 1',
-      rote: 'Gawain',
+      arcana: 'Temps 1', // Temporal Eddies
+      rote: 'Gawain / Conseil Libre',
       description: 'Vision du mage',
       costReduced: true,
+      // Wits + Investigation + Time
     }, {
       arcana: 'Temps 2',
       rote: 'Echelle d\'argent / Gawain',
@@ -1266,9 +1279,10 @@ export class NwodMageRotesComponent implements OnInit {
       costMana: true,
     }, {
       arcana: 'Temps 2',
-      rote: '',
+      rote: 'Conseil Libre',
       description: 'Regarde vers l\'avenir et entrevoie l\'issue d\'une action, avec 2 variables',
       costMana: true,
+      // Wits + Investigation + Time
     }, {
       arcana: 'Temps 2',
       rote: 'Mysterium / Gardiens du voile',
