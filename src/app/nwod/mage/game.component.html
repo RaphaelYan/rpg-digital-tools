@@ -12,9 +12,9 @@
     <div class="card" *ngIf="player.displayed">
       <h2 class="text-center">
         {{ player.name }}
-        <ng-template [ngIf]="hasAccessToSheet(player)">
+        <ng-container *ngIf="player.ownerUrl && hasAccessToSheet(player)">
           (<a [attr.href]="'https://raphaelyan.github.io/rpg-digital-tools/nwod/mage/' + player.ownerUrl" target="_blank">lien</a>)
-        </ng-template>
+        </ng-container>
       </h2>
 
       <div class="col-12 text-center">Santé</div>
@@ -36,11 +36,13 @@
         </div>
       </div>
 
-      <div class="col-12 text-center">Mana</div>
-      <div class="col-12 boxes">
-        <div class="box {{ box }}" *ngFor="let box of player.mana; let i = index" (click)="toggleBox(player, player.mana, i)">
+      <ng-container *ngIf="player.mana">
+        <div class="col-12 text-center">Mana</div>
+        <div class="col-12 boxes">
+          <div class="box {{ box }}" *ngFor="let box of player.mana; let i = index" (click)="toggleBox(player, player.mana, i)">
+          </div>
         </div>
-      </div>
+      </ng-container>
 
       <ng-container *ngIf="player.destinee">
         <div class="col-12 text-center">Destinée</div>
@@ -48,6 +50,13 @@
           <div class="box {{ box }}" *ngFor="let box of player.destinee; let i = index" (click)="toggleBox(player, player.destinee, i)">
           </div>
         </div>
+      </ng-container>
+
+      <ng-container *ngIf="player.bonus">
+        <div class="col-12 text-center">Bonus</div>
+        <ul>
+          <li *ngFor="let bonus of player.bonus">{{ bonus }}</li>
+        </ul>
       </ng-container>
     </div>
   </div>
