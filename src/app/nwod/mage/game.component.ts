@@ -88,4 +88,8 @@ export class NwodMageGameComponent {
   public updatePlayerText(player: any, text: string): void {
     this.afs.doc('game/' + player.id).update({ text});
   }
+
+  public togglePlayer(player): void {
+    this.afs.doc('game/' + player.id).update({ displayed: !player.displayed});
+  }
 }
