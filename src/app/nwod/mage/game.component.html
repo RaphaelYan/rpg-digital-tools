@@ -78,13 +78,21 @@
   </div>
 </div>
 <div class="row">
-  <textarea *ngIf="staticData[0] && hasAccessToSheet(staticData[0])" class="col-12" rows="5" [(ngModel)]="staticData[0].text" (ngModelChange)="updatePlayerText(staticData[0], $event)">
+  <textarea *ngIf="staticData[0] && staticData[0].displayed && hasAccessToSheet(staticData[0])" class="col-12" rows="5" [(ngModel)]="staticData[0].text" (ngModelChange)="updatePlayerText(staticData[0], $event)">
   </textarea>
-  <textarea *ngIf="staticData[1] && hasAccessToSheet(staticData[1])" class="col-12" rows="5" [(ngModel)]="staticData[1].text" (ngModelChange)="updatePlayerText(staticData[1], $event)">
+  <textarea *ngIf="staticData[1] && staticData[1].displayed && hasAccessToSheet(staticData[1])" class="col-12" rows="5" [(ngModel)]="staticData[1].text" (ngModelChange)="updatePlayerText(staticData[1], $event)">
   </textarea>
-  <textarea *ngIf="staticData[2] && hasAccessToSheet(staticData[2])" class="col-12" rows="5" [(ngModel)]="staticData[2].text" (ngModelChange)="updatePlayerText(staticData[2], $event)">
+  <textarea *ngIf="staticData[2] && staticData[2].displayed && hasAccessToSheet(staticData[2])" class="col-12" rows="5" [(ngModel)]="staticData[2].text" (ngModelChange)="updatePlayerText(staticData[2], $event)">
   </textarea>
-  <textarea *ngIf="staticData[3] && hasAccessToSheet(staticData[3])" class="col-12" rows="5" [(ngModel)]="staticData[3].text" (ngModelChange)="updatePlayerText(staticData[3], $event)">
+  <textarea *ngIf="staticData[3] && staticData[3].displayed && hasAccessToSheet(staticData[3])" class="col-12" rows="5" [(ngModel)]="staticData[3].text" (ngModelChange)="updatePlayerText(staticData[3], $event)">
+  </textarea>
+  <textarea *ngIf="staticData[4] && hasAccessToSheet(staticData[4])" class="col-12" rows="5" [(ngModel)]="staticData[4].text" (ngModelChange)="updatePlayerText(staticData[4], $event)">
+  </textarea>
+  <textarea *ngIf="staticData[5] && hasAccessToSheet(staticData[5])" class="col-12" rows="5" [(ngModel)]="staticData[5].text" (ngModelChange)="updatePlayerText(staticData[5], $event)">
+  </textarea>
+  <textarea *ngIf="staticData[6] && hasAccessToSheet(staticData[6])" class="col-12" rows="5" [(ngModel)]="staticData[6].text" (ngModelChange)="updatePlayerText(staticData[6], $event)">
+  </textarea>
+  <textarea *ngIf="staticData[7] && hasAccessToSheet(staticData[7])" class="col-12" rows="5" [(ngModel)]="staticData[7].text" (ngModelChange)="updatePlayerText(staticData[7], $event)">
   </textarea>
 </div>
 
