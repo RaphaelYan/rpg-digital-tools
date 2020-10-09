@@ -8,10 +8,17 @@ import { Component } from '@angular/core';
 export class ResumesComponent {
   public resumes = [
     {
+      date: '7 Octobre 2020',
+      title: 'Mage - Le mythe de la Reine détrônée - Chapitre 3, Acte 1',
+      chars: 'Clem, Mélo, Repié, Amandine',
+      // pdf: 'assets/resumes/mage/mage-partie7.pdf',
+      dm: 'MaFeRyT',
+      youtube: 'https://youtu.be/BWWIw13X6B8'
+    }, {
       date: '4 Septembre 2020',
       title: 'Mage - Le mythe de la Reine détrônée - Chapitre 2, Acte 2 (fin)',
       chars: 'Clem, Mélo, Repié, Amandine',
-      // pdf: 'assets/resumes/mage/mage-partie5.pdf',
+      // pdf: 'assets/resumes/mage/mage-partie6.pdf',
       dm: 'MaFeRyT',
       youtube: 'https://youtu.be/TacmyAtL-p0'
     }, {
