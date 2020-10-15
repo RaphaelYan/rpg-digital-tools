@@ -32,6 +32,7 @@ export class ResumesComponent {
       date: '22 Août 2020',
       title: 'Les Foudres du Roi-Tonnerre - partie 18',
       chars: 'Clem, Mélo, Raph, Coran, Rémi',
+      pdf: 'https://homebrewery.naturalcrit.com/share/1vWTPZeO-QyI',
       dm: 'Repié',
       youtube: 'https://www.youtube.com/watch?v=6inn_M5hEfY'
     }, {
