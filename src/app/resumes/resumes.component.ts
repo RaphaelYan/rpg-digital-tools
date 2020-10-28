@@ -11,9 +11,9 @@ export class ResumesComponent {
       date: '24 Octobre 2020',
       title: 'Mage - Le mythe de la Reine détrônée - Chapitre 3, Acte 3',
       chars: 'Clem, Mélo, Repié, Amandine',
-      pdf: 'https://raphaelyan.github.io/rpg-digital-tools/resumes/chapitre3-acte32',
+      pdf: 'https://raphaelyan.github.io/rpg-digital-tools/resumes/chapitre3-acte3',
       dm: 'MaFeRyT',
-      // youtube: 'https://youtu.be/gqZHtEucA80'
+      youtube: 'https://youtu.be/gB593DX4bMQ'
     }, {
       date: '16 Octobre 2020',
       title: 'Mage - Le mythe de la Reine détrônée - Chapitre 3, Acte 2',
