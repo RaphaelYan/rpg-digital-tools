@@ -8,6 +8,13 @@ import { Component } from '@angular/core';
 export class ResumesComponent {
   public resumes = [
     {
+      date: '24 Octobre 2020',
+      title: 'Mage - Le mythe de la Reine détrônée - Chapitre 3, Acte 3',
+      chars: 'Clem, Mélo, Repié, Amandine',
+      pdf: 'https://raphaelyan.github.io/rpg-digital-tools/resumes/chapitre3-acte32',
+      dm: 'MaFeRyT',
+      // youtube: 'https://youtu.be/gqZHtEucA80'
+    }, {
       date: '16 Octobre 2020',
       title: 'Mage - Le mythe de la Reine détrônée - Chapitre 3, Acte 2',
       chars: 'Clem, Mélo, Repié, Amandine',
