@@ -40,6 +40,11 @@ export class SideNavComponent {
     }, {
       title: 'Escape games',
       url: '/escape'
+    }, {
+      separator: true
+    }, {
+      title: 'WOW Auctions',
+      url: '/auctions'
     }
   ];
 }

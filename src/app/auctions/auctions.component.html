@@ -1,0 +1,11 @@
+<ngx-charts-line-chart
+  *ngIf="auctions"
+  [view]="[1000, 500]"
+  [legend]="true"
+  [xAxis]="true"
+  [yAxis]="true"
+  [timeline]="true"
+  [results]="auctions"
+  [yAxisTickFormatting]="yLeftTickFormat"
+  >
+</ngx-charts-line-chart>
