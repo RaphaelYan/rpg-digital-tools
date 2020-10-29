@@ -2,6 +2,9 @@
   <div class="col-12">
     <div class="notes" [innerHtml]="(text | async)?.text"></div>
   </div>
-  <textarea *ngIf="isAdmin()" class="col-12" rows="5" [ngModel]="currentText" (ngModelChange)="updateText($event)">
+  <textarea *ngIf="isAdmin()" class="col-12" rows="5" [(ngModel)]="currentText">
   </textarea>
+  <button *ngIf="isAdmin()" type="button" class="col-12 btn-primary" (click)="updateText(currentText)">
+    Sauvegarder
+  </button>
 </div>
