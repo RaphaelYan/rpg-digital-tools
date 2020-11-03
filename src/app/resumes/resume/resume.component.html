@@ -1,6 +1,6 @@
 <div class="row">
   <div class="col-12">
-    <div class="notes" [innerHtml]="(text | async)?.text"></div>
+    <div class="notes" [innerHtml]="((text | async)?.text) | sanitize"></div>
   </div>
   <textarea *ngIf="isAdmin()" class="col-12" rows="5" [(ngModel)]="currentText">
   </textarea>
