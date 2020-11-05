@@ -32,6 +32,11 @@
 .boxes {
   margin-bottom: 15px;
 }
+.boxes-mana {
+  max-width: 210px !important;
+  margin-left: auto;
+  margin-right: auto;
+}
 
 .notes {
   border: 1px solid;
@@ -45,4 +50,8 @@
     margin: 0 -50px;
     display: block;
   }
+}
+
+textarea {
+  line-height: 30px;
 }

@@ -18,6 +18,7 @@ export class NwodMageGameComponent {
   public text: Observable<any>;
   public currentText: string;
   public staticData = [];
+  public showInput: boolean = false;
 
   private currentPlayer: any;
   private currentBox: string[];
@@ -74,7 +75,7 @@ export class NwodMageGameComponent {
   }
 
   public hasAccessToSheet(player: any): boolean {
-    return this.currentUser.uid === player.ownerUid || this.isAdmin();
+    return this.currentUser && this.currentUser.uid === player.ownerUid || this.isAdmin();
   }
 
   public isAdmin(): boolean {
@@ -82,14 +83,12 @@ export class NwodMageGameComponent {
   }
 
   public updateText(text: string): void {
+    this.showInput = !this.showInput;
     this.textDoc.update({ text });
   }
 
   public updatePlayerText(player: any, text: string): void {
+    player.showInput = !player.showInput;
     this.afs.doc('game/' + player.id).update({ text});
-  }
-
-  public togglePlayer(player): void {
-    this.afs.doc('game/' + player.id).update({ displayed: !player.displayed});
   }
 }

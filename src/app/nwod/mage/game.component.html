@@ -8,15 +8,16 @@
 
 <div class="row">
   <div class="col-sm-3 col-xs-12" *ngFor="let player of players | async">
-    <div class="card" *ngIf="player.displayed">
-      <h2 class="text-center">
+    <div class="card text-center">
+      <h2>
+        <div class="box" style="background-color:{{player.color}}"></div>
         {{ player.name }}
         <ng-container *ngIf="player.ownerUrl && hasAccessToSheet(player)">
           (<a [attr.href]="'https://raphaelyan.github.io/rpg-digital-tools/nwod/mage/' + player.ownerUrl" target="_blank">lien</a>)
         </ng-container>
       </h2>
 
-      <div class="col-12 text-center">Santé</div>
+      <div class="col-12">Santé</div>
       <div class="col-12 boxes">
         <div class="box {{ box }}" *ngFor="let box of player.health; let i = index; let last = last" (click)="openModal(player, player.health, i)">
 
@@ -29,7 +30,7 @@
         </div>
       </div>
 
-      <div class="col-12 text-center">Volonté</div>
+      <div class="col-12">Volonté</div>
       <div class="col-12 boxes">
         <div class="box {{ box }}" *ngFor="let box of player.willpower; let i = index" (click)="toggleBox(player, player.willpower, i)">
         </div>
@@ -37,14 +38,14 @@
 
       <ng-container *ngIf="player.mana">
         <div class="col-12 text-center">Mana</div>
-        <div class="col-12 boxes">
+        <div class="col-12 boxes boxes-mana">
           <div class="box {{ box }}" *ngFor="let box of player.mana; let i = index" (click)="toggleBox(player, player.mana, i)">
           </div>
         </div>
       </ng-container>
 
       <ng-container *ngIf="player.destinee">
-        <div class="col-12 text-center">Destinée</div>
+        <div class="col-12">Destinée</div>
         <div class="col-12 boxes">
           <div class="box {{ box }}" *ngFor="let box of player.destinee; let i = index" (click)="toggleBox(player, player.destinee, i)">
           </div>
@@ -52,47 +53,55 @@
       </ng-container>
 
       <ng-container *ngIf="player.bonus">
-        <div class="col-12 text-center">Bonus</div>
+        <div class="col-12">Bonus</div>
         <ul>
           <li *ngFor="let bonus of player.bonus">{{ bonus }}</li>
         </ul>
       </ng-container>
+
+      <div class="col-12">Sorts Actifs</div>
+      <div class="col-12" *ngIf="isAdmin()">
+        <i>Actif max = {{ player.spells_max }} / Sur soi = {{ player.spells_self }}</i>
+      </div>
+      <ng-container *ngFor="let spell of player.active_spells">
+        - spell
+      </ng-container>
+
+      <div class="col-12 mb-3" *ngIf="!player.active_spells.length">Aucun !</div>
     </div>
   </div>
 </div>
 
 <div class="row">
-  <div [class.col-12]="!isAdmin()" [class.col-6]="isAdmin()">
+  <div class="col-12">
     <h2>Notes du DM</h2>
-    <div class="notes" [innerHtml]="(text | async)?.text"></div>
+
+    <div [hidden]="isAdmin() && showInput">
+      <button class="btn btn-primary btn-block mb-1 btn-sm" *ngIf="isAdmin()" (click)="showInput = !showInput">Editer</button>
+      <div class="notes" [innerHtml]="(text | async)?.text"></div>
+    </div>
+    <div [hidden]="!isAdmin() || (isAdmin() && !showInput)">
+      <button class="btn btn-success btn-block mb-1 btn-sm" *ngIf="isAdmin()" (click)="updateText(currentText)">Enregistrer</button>
+      <textarea class="col-12" rows="10" [(ngModel)]="currentText">
+      </textarea>
+    </div>
   </div>
-  <textarea *ngIf="isAdmin()" class="col-6" rows="5" [ngModel]="currentText" (ngModelChange)="updateText($event)">
-  </textarea>
 </div>
 
 <div class="row">
-  <div class="col-sm-3 col-xs-12" *ngFor="let player of players | async; let i = index" [hidden]="!player.displayed">
+  <div class="col-sm-3 col-xs-12" *ngFor="let player of players | async; let i = index">
     <h2>Notes de {{ player.name }}</h2>
-    <div class="notes" [innerHtml]="player.text"></div>
+
+    <div [hidden]="hasAccessToSheet(player) && player.showInput">
+      <button class="btn btn-primary btn-block mb-1 btn-sm" *ngIf="hasAccessToSheet(player)" (click)="player.showInput = !player.showInput">Editer</button>
+      <div class="notes" [innerHtml]="player.text"></div>
+    </div>
+    <div [hidden]="!hasAccessToSheet(player) || (hasAccessToSheet(player) && !player.showInput)">
+      <button class="btn btn-success btn-block mb-1 btn-sm" *ngIf="hasAccessToSheet(player)" (click)="updatePlayerText(player, player.text)">Enregistrer</button>
+      <textarea class="col-12" rows="10" [(ngModel)]="player.text">
+      </textarea>
+    </div>
   </div>
-</div>
-<div class="row">
-  <textarea *ngIf="staticData[0] && staticData[0].displayed && hasAccessToSheet(staticData[0])" class="col-12" rows="5" [(ngModel)]="staticData[0].text" (ngModelChange)="updatePlayerText(staticData[0], $event)">
-  </textarea>
-  <textarea *ngIf="staticData[1] && staticData[1].displayed && hasAccessToSheet(staticData[1])" class="col-12" rows="5" [(ngModel)]="staticData[1].text" (ngModelChange)="updatePlayerText(staticData[1], $event)">
-  </textarea>
-  <textarea *ngIf="staticData[2] && staticData[2].displayed && hasAccessToSheet(staticData[2])" class="col-12" rows="5" [(ngModel)]="staticData[2].text" (ngModelChange)="updatePlayerText(staticData[2], $event)">
-  </textarea>
-  <textarea *ngIf="staticData[3] && staticData[3].displayed && hasAccessToSheet(staticData[3])" class="col-12" rows="5" [(ngModel)]="staticData[3].text" (ngModelChange)="updatePlayerText(staticData[3], $event)">
-  </textarea>
-  <textarea *ngIf="staticData[4] && hasAccessToSheet(staticData[4])" class="col-12" rows="5" [(ngModel)]="staticData[4].text" (ngModelChange)="updatePlayerText(staticData[4], $event)">
-  </textarea>
-  <textarea *ngIf="staticData[5] && hasAccessToSheet(staticData[5])" class="col-12" rows="5" [(ngModel)]="staticData[5].text" (ngModelChange)="updatePlayerText(staticData[5], $event)">
-  </textarea>
-  <textarea *ngIf="staticData[6] && hasAccessToSheet(staticData[6])" class="col-12" rows="5" [(ngModel)]="staticData[6].text" (ngModelChange)="updatePlayerText(staticData[6], $event)">
-  </textarea>
-  <textarea *ngIf="staticData[7] && hasAccessToSheet(staticData[7])" class="col-12" rows="5" [(ngModel)]="staticData[7].text" (ngModelChange)="updatePlayerText(staticData[7], $event)">
-  </textarea>
 </div>
 
 <div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
