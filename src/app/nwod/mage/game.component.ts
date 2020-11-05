@@ -19,8 +19,12 @@ export class NwodMageGameComponent {
   public currentText: string;
   public staticData = [];
   public showInput: boolean = false;
+  public currentPlayer: any;
+  public formSpell = {
+    name: '',
+    color: ''
+  };
 
-  private currentPlayer: any;
   private currentBox: string[];
   private currentIndex: number;
   private textDoc: AngularFirestoreDocument<any>;
@@ -68,6 +72,13 @@ export class NwodMageGameComponent {
     $('#staticBackdrop').modal('show');
   }
 
+  public openSpellsModal(player: any): void {
+    this.currentPlayer = player;
+    this.formSpell.color = player.color;
+
+    $('#staticSpellsBackdrop').modal('show');
+  }
+
   public setBox(value: string): void {
     this.currentBox[this.currentIndex] = value;
     this.afs.doc('game/' + this.currentPlayer.id).update(this.currentPlayer);
@@ -89,6 +100,24 @@ export class NwodMageGameComponent {
 
   public updatePlayerText(player: any, text: string): void {
     player.showInput = !player.showInput;
-    this.afs.doc('game/' + player.id).update({ text});
+    this.afs.doc('game/' + player.id).update({ text });
+  }
+
+  public addSpell(): void {
+    const activeSpells = this.currentPlayer.active_spells;
+    activeSpells.push(this.formSpell);
+    this.afs.doc('game/' + this.currentPlayer.id).update({ active_spells: activeSpells });
+
+    $('#staticSpellsBackdrop').modal('hide');
+    this.formSpell = {
+      name: '',
+      color: ''
+    };
+  }
+
+  public removeSpell(index: number): void {
+    const activeSpells = this.currentPlayer.active_spells;
+    activeSpells.splice(index, 1);
+    this.afs.doc('game/' + this.currentPlayer.id).update({ active_spells: activeSpells });
   }
 }

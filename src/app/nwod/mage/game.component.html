@@ -60,14 +60,18 @@
       </ng-container>
 
       <div class="col-12">Sorts Actifs</div>
-      <div class="col-12" *ngIf="isAdmin()">
+      <div class="col-12" *ngIf="hasAccessToSheet(player)">
         <i>Actif max = {{ player.spells_max }} / Sur soi = {{ player.spells_self }}</i>
       </div>
       <ng-container *ngFor="let spell of player.active_spells">
-        - spell
+        <div>
+          <div class="box" style="background-color:{{spell.color}}"></div>
+          {{ spell.name }}
+        </div>
       </ng-container>
 
       <div class="col-12 mb-3" *ngIf="!player.active_spells.length">Aucun !</div>
+      <button type="button" class="btn btn-outline-primary mb-3 btn-sm" *ngIf="hasAccessToSheet(player)" (click)="openSpellsModal(player)">Editer</button>
     </div>
   </div>
 </div>
@@ -77,11 +81,11 @@
     <h2>Notes du DM</h2>
 
     <div [hidden]="isAdmin() && showInput">
-      <button class="btn btn-primary btn-block mb-1 btn-sm" *ngIf="isAdmin()" (click)="showInput = !showInput">Editer</button>
+      <button type="button" class="btn btn-outline-primary btn-block mb-1 btn-sm" *ngIf="isAdmin()" (click)="showInput = !showInput">Editer</button>
       <div class="notes" [innerHtml]="(text | async)?.text"></div>
     </div>
     <div [hidden]="!isAdmin() || (isAdmin() && !showInput)">
-      <button class="btn btn-success btn-block mb-1 btn-sm" *ngIf="isAdmin()" (click)="updateText(currentText)">Enregistrer</button>
+      <button type="button" class="btn btn-success btn-block mb-1 btn-sm" *ngIf="isAdmin()" (click)="updateText(currentText)">Enregistrer</button>
       <textarea class="col-12" rows="10" [(ngModel)]="currentText">
       </textarea>
     </div>
@@ -93,11 +97,11 @@
     <h2>Notes de {{ player.name }}</h2>
 
     <div [hidden]="hasAccessToSheet(player) && player.showInput">
-      <button class="btn btn-primary btn-block mb-1 btn-sm" *ngIf="hasAccessToSheet(player)" (click)="player.showInput = !player.showInput">Editer</button>
+      <button type="button" class="btn btn-outline-primary btn-block mb-1 btn-sm" *ngIf="hasAccessToSheet(player)" (click)="player.showInput = !player.showInput">Editer</button>
       <div class="notes" [innerHtml]="player.text"></div>
     </div>
     <div [hidden]="!hasAccessToSheet(player) || (hasAccessToSheet(player) && !player.showInput)">
-      <button class="btn btn-success btn-block mb-1 btn-sm" *ngIf="hasAccessToSheet(player)" (click)="updatePlayerText(player, player.text)">Enregistrer</button>
+      <button type="button" class="btn btn-success btn-block mb-1 btn-sm" *ngIf="hasAccessToSheet(player)" (click)="updatePlayerText(player, player.text)">Enregistrer</button>
       <textarea class="col-12" rows="10" [(ngModel)]="player.text">
       </textarea>
     </div>
@@ -118,6 +122,46 @@
         <button type="button" class="btn btn-success" (click)="setBox('bg-success')">Contondant</button>
         <button type="button" class="btn btn-warning" (click)="setBox('bg-warning')">Léthal</button>
         <button type="button" class="btn btn-danger" (click)="setBox('bg-danger')">Aggravé</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="staticSpellsBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="staticBackdropLabel">Modifier les sorts actifs</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body" *ngIf="currentPlayer">
+        <ng-container *ngFor="let spell of currentPlayer.active_spells; let i = index">
+          <div class="text-center">
+            <div class="box" style="background-color:{{spell.color}}"></div>
+            {{ spell.name }}
+            <button type="button" class="btn btn-danger" (click)="removeSpell(i)">X</button>
+          </div>
+        </ng-container>
+
+        <hr *ngIf="currentPlayer.active_spells.length">
+
+        <div class="form-group">
+          <label for="spell-name">Nom du sort</label>
+          <input type="text" class="form-control" id="spell-name" placeholder="Nom du sort ..." [(ngModel)]="formSpell.name">
+        </div>
+        <div class="form-group">
+          <label for="spell-target">Sur qui ?</label>
+          <select class="form-control" id="spell-target" [(ngModel)]="formSpell.color">
+            <option *ngFor="let player of staticData" [value]="player.color">
+              {{ player.name }}
+            </option>
+            <option value="#000000">Autre</option>
+          </select>
+        </div>
+
+        <button type="button" class="btn btn-success" (click)="addSpell()">Ajouter</button>
       </div>
     </div>
   </div>
