@@ -15,7 +15,12 @@ export class ResumesComponent {
       dm: 'MaFeRyT',
       youtube: 'https://youtu.be/gB593DX4bMQ'
     }, {
-      date: '16 Octobre 2020',
+      date: '17 Octobre 2020',
+      title: 'Les Foudres du Roi-Tonnerre - partie 19',
+      chars: 'Clem, Mélo, Raph, Coran, Rémi, Thamos',
+      dm: 'Repié'
+    }, {
+      date: '15 Octobre 2020',
       title: 'Mage - Le mythe de la Reine détrônée - Chapitre 3, Acte 2',
       chars: 'Clem, Mélo, Repié, Amandine',
       pdf: 'https://raphaelyan.github.io/rpg-digital-tools/resumes/chapitre3-acte2',
