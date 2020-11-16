@@ -8,6 +8,12 @@ import { Component } from '@angular/core';
 export class ResumesComponent {
   public resumes = [
     {
+      date: '13 Novembre 2020',
+      title: 'Les Foudres du Roi-Tonnerre - partie 20',
+      chars: 'Clem, Mélo, Raph, Coran',
+      dm: 'Repié',
+      youtube: 'https://www.youtube.com/watch?v=3wPZv7a8Qkk'
+    }, {
       date: '24 Octobre 2020',
       title: 'Mage - Le mythe de la Reine détrônée - Chapitre 3, Acte 3',
       chars: 'Clem, Mélo, Repié, Amandine',
@@ -18,7 +24,8 @@ export class ResumesComponent {
       date: '17 Octobre 2020',
       title: 'Les Foudres du Roi-Tonnerre - partie 19',
       chars: 'Clem, Mélo, Raph, Coran, Rémi, Thamos',
-      dm: 'Repié'
+      dm: 'Repié',
+      youtube: 'https://www.youtube.com/watch?v=Fedof_5Cwqs'
     }, {
       date: '15 Octobre 2020',
       title: 'Mage - Le mythe de la Reine détrônée - Chapitre 3, Acte 2',

@@ -60,6 +60,10 @@ export class NwodMageGameComponent {
   }
 
   public toggleBox(player: any, box: string[], index: number): void {
+    if (box[index] === 'bg-danger') {
+      return;
+    }
+
     box[index] = box[index] === '' ? 'bg-primary' : '';
 
     this.afs.doc('game/' + player.id).update(player);
