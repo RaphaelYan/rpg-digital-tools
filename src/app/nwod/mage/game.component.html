@@ -72,6 +72,7 @@
 
       <div class="col-12 mb-3" *ngIf="!player.active_spells.length">Aucun !</div>
       <button type="button" class="btn btn-outline-primary mb-3 btn-sm" *ngIf="hasAccessToSheet(player)" (click)="openSpellsModal(player)">Editer</button>
+      <button type="button" class="btn btn-outline-primary mb-3 btn-sm" *ngIf="isAdmin()" (click)="resetSpells(player)">Reset</button>
     </div>
   </div>
 </div>

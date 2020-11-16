@@ -124,4 +124,8 @@ export class NwodMageGameComponent {
     activeSpells.splice(index, 1);
     this.afs.doc('game/' + this.currentPlayer.id).update({ active_spells: activeSpells });
   }
+
+  public resetSpells(player: any): void {
+    this.afs.doc('game/' + player.id).update({ active_spells: [] });
+  }
 }
