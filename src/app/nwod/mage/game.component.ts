@@ -107,6 +107,11 @@ export class NwodMageGameComponent {
     this.afs.doc('game/' + player.id).update({ text });
   }
 
+  public updatePlayerPrivateText(player: any, privateText: string): void {
+    player.showPrivateInput = !player.showPrivateInput;
+    this.afs.doc('game/' + player.id).update({ privateText });
+  }
+
   public addSpell(): void {
     const activeSpells = this.currentPlayer.active_spells;
     activeSpells.push(this.formSpell);

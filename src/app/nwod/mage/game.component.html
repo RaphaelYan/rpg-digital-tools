@@ -94,6 +94,7 @@
 </div>
 
 <div class="row">
+  <!-- PUBLIC NOTES -->
   <div class="col-sm-3 col-xs-12" *ngFor="let player of players | async; let i = index">
     <h2>Notes de {{ player.name }}</h2>
 
@@ -107,6 +108,25 @@
       </textarea>
     </div>
   </div>
+</div>
+
+<div class="row">
+  <!-- PRIVATE NOTES -->
+  <ng-container *ngFor="let player of players | async; let i = index">
+    <div [class.col-sm-12]="!isAdmin()" [class.col-sm-3]="isAdmin()" *ngIf="hasAccessToSheet(player)">
+      <h2>Tes notes privées</h2>
+
+      <div [hidden]="player.showPrivateInput">
+        <button type="button" class="btn btn-outline-primary btn-block mb-1 btn-sm" (click)="player.showPrivateInput = !player.showPrivateInput">Editer</button>
+        <div class="notes" [innerHtml]="player.privateText"></div>
+      </div>
+      <div [hidden]="!player.showPrivateInput">
+        <button type="button" class="btn btn-success btn-block mb-1 btn-sm" (click)="updatePlayerPrivateText(player, player.privateText)">Enregistrer</button>
+        <textarea class="col-12" rows="10" [(ngModel)]="player.privateText">
+        </textarea>
+      </div>
+    </div>
+  </ng-container>
 </div>
 
 <div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
