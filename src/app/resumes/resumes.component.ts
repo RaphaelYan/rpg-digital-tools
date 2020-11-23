@@ -8,6 +8,16 @@ import { Component } from '@angular/core';
 export class ResumesComponent {
   public resumes = [
     {
+<<<<<<< HEAD
+=======
+      date: '19 Novembre 2020',
+      title: 'Mage - Le mythe de la Reine détrônée - Chapitre 4, Acte 1',
+      chars: 'Clem, Mélo, Repié, Amandine',
+      pdf: 'https://raphaelyan.github.io/rpg-digital-tools/resumes/chapitre4-acte1',
+      dm: 'MaFeRyT',
+      youtube: 'https://youtu.be/_x3NUIWAeNg'
+    }, {
+>>>>>>> aze
       date: '13 Novembre 2020',
       title: 'Les Foudres du Roi-Tonnerre - partie 20',
       chars: 'Clem, Mélo, Raph, Coran',
