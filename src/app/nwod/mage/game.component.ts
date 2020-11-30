@@ -102,13 +102,13 @@ export class NwodMageGameComponent {
     this.textDoc.update({ text });
   }
 
-  public updatePlayerText(player: any, text: string): void {
-    player.showInput = !player.showInput;
+  public updatePlayerText(player: any, text: string, i: number): void {
+    this.staticData[i].showInput = !this.staticData[i].showInput;
     this.afs.doc('game/' + player.id).update({ text });
   }
 
-  public updatePlayerPrivateText(player: any, privateText: string): void {
-    player.showPrivateInput = !player.showPrivateInput;
+  public updatePlayerPrivateText(player: any, privateText: string, i: number): void {
+    this.staticData[i].showPrivateInput = !this.staticData[i].showPrivateInput;
     this.afs.doc('game/' + player.id).update({ privateText });
   }
 

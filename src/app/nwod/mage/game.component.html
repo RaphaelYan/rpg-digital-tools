@@ -98,13 +98,13 @@
   <div class="col-sm-3 col-xs-12" *ngFor="let player of players | async; let i = index">
     <h2>Notes de {{ player.name }}</h2>
 
-    <div [hidden]="hasAccessToSheet(player) && player.showInput">
-      <button type="button" class="btn btn-outline-primary btn-block mb-1 btn-sm" *ngIf="hasAccessToSheet(player)" (click)="player.showInput = !player.showInput">Editer</button>
+    <div [hidden]="hasAccessToSheet(player) && staticData[i].showInput">
+      <button type="button" class="btn btn-outline-primary btn-block mb-1 btn-sm" *ngIf="hasAccessToSheet(player)" (click)="staticData[i].showInput = !staticData[i].showInput">Editer</button>
       <div class="notes" [innerHtml]="player.text"></div>
     </div>
-    <div [hidden]="!hasAccessToSheet(player) || (hasAccessToSheet(player) && !player.showInput)">
-      <button type="button" class="btn btn-success btn-block mb-1 btn-sm" *ngIf="hasAccessToSheet(player)" (click)="updatePlayerText(player, player.text)">Enregistrer</button>
-      <textarea class="col-12" rows="10" [(ngModel)]="player.text">
+    <div [hidden]="!hasAccessToSheet(player) || (hasAccessToSheet(player) && !staticData[i].showInput)">
+      <button type="button" class="btn btn-success btn-block mb-1 btn-sm" *ngIf="hasAccessToSheet(player)" (click)="updatePlayerText(player, staticData[i].text, i)">Enregistrer</button>
+      <textarea class="col-12" rows="10" [(ngModel)]="staticData[i].text">
       </textarea>
     </div>
   </div>
@@ -116,13 +116,13 @@
     <div [class.col-sm-12]="!isAdmin()" [class.col-sm-3]="isAdmin()" *ngIf="hasAccessToSheet(player)">
       <h2>Tes notes privées</h2>
 
-      <div [hidden]="player.showPrivateInput">
-        <button type="button" class="btn btn-outline-primary btn-block mb-1 btn-sm" (click)="player.showPrivateInput = !player.showPrivateInput">Editer</button>
+      <div [hidden]="staticData[i].showPrivateInput">
+        <button type="button" class="btn btn-outline-primary btn-block mb-1 btn-sm" (click)="staticData[i].showPrivateInput = !staticData[i].showPrivateInput">Editer</button>
         <div class="notes" [innerHtml]="player.privateText"></div>
       </div>
-      <div [hidden]="!player.showPrivateInput">
-        <button type="button" class="btn btn-success btn-block mb-1 btn-sm" (click)="updatePlayerPrivateText(player, player.privateText)">Enregistrer</button>
-        <textarea class="col-12" rows="10" [(ngModel)]="player.privateText">
+      <div [hidden]="!staticData[i].showPrivateInput">
+        <button type="button" class="btn btn-success btn-block mb-1 btn-sm" (click)="updatePlayerPrivateText(player, staticData[i].privateText, i)">Enregistrer</button>
+        <textarea class="col-12" rows="10" [(ngModel)]="staticData[i].privateText">
         </textarea>
       </div>
     </div>
