@@ -26,6 +26,9 @@ export class SideNavComponent {
       title: 'D&D 5 - Probas',
       url: '/proba'
     }, {
+      title: 'D&D 5 - Spells',
+      url: '/dd-spells'
+    }, {
       separator: true
     }, {
       title: 'Chronicles of Darkness',
@@ -47,4 +50,8 @@ export class SideNavComponent {
       url: '/auctions'
     }
   ];
+
+  public hideMenu(): void {
+    this.toggleSideMenu = false;
+  }
 }

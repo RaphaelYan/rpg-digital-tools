@@ -2,7 +2,7 @@
   <ng-template ngFor let-menu [ngForOf]="menus">
     <li *ngIf="menu.separator" class="separator">
     </li>
-    <li routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}" (click)="toggleSideMenu = false" *ngIf="!menu.separator">
+    <li routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}" (click)="hideMenu()" *ngIf="!menu.separator">
       <a [routerLink]="menu.url">{{ menu.title }}</a>
     </li>
   </ng-template>
