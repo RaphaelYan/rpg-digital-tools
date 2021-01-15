@@ -8,113 +8,131 @@ import { Component } from '@angular/core';
 export class ResumesComponent {
   public resumes = [
     {
+      date: '15 Janvier 2021',
+      title: 'Les Foudres du Roi-Tonnerre - partie 22',
+      chars: 'Clem, Coran, Mélo, Raph, Rémi, Thamos, Tommy',
+      dm: 'Repié',
+      // youtube: '',
+    }, {
       date: '09 Janvier 2021',
       title: 'Mage - Le mythe de la Reine détrônée - Chapitre 4, Acte 4',
       chars: 'Clem, Mélo, Repié, Amandine',
       pdf: 'https://raphaelyan.github.io/rpg-digital-tools/resumes/chapitre4-acte4',
       dm: 'MaFeRyT',
-      youtube: 'https://youtu.be/o6ZskoIPsR4'
+      youtube: 'https://youtu.be/o6ZskoIPsR4',
     }, {
       date: '10 Décembre 2020',
       title: 'Mage - Le mythe de la Reine détrônée - Chapitre 4, Acte 3',
       chars: 'Repié',
       pdf: 'assets/resumes/mage/chapitre4-acte3.pdf',
       dm: 'MaFeRyT',
-      youtube: 'https://youtu.be/BP70XUmsoqU'
+      youtube: 'https://youtu.be/BP70XUmsoqU',
     }, {
       date: '05 Décembre 2020',
       title: 'Mage - Le mythe de la Reine détrônée - Chapitre 4, Acte 2',
       chars: 'Clem, Mélo, Repié, Amandine',
       pdf: 'https://raphaelyan.github.io/rpg-digital-tools/resumes/chapitre4-acte2',
       dm: 'MaFeRyT',
-      youtube: 'https://youtu.be/VzqCrysfMYo'
+      youtube: 'https://youtu.be/VzqCrysfMYo',
+    }, {
+      date: '28 Novembre 2020',
+      title: 'Les Foudres du Roi-Tonnerre - partie 21',
+      chars: 'Clem, Mélo, Raph, Rémi, Thamos, Tommy',
+      dm: 'Repié',
+      // youtube: '',
+    }, {
+      date: '25 Novembre 2020',
+      title: 'Tales of Felgia - Session 5',
+      chars: 'Ba\'Hekin, Charles de Rasseau, Karli\'ah, Lobor, Nessira, Skenris',
+      pdf: 'https://www.notion.so/Session-5-8460712ed3f84318a8fcddeb007bbd80',
+      dm: 'Clem',
     }, {
       date: '19 Novembre 2020',
       title: 'Mage - Le mythe de la Reine détrônée - Chapitre 4, Acte 1',
       chars: 'Clem, Mélo, Repié, Amandine',
       pdf: 'https://raphaelyan.github.io/rpg-digital-tools/resumes/chapitre4-acte1',
       dm: 'MaFeRyT',
-      youtube: 'https://youtu.be/_x3NUIWAeNg'
+      youtube: 'https://youtu.be/_x3NUIWAeNg',
     }, {
       date: '13 Novembre 2020',
       title: 'Les Foudres du Roi-Tonnerre - partie 20',
       chars: 'Clem, Mélo, Raph, Coran',
       dm: 'Repié',
-      youtube: 'https://www.youtube.com/watch?v=3wPZv7a8Qkk'
+      youtube: 'https://www.youtube.com/watch?v=3wPZv7a8Qkk',
     }, {
       date: '24 Octobre 2020',
       title: 'Mage - Le mythe de la Reine détrônée - Chapitre 3, Acte 3',
       chars: 'Clem, Mélo, Repié, Amandine',
       pdf: 'https://raphaelyan.github.io/rpg-digital-tools/resumes/chapitre3-acte3',
       dm: 'MaFeRyT',
-      youtube: 'https://youtu.be/gB593DX4bMQ'
+      youtube: 'https://youtu.be/gB593DX4bMQ',
     }, {
       date: '17 Octobre 2020',
       title: 'Les Foudres du Roi-Tonnerre - partie 19',
       chars: 'Clem, Mélo, Raph, Coran, Rémi, Thamos',
       dm: 'Repié',
-      youtube: 'https://www.youtube.com/watch?v=Fedof_5Cwqs'
+      youtube: 'https://www.youtube.com/watch?v=Fedof_5Cwqs',
     }, {
       date: '15 Octobre 2020',
       title: 'Mage - Le mythe de la Reine détrônée - Chapitre 3, Acte 2',
       chars: 'Clem, Mélo, Repié, Amandine',
       pdf: 'https://raphaelyan.github.io/rpg-digital-tools/resumes/chapitre3-acte2',
       dm: 'MaFeRyT',
-      youtube: 'https://youtu.be/gqZHtEucA80'
+      youtube: 'https://youtu.be/gqZHtEucA80',
     }, {
       date: '7 Octobre 2020',
       title: 'Mage - Le mythe de la Reine détrônée - Chapitre 3, Acte 1',
       chars: 'Clem, Mélo, Repié, Amandine',
       pdf: 'https://raphaelyan.github.io/rpg-digital-tools/resumes/chapitre3-acte1',
       dm: 'MaFeRyT',
-      youtube: 'https://youtu.be/BWWIw13X6B8'
+      youtube: 'https://youtu.be/BWWIw13X6B8',
     }, {
       date: '4 Septembre 2020',
       title: 'Mage - Le mythe de la Reine détrônée - Chapitre 2, Acte 2 (fin)',
       chars: 'Clem, Mélo, Repié, Amandine',
       // pdf: 'assets/resumes/mage/mage-partie6.pdf',
       dm: 'MaFeRyT',
-      youtube: 'https://youtu.be/TacmyAtL-p0'
+      youtube: 'https://youtu.be/TacmyAtL-p0',
     }, {
       date: '29 Août 2020',
       title: 'Mage - Le mythe de la Reine détrônée - Chapitre 2, Acte 2',
       chars: 'Clem, Mélo, Repié',
       // pdf: 'assets/resumes/mage/mage-partie5.pdf',
       dm: 'MaFeRyT',
-      youtube: 'https://youtu.be/3CTqD_1XLTU'
+      youtube: 'https://youtu.be/3CTqD_1XLTU',
     }, {
       date: '22 Août 2020',
       title: 'Les Foudres du Roi-Tonnerre - partie 18',
       chars: 'Clem, Mélo, Raph, Coran, Rémi',
       pdf: 'https://homebrewery.naturalcrit.com/share/1vWTPZeO-QyI',
       dm: 'Repié',
-      youtube: 'https://www.youtube.com/watch?v=6inn_M5hEfY'
+      youtube: 'https://www.youtube.com/watch?v=6inn_M5hEfY',
     }, {
       date: '31 Juillet 2020',
       title: 'Les Foudres du Roi-Tonnerre - partie 17',
       dm: 'Repié',
-      youtube: 'https://www.youtube.com/watch?v=NQFjC5tNnkU&feature=youtu.be'
+      youtube: 'https://www.youtube.com/watch?v=NQFjC5tNnkU&feature=youtu.be',
     }, {
       date: '24 Juillet 2020',
       title: 'Mage - Le mythe de la Reine détrônée - Chapitre 2, Acte 1',
       chars: 'Clem, Mélo, Repié',
       pdf: 'assets/resumes/mage/mage-partie4.pdf',
       dm: 'MaFeRyT',
-      youtube: 'https://youtu.be/YMjRM-vSruQ'
+      youtube: 'https://youtu.be/YMjRM-vSruQ',
     }, {
       date: '10 Juillet 2020',
       title: 'Mage - Le mythe de la Reine détrônée - Chapitre 1, Acte 4',
       chars: 'Clem, Mélo, Repié',
       pdf: 'assets/resumes/mage/mage-partie3.pdf',
       dm: 'MaFeRyT',
-      youtube: 'https://youtu.be/6n4SyGCa1Ko'
+      youtube: 'https://youtu.be/6n4SyGCa1Ko',
     }, {
       date: '02 Juillet 2020',
       title: 'Mage - Le mythe de la Reine détrônée - Chapitre 1, Acte 2 & 3',
       chars: 'Clem, Mélo, Repié',
       pdf: 'assets/resumes/mage/mage-partie2.pdf',
       dm: 'MaFeRyT',
-      youtube: 'https://youtu.be/AFDfhlr0PrQ'
+      youtube: 'https://youtu.be/AFDfhlr0PrQ',
     }, {
       date: '26 Juin 2020',
       title: 'Les Foudres du Roi-Tonnerre - partie 16',
@@ -125,7 +143,7 @@ export class ResumesComponent {
       chars: 'Clem, Mélo, Repié, Thamos',
       pdf: 'assets/resumes/mage/mage-partie1.pdf',
       dm: 'MaFeRyT',
-      youtube: 'https://youtu.be/XgmJegM8bcE'
+      youtube: 'https://youtu.be/XgmJegM8bcE',
     }, {
       date: '12 Juin 2020',
       title: 'Les Foudres du Roi-Tonnerre - partie 15',
@@ -135,7 +153,7 @@ export class ResumesComponent {
       title: 'Initiation au Monde des Ténèbres',
       chars: 'Jean, Repié, Thamos, Roro, Rémi',
       dm: 'MaFeRyT',
-      youtube: 'https://youtu.be/JHuRavxKhN8'
+      youtube: 'https://youtu.be/JHuRavxKhN8',
     }, {
       date: '30 Mai 2020',
       title: 'Les Foudres du Roi-Tonnerre - partie 14',
