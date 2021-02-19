@@ -7,7 +7,31 @@ import { Component } from '@angular/core';
 })
 export class ResumesComponent {
   public resumes = [
+    // {
+    //   date: '27 Février 2021',
+    //   title: 'Mage - Le mythe de la Reine détrônée - Chapitre 5',
+    //   chars: 'Clem, Mélo, Repié, Amandine',
+    //   pdf: '',
+    //   dm: 'MaFeRyT',
+    //   youtube: '',
+    // },
+
+    // {
+    //   date: '20 Février 2021',
+    //   title: 'Les Foudres du Roi-Tonnerre - partie 23',
+    //   chars: 'Clem, Coran, Mélo, Raph, Rémi, Thamos, Tommy',
+    //   dm: 'Repié',
+    //   // youtube: '',
+    // },
+
     {
+      date: '05 Février 2021',
+      title: 'Mage - Le mythe de la Reine détrônée - Chapitre 4, Acte 5',
+      chars: 'Clem, Mélo, Repié, Amandine',
+      pdf: 'https://raphaelyan.github.io/rpg-digital-tools/resumes/chapitre4-acte5',
+      dm: 'MaFeRyT',
+      youtube: 'https://youtu.be/6jHaFLdKjHM',
+    }, {
       date: '15 Janvier 2021',
       title: 'Les Foudres du Roi-Tonnerre - partie 22',
       chars: 'Clem, Coran, Mélo, Raph, Rémi, Thamos, Tommy',

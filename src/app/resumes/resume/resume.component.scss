@@ -1,0 +1,12 @@
+:host ::ng-deep {
+  code {
+    display: block;
+    border: 1px solid;
+    border-radius: 15px;
+    padding: 15px;
+  }
+
+  h4 {
+    text-decoration: underline;
+  }
+}
