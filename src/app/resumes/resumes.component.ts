@@ -7,24 +7,25 @@ import { Component } from '@angular/core';
 })
 export class ResumesComponent {
   public resumes = [
-    // {
-    //   date: '27 Février 2021',
-    //   title: 'Mage - Le mythe de la Reine détrônée - Chapitre 5',
-    //   chars: 'Clem, Mélo, Repié, Amandine',
-    //   pdf: '',
-    //   dm: 'MaFeRyT',
-    //   youtube: '',
-    // },
-
-    // {
-    //   date: '20 Février 2021',
-    //   title: 'Les Foudres du Roi-Tonnerre - partie 23',
-    //   chars: 'Clem, Coran, Mélo, Raph, Rémi, Thamos, Tommy',
-    //   dm: 'Repié',
-    //   // youtube: '',
-    // },
-
     {
+      date: '4 Avril 2021',
+      title: 'Mage - Le mythe de la Reine détrônée - Chapitre 5, Acte 2',
+      chars: 'Clem, Mélo, Repié, Amandine',
+      dm: 'MaFeRyT',
+      youtube: 'https://youtu.be/rKcVoyDYKjQ',
+    }, {
+      date: '27 Février 2021',
+      title: 'Mage - Le mythe de la Reine détrônée - Chapitre 5, Acte 1',
+      chars: 'Clem, Mélo, Repié, Amandine',
+      pdf: 'https://raphaelyan.github.io/rpg-digital-tools/resumes/chapitre5-acte1',
+      dm: 'MaFeRyT',
+      youtube: 'https://youtu.be/kpPJ2YohmnU',
+    }, {
+      date: '20 Février 2021',
+      title: 'Les Foudres du Roi-Tonnerre - partie 23',
+      chars: 'Clem, Coran, Mélo, Raph, Rémi, Tommy',
+      dm: 'Repié',
+    }, {
       date: '05 Février 2021',
       title: 'Mage - Le mythe de la Reine détrônée - Chapitre 4, Acte 5',
       chars: 'Clem, Mélo, Repié, Amandine',
@@ -36,7 +37,6 @@ export class ResumesComponent {
       title: 'Les Foudres du Roi-Tonnerre - partie 22',
       chars: 'Clem, Coran, Mélo, Raph, Rémi, Thamos, Tommy',
       dm: 'Repié',
-      // youtube: '',
     }, {
       date: '09 Janvier 2021',
       title: 'Mage - Le mythe de la Reine détrônée - Chapitre 4, Acte 4',
@@ -63,7 +63,6 @@ export class ResumesComponent {
       title: 'Les Foudres du Roi-Tonnerre - partie 21',
       chars: 'Clem, Mélo, Raph, Rémi, Thamos, Tommy',
       dm: 'Repié',
-      // youtube: '',
     }, {
       date: '25 Novembre 2020',
       title: 'Tales of Felgia - Session 5',
@@ -114,14 +113,12 @@ export class ResumesComponent {
       date: '4 Septembre 2020',
       title: 'Mage - Le mythe de la Reine détrônée - Chapitre 2, Acte 2 (fin)',
       chars: 'Clem, Mélo, Repié, Amandine',
-      // pdf: 'assets/resumes/mage/mage-partie6.pdf',
       dm: 'MaFeRyT',
       youtube: 'https://youtu.be/TacmyAtL-p0',
     }, {
       date: '29 Août 2020',
       title: 'Mage - Le mythe de la Reine détrônée - Chapitre 2, Acte 2',
       chars: 'Clem, Mélo, Repié',
-      // pdf: 'assets/resumes/mage/mage-partie5.pdf',
       dm: 'MaFeRyT',
       youtube: 'https://youtu.be/3CTqD_1XLTU',
     }, {
