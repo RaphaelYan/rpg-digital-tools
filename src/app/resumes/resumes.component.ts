@@ -8,6 +8,11 @@ import { Component } from '@angular/core';
 export class ResumesComponent {
   public resumes = [
     {
+      date: '10 Avril 2021',
+      title: 'Les Foudres du Roi-Tonnerre - partie 24',
+      chars: 'Clem, Mélo, Raph, Rémi, Tommy',
+      dm: 'Repié',
+    }, {
       date: '4 Avril 2021',
       title: 'Mage - Le mythe de la Reine détrônée - Chapitre 5, Acte 2',
       chars: 'Clem, Mélo, Repié, Amandine',
