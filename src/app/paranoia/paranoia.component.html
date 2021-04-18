@@ -1,32 +1,58 @@
 <h1>Paranoia</h1>
 
-<div class="move-area">
-  <app-paranoia-computer [style.left]="'200px'" [style.top]="'150px'">
+<div class="paranoia-small-container d-block d-xl-none">
+  <app-paranoia-computer [style.right]="'170px'" [style.top]="'30px'">
   </app-paranoia-computer>
-  <app-paranoia-computer [style.left]="'200px'" [style.top]="'400px'">
+  <app-paranoia-computer [style.left]="'170px'" [style.top]="'320px'">
+  </app-paranoia-computer>
+  <div style="text-align:center;margin-top:180px;">
+    Vous n'avez pas l'acrédtation nécessaire pour utiliser un petit écran.<br>
+    Veuillez agrandir votre écran ou vous serez accusé de traitrise.<br>
+    <br>
+    L'ordinateur est votre ami.
+  </div>
+</div>
+
+<div class="paranoia-container d-none d-xl-block">
+  <app-paranoia-computer [style.left]="'70px'" [style.top]="'150px'">
+  </app-paranoia-computer>
+  <app-paranoia-computer [style.left]="'960px'" [style.top]="'270px'">
+  </app-paranoia-computer>
+  <app-paranoia-computer [style.left]="'470px'" [style.top]="'570px'">
   </app-paranoia-computer>
 
-  <app-paranoia-ribbon width="320px" [style.left]="'600px'" [style.top]="'150px'">
+  <div class="text-center" style="margin-top:50px;">
+    <h3>Bonjour Clarificateur.</h3>
+    Obéissez à votre ami l'Ordinateur et protégez le Complexe Alpha !<br>
+    Traquez les comploteurs et les mutants, démasquez les traîtres parmi vos équipiers...<br>
+    Et prenez garde à ne pas être démasqué vous-même !<br>
+  </div>
+
+  <app-paranoia-ribbon width="280px" [style.left]="'415px'" [style.top]="'185px'">
     Sois heureux, citoyen.<br>
     Être heureux est un devoir.
   </app-paranoia-ribbon>
-  <!-- <app-paranoia-ribbon width="285px" [style.left]="'600px'" [style.top]="'192px'">
-    Être heureux est un devoir.
-  </app-paranoia-ribbon> -->
 
+  <div class="text-center" style="margin-top:140px;">
+    Bienvenue dans l'ultime refuge de l'humanité : le complexe Alpha.<br>
+    Il n'existe rien en dehors du complexe Alpha.<br>
+    L'Ordinateur veille sur le complexe alpha et ses citoyens.<br>
+  </div>
 
-  <!-- Bienvenue dans l'ultime refuge de l'humanité : le complexe Alpha. -->
-  <!-- Il n'existe rien en dehors du complexe Alpha. -->
-  <!-- L'Ordinateur veille sur le complexe alpha et ses citoyens. -->
-  <!-- L'Ordinateur administre avec bienveillance et exécute avec indulgence. -->
-  <!-- L'Ordinateur est votre ami. -->
-  <!-- Les traîtres sont les ennemis de l'Ordinateur. -->
-  <!-- Votre mission : éliminer les traîtres. -->
+  <div class="text-center" style="margin-top:30px;">
+    <h3>Votre mission : éliminer les traîtres.</h3>
+    Les traîtres sont les ennemis de l'Ordinateur.<br>
+    L'ordinateur est votre ami.<br>
+  </div>
 
-  <!-- Bonjour Clarificateur.
-  Obéissez à votre ami l'Ordinateur et protégez le Complexe Alpha !
-  Traquez les comploteurs et les mutants, démasquez les traîtres parmi vos équipiers...
-  Et prenez garde à ne pas être démasqué vous-même ! -->
+  <app-paranoia-ribbon width="280px" [style.left]="'90px'" [style.top]="'505px'">
+    Réfléchir, c'est déjà trahir.
+  </app-paranoia-ribbon>
 
+  <app-paranoia-ribbon width="370px" [style.left]="'650px'" [style.top]="'535px'">
+    En cas de doute sur votre loyauté :<br>
+    1. placez votre laser sur votre tempe.<br>
+    2. pressez la détente<br>
+  </app-paranoia-ribbon>.
 
 </div>

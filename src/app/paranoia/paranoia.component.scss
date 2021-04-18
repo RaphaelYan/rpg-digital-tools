@@ -1,5 +1,12 @@
-.move-area {
+.paranoia-small-container {
+  position: relative;
   height: 500px;
+  width: 100%;
+  border: 10px double;
+}
+.paranoia-container {
+  position: relative;
+  height: 700px;
   width: 100%;
   border: 10px double;
 }
