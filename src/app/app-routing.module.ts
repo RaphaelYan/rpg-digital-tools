@@ -27,6 +27,9 @@ const routes: Routes = [
     path: 'nwod',
     loadChildren: () => import('./nwod/nwod.module').then(m => m.NwodModule)
   }, {
+    path: 'paranoia',
+    loadChildren: () => import('./paranoia/paranoia.module').then(m => m.ParanoiaModule)
+  }, {
     path: 'auctions',
     loadChildren: () => import('./auctions/auctions.module').then(m => m.AuctionsModule)
   }, {

@@ -1,0 +1,27 @@
+:host {
+  position: absolute;
+  background: url('/assets/paranoia/computer_100.png');
+  width: 100px;
+  height: 90px;
+}
+
+.eye {
+  position: relative;
+  top: 25px;
+  left: 35px;
+  display: inline-block;
+  border-radius: 50%;
+  height: 30px;
+  width: 30px;
+  background: white;
+}
+.eye:after {
+  position: absolute;
+  bottom: 17px;
+  right: 10px;
+  width: 10px;
+  height: 10px;
+  background: #000;
+  border-radius: 50%;
+  content: " ";
+}

@@ -48,6 +48,11 @@ export class SideNavComponent {
     }, {
       title: 'WOW Auctions',
       url: '/auctions'
+    }, {
+      separator: true
+    }, {
+      title: 'Paranoia',
+      url: '/paranoia'
     }
   ];
 
