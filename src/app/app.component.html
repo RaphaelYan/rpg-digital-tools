@@ -22,6 +22,7 @@
 </main>
 
 <div *ngIf="isAdmin()">
+  <hr style="clear:both">
   <p *ngFor="let log of logs | async">
     doc id: {{ log.id }}<br>
     uid: {{ log.uid }}<br>

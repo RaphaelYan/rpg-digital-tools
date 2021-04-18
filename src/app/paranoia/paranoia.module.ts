@@ -5,11 +5,13 @@ import { FormsModule } from '@angular/forms';
 import { ParanoiaRoutingModule } from './paranoia-routing.module';
 import { ParanoiaComponent } from './paranoia.component';
 import { ParanoiaComputerComponent } from './computer/computer.component';
+import { ParanoiaRibbonComponent } from './ribbon/ribbon.component';
 
 @NgModule({
   declarations: [
     ParanoiaComponent,
     ParanoiaComputerComponent,
+    ParanoiaRibbonComponent,
   ],
   imports: [
     CommonModule,
