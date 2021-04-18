@@ -1,12 +1,13 @@
+:host {
+  position: absolute;
+}
+
 .ribbon-container,
 .ribbon-container * {
   box-sizing: content-box;
 }
 
 .ribbon-container {
-  position: absolute;
-  left: 600px;
-  top: 300px;
   background-color: #e1f5fe;
 }
 
@@ -41,16 +42,17 @@
 }
 
 .ribbon span {
+  text-transform: uppercase;
   display: block;
   position: relative;
   width: 100%;
   left: -16px;
   padding: 0 16px 16px;
   background: #96BEDC;
-  border-top-left-radius: 496px 16px;
-  border-top-right-radius: 496px 16px;
   text-align: center;
-  font: 18px/42px Pacifico, sans-serif;
+  border-top-left-radius: calc(50% + 16px) 16px;
+  border-top-right-radius: calc(50% + 16px) 16px;
+  line-height: 30px;
   color: #fff;
   text-shadow: 0 1px 1px rgba(0, 0, 0, .4);
   z-index: 1;
@@ -70,8 +72,8 @@
 .ribbon span:before {
   width: 100%;
   background: #71A7D0;
-  border-top-left-radius: 496px 16px;
-  border-top-right-radius: 496px 16px;
+  border-top-left-radius: calc(50% + 16px) 16px;
+  border-top-right-radius: calc(50% + 16px) 16px;
   z-index: 1;
 }
 
@@ -79,8 +81,8 @@
   width: calc(100% - 32px);
   left: 16px;
   background: #e1f5fe;
-  border-top-left-radius: 480px 16px;
-  border-top-right-radius: 480px 16px;
+  border-top-left-radius: 50% 16px;
+  border-top-right-radius: 50% 16px;
   z-index: 2;
 }
 
