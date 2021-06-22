@@ -46,4 +46,5 @@ export interface Clarificateur {
   stuff: Item[];
   maxHitpoints: number;
   active: boolean;
+  currentAction: string;
 }

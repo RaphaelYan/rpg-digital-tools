@@ -65,6 +65,7 @@ export class ParanoiaComponent implements AfterViewInit, OnDestroy {
     stuff: [],
     maxHitpoints: -1,
     active: true,
+    currentAction: null,
   };
   public currentCharacter = null;
   public screen: any = {
@@ -258,6 +259,7 @@ export class ParanoiaComponent implements AfterViewInit, OnDestroy {
     this.initModalActionsColors();
     this.retrieveActiveImage();
     this.paranoiaService.initParanoiaLogs();
+    this.initModalEvents();
     setTimeout(() => {
       $('[tooltip]').tooltip();
     }, 1000);
@@ -328,10 +330,10 @@ export class ParanoiaComponent implements AfterViewInit, OnDestroy {
     const indexes = [];
 
     let index = 0;
-    for (const stuff of defaultStuff) {
+    for (const s of defaultStuff) {
       setTimeout(() => {
         this.wizardStuffRemaining -= 1;
-        this.newCharacterForm.stuff.push(stuff);
+        this.newCharacterForm.stuff.push(s);
       }, index * 1000);
       index++;
     }
@@ -515,5 +517,35 @@ export class ParanoiaComponent implements AfterViewInit, OnDestroy {
 
   private getCurrentCharacterName(): string {
     return `${this.currentCharacter.name}-${this.currentCharacter.level}-${this.currentCharacter.sector}`;
+  }
+
+  private initModalEvents(): void {
+    $('#modalDices').on('show.bs.modal', () => {
+      this.characterDoc.update({ currentAction: 'modalDices' });
+    });
+    $('#modalDices').on('hidden.bs.modal', () => {
+      this.characterDoc.update({ currentAction: null });
+    });
+
+    $('#modalInspect').on('show.bs.modal', () => {
+      this.characterDoc.update({ currentAction: 'modalInspect' });
+    });
+    $('#modalInspect').on('hidden.bs.modal', () => {
+      this.characterDoc.update({ currentAction: null });
+    });
+
+    $('#modalCharacter').on('show.bs.modal', () => {
+      this.characterDoc.update({ currentAction: 'modalCharacter' });
+    });
+    $('#modalCharacter').on('hidden.bs.modal', () => {
+      this.characterDoc.update({ currentAction: null });
+    });
+
+    $('#modalContact').on('show.bs.modal', () => {
+      this.characterDoc.update({ currentAction: 'modalContact' });
+    });
+    $('#modalContact').on('hidden.bs.modal', () => {
+      this.characterDoc.update({ currentAction: null });
+    });
   }
 }

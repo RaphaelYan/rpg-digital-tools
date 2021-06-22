@@ -27,11 +27,6 @@ export class ParanoiaCharacterComponent implements OnChanges {
       if (this.config.avatar && (!previous || previous.avatar !== current.avatar)) {
         this.backgroundUrl = `url('${this.config.avatar}')`;
       }
-
-
-      if (!previous || previous.currentAction !== current.currentAction) {
-        this.activeAction(this.config.currentAction);
-      }
     }
   }
 
@@ -41,22 +36,5 @@ export class ParanoiaCharacterComponent implements OnChanges {
     // setTimeout(() => {
     //   this.traitorActive = false;
     // }, 5000);
-  }
-
-  activeAction(currentAction: number): void {
-    this.action1Active = false;
-    this.action2Active = false;
-    this.action3Active = false;
-    this.action4Active = false;
-
-    if (currentAction === 1) {
-      this.action1Active = true;
-    } else if (currentAction === 2) {
-      this.action2Active = true;
-    } else if (currentAction === 3) {
-      this.action3Active = true;
-    } else if (currentAction === 4) {
-      this.action4Active = true;
-    }
   }
 }

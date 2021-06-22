@@ -24,10 +24,10 @@
   </span>
 
   <span class="actions">
-    <i class="fa fa-cube" aria-hidden="true" [class.active]="action1Active"></i>
-    <i class="fa fa-search" aria-hidden="true" [class.active]="action2Active"></i>
-    <i class="fa fa-user" aria-hidden="true" [class.active]="action3Active"></i>
-    <i class="fa fa-laptop" aria-hidden="true" [class.active]="action4Active"></i>
+    <i class="fa fa-cube" aria-hidden="true" [class.active]="config.currentAction === 'modalDices'"></i>
+    <i class="fa fa-search" aria-hidden="true" [class.active]="config.currentAction === 'modalInspect'"></i>
+    <i class="fa fa-user" aria-hidden="true" [class.active]="config.currentAction === 'modalCharacter'"></i>
+    <i class="fa fa-laptop" aria-hidden="true" [class.active]="config.currentAction === 'modalContact'"></i>
   </span>
 </div>
 

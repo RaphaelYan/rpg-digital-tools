@@ -339,24 +339,15 @@
     </div>
   </app-paranoia-modal>
 
-  <app-paranoia-modal [id]="'modalCharacter'" [title]="'Ma feuille de personnage'">
+  <app-paranoia-modal [id]="'modalCharacter'" [title]="'Ma feuille de personnage'" [addClass]="'modal-lg'">
     <div class="modal-body">
       <div class="container-fluid">
-        <div class="row">
-          <div class="col-md-4">
-          ...
-          </div>
-          <div class="col-md-4">
-            <i class="fa fa-laptop" aria-hidden="true"
-               tooltip title="Contacter l'Ordinateur"
-            ></i>
-          </div>
-        </div>
+        <ul>
+          <ng-container *ngFor="let item of currentCharacter?.stuff">
+            <li [class.used]="item.used">{{ item.name }}</li>
+          </ng-container>
+        </ul>
       </div>
-    </div>
-    <div class="modal-footer">
-      <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-      <button type="button" class="btn btn-primary">Save changes</button>
     </div>
   </app-paranoia-modal>
 
