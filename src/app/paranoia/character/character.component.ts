@@ -13,7 +13,7 @@ export class ParanoiaCharacterComponent implements OnChanges {
   public action3Active: boolean = false;
   public action4Active: boolean = false;
 
-  public backgroundUrl: string = 'url(/assets/paranoia/male1.png)';
+  public backgroundUrl: string = 'url(https://raphaelyan.github.io/rpg-digital-tools/assets/paranoia/male1.png)';
 
   public ngOnChanges(changes: SimpleChanges): void {
     if (changes.config) {
