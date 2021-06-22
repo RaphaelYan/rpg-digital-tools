@@ -1,0 +1,122 @@
+@import '../variables';
+
+.character {
+  width: 200px;
+  height: 200px; // 150px + 50px
+  float: left;
+  display: block;
+  margin-bottom: 20px;
+  position: relative;
+
+  background-size: 150px 150px;
+  background-repeat: no-repeat;
+  background-position-y: 50px;
+}
+
+// .character { background-image: url('/assets/paranoia/male1.png'); }
+// .character.male1 { background-image: url('/assets/paranoia/male1.png'); }
+// .character.male2 { background-image: url('/assets/paranoia/male2.png'); }
+// .character.female1 { background-image: url('/assets/paranoia/female1.png'); }
+// .character.female2 { background-image: url('/assets/paranoia/female2.png'); }
+
+.name {
+  font-weight: 600;
+}
+
+.clone {
+  font-weight: 600;
+  position: absolute;
+
+  right: 50px;
+  top: 50px;
+  width: 0px;
+  height: 0px;
+  border-top: 50px solid;
+  border-left: 50px solid transparent;
+}
+
+.clone span {
+  position: absolute;
+  top: -48px;
+  left: -19px;
+  display: block;
+}
+
+.actions {
+  width: 50px;
+  position: absolute;
+  right: 0;
+  top: 50px;
+  height: 150px;
+  border: 1px solid #d3d5d4;
+  border-left: none;
+  border-top: none;
+
+  i {
+    height: 37px;
+    display: block;
+    text-align: center;
+    font-size: 20px;
+    font-weight: 600;
+    padding-top: 8px;
+    border-top: 1px solid #d3d5d4;
+  }
+}
+
+.traitor {
+  margin: 3px;
+  display: block;
+}
+.traitor i {
+  font-size: 20px;
+}
+
+.cursor-help {
+  cursor: help;
+}
+
+.lists li {
+  padding-bottom: 12px;
+  line-height: 18px;
+}
+
+.level-IR .clone { border-top-color: $colorIR; color: white; }
+.level-R  .clone { border-top-color: $colorR; color: white; }
+.level-O  .clone { border-top-color: $colorO; color: white; }
+.level-J  .clone { border-top-color: $colorJ; color: black; }
+.level-V  .clone { border-top-color: $colorV; color: black; }
+.level-B  .clone { border-top-color: $colorB; color: white; }
+.level-I  .clone { border-top-color: $colorI; color: white; }
+.level-VI .clone { border-top-color: $colorVI; color: white; }
+.level-UV .clone { border-top-color: $colorUV; color: black; }
+
+.level-IR .traitor { color: $colorIR; text-shadow: 1px 1px 1px rgba(0,0,0,0.2); }
+.level-R  .traitor { color: $colorR; text-shadow: 1px 1px 1px rgba(0,0,0,0.2); }
+.level-O  .traitor { color: $colorO; text-shadow: 1px 1px 1px rgba(0,0,0,0.2); }
+.level-J  .traitor { color: $colorJ; text-shadow: 1px 1px 1px rgba(255,255,255,0.2); }
+.level-V  .traitor { color: $colorV; text-shadow: 1px 1px 1px rgba(255,255,255,0.2); }
+.level-B  .traitor { color: $colorB; text-shadow: 1px 1px 1px rgba(0,0,0,0.2); }
+.level-I  .traitor { color: $colorI; text-shadow: 1px 1px 1px rgba(0,0,0,0.2); }
+.level-VI .traitor { color: $colorVI; text-shadow: 1px 1px 1px rgba(0,0,0,0.2); }
+.level-UV .traitor { color: $colorUV; text-shadow: 1px 1px 1px rgba(255,255,255,0.2); }
+
+.level-IR .actions .active { background-color: $colorIR; color: white; }
+.level-R  .actions .active { background-color: $colorR; color: white; }
+.level-O  .actions .active { background-color: $colorO; color: white; }
+.level-J  .actions .active { background-color: $colorJ; color: black; }
+.level-V  .actions .active { background-color: $colorV; color: black; }
+.level-B  .actions .active { background-color: $colorB; color: white; }
+.level-I  .actions .active { background-color: $colorI; color: white; }
+.level-VI .actions .active { background-color: $colorVI; color: white; }
+.level-UV .actions .active { background-color: $colorUV; color: black; }
+
+p.colors { width: 100%; text-align: center; }
+p.colors .level-IR { background-color: $colorIR; color: white; width: 11%; display: inline-block; }
+p.colors .level-R  { background-color: $colorR; color: white; width: 11%; display: inline-block; }
+p.colors .level-O  { background-color: $colorO; color: white; width: 11%; display: inline-block; }
+p.colors .level-J  { background-color: $colorJ; color: black; width: 11%; display: inline-block; }
+p.colors .level-V  { background-color: $colorV; color: black; width: 11%; display: inline-block; }
+p.colors .level-B  { background-color: $colorB; color: white; width: 11%; display: inline-block; }
+p.colors .level-I  { background-color: $colorI; color: white; width: 11%; display: inline-block; }
+p.colors .level-VI { background-color: $colorVI; color: white; width: 11%; display: inline-block; }
+p.colors .level-UV { background-color: $colorUV; color: black; width: 11%; display: inline-block; }

@@ -26,6 +26,19 @@ export class DdRulesComponent {
       body: `Les joueurs ne regagnent pas TOUS leurs pv lors d'un repos long.
 <br><br>
 Ils doivent dépenser leurs dés de vies comme lors d'un repos court pour se soigner naturellement.`
+    }, {
+      title: 'Gain de niveau',
+      body: `Pour le gain de points de vie :
+<ul>
+    <li>on lance le dé</li>
+    <li>si le résultat ne plait pas :</li>
+    <li style="list-style: none;">
+    <ul>
+        <li>soit on relance le dé</li>
+        <li>soit on prend la moitié du maximum du dé</li>
+    </ul>
+    </li>
+</ul>`
     }
   ];
 }

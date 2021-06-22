@@ -1,0 +1,4 @@
+@import './variables';
+
+:host ::ng-deep .modal-computer .btn-secondary { background-color: $colorR; border-color: $colorR; }
+:host ::ng-deep .modal-computer .btn-primary { background-color: $colorO; border-color: $colorO; }

@@ -1,5 +1,3 @@
-<h1>Paranoia</h1>
-
 <div class="paranoia-small-container d-block d-xl-none">
   <app-paranoia-computer [style.right]="'170px'" [style.top]="'30px'">
   </app-paranoia-computer>
@@ -13,7 +11,7 @@
   </div>
 </div>
 
-<div class="paranoia-container d-none d-xl-block">
+<div class="paranoia-container d-none d-xl-block" [hidden]="mode !== 'home'">
   <app-paranoia-computer [style.left]="'70px'" [style.top]="'150px'">
   </app-paranoia-computer>
   <app-paranoia-computer [style.left]="'960px'" [style.top]="'270px'">
@@ -45,7 +43,7 @@
     L'ordinateur est votre ami.<br>
   </div>
 
-  <app-paranoia-ribbon width="280px" [style.left]="'90px'" [style.top]="'505px'">
+  <app-paranoia-ribbon width="280px" [style.left]="'90px'" [style.top]="'535px'">
     Réfléchir, c'est déjà trahir.
   </app-paranoia-ribbon>
 
@@ -54,5 +52,319 @@
     1. placez votre laser sur votre tempe.<br>
     2. pressez la détente<br>
   </app-paranoia-ribbon>
+
+  <button type="button" class="btn btn-primary letz-go" (click)="launchGame()">J'accepte la mission</button>
+</div>
+
+<div class="wizard step-{{ wizardStep }}" [hidden]="mode !== 'wizard'">
+  <ng-container *ngIf="wizardStep === 1">
+    <h2>Prérequis pour le clonage</h2>
+    <p>Quelle est votre dénomination ?</p>
+    <p>{{ newCharacterForm.name || '??????????' }}-R-{{ newCharacterForm.sector || '???' }}</p>
+    <input class="form-control" type="text" [(ngModel)]="newCharacterForm.name" placeholder="Nom (10 caractères maximums)" maxlength="10">
+    <input class="form-control" type="text" [(ngModel)]="newCharacterForm.sector" placeholder="Secteur (3 caractères maximums)" maxlength="3">
+
+    <p>Faites vite ou vous serez considéré comme un traître dans ... {{ wizardRemainingSeconds | number: '1.2-2' }} secondes</p>
+    <p>Si votre dénomination contient autre chose que des lettres majuscules entre A et Z vous serez considéré comme un traître.</p>
+
+    <button type="button" class="btn btn-primary" (click)="wizardFirstStep()" [hidden]="!newCharacterForm.name || !newCharacterForm.sector">Lancer la séquence de clonage</button>
+  </ng-container>
+
+  <ng-container *ngIf="wizardStep === 2">
+    <h2>Vérification de vos <strike>in</strike>compétences</h2>
+    <div class="animation">
+      <i class="fa fa-compass" aria-hidden="true" [class.active]="wizardSkillsRemaining > 0"></i>
+    </div>
+    <div class="row">
+      <div class="col-md-3">
+        <h5 [class.active]="wizardCurrentSkillsUp === 0">Violence = {{ newCharacterForm.skills.violence }}</h5>
+        (athlétisme, flingues, combat, lancer, ...)
+      </div>
+      <div class="col-md-3">
+        <h5 [class.active]="wizardCurrentSkillsUp === 1">Audace =  {{ newCharacterForm.skills.audace }}</h5>
+        (bluff, charme, intimidation, furtivité, ...)
+      </div>
+      <div class="col-md-3">
+        <h5 [class.active]="wizardCurrentSkillsUp === 2">Neurones =  {{ newCharacterForm.skills.neurones }}</h5>
+        (science, psychologie, bureaucratie, ...)
+      </div>
+      <div class="col-md-3">
+        <h5 [class.active]="wizardCurrentSkillsUp === 3">Mécanique =  {{ newCharacterForm.skills.mecanique }}</h5>
+        (pilotage, ingénierie, programmation, ...)
+      </div>
+    </div>
+    <div class="row">
+      <div class="text-center col-md-6 offset-md-3" [hidden]="wizardSkillsRemaining <= 0">{{ wizardSkillsRemaining }} points restants</div>
+      <button type="button" class="btn btn-primary col-md-6 offset-md-3" (click)="startSkillsStep2()" [hidden]="wizardSkillsRemaining >= 0">Je détermine mes éventuelles compétences, de façon non-aléatoire</button>
+      <button type="button" class="btn btn-primary col-md-6 offset-md-3" (click)="wizardSecondStep()" [hidden]="wizardSkillsRemaining !== 0">J'accepte mes imperfections et j'implante une puce 6G dans mon ADN</button>
+    </div>
+  </ng-container>
+
+  <ng-container *ngIf="wizardStep === 3">
+    <h2>Erreur détectée dans le processus de clonage</h2>
+    <h5 class="text-center">Choissez un pouvoir de mutant</h5>
+    <div class="row" *ngIf="wizardCurrentPowers.length">
+      <div class="col-md-6">
+        <div class="card" (click)="newCharacterForm.power = wizardCurrentPowers[0]" [class.active]="newCharacterForm.power === wizardCurrentPowers[0]">
+          <div class="card-body">
+            <h5 class="card-title">{{ wizardCurrentPowers[0].name }}</h5>
+            <p class="card-text" [innerHtml]="wizardCurrentPowers[0].description"></p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="card" (click)="newCharacterForm.power = wizardCurrentPowers[1]" [class.active]="newCharacterForm.power === wizardCurrentPowers[1]">
+          <div class="card-body">
+            <h5 class="card-title">{{ wizardCurrentPowers[1].name }}</h5>
+            <p class="card-text" [innerHtml]="wizardCurrentPowers[1].description"></p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="card" (click)="newCharacterForm.power = wizardCurrentPowers[2]" [class.active]="newCharacterForm.power === wizardCurrentPowers[2]">
+          <div class="card-body">
+            <h5 class="card-title">{{ wizardCurrentPowers[2].name }}</h5>
+            <p class="card-text" [innerHtml]="wizardCurrentPowers[2].description"></p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="card" (click)="newCharacterForm.power = wizardCurrentPowers[3]" [class.active]="newCharacterForm.power === wizardCurrentPowers[3]">
+          <div class="card-body">
+            <h5 class="card-title">{{ wizardCurrentPowers[3].name }}</h5>
+            <p class="card-text" [innerHtml]="wizardCurrentPowers[3].description"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <button type="button" class="btn btn-primary col-md-2 offset-md-5" (click)="wizardThirdStep()" [hidden]="!newCharacterForm.power">Euh ... j'accepte</button>
+  </ng-container>
+
+  <ng-container *ngIf="wizardStep === 4">
+    <h2>Branchement des souvenirs éventuels</h2>
+
+    <h5 class="text-center">Choissez une société secrête</h5>
+    <div class="row" *ngIf="wizardCurrentSocieties.length">
+      <div class="col-md-6">
+        <div class="card" (click)="newCharacterForm.society = wizardCurrentSocieties[0]" [class.active]="newCharacterForm.society === wizardCurrentSocieties[0]">
+          <div class="card-body">
+            <h5 class="card-title">{{ wizardCurrentSocieties[0].name }}</h5>
+            <p class="card-text" [innerHtml]="wizardCurrentSocieties[0].description"></p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="card" (click)="newCharacterForm.society = wizardCurrentSocieties[1]" [class.active]="newCharacterForm.society === wizardCurrentSocieties[1]">
+          <div class="card-body">
+            <h5 class="card-title">{{ wizardCurrentSocieties[1].name }}</h5>
+            <p class="card-text" [innerHtml]="wizardCurrentSocieties[1].description"></p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="card" (click)="newCharacterForm.society = wizardCurrentSocieties[2]" [class.active]="newCharacterForm.society === wizardCurrentSocieties[2]">
+          <div class="card-body">
+            <h5 class="card-title">{{ wizardCurrentSocieties[2].name }}</h5>
+            <p class="card-text" [innerHtml]="wizardCurrentSocieties[2].description"></p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="card" (click)="newCharacterForm.society = wizardCurrentSocieties[3]" [class.active]="newCharacterForm.society === wizardCurrentSocieties[3]">
+          <div class="card-body">
+            <h5 class="card-title">{{ wizardCurrentSocieties[3].name }}</h5>
+            <p class="card-text" [innerHtml]="wizardCurrentSocieties[3].description"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <button type="button" class="btn btn-primary col-md-4 offset-md-4" (click)="wizardFourthStep()" [hidden]="!newCharacterForm.society">AH ! Oui c'est vrai ça ...</button>
+  </ng-container>
+
+  <ng-container *ngIf="wizardStep === 5">
+    <h2>Récupération de vos effets personnels</h2>
+
+    <ul>
+      <li *ngFor="let item of newCharacterForm.stuff">{{ item.name }}</li>
+    </ul>
+
+    <div class="text-center col-md-6 offset-md-3" [hidden]="wizardStuffRemaining <= 0">{{ wizardStuffRemaining }} équipement restants</div>
+    <button type="button" class="btn btn-primary col-md-6 offset-md-3" (click)="startStuffStep5()" [hidden]="wizardStuffRemaining >= 0">J'espère obtenir une photo de W-I-RTT le célèbre unijambiste</button>
+    <button type="button" class="btn btn-primary col-md-6 offset-md-3" (click)="wizardFifthStep()" [hidden]="wizardStuffRemaining !== 0">Je vais essayer de survivre</button>
+  </ng-container>
+
+  <ng-container *ngIf="wizardStep === 6">
+    <h2>Choix de votre affectation</h2>
+
+    <h5 class="text-center">Choissez une affectation (avant les autres ! dépéchez-vous !)</h5>
+    <div class="row" *ngIf="affectationsCollection | async; let affectations">
+      <div class="col-md-6" *ngFor="let affectation of affectations">
+        <div class="card" (click)="newCharacterForm.affectation = affectation" [class.active]="newCharacterForm.affectation === affectation" [hidden]="affectation.used">
+          <div class="card-body">
+            <h5 class="card-title" [innerHtml]="affectation.label"></h5>
+            <p class="card-text" [innerHtml]="affectation.description"></p>
+          </div>
+        </div>
+
+        <div class="card used" [hidden]="!affectation.used">
+          <div class="card-body">
+            <p class="card-text"><i>Cette affectation a déjà été choisie par un traitre</i></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <button type="button" class="btn btn-primary col-md-4 offset-md-4" (click)="saveCharacter()" [hidden]="!newCharacterForm.affectation || newCharacterForm.affectation?.used">This is the way</button>
+  </ng-container>
+
+  <ng-container *ngIf="wizardStep === 7">
+    <h2>Appel du banquier en cours ...</h2>
+  </ng-container>
+</div>
+
+<div class="game" [hidden]="mode !== 'game'">
+  <div class="paranoia-character-container d-none d-xl-inline-block">
+    <div *ngIf="charactersCollection | async; let characters">
+      <div *ngFor="let character of characters">
+        <app-paranoia-character [config]="character"></app-paranoia-character>
+      </div>
+    </div>
+  </div>
+  <div class="paranoia-container d-none d-xl-inline-block" [ngStyle]="getCurrentImage()" *ngIf="screen.image">
+  </div>
+  <div class="paranoia-container d-none d-xl-inline-block" [hidden]="screen.image">
+    <app-paranoia-computer [style.left]="'394px'" [style.top]="'355px'">
+    </app-paranoia-computer>
+    <div class="screen-text" *ngIf="screen.text" [innerHtml]="screen.text"></div>
+  </div>
+
+  <span class="actions d-none d-xl-inline-block">
+    <i class="fa fa-cube" aria-hidden="true"
+       tooltip title="Lancer les dés"
+       data-toggle="modal" data-target="#modalDices"
+    ></i>
+    <i class="fa fa-search" aria-hidden="true"
+       tooltip title="Inspecter un personnage"
+       data-toggle="modal" data-target="#modalInspect"
+    ></i>
+    <i class="fa fa-user" aria-hidden="true"
+       tooltip title="Ma feuille de personnage"
+       data-toggle="modal" data-target="#modalCharacter"
+    ></i>
+    <i class="fa fa-laptop" aria-hidden="true"
+       tooltip title="Contacter l'Ordinateur"
+       data-toggle="modal" data-target="#modalContact" data-backdrop="static"
+    ></i>
+  </span>
+
+  <div class="logs d-none d-xl-inline-block">
+    <p *ngFor="let log of paranoiaService.paranoiaLogs | async">
+      <span [hidden]="true">doc id: {{ log.id }}</span><!-- DEBUG -->
+      <span [hidden]="true">user uid: {{ log.uid }}</span><!-- DEBUG -->
+      {{ log.timestampStr }} : <span [innerHtml]="log.wording"></span>
+    </p>
+  </div>
+
+
+
+
+  <app-paranoia-modal [id]="'modalDices'" [title]="'Lancer les dés'">
+    <div class="modal-body">
+      <div class="container-fluid">
+        <div class="row modal-actions">
+          <div class="col-md-6">
+            <div class="action bg-{{ modalActions1Color }}"
+                 tooltip title="athlétisme, flingues, combat, lancer, ..."
+                 (click)="actionClicked(modalActions1Color, currentCharacter?.skills.violence, 'Violence')"
+            >
+              <i class="fa fa-hand-rock-o" aria-hidden="true"></i>
+              Violence ({{ currentCharacter?.skills.violence }})
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="action bg-{{ modalActions2Color }}"
+                 tooltip title="bluff, charme, intimidation, furtivité, ..."
+                 (click)="actionClicked(modalActions2Color, currentCharacter?.skills.audace, 'Audace')"
+            >
+              <i class="fa fa-comments-o" aria-hidden="true"></i>
+              Audace ({{ currentCharacter?.skills.audace }})
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="action bg-{{ modalActions3Color }}"
+                 tooltip title="science, psychologie, bureaucratie, ..."
+                 (click)="actionClicked(modalActions3Color, currentCharacter?.skills.neurones, 'Neurones')"
+            >
+              <i class="fa fa-lightbulb-o" aria-hidden="true"></i>
+              Neurones ({{ currentCharacter?.skills.neurones }})
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="action bg-{{ modalActions4Color }}"
+                 tooltip title="pilotage, ingénierie, programmation, ..."
+                 (click)="actionClicked(modalActions4Color, currentCharacter?.skills.mecanique, 'Mécanique')"
+            >
+              <i class="fa fa-wrench" aria-hidden="true"></i>
+              Mécanique ({{ currentCharacter?.skills.mecanique }})
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </app-paranoia-modal>
+
+  <app-paranoia-modal [id]="'modalInspect'" [title]="'Inspecter un personnage'">
+    <div class="modal-body">
+      <div class="container-fluid">
+        <!-- <ng-container *ngFor="let character of characters">
+          <div class="row" *ngIf="character.name !== currentCharacter.name">
+            <div class="col-md-12 user-select">
+              {{ character.name}}-{{ character.level }}-{{ character.sector }}
+            </div>
+          </div>
+        </ng-container> -->
+      </div>
+    </div>
+  </app-paranoia-modal>
+
+  <app-paranoia-modal [id]="'modalCharacter'" [title]="'Ma feuille de personnage'">
+    <div class="modal-body">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-md-4">
+          ...
+          </div>
+          <div class="col-md-4">
+            <i class="fa fa-laptop" aria-hidden="true"
+               tooltip title="Contacter l'Ordinateur"
+            ></i>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      <button type="button" class="btn btn-primary">Save changes</button>
+    </div>
+  </app-paranoia-modal>
+
+  <app-paranoia-modal [id]="'modalContact'" [title]="'Contacter l\'Ordinateur'" [addClass]="'modal-computer'" [showClose]="false">
+    <div class="modal-body">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-md-12">
+            <p>L'ordinateur est indisponible pour le moment.</p>
+            <p>Veuillez vous excuser pour la gêne que cela vous occasionne.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-secondary" (click)="computerDontExcuse()">Ne pas s'excuser</button>
+      <button type="button" class="btn btn-primary" (click)="computerExcuse()">S'excuser</button>
+    </div>
+  </app-paranoia-modal>
 
 </div>
