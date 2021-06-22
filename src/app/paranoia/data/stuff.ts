@@ -1,5 +1,24 @@
 import { Item } from '../models';
 
+export const defaultStuff: Item[] = [
+  {
+    id: 1000,
+    name: 'Pistoler laser rouge',
+    used: false,
+    description: ``
+  }, {
+    id: 1001,
+    name: 'Armure réflective rouge',
+    used: false,
+    description: ``
+  }, {
+    id: 1002,
+    name: '100 crédits',
+    used: false,
+    description: ``
+  },
+];
+
 export const stuff: Item[] = [
   {
     id: 1,

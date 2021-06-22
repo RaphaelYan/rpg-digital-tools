@@ -15,7 +15,7 @@ export class ParanoiaService {
 
   public initParanoiaLogs(): void {
     this.paranoiaLogsCollection = this.afs.collection<any>('paranoia-logs', (ref) => {
-      return ref.orderBy('timestamp', 'desc');
+      return ref.orderBy('timestamp', 'desc').limit(20);
     });
 
     this.paranoiaLogs = this.paranoiaLogsCollection.snapshotChanges().pipe(

@@ -8,7 +8,7 @@ import { ParanoiaService } from './paranoia.service';
 
 import { powers } from './data/powers';
 import { societies } from './data/societies';
-import { stuff } from './data/stuff';
+import { stuff, defaultStuff } from './data/stuff';
 
 declare var $: any;
 
@@ -26,6 +26,7 @@ export class ParanoiaComponent implements AfterViewInit, OnDestroy {
   public charactersCollection: Observable<Clarificateur[]>;
   public affectationsCollection: Observable<any[]>;
   public selectedAffectation = null;
+  public currentInspection = null;
 
   public wizardStep = 1;
   // Wizard Step 1
@@ -146,11 +147,11 @@ export class ParanoiaComponent implements AfterViewInit, OnDestroy {
 
     const characterName = this.getCurrentCharacterName();
 
-    let wording = `${characterName} a fait ${score}`;
+    let wording = `${characterName} a fait <b>${score}</b>`;
     if (scoreDice === maxDice) {
       wording += ' (MAX !)';
     }
-    wording += ` sur jet de ${skillName}`;
+    wording += ` sur un jet de <b>${skillName}</b>`;
     if (isTraitor) {
       wording += ' (et est un traitre en cliquant sur la mauvaise ';
       wording += this.paranoiaService.transformToAccreditationColor('accréditation', level);
@@ -322,26 +323,37 @@ export class ParanoiaComponent implements AfterViewInit, OnDestroy {
   }
 
   public startStuffStep5(): void {
-    this.wizardStuffRemaining = 5;
+    this.wizardStuffRemaining = 5 + defaultStuff.length;
 
     const indexes = [];
 
-    // 5 * 1s = 5 secondes d'animation
-    const intervalSkills = setInterval(() => {
-      if (this.wizardStuffRemaining <= 0) {
-        clearInterval(intervalSkills);
-        return;
-      }
+    let index = 0;
+    for (const stuff of defaultStuff) {
+      setTimeout(() => {
+        this.wizardStuffRemaining -= 1;
+        this.newCharacterForm.stuff.push(stuff);
+      }, index * 1000);
+      index++;
+    }
 
-      let indexItem = this.rand(0, this.stuff.length - 1);
-      while (indexes.includes(indexItem)) {
-        indexItem = this.rand(0, this.stuff.length - 1);
-      }
+    setTimeout(() => {
+      // 5 * 1s = 5 secondes d'animation
+      const intervalSkills = setInterval(() => {
+        if (this.wizardStuffRemaining <= 0) {
+          clearInterval(intervalSkills);
+          return;
+        }
 
-      indexes.push(indexItem);
-      this.newCharacterForm.stuff.push(this.stuff[indexItem]);
-      this.wizardStuffRemaining -= 1;
-    }, 1000);
+        let indexItem = this.rand(0, this.stuff.length - 1);
+        while (indexes.includes(indexItem)) {
+          indexItem = this.rand(0, this.stuff.length - 1);
+        }
+
+        indexes.push(indexItem);
+        this.newCharacterForm.stuff.push(this.stuff[indexItem]);
+        this.wizardStuffRemaining -= 1;
+      }, 1000);
+    }, (defaultStuff.length - 1) * 1000);
   }
 
   public computerDontExcuse(): void {
@@ -352,6 +364,7 @@ export class ParanoiaComponent implements AfterViewInit, OnDestroy {
     const characterName = this.getCurrentCharacterName();
     const wording = `Traitrise : ${characterName} ne s'excuse pas auprès de l'ordinateur.`;
     this.paranoiaService.addParanoiaLog(wording, this.currentUser);
+    $('#modalContact').modal('hide');
   }
 
   public computerExcuse(): void {
@@ -366,6 +379,11 @@ export class ParanoiaComponent implements AfterViewInit, OnDestroy {
       wording += `.`;
       this.paranoiaService.addParanoiaLog(wording, this.currentUser);
     }
+    $('#modalContact').modal('hide');
+  }
+
+  public inspectCharacter(character: Clarificateur): void {
+    this.currentInspection = character;
   }
 
   private initEyes(): void {

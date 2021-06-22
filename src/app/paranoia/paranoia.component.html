@@ -318,13 +318,23 @@
   <app-paranoia-modal [id]="'modalInspect'" [title]="'Inspecter un personnage'">
     <div class="modal-body">
       <div class="container-fluid">
-        <!-- <ng-container *ngFor="let character of characters">
-          <div class="row" *ngIf="character.name !== currentCharacter.name">
-            <div class="col-md-12 user-select">
-              {{ character.name}}-{{ character.level }}-{{ character.sector }}
+        <div *ngIf="charactersCollection | async; let characters" [hidden]="currentInspection">
+          <div *ngFor="let character of characters">
+            <div class="row" *ngIf="character.name !== currentCharacter.name">
+              <div class="col-md-12 user-select" (click)="inspectCharacter(character)">
+                {{ character.name}}-{{ character.level }}-{{ character.sector }}
+              </div>
             </div>
           </div>
-        </ng-container> -->
+        </div>
+
+        <div *ngIf="currentInspection">
+          <ul>
+            <ng-container *ngFor="let item of currentInspection.stuff">
+              <li *ngIf="!item.used">{{ item.name }}</li>
+            </ng-container>
+          </ul>
+        </div>
       </div>
     </div>
   </app-paranoia-modal>
