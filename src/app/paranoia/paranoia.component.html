@@ -232,12 +232,13 @@
       </div>
     </div>
   </div>
-  <div class="paranoia-container d-none d-xl-inline-block" [ngStyle]="getCurrentImage()" *ngIf="screen.image">
+  <div class="paranoia-container d-none d-xl-inline-block" [ngStyle]="getCurrentImage()" *ngIf="screen.image" [hidden]="screen.text || screen.timer > 0">
   </div>
-  <div class="paranoia-container d-none d-xl-inline-block" [hidden]="screen.image">
+  <div class="paranoia-container d-none d-xl-inline-block" [hidden]="screen.image && !(screen.text || screen.timer > 0)">
     <app-paranoia-computer [style.left]="'394px'" [style.top]="'355px'">
     </app-paranoia-computer>
     <div class="screen-text" *ngIf="screen.text" [innerHtml]="screen.text"></div>
+    <div class="screen-text" *ngIf="screen.timer > 0 && timerRemainingSeconds > 0">Vite ! Plus que {{ timerRemainingSeconds | number: '1.2-2' }} secondes ...</div>
   </div>
 
   <span class="actions d-none d-xl-inline-block">

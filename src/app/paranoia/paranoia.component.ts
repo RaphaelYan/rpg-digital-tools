@@ -71,7 +71,9 @@ export class ParanoiaComponent implements AfterViewInit, OnDestroy {
   public screen: any = {
     image: '',
     text: '',
+    timer: -1,
   };
+  public timerRemainingSeconds: number = 0;
   public currentUser = null;
   private characterDoc: AngularFirestoreDocument<any>;
 
@@ -494,6 +496,18 @@ export class ParanoiaComponent implements AfterViewInit, OnDestroy {
     }
   }
 
+  private reduceTimerRemainingSeconds(): void {
+    this.timerRemainingSeconds -= 0.01;
+
+    if (this.timerRemainingSeconds > 0) {
+      setTimeout(() => {
+        this.reduceTimerRemainingSeconds();
+      }, 10);
+    } else {
+      this.timerRemainingSeconds = 0;
+    }
+  }
+
   private rand(min: number, max: number): number {
     return Math.floor(Math.random() * (max - min + 1)) + min;
   }
@@ -512,6 +526,13 @@ export class ParanoiaComponent implements AfterViewInit, OnDestroy {
     this.afs.doc('paranoia-game/screen').valueChanges().subscribe((a: any) => {
       this.screen.image = a.image;
       this.screen.text = a.text;
+      this.screen.timer = a.timer;
+      console.warn('retrieveActiveImage')
+      if (a.timer !== -1) {
+        console.warn('timer !== -1', a.timer)
+        this.timerRemainingSeconds = a.timer;
+        this.reduceTimerRemainingSeconds();
+      }
     });
   }
 
