@@ -527,9 +527,7 @@ export class ParanoiaComponent implements AfterViewInit, OnDestroy {
       this.screen.image = a.image;
       this.screen.text = a.text;
       this.screen.timer = a.timer;
-      console.warn('retrieveActiveImage')
       if (a.timer !== -1) {
-        console.warn('timer !== -1', a.timer)
         this.timerRemainingSeconds = a.timer;
         this.reduceTimerRemainingSeconds();
       }
