@@ -1,0 +1,32 @@
+<div class="character level-{{ config.level }}" [style.background-image]="backgroundUrl | safeStyle">
+  <span class="clone cursor-help"
+        tooltip title="Cliquez pour en savoir plus" data-placement="right"
+        data-toggle="modal" data-target="#explainCloneColor"
+  ><span>{{ config.cloneNumber }}</span></span>
+
+  <div class="name">{{ config.name}}-{{ config.level }}-{{ config.sector }}</div>
+
+  <div class="affectation cursor-help"
+       tooltip title="Cliquez pour en savoir plus" data-placement="right"
+       data-toggle="modal" data-target="#explainAffectation"
+  >{{ config.affectation && config.affectation.name }}</div>
+
+  <span class="traitor cursor-help"
+        [class.active]="traitorActive"
+        tooltip title="Cliquez pour en savoir plus" data-placement="bottom"
+        data-toggle="modal" data-target="#explainTraitor"
+  >
+    <i class="fa fa-star{{ config.traitor > 0 ? '' : '-o' }}" aria-hidden="true"></i>
+    <i class="fa fa-star{{ config.traitor > 1 ? '' : '-o' }}" aria-hidden="true"></i>
+    <i class="fa fa-star{{ config.traitor > 2 ? '' : '-o' }}" aria-hidden="true"></i>
+    <i class="fa fa-star{{ config.traitor > 3 ? '' : '-o' }}" aria-hidden="true"></i>
+    <i class="fa fa-star{{ config.traitor > 4 ? '' : '-o' }}" aria-hidden="true"></i>
+  </span>
+
+  <span class="actions">
+    <i class="fa fa-cube" aria-hidden="true" [class.active]="config.currentAction === 'modalDices'"></i>
+    <i class="fa fa-search" aria-hidden="true" [class.active]="config.currentAction === 'modalInspect'"></i>
+    <i class="fa fa-user" aria-hidden="true" [class.active]="config.currentAction === 'modalCharacter'"></i>
+    <i class="fa fa-laptop" aria-hidden="true" [class.active]="config.currentAction === 'modalContact'"></i>
+  </span>
+</div>

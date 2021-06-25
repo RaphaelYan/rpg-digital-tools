@@ -1,3 +1,11 @@
+@import '../mixins';
+@import './variables';
+
+:host {
+  display: block;
+  margin-top: 20px;
+}
+
 .paranoia-small-container {
   position: relative;
   height: 500px;
@@ -6,7 +14,149 @@
 }
 .paranoia-container {
   position: relative;
-  height: 700px;
+  height: 800px;
   width: 100%;
   border: 10px double;
 }
+.paranoia-container[hidden] {
+  display: none !important;
+}
+
+.paranoia-character-container {
+  position: relative;
+  height: 800px;
+  width: 20%;
+  padding-right: 10px;
+  float: left;
+}
+
+.letz-go {
+  margin: 0 auto;
+  display: block;
+  margin-top: 200px;
+}
+
+.game .paranoia-container {
+  width: 80%;
+  float: left;
+
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.actions {
+  width: 80%;
+  margin-left: 20%;
+
+  i {
+    height: 97px;
+    display: inline-block;
+    text-align: center;
+    font-size: 40px;
+    font-weight: 600;
+    padding: 30px 92px;
+    margin: 0;
+    cursor: pointer;
+    width: 25%;
+    &:hover {
+      background: black;
+      color: white;
+    }
+  }
+  i + i {
+    border-left: 1px solid #d3d5d4;
+  }
+}
+
+.user-select {
+  cursor: pointer;
+  padding: 15px;
+
+  &:hover {
+    background: black;
+    color: white;
+  }
+}
+
+.wizard.step-2 {
+  .animation {
+    text-align: center;
+    padding-top: 30px;
+    padding-bottom: 90px;
+    i {
+      font-size: 150px;
+      &.active {
+        animation: 1s linear 0s infinite normal rotating;
+      }
+    }
+  }
+  .col-md-3 {
+    text-align: center;
+    h5.active {
+      animation: 0.5s linear 0s infinite normal rotating;
+    }
+  }
+}
+
+@keyframes rotating {
+  from { @include transform(rotate(0deg)); }
+  to { @include transform(rotate(360deg)); }
+}
+
+.wizard.step-3,
+.wizard.step-4,
+.wizard.step-5,
+.wizard.step-6,
+.wizard.step-7 {
+  h2 {
+    padding-bottom: 30px
+  }
+  .card {
+    margin: 15px;
+    cursor: pointer;
+  }
+  .card.used {
+    background-color: darkgrey;
+    cursor: not-allowed;
+  }
+
+  .card.active {
+    margin: 6px;
+    border: 10px double black;
+  }
+  .card:not(.used):hover {
+    margin: 6px;
+    border: 10px solid black;
+  }
+}
+
+.screen-text {
+  padding: 0 100px;
+  padding-top: 40px;
+  font-size: 20px;
+}
+
+:host ::ng-deep .text-level-IR { color: $colorIR; }
+:host ::ng-deep .text-level-R  { color: $colorR; }
+:host ::ng-deep .text-level-O  { color: $colorO; }
+:host ::ng-deep .text-level-J  { color: $colorJ; text-shadow: 1px 1px 1px rgba(0,0,0,0.5); }
+:host ::ng-deep .text-level-V  { color: $colorV; }
+:host ::ng-deep .text-level-B  { color: $colorB; }
+:host ::ng-deep .text-level-I  { color: $colorI; }
+:host ::ng-deep .text-level-VI { color: $colorVI; }
+:host ::ng-deep .text-level-UV { color: $colorUV; text-shadow: 1px 1px 1px rgba(0,0,0,0.5); }
+
+.used {
+  text-decoration: line-through;
+}
+
+p.colors { width: 100%; text-align: center; }
+p.colors .level-IR { background-color: $colorIR; color: white; width: 11%; display: inline-block; }
+p.colors .level-R  { background-color: $colorR; color: white; width: 11%; display: inline-block; }
+p.colors .level-O  { background-color: $colorO; color: white; width: 11%; display: inline-block; }
+p.colors .level-J  { background-color: $colorJ; color: black; width: 11%; display: inline-block; }
+p.colors .level-V  { background-color: $colorV; color: black; width: 11%; display: inline-block; }
+p.colors .level-B  { background-color: $colorB; color: white; width: 11%; display: inline-block; }
+p.colors .level-I  { background-color: $colorI; color: white; width: 11%; display: inline-block; }
+p.colors .level-VI { background-color: $colorVI; color: white; width: 11%; display: inline-block; }
+p.colors .level-UV { background-color: $colorUV; color: black; width: 11%; display: inline-block; }

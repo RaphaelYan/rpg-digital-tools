@@ -1,0 +1,17 @@
+@keyframes blink-star {
+  from { content: "" }
+  to { content: "" }
+}
+
+@keyframes blink-font-weight {
+  from { font-weight: normal; }
+  to { font-weight: bold; }
+}
+
+.traitor.active i.fa-star::before {
+  animation: .2s linear 0s 20 alternate blink-star;
+}
+
+.actions i {
+  transition: background-color 1s ease;
+}
