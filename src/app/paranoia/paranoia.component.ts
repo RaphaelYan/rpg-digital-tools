@@ -1,5 +1,5 @@
 import { Component, AfterViewInit, OnDestroy } from '@angular/core';
-import { Clarificateur, Power, Society, Item } from './models';
+import { Citoyen, Power, Society, Item } from './models';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { AngularFirestore, AngularFirestoreDocument } from '@angular/fire/firestore';
 import { first } from 'rxjs/operators';
@@ -23,7 +23,7 @@ declare var $: any;
 })
 export class ParanoiaComponent implements AfterViewInit, OnDestroy {
   public mode: string = 'home'; // home | wizard | game
-  public charactersCollection: Observable<Clarificateur[]>;
+  public charactersCollection: Observable<Citoyen[]>;
   public affectationsCollection: Observable<any[]>;
   public selectedAffectation = null;
   public currentInspection = null;
@@ -46,7 +46,7 @@ export class ParanoiaComponent implements AfterViewInit, OnDestroy {
   public modalActions3Color: number = 4;
   public modalActions4Color: number = 3;
 
-  public newCharacterForm: Clarificateur = {
+  public newCharacterForm: Citoyen = {
     avatar: '', // female1
     cloneNumber: 1,
     level: 'R',
@@ -162,6 +162,7 @@ export class ParanoiaComponent implements AfterViewInit, OnDestroy {
     }
 
     this.paranoiaService.addParanoiaLog(wording, this.currentUser);
+    $('#modalDices').modal('hide');
   }
 
   public wizardFirstStep(): void {
@@ -386,7 +387,7 @@ export class ParanoiaComponent implements AfterViewInit, OnDestroy {
     $('#modalContact').modal('hide');
   }
 
-  public inspectCharacter(character: Clarificateur): void {
+  public inspectCharacter(character: Citoyen): void {
     this.currentInspection = character;
   }
 
@@ -513,7 +514,7 @@ export class ParanoiaComponent implements AfterViewInit, OnDestroy {
   }
 
   private retrieveActiveCharacters(): void {
-    this.charactersCollection = this.afs.collection<Clarificateur>('paranoia-characters', (ref) => {
+    this.charactersCollection = this.afs.collection<Citoyen>('paranoia-characters', (ref) => {
       return ref.where('active', '==', true);
     }).valueChanges();
   }
@@ -550,6 +551,7 @@ export class ParanoiaComponent implements AfterViewInit, OnDestroy {
       this.characterDoc.update({ currentAction: 'modalInspect' });
     });
     $('#modalInspect').on('hidden.bs.modal', () => {
+      this.currentInspection = null;
       this.characterDoc.update({ currentAction: null });
     });
 

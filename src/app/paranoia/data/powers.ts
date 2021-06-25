@@ -8,7 +8,7 @@ export const powers: Power[] = [
     description: `
 Félicitations, vous êtes clean !<br>
 Pas de pouvoirs mutants ici, merci beaucoup !<br>
-Vous êtes un Clarificateur totalement loyal et non muté, prêt à tuer les traîtres mutants communistes pour l'Ordinateur.`,
+Vous êtes un Citoyen totalement loyal et non muté, prêt à tuer les traîtres mutants communistes pour l'Ordinateur.`,
   }, {
     id: 2,
     name: 'Électrochocs',

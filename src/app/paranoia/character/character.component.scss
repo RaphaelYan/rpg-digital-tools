@@ -13,12 +13,6 @@
   background-position-y: 50px;
 }
 
-// .character { background-image: url('/assets/paranoia/male1.png'); }
-// .character.male1 { background-image: url('/assets/paranoia/male1.png'); }
-// .character.male2 { background-image: url('/assets/paranoia/male2.png'); }
-// .character.female1 { background-image: url('/assets/paranoia/female1.png'); }
-// .character.female2 { background-image: url('/assets/paranoia/female2.png'); }
-
 .name {
   font-weight: 600;
 }
@@ -109,14 +103,3 @@
 .level-I  .actions .active { background-color: $colorI; color: white; }
 .level-VI .actions .active { background-color: $colorVI; color: white; }
 .level-UV .actions .active { background-color: $colorUV; color: black; }
-
-p.colors { width: 100%; text-align: center; }
-p.colors .level-IR { background-color: $colorIR; color: white; width: 11%; display: inline-block; }
-p.colors .level-R  { background-color: $colorR; color: white; width: 11%; display: inline-block; }
-p.colors .level-O  { background-color: $colorO; color: white; width: 11%; display: inline-block; }
-p.colors .level-J  { background-color: $colorJ; color: black; width: 11%; display: inline-block; }
-p.colors .level-V  { background-color: $colorV; color: black; width: 11%; display: inline-block; }
-p.colors .level-B  { background-color: $colorB; color: white; width: 11%; display: inline-block; }
-p.colors .level-I  { background-color: $colorI; color: white; width: 11%; display: inline-block; }
-p.colors .level-VI { background-color: $colorVI; color: white; width: 11%; display: inline-block; }
-p.colors .level-UV { background-color: $colorUV; color: black; width: 11%; display: inline-block; }

@@ -57,6 +57,7 @@
     padding: 30px 92px;
     margin: 0;
     cursor: pointer;
+    width: 25%;
     &:hover {
       background: black;
       color: white;
@@ -148,3 +149,14 @@
 .used {
   text-decoration: line-through;
 }
+
+p.colors { width: 100%; text-align: center; }
+p.colors .level-IR { background-color: $colorIR; color: white; width: 11%; display: inline-block; }
+p.colors .level-R  { background-color: $colorR; color: white; width: 11%; display: inline-block; }
+p.colors .level-O  { background-color: $colorO; color: white; width: 11%; display: inline-block; }
+p.colors .level-J  { background-color: $colorJ; color: black; width: 11%; display: inline-block; }
+p.colors .level-V  { background-color: $colorV; color: black; width: 11%; display: inline-block; }
+p.colors .level-B  { background-color: $colorB; color: white; width: 11%; display: inline-block; }
+p.colors .level-I  { background-color: $colorI; color: white; width: 11%; display: inline-block; }
+p.colors .level-VI { background-color: $colorVI; color: white; width: 11%; display: inline-block; }
+p.colors .level-UV { background-color: $colorUV; color: black; width: 11%; display: inline-block; }

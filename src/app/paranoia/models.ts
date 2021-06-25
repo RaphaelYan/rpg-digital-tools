@@ -32,7 +32,7 @@ export interface Item {
   used: boolean;
 }
 
-export interface Clarificateur {
+export interface Citoyen {
   avatar: string;
   cloneNumber: number;
   level: string;
