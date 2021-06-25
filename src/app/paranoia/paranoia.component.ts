@@ -207,10 +207,6 @@ export class ParanoiaComponent implements AfterViewInit, OnDestroy {
 
     let indexSociety1 = this.rand(0, this.societies.length - 1);
 
-    if (this.currentUser.email === 'pierre.beaujeu@rednet.io' || this.currentUser.email === 'pierre.beaujeu@gmail.com') {
-      indexSociety1 = 3;
-    }
-
     let indexSociety2 = this.rand(0, this.societies.length - 1);
     while ([indexSociety1].includes(indexSociety2)) {
       indexSociety2 = this.rand(0, this.societies.length - 1);
@@ -271,10 +267,6 @@ export class ParanoiaComponent implements AfterViewInit, OnDestroy {
   public startSkillsStep2(): void {
     // Une moyenne de 7 par skill = 7*4 = 28
     this.wizardSkillsRemaining = 28;
-
-    if (this.currentUser.email === 'melodie.ea@gmail.com') {
-      this.wizardSkillsRemaining = 32;
-    }
 
     // 28 * 0.5s = 14 secondes d'animation
     const intervalSkills = setInterval(() => {
