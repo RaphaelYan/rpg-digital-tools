@@ -205,7 +205,7 @@ export class ParanoiaComponent implements AfterViewInit, OnDestroy {
   public wizardThirdStep(): void {
     this.wizardStep = 4;
 
-    let indexSociety1 = this.rand(0, this.societies.length - 1);
+    const indexSociety1 = this.rand(0, this.societies.length - 1);
 
     let indexSociety2 = this.rand(0, this.societies.length - 1);
     while ([indexSociety1].includes(indexSociety2)) {
