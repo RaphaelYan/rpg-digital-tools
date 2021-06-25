@@ -26,4 +26,3 @@ deploy:
   local_dir: dist/rpg-digital-tools
   on:
     branch: master
-    branch: paranoia-game
