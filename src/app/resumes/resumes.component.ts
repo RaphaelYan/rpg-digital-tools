@@ -8,8 +8,14 @@ import { Component } from '@angular/core';
 export class ResumesComponent {
   public resumes = [
     {
+      date: '24 Juin 2021',
+      title: 'Paranoia - Coupure de courant',
+      chars: 'Clem, Constance, Mélo, Pierre',
+      dm: 'MaFeRyT',
+    }, {
       date: '11 Juin 2021',
       title: 'Les Foudres du Roi-Tonnerre - partie 25',
+      pdf: 'assets/resumes/repie/2021-06-11-partie-25.png',
       chars: 'Clem, Coran, Mélo, Raph, Rémi, Tommy',
       dm: 'Repié',
     }, {
@@ -20,6 +26,7 @@ export class ResumesComponent {
     }, {
       date: '10 Avril 2021',
       title: 'Les Foudres du Roi-Tonnerre - partie 24',
+      pdf: 'assets/resumes/repie/2021-05-10-partie-24.pdf',
       chars: 'Clem, Mélo, Raph, Rémi, Tommy',
       dm: 'Repié',
     }, {
