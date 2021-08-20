@@ -8,6 +8,11 @@ import { Component } from '@angular/core';
 export class ResumesComponent {
   public resumes = [
     {
+      date: '31 Juillet 2021',
+      title: 'Les Foudres du Roi-Tonnerre - partie 26',
+      chars: 'Clem, Coran, Mélo, Raph, Rémi, Tommy',
+      dm: 'Repié',
+    }, {
       date: '24 Juin 2021',
       title: 'Paranoia - Coupure de courant',
       chars: 'Clem, Constance, Mélo, Pierre',
@@ -319,7 +324,7 @@ export class ResumesComponent {
     }, {
       date: '7 Octobre 2017',
       title: 'Savage World - Les 6 nains de la main',
-      chars: 'Julien, Darth, Noëlie, Baptiste, clément, Yann',
+      chars: 'Julien, Darth, Noelie, Baptiste, clément, Yann',
       dm: 'MaFeRyT',
     }, {
       date: '29 Avril 2017',
@@ -366,16 +371,81 @@ export class ResumesComponent {
       title: 'HOTQ - Partie 1 : Les flammes du culte',
       dm: 'MaFeRyT',
     }, {
+      date: '5 Juillet 2015',
+      title: 'D&D - Le sceau de lune',
+      dm: 'MaFeRyT',
+      chars: 'Dallo, FiBoot, Syccor, Vador',
+    }, {
+      date: '14 Mai 2015',
+      title: 'Donj de glace',
+      dm: 'Syccor',
+      chars: 'FiBoot, MaFeRyT, Vador',
+    }, {
+      date: '10 Aout 2014',
+      title: 'D&D 3.5 - La pyramide des tenebres - part 5',
+      dm: 'MaFeRyT',
+      chars: 'Syccor (Vaiana), Vador (Elesia), Fiboot (Galak), Shinden (Kay), Azrael (), Dallo (Alben)',
+    }, {
+      date: '21 Juin 2014',
+      title: 'D&D 3.5 - La pyramide des tenebres - part 5',
+      dm: 'MaFeRyT',
+      chars: 'Syccor (Vaiana), Vador (Elesia), Fiboot (Galak), Dallo (Alben)',
+    }, {
+      date: '21 Juin 2014',
+      title: 'D&D 3.5 - La pyramide des tenebres - part 4',
+      dm: 'MaFeRyT',
+      chars: 'Syccor (Vaiana), Fiboot (Galak), Vador (Elesia), Shinden (Kay), Azrael (?)',
+    }, {
+      date: '6 Avril 2014',
+      title: 'D&D 3.5 - La pyramide des tenebres - part 3',
+      dm: 'MaFeRyT',
+      chars: 'Syccor (Vaiana), Fiboot (Galak), Vador (Elesia), Shinden (Kay)',
+    }, {
+      date: '6 Avril 2014',
+      title: 'D&D 3.5 - La pyramide des tenebres - part 2',
+      dm: 'MaFeRyT',
+      chars: 'Syccor (Vaiana), Fiboot (Galak), Azrael (?), Vador (Elesia), Shinden (Kay)',
+    }, {
+      date: '6 Avril 2014',
+      title: 'D&D 3.5 - La pyramide des tenebres - part 1',
+      dm: 'MaFeRyT',
+      chars: 'Syccor (Vaiana), Fiboot (Galak), Azrael (?), Vador (Elesia), Shinden (Kay)',
+    }, {
+      date: '2 Mars 2014',
+      title: 'D&D 3.5 - Fallcrest et la malédiction de la pyramide',
+      dm: 'MaFeRyT',
+      chars: 'Syccor (Vaiana), Fiboot (Galak), Raogi (?), Vador (Elesia)',
+    }, {
+      date: '21 Février 2014',
+      title: 'D&D 3.5 - La tour des mystères',
+      dm: 'MaFeRyT',
+      chars: 'Syccor (Vaiana), Fiboot (Hippias), Quentin (?), Shinden (Kai), Dallo (Carnak)',
+    }, {
+      date: '7 Février 2014',
+      title: 'D&D 3.5 - La chasse au profane',
+      dm: 'MaFeRyT',
+      chars: 'Vador (Elesia), Syccor (Vaiana), Fiboot (Galak), Beldom (Beldomï), Makkura (Rose), ShadowMaso (Goultard), Dallo (Alben)',
+    }, {
       date: '15 Décembre 2013',
       title: 'Dragonia Guilds - Partie 6',
       dm: 'MaFeRyT',
       chars: 'Syccor, Shinden, Azrael, Vador',
     }, {
+      date: '20 Octobre 2013',
+      title: 'D&D 3.5 - D\'eau et de feu (Le dragon du marécage)',
+      dm: 'MaFeRyT',
+      chars: 'Vador (Elesia), Syccor (Vaiana), Fiboot (Galak), Shinden (Kay)',
+    }, {
+      date: '20 Octobre 2013',
+      title: 'D&D 3.5 - D\'eau et de feu (prologue)',
+      dm: 'MaFeRyT',
+      chars: 'Vador (Elesia), Syccor (Vaiana), Fiboot (Galak), Shinden (Kay)',
+    }, {
       date: '1 Septembre 2013',
       title: 'Dragonia Guilds - Partie 5',
       dm: 'MaFeRyT',
       chars: 'Syccor, Fiboot, Shinden, Gibli, Azrael, Vador',
-      }, {
+    }, {
       date: '25 Août 2013',
       title: 'Dragonia Guilds - Partie 4',
       dm: 'MaFeRyT',
@@ -404,7 +474,57 @@ export class ResumesComponent {
       date: 'Décembre 2012',
       title: 'D&D',
       dm: 'Idriss',
-      chars: 'MaFeRyT, Noëlie, Vador, Denis, Syccor',
+      chars: 'MaFeRyT, Noelie, Vador, Denis, Syccor',
+    }, {
+      date: 'Septembre - Décembre 2012',
+      title: 'D&D 3.5 - L\'éritier draconique',
+      dm: 'MaFeRyT',
+      chars: 'Idriss (Pardav, nain guerrier), Noelie (?, elfe rodeuse), Syccor (Vaiana, humaine roublarde), Denis (?, demi-elfe moine), Vador (Elesia, elfe magicienne)',
+    }, {
+      date: '10 Août 2012',
+      title: 'D&D 3.5 - The Game',
+      dm: 'MaFeRyT',
+      chars: 'Vador (Elesia), Jinashi (Aedan), Fiboot (Galak), (Chalam), (Miya)',
+    }, {
+      date: '27 Juillet 2012',
+      title: 'D&D 3.5 - Une forteresse naine mysterieuse',
+      dm: 'MaFeRyT',
+      chars: 'Jinashi (Nain Rodeur), Shinden (Skiwi), Wellan (Demi-Orc Barbare), Fiboot (Galak), Syccor (Vaiana), Vador (Elfe Magicien)',
+    }, {
+      date: '13 Juillet 2012',
+      title: 'D&D 3.5 - Une nouvelle magie',
+      dm: 'MaFeRyT',
+      chars: 'Karnad(barde), Marty(guerrier/pretre), Wellan(barbare), Aralicia(spadassin/guerrier/magicien), Vador(magicien)',
+    }, {
+      date: '29 Juin 2012',
+      title: 'D&D 3.5 - Un voyage palpitant',
+      dm: 'MaFeRyT',
+      chars: 'KevinJoJo(Humain Pretre), Shinden(gnome ensorceleur), FiBoot(halfelin roublard/ensorceleur), Toxicat(Goliath Guerrier), ToxiGF(Elfe Rodeur)',
+    }, {
+      date: '24 Juin 2012',
+      title: 'D&D 3.5 - Un problème colossal',
+      dm: 'MaFeRyT',
+      chars: 'Vador(magicien), Shinden(guerrier), Toxicat(barbare), Fiboot(Galak), Syccor(Vaiana), Zesso(Pretre)',
+    }, {
+      date: '15 Juin 2012',
+      title: 'D&D 3.5 - L\'eau ca mouille',
+      dm: 'MaFeRyT',
+      chars: 'Vador(magicien), Shinden(spadassin), Fiboot(Galak), Syccor(Vaiana), Karnad(Pretre)',
+    }, {
+      date: '4 Mai 2012',
+      title: 'MdT2 Mortels - Y a pas le feu',
+      dm: 'MaFeRyT',
+      chars: 'Syccor, Shinden, Fiboot, Vador, Naglareph',
+    }, {
+      date: '24 Février 2012',
+      title: 'D&D 3.5 - La bête',
+      dm: 'MaFeRyT',
+      chars: 'Nemesis, Fiboot, Shinden, Backslash, Jin',
+    }, {
+      date: '20 Janvier 2012',
+      title: 'D&D 3.5 - Les tréfonds aux milles dragons',
+      dm: 'MaFeRyT',
+      chars: 'Fiboot(barde), Syccor(roublard), Shinden(Druide), Vador(guerrier)',
     }, {
       date: 'Août - Octobre 2011',
       title: 'Mage - Le mythe de la Reine détrônée',
