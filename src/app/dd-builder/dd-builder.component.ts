@@ -11,7 +11,7 @@ declare var $: any;
   styleUrls: ['./dd-builder.component.scss']
 })
 export class DdBuilderComponent implements AfterViewInit {
-  mode = 'points';
+  mode = 'points27';
   races = races;
   table = JSON.parse(JSON.stringify((table)));
   points = 27;
@@ -66,7 +66,11 @@ export class DdBuilderComponent implements AfterViewInit {
     // 8 = 0; 9 = 1; 10 = 2; 11 = 3; 12 = 4; 13 = 5; 14 = 7; 15 = 9
     if (this.between(from, 8, 13) && this.between(to, 8, 13)) {
       return 1;
-    } else if (this.between(from, 13, 15) && this.between(to, 13, 15)) {
+    } else if (this.between(from, 13, 15) && this.between(to, 13, 15)) { // 13 => 14 | 14 => 15 | 15 => 14 | 14 => 13
+      return 2;
+    } else if (this.between(from, 15, 17) && this.between(to, 15, 17)) { // 15 => 16 | 16 => 17 | 17 => 16 | 16 => 15
+      return 3;
+    } else if (this.between(from, 6, 8) && this.between(to, 6, 8)) { // 6 => 7 | 7 => 8 | 8 => 7 | 7 => 6
       return 2;
     }
   }
@@ -77,7 +81,11 @@ export class DdBuilderComponent implements AfterViewInit {
       return this.valueChanged(carac);
     }
 
-    if (carac.score >= 15 ) {
+    if (this.mode === 'points27' && carac.score >= 15) {
+      return;
+    }
+
+    if (this.mode === 'points35' && carac.score >= 17) {
       return;
     }
 
@@ -97,7 +105,11 @@ export class DdBuilderComponent implements AfterViewInit {
       return this.valueChanged(carac);
     }
 
-    if (carac.score <= 8) {
+    if (this.mode === 'points27' && carac.score <= 8) {
+      return;
+    }
+
+    if (this.mode === 'points35' && carac.score <= 6) {
       return;
     }
 
@@ -150,5 +162,11 @@ export class DdBuilderComponent implements AfterViewInit {
     this.table = JSON.parse(JSON.stringify((table)));
     this.resetOthersBonus();
     $('#select-race').val('');
+
+    if (this.mode === 'points27') {
+      this.points = 27;
+    } else if (this.mode === 'points35') {
+      this.points = 35;
+    }
   }
 }
