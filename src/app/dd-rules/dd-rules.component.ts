@@ -8,23 +8,38 @@ import { Component } from '@angular/core';
 export class DdRulesComponent {
   public rules = [
     {
+      title: 'Roleplay & surprises',
+      body: `Entre chaque round, possibilité de faire 1 minute de discussion tactique/métagame.
+<br>
+Aucune discussion au tour de chaque joueur.`
+    }, {
+      title: 'Personnages très inspirés',
+      body: `Suppression de la limite de 1 point pour le "point d'inspiration".
+<br>
+Libérez votre créativité et votre ingéniosité.`
+    }, {
+      title: 'La mort reste un secret',
+      body: `Les jets de sauvegarde contre la mort se font en secret.`
+    }, {
       title: 'Boire une potion',
       body: `Boire une potion ne coûte qu'une action bonus, à la place de prendre l'action principale`
     }, {
+      title: 'Action : Attaquer sur la défensive',
+      body: `Idem que l'action "Esquiver", mais en pouvant attaquer avec un désavantage`
+    }, {
+      title: 'Action : Défense totale',
+      body: `Idem que l'action "Esquiver", mais ajoute aussi +2 à la classe d'armure`
+    }, {
       title: 'Lanceur de sort versatile',
       body: `Le personnage peut lancer 1 sort en dépensant 2 emplacements de niveau inférieur
-    <br><br>
-    Exemple : Lancer un sort de niveau 2 en dépensant 2 emplacement de sort niveau 1`
-    }, {
-      title: 'Attaquer sur la défensive',
-      body: `Permet de faire l'action "Esquiver", mais en pouvant attaquer avec un désavantage`
-    }, {
-      title: 'Défense totale',
-      body: `En prenant l'action "Esquiver", ajoute +2 à la classe d'armure`
+<br>
+<br>
+Exemple : Lancer un sort de niveau 2 en dépensant 2 emplacement de sort niveau 1`
     }, {
       title: 'Guérison naturelle',
       body: `Les joueurs ne regagnent pas TOUS leurs pv lors d'un repos long.
-<br><br>
+<br>
+<br>
 Ils doivent dépenser leurs dés de vies comme lors d'un repos court pour se soigner naturellement.`
     }, {
       title: 'Gain de niveau',
