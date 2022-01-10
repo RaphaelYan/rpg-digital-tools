@@ -95,8 +95,17 @@ export const races = [
     ]
   }, {
     label: 'Tieffelin',
-    bonus: '+2cha, +1int',
-    racial: 13
+    subraces: [
+      {
+        label: 'standard',
+        bonus: '+2cha, +1int',
+        racial: 13
+      }, {
+        label: 'Bloodline of Glasya',
+        bonus: '+2cha, +1dex',
+        racial: 24
+      }
+    ]
   }, {
     label: 'Firbolg',
     bonus: '+2sag, +1for',

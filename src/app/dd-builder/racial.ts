@@ -263,5 +263,16 @@ export const racial = [
         bonus: 1
       }
     ]
+  }, {
+    id: 23,
+    bonus: [
+      {
+        id: 6,
+        bonus: 2
+      }, {
+        id: 2,
+        bonus: 1
+      }
+    ]
   }
 ];
