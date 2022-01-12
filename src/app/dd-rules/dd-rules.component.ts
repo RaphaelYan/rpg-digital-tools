@@ -42,8 +42,11 @@ Exemple : Lancer un sort de niveau 2 en dépensant 2 emplacement de sort niveau 
 <br>
 Ils doivent dépenser leurs dés de vies comme lors d'un repos court pour se soigner naturellement.`
     }, {
-      title: 'Gain de niveau',
-      body: `Pour le gain de points de vie :
+      title: 'Gain de niveau pour les points de vies',
+      body: `
+Pour le niveau 1, c'est le maximum sur le dé.
+<br>
+Ensuite pour chaque niveau :
 <ul>
     <li>on lance le dé</li>
     <li>si le résultat ne plait pas :</li>
