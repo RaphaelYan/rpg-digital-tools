@@ -7,6 +7,19 @@ import { Component } from '@angular/core';
 })
 export class DdRulesComponent {
   public rules = [
+// ennemis avec actions speciales et/ou capacités spéciales
+// les ennemis peuvent fuir de temps en temps
+// decrire le terrain et l'environnement pour interaction
+
+//     }, {
+//       title: '',
+//       body: `Tomber à 0 points de vie<br>
+//           - dégâts à l'armure : CA -2, doit passer 10 minutes à réparer<br>
+//           - dégâts à l'arme : touché -2, doit passer 10 minutes à réparer<br>
+//           - 1 niveau de fatigue<br>
+//           - caractéristique réduite de 2, doit passer un repos long<br>
+//           - perte de la moitié des dés de repos<br>
+//     }
     {
       title: 'Roleplay & surprises',
       body: `Entre chaque round, possibilité de faire 1 minute de discussion tactique/métagame.
@@ -35,6 +48,18 @@ Libérez votre créativité et votre ingéniosité.`
 <br>
 <br>
 Exemple : Lancer un sort de niveau 2 en dépensant 2 emplacement de sort niveau 1`
+}, {
+  title: 'Lanceur de sort protecteur',
+  body: `Les sorts de protection / amélioration peuvent être lancés sur le "groupe" en dépensant un emplacement de sort d’un niveau +1
+<br>
+La durée du sort est divisée par le nombre de cible.<br>
+<br>
+Exemple : Le sort "protection-contre-une-energie" ou "amelioration-de-caracteristique"`
+}, {
+  title: 'Identification des objets magiques',
+  body: `Il faut soit utiliser le sort identification,
+<br>
+soit expérimenter l'objet pour trouver ses fonctionnalités.`
     }, {
       title: 'Guérison naturelle',
       body: `Les joueurs ne regagnent pas TOUS leurs pv lors d'un repos long.
