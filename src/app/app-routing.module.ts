@@ -9,6 +9,9 @@ const routes: Routes = [
     path: 'dd-rules',
     loadChildren: () => import('./dd-rules/dd-rules.module').then(m => m.DdRulesModule)
   }, {
+    path: 'dd-spells',
+    loadChildren: () => import('./dd-spells/dd-spells.module').then(m => m.DdSpellsModule)
+  }, {
     path: 'init',
     loadChildren: () => import('./init/init.module').then(m => m.InitModule)
   }, {
