@@ -63,7 +63,7 @@ export class CampaignWirtComponent implements AfterViewInit {
         return `<td class="value-${value} ${addClass}">` + (displayValues ? value : '') + `</td>`;
       }
       return `<td class="value-${value}">` + (displayValues ? value : '') + `</td>`;
-    }
+    };
 
     // Display attributes
     let html = '';
