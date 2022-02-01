@@ -36,6 +36,12 @@ const routes: Routes = [
     path: 'auctions',
     loadChildren: () => import('./auctions/auctions.module').then(m => m.AuctionsModule)
   }, {
+    path: 'auctions',
+    loadChildren: () => import('./auctions/auctions.module').then(m => m.AuctionsModule)
+  }, {
+    path: 'l-homme-a-la-jambe-de-bois',
+    loadChildren: () => import('./campaign-wirt/campaign-wirt.module').then(m => m.CampaignWirtModule)
+  }, {
     path: '',
     loadChildren: () => import('./home/home.module').then(m => m.HomeModule)
   }
