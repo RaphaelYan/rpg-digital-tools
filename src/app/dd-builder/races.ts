@@ -115,6 +115,10 @@ export const races = [
     bonus: '+2for, +1con',
     racial: 16
   }, {
+    label: 'Goliath "sage"',
+    bonus: '+1con, +2sag',
+    racial: 25
+  }, {
     label: 'Kenku',
     bonus: '+2dex, +1sag',
     racial: 17

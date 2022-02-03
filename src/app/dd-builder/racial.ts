@@ -264,7 +264,7 @@ export const racial = [
       }
     ]
   }, {
-    id: 23,
+    id: 24,
     bonus: [
       {
         id: 6,
@@ -272,6 +272,17 @@ export const racial = [
       }, {
         id: 2,
         bonus: 1
+      }
+    ]
+  }, {
+    id: 25,
+    bonus: [
+      {
+        id: 3,
+        bonus: 1
+      }, {
+        id: 5,
+        bonus: 2
       }
     ]
   }
