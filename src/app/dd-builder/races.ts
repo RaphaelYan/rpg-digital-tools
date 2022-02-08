@@ -35,6 +35,10 @@ export const races = [
         label: 'Gnome des roches',
         bonus: '+2int, +1con',
         racial: 7
+      }, {
+        label: 'Gnome des profondeurs',
+        bonus: '+2int, +1dex',
+        racial: 6
       }
     ]
   }, {
