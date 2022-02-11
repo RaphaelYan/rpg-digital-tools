@@ -12,7 +12,7 @@ export class CampaignWirtComponent implements AfterViewInit {
     const displayValues = true;
     const chars = [
       {
-        name: 'Noelie',
+        name: 'Noëlie',
         proficiency: 3, armor_class: 15, pv: 67,
         strength: 2, dexterity: 0, constitution: 2, intelligence: 0, wisdom: 2, charisma: 5,
         masteries: [ 'dexterity', 'arcana', 'investigation', 'religion', 'insight', 'survival', 'charisma', 'performance' ],
@@ -33,14 +33,14 @@ export class CampaignWirtComponent implements AfterViewInit {
         masteries: [ 'constitution', 'intelligence', 'arcana', 'history', 'investigation', 'sleight_of_hand' ],
       },
       {
-        name: 'Clement',
+        name: 'Clément',
         proficiency: 3, armor_class: 0, pv: 0,
-        strength: -1, dexterity: -1, constitution: -1, intelligence: -1, wisdom: -1, charisma: -1,
+        strength: 3, dexterity: 2, constitution: 2, intelligence: 0, wisdom: 5, charisma: 0,
         masteries: [ ],
       },
       {
         name: 'Mélodie',
-        proficiency: 0, armor_class: 0, pv: 0,
+        proficiency: 3, armor_class: 0, pv: 0,
         strength: 5, dexterity: 2, constitution: 3, intelligence: 0, wisdom: 0, charisma: 0,
         masteries: [ ],
       },
