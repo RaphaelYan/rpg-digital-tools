@@ -34,15 +34,15 @@ export class CampaignWirtComponent implements AfterViewInit {
       },
       {
         name: 'Clément',
-        proficiency: 3, armor_class: 0, pv: 60,
+        proficiency: 3, armor_class: 18, pv: 60,
         strength: 3, dexterity: 2, constitution: 2, intelligence: 0, wisdom: 5, charisma: 0,
-        masteries: [ ],
+        masteries: [ 'wisdom', 'charisma', 'athletics', 'stealth', 'insight', 'deception', 'persuasion' ],
       },
       {
         name: 'Mélodie',
         proficiency: 3, armor_class: 14, pv: 90,
         strength: 5, dexterity: 1, constitution: 3, intelligence: 0, wisdom: 0, charisma: 0,
-        masteries: [ 'athletics', 'nature', 'perception', 'survival', 'intimidation' ],
+        masteries: [ 'strength', 'constitution', 'athletics', 'nature', 'perception', 'survival', 'intimidation' ],
       },
     ];
 
