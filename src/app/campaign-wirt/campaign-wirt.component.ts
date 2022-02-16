@@ -40,8 +40,8 @@ export class CampaignWirtComponent implements AfterViewInit {
       },
       {
         name: 'Mélodie',
-        proficiency: 3, armor_class: 14, pv: 90,
-        strength: 5, dexterity: 1, constitution: 3, intelligence: 0, wisdom: 0, charisma: 0,
+        proficiency: 3, armor_class: 15, pv: 90,
+        strength: 5, dexterity: 2, constitution: 3, intelligence: 0, wisdom: 0, charisma: 0,
         masteries: [ 'strength', 'constitution', 'athletics', 'nature', 'perception', 'survival', 'intimidation' ],
       },
     ];

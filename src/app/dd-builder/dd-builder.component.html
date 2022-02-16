@@ -4,6 +4,19 @@
   </div>
 
   <div class="row">
+    <div class="text-left col-6">
+      <select class="custom-select mode" [(ngModel)]="mode" (ngModelChange)="reset()">
+        <option value="points27" selected>Mode par points (27 points, min 8, max 15)</option><!-- moyenne = 12,5 -->
+        <option value="points35" selected>Mode par points héroïque (35 points, min 6, max 17)</option><!-- moyenne = 13,3 -->
+        <option value="free">Libre</option>
+        <!-- 4d6 => moyenne = 12,2 -->
+      </select>
+      <sub>* Changer ce champs reset le formulaire</sub>
+    </div>
+    <div class="center-align col-6 points" *ngIf="mode === 'points27' || mode === 'points35'">Points : {{ points }}</div>
+  </div>
+
+  <div class="row">
     <div class="input-field col-6">
       <select id="select-race" class="custom-select">
         <option value="" disabled selected>Sélectionnez votre race</option>
@@ -53,17 +66,5 @@
         </tr>
       </tbody>
     </table>
-  </div>
-
-  <div class="row">
-    <div class="text-right col-6">
-      <select class="custom-select mode" [(ngModel)]="mode" (ngModelChange)="reset()">
-        <option value="points27" selected>Mode par points (27 points, min 8, max 15)</option><!-- moyenne = 12,5 -->
-        <option value="points35" selected>Mode par points héroïque (35 points, min 6, max 17)</option><!-- moyenne = 13,3 -->
-        <option value="free">Libre</option>
-        <!-- 4d6 => moyenne = 12,2 -->
-      </select>
-    </div>
-    <div class="center-align col-6 points" *ngIf="mode === 'points27' || mode === 'points35'">Points : {{ points }}</div>
   </div>
 </div>
