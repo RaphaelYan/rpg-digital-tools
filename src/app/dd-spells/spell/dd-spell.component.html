@@ -1,0 +1,32 @@
+<div class="container" *ngIf="spell">
+  <div class="row">
+    <div class="col-md-12">
+      <h1>{{ spell.name }}</h1>
+      <div>
+        Niveau {{ spell.level }} - {{ spell.school }}
+        <ng-container *ngIf="spell.ritual">(rituel)</ng-container>
+      </div>
+      <div>Temps d'incantation : {{ spell.casting_time }}</div>
+      <div>Portée : {{ spell.range }}</div>
+      <div>Composantes : {{ spell.components }}</div>
+      <div>
+        Durée :
+        <ng-container *ngIf="spell.concentration">Concentration, jusqu'à </ng-container>
+        {{ spell.duration }}
+      </div>
+
+      <div class="description" [innerHtml]="spell.description"></div>
+      <div *ngIf="spell.higher_level">{{ spell.higher_level }}</div>
+
+      <div *ngIf="spell.tags?.length">
+        Tags :
+        <span class="badge badge-primary" *ngFor="let tag of spell.tags">{{ tag }}</span>
+      </div>
+      <div *ngIf="spell.classes?.length">
+        Classes :
+        <span class="badge badge-primary" *ngFor="let classe of spell.classes">{{ classe }}</span>
+      </div>
+      <div>Source : {{ spell.source }}</div>
+    </div>
+  </div>
+</div>
