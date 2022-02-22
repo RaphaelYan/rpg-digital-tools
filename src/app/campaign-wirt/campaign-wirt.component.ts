@@ -21,7 +21,7 @@ export class CampaignWirtComponent implements AfterViewInit {
       },
       {
         name: 'Julien',
-        proficiency: 3, armor_class: 16, pv: 51,
+        proficiency: 3, armor_class: 17, pv: 51,
         strength: -1, dexterity: 5, constitution: 1, intelligence: 2, wisdom: 1, charisma: 2,
         masteries: [ 'dexterity', 'intelligence', 'deception', 'investigation', 'perception', 'persuasion', 'sleight_of_hand', 'stealth' ],
         expert: [ 'stealth', 'deception', 'investigation' ],
