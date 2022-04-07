@@ -1,31 +1,34 @@
-<table class="table table-hover">
-  <thead>
-    <tr>
-      <th>Nom</th>
-      <th>Niveau</th>
-      <th>École</th>
-      <th>Incantation</th>
-      <th>Concentration</th>
-      <th>Rituel</th>
-      <th>Description courte</th>
-      <th>Source</th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor="let spell of spells | async">
-      <td>{{ spell.name }}</td>
-      <td>{{ spell.level }}</td>
-      <td>{{ spell.school }}</td>
-      <td>{{ spell.casting_time }}</td>
-      <td>{{ spell.concentration ? 'Oui' : 'Non' }}</td>
-      <td>{{ spell.ritual ? 'Oui' : 'Non' }}</td>
-      <td>{{ spell.description_short }}</td>
-      <td>{{ spell.source }}</td>
-      <td><a [routerLink]="'/dd-spells/' + spell.id">Détails</a></td>
-    </tr>
-  </tbody>
-</table>
+<div class="table-container">
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th>Nom</th>
+        <th>Niveau</th>
+        <th>École</th>
+        <th>Incantation</th>
+        <th>Concentration</th>
+        <th>Rituel</th>
+        <th>Description courte</th>
+        <th>Source</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let spell of spells | async">
+        <td>{{ spell.name }}</td>
+        <td>{{ spell.level }}</td>
+        <td>{{ spell.school }}</td>
+        <td>{{ spell.casting_time }}</td>
+        <td>{{ spell.concentration ? 'Oui' : 'Non' }}</td>
+        <td>{{ spell.ritual ? 'Oui' : 'Non' }}</td>
+        <td>{{ spell.description_short }}</td>
+        <td>{{ spell.source }}</td>
+        <td><a [routerLink]="'/dd-spells/' + spell.id">Détails</a></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
 
 
 
