@@ -8,6 +8,16 @@ import { Component } from '@angular/core';
 export class ResumesComponent {
   public resumes = [
     {
+      date: '22 Avril 2022',
+      title: 'D&D5 : L\'homme à la jambre de bois - partie 5',
+      chars: 'Clem, Mélo, Noëlie, Repié, Syccor',
+      dm: 'MaFeRyT',
+    }, {
+      date: '8 Avril 2022',
+      title: 'D&D5 : L\'homme à la jambre de bois - partie 4',
+      chars: 'Clem, Mélo, Noëlie, Repié, Syccor',
+      dm: 'MaFeRyT',
+    }, {
       date: '25 Mars 2022',
       title: 'D&D5 : L\'homme à la jambre de bois - partie 3',
       chars: 'Clem, Mélo, Noëlie, Repié, Syccor',
