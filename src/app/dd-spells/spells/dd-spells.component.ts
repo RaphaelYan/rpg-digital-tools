@@ -14,6 +14,7 @@ export class DdSpellsComponent implements OnInit {
   public spells: Observable<any[]>;
   public spellForm: any = {};
   public user: any;
+  public fetched: boolean = false;
 
   constructor(
     public angularFireAuth: AngularFireAuth,
@@ -24,6 +25,7 @@ export class DdSpellsComponent implements OnInit {
   public ngOnInit() {
     this.resetSpellForm();
     this.angularFireAuth.authState.subscribe((user) => {
+      this.fetched = true;
       if (!user) {
         return;
       }

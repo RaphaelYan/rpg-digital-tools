@@ -25,6 +25,12 @@
         <td>{{ spell.source }}</td>
         <td><a [routerLink]="'/dd-spells/' + spell.id">Détails</a></td>
       </tr>
+      <tr *ngIf="fetched && !user">
+        <td colspan="9" class="text-center">
+          Merci de vous connecter pour avoir accès à la liste des sorts.<br>
+          (si c'est gratuit, c'est vous le produit !)
+        </td>
+      </tr>
     </tbody>
   </table>
 </div>
