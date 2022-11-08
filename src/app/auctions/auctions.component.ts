@@ -59,7 +59,7 @@ export class AuctionsComponent {
 
   public scrap(): void {
     for (const key in this.store) {
-      this.store[key].date = new Date().toISOString().split('T')[0];
+      this.store[key].date = new Date().toISOString();
       this.store[key].id = key;
     }
 
