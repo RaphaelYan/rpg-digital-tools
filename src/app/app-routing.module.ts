@@ -42,9 +42,6 @@ const routes: Routes = [
     path: 'l-homme-a-la-jambe-de-bois',
     loadChildren: () => import('./campaign-wirt/campaign-wirt.module').then(m => m.CampaignWirtModule)
   }, {
-    path: 'campaign-repie',
-    loadChildren: () => import('./campaign-repie/campaign-repie.module').then(m => m.CampaignRepieModule)
-  }, {
     path: '',
     loadChildren: () => import('./home/home.module').then(m => m.HomeModule)
   }
