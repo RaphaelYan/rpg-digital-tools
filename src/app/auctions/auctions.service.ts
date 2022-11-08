@@ -16,4 +16,8 @@ export class AuctionsService {
       auctions.pipe(first()).subscribe(resolve);
     });
   }
+
+  public mergeAuctionItem(id, auctionItem) {
+    this.afs.doc('auctions/' + id).set(auctionItem);
+  }
 }

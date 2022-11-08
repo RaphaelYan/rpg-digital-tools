@@ -1,5 +1,13 @@
+<ng-container *ngIf="isAdmin()">
+  <button type="button" (click)="scrap()">SCRAP</button>
+
+  <input type="text" [(ngModel)]="clientid">
+  <input type="text" [(ngModel)]="clientsecret">
+</ng-container>
+
+
 <ngx-charts-line-chart
-  *ngIf="auctions"
+  *ngIf="auctions?.length"
   [view]="[1000, 500]"
   [legend]="true"
   [xAxis]="true"
