@@ -19,6 +19,18 @@ export const auctionStore = {
   191471: { name: 'Écorce tordue 2', },
   191472: { name: 'Écorce tordue 3', },
 
+  190395: { name: 'Minerai de sérévite 1', },
+  190396: { name: 'Minerai de sérévite 2', },
+  190394: { name: 'Minerai de sérévite 3', },
+
+  189143: { name: 'Minerai de draconium 1', },
+  188658: { name: 'Minerai de draconium 2', },
+  190311: { name: 'Minerai de draconium 3', },
+
+  190312: { name: 'Minerai de khaz’gorite 1', },
+  190313: { name: 'Minerai de khaz’gorite 2', },
+  190314: { name: 'Minerai de khaz’gorite 3', },
+
   ///////////////////////
   // SHADOWLANDS ITEMS //
   ///////////////////////
