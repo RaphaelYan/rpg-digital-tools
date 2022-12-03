@@ -1,7 +1,9 @@
 export const auctionStore = {
   ////////////////////////
-  // DRAGONFLIGHT HERBS //
+  // DRAGONFLIGHT ITEMS //
   ////////////////////////
+
+  198614: { name: 'Paquet de cartes de Sombrelune détrempées', },
 
   191460: { name: 'Hochenblume 1', },
   191461: { name: 'Hochenblume 2', },
