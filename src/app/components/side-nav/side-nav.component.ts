@@ -31,6 +31,14 @@ export class SideNavComponent {
     }, {
       separator: true
     }, {
+      title: 'D&D 5 - Campagne - Wirt',
+      url: '/l-homme-a-la-jambe-de-bois'
+    }, {
+      title: 'D&D 5 - Campagne - Gardiens du Temps',
+      url: '/dd-gardiens-du-temps'
+    }, {
+      separator: true
+    }, {
       title: 'Chronicles of Darkness',
       url: '/nwod'
     }, {

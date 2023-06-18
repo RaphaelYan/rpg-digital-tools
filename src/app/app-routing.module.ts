@@ -42,6 +42,9 @@ const routes: Routes = [
     path: 'l-homme-a-la-jambe-de-bois',
     loadChildren: () => import('./campaign-wirt/campaign-wirt.module').then(m => m.CampaignWirtModule)
   }, {
+    path: 'dd-gardiens-du-temps',
+    loadChildren: () => import('./campaign-gardiens-du-temps/campaign-gardiens-du-temps.module').then(m => m.CampaignGardiensDuTempsModule)
+  }, {
     path: '',
     loadChildren: () => import('./home/home.module').then(m => m.HomeModule)
   }
