@@ -8,6 +8,16 @@ import { Component } from '@angular/core';
 export class ResumesComponent {
   public resumes = [
     {
+      date: '20 Avril 2023',
+      title: 'La chasse aux oeufs de pâques',
+      chars: 'Mélo, Raph, Tommy',
+      dm: 'Clem',
+    }, {
+      date: '16 Décembre 2022',
+      title: 'D&D5 : La Fondation S.C.E - partie 4',
+      chars: 'Clem, Mélo, Raph, Tommy',
+      dm: 'Repié',
+    }, {
       date: '18 Novembre 2022',
       title: 'D&D5 : La Fondation S.C.E - partie 3',
       chars: 'Clem, Mélo, Raph, Tommy',
