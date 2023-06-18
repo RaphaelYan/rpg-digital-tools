@@ -160,17 +160,16 @@ ul {
   li {
     cursor: pointer;
     float: none;
-    line-height: 48px;
     list-style-type: none;
+    margin-top: 5px;
     a {
       text-decoration: none;
       color: rgba(0,0,0,.87);
       display: block;
       font-size: 14px;
       font-weight: 500;
-      height: 48px;
-      line-height: 48px;
-      padding: 0 32px;
+      line-height: 20px;
+      padding: 5px 32px;
       &:hover {
         background-color: rgba(0,0,0,.05);
       }
