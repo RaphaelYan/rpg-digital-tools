@@ -8,6 +8,9 @@ declare var $: any;
   styleUrls: ['./campaign-gardiens-du-temps.component.scss']
 })
 export class CampaignGardiensDuTempsComponent implements AfterViewInit {
+  public showScenars: any = {};
+  public currentZoom = null;
+
   public ngAfterViewInit(): void {
     const displayValues = true;
     const chars = [

@@ -10,42 +10,27 @@
     right: 0;
     top: 50px;
   }
-  .table.table-skills thead th {
-    writing-mode: vertical-rl;
-    text-orientation: mixed;
+}
+
+.card-body {
+  .row {
+    img {
+      max-width: 100%;
+      cursor: pointer;
+    }
   }
-  .border-left { border-left: 1px solid black !important; }
+}
 
-  td.value--2 { background-color: #ff0000; }
-  td.value--1 { background-color: #fe5d00; }
-  td.value-0 { background-color: #f88900; }
-  td.value-1 { background-color: #efae00; }
-  td.value-2 { background-color: #e4cf00; }
-  td.value-3 { background-color: #d7de00; }
-  td.value-4 { background-color: #c6ed00; }
-  td.value-5 { background-color: #aefc00; }
-  td.value-6 { background-color: #97fd00; }
-  td.value-7 { background-color: #7cfe00; }
-  td.value-8 { background-color: #58fe00; }
-  td.value-9 { background-color: #00ff00; }
-  td.value-10 { background-color: #00ff00; }
-  td.value-11 { background-color: #00ff00; }
-  td.value-12 { background-color: #00ff00; }
-  td.value-13 { background-color: #00ff00; }
-  td.value-14 { background-color: #00ff00; }
-  td.value-15 { background-color: #00ff00; }
-
-  /* https://mycolor.space/gradient3?ori=to+right&hex=%23FF0000&hex2=%23C8FA00&hex3=%2300FF00&submit=submit */
-  /* #ff0000
-  #fe5d00
-  #f88900
-  #efae00
-  #e4cf00
-  #d7de00
-  #c6ed00
-  #aefc00
-  #97fd00
-  #7cfe00
-  #58fe00
-  #00ff00 */
+.zoom {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  text-align: center;
+  background: black;
+  img {
+    width: auto;
+    height: 100vh;
+    cursor: pointer;
+  }
 }
