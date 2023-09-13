@@ -14,6 +14,7 @@ export class DdSpellComponent implements OnInit {
   public spell = null;
   private spellDoc: AngularFirestoreDocument<any>;
   private spell$: Observable<any>;
+  private user: any;
 
   constructor(
     private activatedRoute: ActivatedRoute,
@@ -37,5 +38,21 @@ export class DdSpellComponent implements OnInit {
     this.spell$.pipe(first()).subscribe((a) => {
       this.spell = a.payload.data();
     });
+
+    this.auth.authState.subscribe((user) => {
+      if (!user) {
+        return;
+      }
+
+      this.user = user;
+    });
+  }
+
+  public isAdmin(): boolean {
+    return this.user && this.user.email === 'maferyt@gmail.com';
+  }
+
+  public updateSpell(): void {
+    this.afs.doc('dd5-spells/' + this.activatedRoute.snapshot.params.id).update(this.spell);
   }
 }
