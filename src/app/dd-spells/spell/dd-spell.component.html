@@ -1,119 +1,125 @@
-<div class="container" *ngIf="spell">
-  <div class="row">
-    <div class="col-md-12">
-      <h1>{{ spell.name }}</h1>
-      <div>
-        Niveau {{ spell.level }} - {{ spell.school }}
-        <ng-container *ngIf="spell.ritual">(rituel)</ng-container>
+<ng-container *ngIf="auth.user | async as user; else notAuth">
+  <div class="container" *ngIf="spell">
+    <div class="row">
+      <div class="col-md-12">
+        <h1>{{ spell.name }}</h1>
+        <div>
+          Niveau {{ spell.level }} - {{ spell.school }}
+          <ng-container *ngIf="spell.ritual">(rituel)</ng-container>
+        </div>
+        <div>Temps d'incantation : {{ spell.casting_time }}</div>
+        <div>Portée : {{ spell.range }}</div>
+        <div>Composantes : {{ spell.components }}</div>
+        <div>
+          Durée :
+          <ng-container *ngIf="spell.concentration">Concentration, jusqu'à </ng-container>
+          {{ spell.duration }}
+        </div>
+
+        <div class="description" [innerHtml]="spell.description"></div>
+        <div *ngIf="spell.higher_level">{{ spell.higher_level }}</div>
+
+        <div *ngIf="spell.tags?.length">
+          Tags :
+          <span class="badge badge-primary" *ngFor="let tag of spell.tags">{{ tag }}</span>
+        </div>
+        <div *ngIf="spell.classes?.length">
+          Classes :
+          <span class="badge badge-primary" *ngFor="let classe of spell.classes">{{ classe }}</span>
+        </div>
+        <div>Source : {{ spell.source }}</div>
       </div>
-      <div>Temps d'incantation : {{ spell.casting_time }}</div>
-      <div>Portée : {{ spell.range }}</div>
-      <div>Composantes : {{ spell.components }}</div>
-      <div>
-        Durée :
-        <ng-container *ngIf="spell.concentration">Concentration, jusqu'à </ng-container>
-        {{ spell.duration }}
+    </div>
+
+    <div *ngIf="isAdmin()">
+      <div class="form-group">
+        <label for="name">Nom</label>
+        <input type="text" class="form-control" id="name" placeholder="Nom" [(ngModel)]="spell.name">
+      </div>
+      <div class="form-group">
+        <label for="description_short">Description courte</label>
+        <textarea class="form-control" id="description_short" rows="3" placeholder="Description courte" [(ngModel)]="spell.description_short"></textarea>
+      </div>
+      <div class="form-group">
+        <label for="description">Description</label>
+        <textarea class="form-control" id="description" rows="3" placeholder="Description" [(ngModel)]="spell.description"></textarea>
+      </div>
+      <div class="form-group">
+        <label for="higher_level">Niveaux supérieurs</label>
+        <textarea class="form-control" id="higher_level" rows="3" placeholder="Lorsque vous lancez ce sort en utilisant un emplacement de sort de niveau ..." [(ngModel)]="spell.higher_level"></textarea>
+      </div>
+      <div class="form-group">
+        <label for="range">Portée</label>
+        <input type="text" class="form-control" id="range" placeholder="18 mètres" [(ngModel)]="spell.range">
+      </div>
+      <div class="form-group">
+        <label for="components">Composantes</label>
+        <input type="text" class="form-control" id="components" placeholder="V, S, M, un diamant" [(ngModel)]="spell.components">
+      </div>
+      <div class="form-group">
+        <label for="ritual">Rituel</label>
+        <input type="checkbox" class="form-control" id="ritual" [(ngModel)]="spell.ritual">
+      </div>
+      <div class="form-group">
+        <label for="concentration">Concentration</label>
+        <input type="checkbox" class="form-control" id="concentration" [(ngModel)]="spell.concentration">
+      </div>
+      <div class="form-group">
+        <label for="duration">Durée</label>
+        <input type="text" class="form-control" id="duration" placeholder="1 round" [(ngModel)]="spell.duration">
+      </div>
+      <div class="form-group">
+        <label for="casting_time">Temps d'incantation</label>
+        <input type="text" class="form-control" id="casting_time" placeholder="1 round" [(ngModel)]="spell.casting_time">
+      </div>
+      <div class="form-group">
+        <label for="level">Niveau</label>
+        <input type="number" class="form-control" id="level" min="0" max="9" placeholder="1" [(ngModel)]="spell.level">
+      </div>
+      <div class="form-group">
+        <label for="school">École</label>
+        <select id="school" class="form-control" [(ngModel)]="spell.school">
+          <option value="Abjuration">Abjuration</option>
+          <option value="Divination">Divination</option>
+          <option value="Enchantement">Enchantement</option>
+          <option value="Évocation">Évocation</option>
+          <option value="Illusion">Illusion</option>
+          <option value="Invocation">Invocation</option>
+          <option value="Nécromancie">Nécromancie</option>
+          <option value="Transmutation">Transmutation</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="classes">Classes</label>
+        <select id="classes" class="form-control" multiple size="8" [(ngModel)]="spell.classes">
+          <option value="Barde">Barde</option>
+          <option value="Clerc">Clerc</option>
+          <option value="Druide">Druide</option>
+          <option value="Ensorceleur">Ensorceleur</option>
+          <option value="Magicien">Magicien</option>
+          <option value="Occultiste">Occultiste</option>
+          <option value="Paladin">Paladin</option>
+          <option value="Rôdeur">Rôdeur</option>
+          <option value="Artificier">Artificier</option>
+        </select>
       </div>
 
-      <div class="description" [innerHtml]="spell.description"></div>
-      <div *ngIf="spell.higher_level">{{ spell.higher_level }}</div>
+      <div class="form-group">
+        <label for="source">Source</label>
+        <select id="source" class="form-control" [(ngModel)]="spell.source">
+    			<option value="base">Player´s Handbook</option>
+    			<option value="xgte">Xanathar´s Guide to Everything</option>
+    			<option value="tcoe">Tasha´s Cauldron of Everything</option>
+    			<option value="ftod">Fizban´s Treasury of Dragons</option>
+    			<option value="custom">Custom</option>
+        </select>
+      </div>
 
-      <div *ngIf="spell.tags?.length">
-        Tags :
-        <span class="badge badge-primary" *ngFor="let tag of spell.tags">{{ tag }}</span>
-      </div>
-      <div *ngIf="spell.classes?.length">
-        Classes :
-        <span class="badge badge-primary" *ngFor="let classe of spell.classes">{{ classe }}</span>
-      </div>
-      <div>Source : {{ spell.source }}</div>
+      <button type="button" class="btn btn-primary" (click)="updateSpell()">Modifier</button>
     </div>
   </div>
+</ng-container>
 
-  <div *ngIf="isAdmin()">
-    <div class="form-group">
-      <label for="name">Nom</label>
-      <input type="text" class="form-control" id="name" placeholder="Nom" [(ngModel)]="spell.name">
-    </div>
-    <div class="form-group">
-      <label for="description_short">Description courte</label>
-      <textarea class="form-control" id="description_short" rows="3" placeholder="Description courte" [(ngModel)]="spell.description_short"></textarea>
-    </div>
-    <div class="form-group">
-      <label for="description">Description</label>
-      <textarea class="form-control" id="description" rows="3" placeholder="Description" [(ngModel)]="spell.description"></textarea>
-    </div>
-    <div class="form-group">
-      <label for="higher_level">Niveaux supérieurs</label>
-      <textarea class="form-control" id="higher_level" rows="3" placeholder="Lorsque vous lancez ce sort en utilisant un emplacement de sort de niveau ..." [(ngModel)]="spell.higher_level"></textarea>
-    </div>
-    <div class="form-group">
-      <label for="range">Portée</label>
-      <input type="text" class="form-control" id="range" placeholder="18 mètres" [(ngModel)]="spell.range">
-    </div>
-    <div class="form-group">
-      <label for="components">Composantes</label>
-      <input type="text" class="form-control" id="components" placeholder="V, S, M, un diamant" [(ngModel)]="spell.components">
-    </div>
-    <div class="form-group">
-      <label for="ritual">Rituel</label>
-      <input type="checkbox" class="form-control" id="ritual" [(ngModel)]="spell.ritual">
-    </div>
-    <div class="form-group">
-      <label for="concentration">Concentration</label>
-      <input type="checkbox" class="form-control" id="concentration" [(ngModel)]="spell.concentration">
-    </div>
-    <div class="form-group">
-      <label for="duration">Durée</label>
-      <input type="text" class="form-control" id="duration" placeholder="1 round" [(ngModel)]="spell.duration">
-    </div>
-    <div class="form-group">
-      <label for="casting_time">Temps d'incantation</label>
-      <input type="text" class="form-control" id="casting_time" placeholder="1 round" [(ngModel)]="spell.casting_time">
-    </div>
-    <div class="form-group">
-      <label for="level">Niveau</label>
-      <input type="number" class="form-control" id="level" min="0" max="9" placeholder="1" [(ngModel)]="spell.level">
-    </div>
-    <div class="form-group">
-      <label for="school">École</label>
-      <select id="school" class="form-control" [(ngModel)]="spell.school">
-        <option value="Abjuration">Abjuration</option>
-        <option value="Divination">Divination</option>
-        <option value="Enchantement">Enchantement</option>
-        <option value="Évocation">Évocation</option>
-        <option value="Illusion">Illusion</option>
-        <option value="Invocation">Invocation</option>
-        <option value="Nécromancie">Nécromancie</option>
-        <option value="Transmutation">Transmutation</option>
-      </select>
-    </div>
-    <div class="form-group">
-      <label for="classes">Classes</label>
-      <select id="classes" class="form-control" multiple size="8" [(ngModel)]="spell.classes">
-        <option value="Barde">Barde</option>
-        <option value="Clerc">Clerc</option>
-        <option value="Druide">Druide</option>
-        <option value="Ensorceleur">Ensorceleur</option>
-        <option value="Magicien">Magicien</option>
-        <option value="Occultiste">Occultiste</option>
-        <option value="Paladin">Paladin</option>
-        <option value="Rôdeur">Rôdeur</option>
-        <option value="Artificier">Artificier</option>
-      </select>
-    </div>
-
-    <div class="form-group">
-      <label for="source">Source</label>
-      <select id="source" class="form-control" [(ngModel)]="spell.source">
-  			<option value="base">Player´s Handbook</option>
-  			<option value="xgte">Xanathar´s Guide to Everything</option>
-  			<option value="tcoe">Tasha´s Cauldron of Everything</option>
-  			<option value="ftod">Fizban´s Treasury of Dragons</option>
-  			<option value="custom">Custom</option>
-      </select>
-    </div>
-
-    <button type="button" class="btn btn-primary" (click)="updateSpell()">Modifier</button>
-  </div>
-</div>
+<ng-template #notAuth>
+  Connectez-vous pour accéder aux sorts !
+</ng-template>
