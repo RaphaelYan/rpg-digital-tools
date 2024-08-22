@@ -1,37 +1,63 @@
 export const auctionStore = {
   ////////////////////////
+  // THE WAR WITHIN ITEMS //
+  ////////////////////////
+
+  213197: { name: 'Lotus de néant', },
+
+  210805: { name: 'Floraison bénie 1', },
+  210806: { name: 'Floraison bénie 2', },
+  210807: { name: 'Floraison bénie 3', },
+
+  210796: { name: 'Champifleur 1', },
+  210797: { name: 'Champifleur 2', },
+  210798: { name: 'Champifleur 3', },
+
+  210808: { name: 'Lance d’Arathor 1', },
+  210809: { name: 'Lance d’Arathor 2', },
+  210810: { name: 'Lance d’Arathor 3', },
+
+  210802: { name: 'Orbinide 1', },
+  210803: { name: 'Orbinide 2', },
+  210804: { name: 'Orbinide 3', },
+
+  210799: { name: 'Pose-appât 1', },
+  210800: { name: 'Pose-appât 2', },
+  210801: { name: 'Pose-appât 3', },
+
+  ////////////////////////
   // DRAGONFLIGHT ITEMS //
   ////////////////////////
 
-  198614: { name: 'Paquet de cartes de Sombrelune détrempées', },
-
-  191460: { name: 'Hochenblume 1', },
-  191461: { name: 'Hochenblume 2', },
-  191462: { name: 'Hochenblume 3', },
-
-  191464: { name: 'Saxifrage 1', },
-  191465: { name: 'Saxifrage 2', },
-  191466: { name: 'Saxifrage 3', },
-
-  191467: { name: 'Pavot à bulle 1', },
-  191468: { name: 'Pavot à bulle 2', },
-  191469: { name: 'Pavot à bulle 3', },
-
-  191470: { name: 'Écorce tordue 1', },
-  191471: { name: 'Écorce tordue 2', },
-  191472: { name: 'Écorce tordue 3', },
-
-  190395: { name: 'Minerai de sérévite 1', },
-  190396: { name: 'Minerai de sérévite 2', },
-  190394: { name: 'Minerai de sérévite 3', },
-
-  189143: { name: 'Minerai de draconium 1', },
-  188658: { name: 'Minerai de draconium 2', },
-  190311: { name: 'Minerai de draconium 3', },
-
-  190312: { name: 'Minerai de khaz’gorite 1', },
-  190313: { name: 'Minerai de khaz’gorite 2', },
-  190314: { name: 'Minerai de khaz’gorite 3', },
+  // 198614: { name: 'Paquet de cartes de Sombrelune détrempées', },
+  //
+  // 191460: { name: 'Hochenblume 1', },
+  // 191461: { name: 'Hochenblume 2', },
+  // 191462: { name: 'Hochenblume 3', },
+  //
+  // 191464: { name: 'Saxifrage 1', },
+  // 191465: { name: 'Saxifrage 2', },
+  // 191466: { name: 'Saxifrage 3', },
+  //
+  // 191467: { name: 'Pavot à bulle 1', },
+  // 191468: { name: 'Pavot à bulle 2', },
+  // 191469: { name: 'Pavot à bulle 3', },
+  //
+  // 191470: { name: 'Écorce tordue 1', },
+  // 191471: { name: 'Écorce tordue 2', },
+  // 191472: { name: 'Écorce tordue 3', },
+  //
+  // 190395: { name: 'Minerai de sérévite 1', },
+  // 190396: { name: 'Minerai de sérévite 2', },
+  // 190394: { name: 'Minerai de sérévite 3', },
+  //
+  // 189143: { name: 'Minerai de draconium 1', },
+  // 188658: { name: 'Minerai de draconium 2', },
+  // 190311: { name: 'Minerai de draconium 3', },
+  //
+  // 190312: { name: 'Minerai de khaz’gorite 1', },
+  // 190313: { name: 'Minerai de khaz’gorite 2', },
+  // 190314: { name: 'Minerai de khaz’gorite 3', },
 
   ///////////////////////
   // SHADOWLANDS ITEMS //
