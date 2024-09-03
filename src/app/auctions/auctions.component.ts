@@ -14,6 +14,8 @@ export class AuctionsComponent {
   public auctions: any[] = null;
   public clientid = '';
   public clientsecret = '';
+  public dateFrom = null;
+  public dateTo = null;
   private user: any;
   private chogallConnected = 1621;
   private store = Object.assign({}, auctionStore);
@@ -30,26 +32,7 @@ export class AuctionsComponent {
 
       this.user = user;
 
-      this.auctionsService.getStaticData()
-      .then((auctions) => {
-        const tmpAuctions = {};
-
-        for (const auction of auctions) {
-          if (!tmpAuctions[auction.id]) {
-            tmpAuctions[auction.id] = {
-              name: auction.name,
-              series: []
-            };
-          }
-
-          tmpAuctions[auction.id].series.push({
-            name: auction.date,
-            value: auction.min_price
-          });
-        }
-
-        this.auctions = Object.values(tmpAuctions);
-      });
+      this.getData();
     });
   }
 
@@ -83,6 +66,10 @@ export class AuctionsComponent {
 
   public isAdmin(): boolean {
     return this.user && this.user.email === 'maferyt@gmail.com';
+  }
+
+  public dateChanged(): void {
+    this.getData();
   }
 
   private loginBattleNet() {
@@ -182,4 +169,29 @@ export class AuctionsComponent {
     this.auctionsService.mergeAuctionItem(id, auctionItem);
   }
 
+  private getData() {
+    this.auctionsService.getStaticData(this.dateFrom, this.dateTo)
+    .then((auctions) => {
+      const tmpAuctions = {};
+
+      for (const auction of auctions) {
+        if (!tmpAuctions[auction.id]) {
+          tmpAuctions[auction.id] = {
+            name: auction.name,
+            series: []
+          };
+        }
+
+        tmpAuctions[auction.id].series.push({
+          name: auction.date,
+          value: auction.min_price
+        });
+      }
+
+      this.auctions = null;
+      setTimeout(() => {
+        this.auctions = Object.values(tmpAuctions);
+      });
+    });
+  }
 }

@@ -4,7 +4,9 @@
   <input type="text" [(ngModel)]="clientid" name="clientid">
   <input type="text" [(ngModel)]="clientsecret" name="clientsecret">
 </ng-container>
-
+<br>
+<input type="date" [(ngModel)]="dateFrom" (ngModelChange)="dateChanged()">
+<input type="date" [(ngModel)]="dateTo" (ngModelChange)="dateChanged()">
 
 <ngx-charts-line-chart
   *ngIf="auctions?.length"

@@ -1,18 +1,31 @@
 import { Injectable } from '@angular/core';
-import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/firestore';
+import { AngularFirestore } from '@angular/fire/firestore';
 import { first } from 'rxjs/operators';
 
 @Injectable()
 export class AuctionsService {
-  private auctionsCollection: AngularFirestoreCollection<any>;
-
   constructor(private afs: AngularFirestore) {
-    this.auctionsCollection = this.afs.collection<any>('auctions');
   }
 
-  public getStaticData(): Promise<any> {
+  public getStaticData(dateFrom: string = null, dateTo: string = null): Promise<any> {
     return new Promise((resolve) => {
-      const auctions = this.auctionsCollection.valueChanges();
+      const collection = this.afs.collection<any>('auctions', (ref) => {
+        if (dateFrom && dateTo) {
+          return ref.where('date', '>=', dateFrom).where('date', '<=', dateTo);
+        }
+
+        if (dateFrom) {
+          return ref.where('date', '>=', dateFrom);
+        }
+
+        if (dateTo) {
+          return ref.where('date', '<=', dateTo);
+        }
+
+        return ref;
+      });
+
+      const auctions = collection.valueChanges();
       auctions.pipe(first()).subscribe(resolve);
     });
   }
