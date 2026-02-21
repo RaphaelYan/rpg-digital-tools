@@ -39568,18 +39568,30 @@ class AuctionsComponent {
         let url = 'https://eu.api.blizzard.com/data/wow/auctions/commodities';
         url += '?namespace=dynamic-eu';
         url += '&locale=fr_FR';
-        url += '&access_token=' + responseAuth.access_token;
+        // url += '&access_token=' + responseAuth.access_token;
         console.log('getCommodities');
-        return this.httpClient.get(url).toPromise();
+        const httpOptions = {
+            headers: new _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpHeaders"]({
+                // 'Content-Type': 'application/x-www-form-urlencoded',
+                'Authorization': `Bearer ${responseAuth.access_token}`
+            })
+        };
+        return this.httpClient.get(url, httpOptions).toPromise();
     }
     getAuctions(responseAuth) {
         let url = 'https://eu.api.blizzard.com/data/wow/connected-realm/';
         url += this.chogallConnected + '/auctions';
         url += '?namespace=dynamic-eu';
         url += '&locale=fr_FR';
-        url += '&access_token=' + responseAuth.access_token;
+        // url += '&access_token=' + responseAuth.access_token;
         console.log('Avant 3ème requete');
-        return this.httpClient.get(url).toPromise();
+        const httpOptions = {
+            headers: new _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpHeaders"]({
+                // 'Content-Type': 'application/x-www-form-urlencoded',
+                'Authorization': `Bearer ${responseAuth.access_token}`
+            })
+        };
+        return this.httpClient.get(url, httpOptions).toPromise();
     }
     processAuctionsItems(auctionItems) {
         for (const auctionItem of auctionItems) {
@@ -39818,25 +39830,19 @@ const valueToPrice = (value) => {
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "auctionStore", function() { return auctionStore; });
 const auctionStore = {
-    ////////////////////////
-    // THE WAR WITHIN ITEMS //
-    ////////////////////////
-    213197: { name: 'Lotus de néant', },
-    210805: { name: 'Floraison bénie 1', },
-    210806: { name: 'Floraison bénie 2', },
-    210807: { name: 'Floraison bénie 3', },
-    210796: { name: 'Champifleur 1', },
-    210797: { name: 'Champifleur 2', },
-    210798: { name: 'Champifleur 3', },
-    210808: { name: 'Lance d’Arathor 1', },
-    210809: { name: 'Lance d’Arathor 2', },
-    210810: { name: 'Lance d’Arathor 3', },
-    210802: { name: 'Orbinide 1', },
-    210803: { name: 'Orbinide 2', },
-    210804: { name: 'Orbinide 3', },
-    210799: { name: 'Pose-appât 1', },
-    210800: { name: 'Pose-appât 2', },
-    210801: { name: 'Pose-appât 3', },
+    ////////////////////
+    // MIDNIGHT ITEMS //
+    ////////////////////
+    236770: { name: 'Sanguironce 1', },
+    236771: { name: 'Sanguironce 2', },
+    236761: { name: 'Tranquillette 1', },
+    236767: { name: 'Tranquillette 2', },
+    236774: { name: 'Azeracine 1', },
+    236775: { name: 'Azeracine 2', },
+    236778: { name: 'Lys de mana 1', },
+    236779: { name: 'Lys de mana 2', },
+    236776: { name: 'Feuille-d’argent 1', },
+    236777: { name: 'Feuille-d’argent 2', },
 };
 
 
