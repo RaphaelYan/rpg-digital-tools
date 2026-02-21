@@ -8,6 +8,31 @@ import { Component } from '@angular/core';
 export class ResumesComponent {
   public resumes = [
     {
+      date: '31 Janvier 2026',
+      title: 'Le calm delilah - partie 3',
+      chars: 'MaFeRyT, Noëlie, Romain, Syccor, Yaz',
+      dm: 'Dreagann',
+    }, {
+      date: '24 Janvier 2026',
+      title: 'Le festivale de womford - partie 2',
+      chars: 'Alexandre, Lorenzo, Lyes, MaFeRyT, Yaz',
+      dm: 'Dreagann',
+    }, {
+      date: '20 Décembre 2025',
+      title: 'Le festivale de womford - partie 1',
+      chars: 'Alexandre, Lorenzo, Lyes, MaFeRyT, Yaz',
+      dm: 'Dreagann',
+    }, {
+      date: '22 Novembre 2025',
+      title: 'Le calm delilah - partie 2',
+      chars: 'MaFeRyT, Noëlie, Romain, Syccor, Yaz',
+      dm: 'Dreagann',
+    }, {
+      date: '13 Juillet 2025',
+      title: 'Le calm delilah - partie 1',
+      chars: 'MaFeRyT, Noëlie, Romain, Syccor, Yaz',
+      dm: 'Dreagann',
+    }, {
       date: '14 Décembre 2023',
       title: 'Les tarides',
       chars: 'Dreagann, Noëlie, Syccor, Yaz',

@@ -100,11 +100,18 @@ export class AuctionsComponent {
     let url = 'https://eu.api.blizzard.com/data/wow/auctions/commodities';
     url += '?namespace=dynamic-eu';
     url += '&locale=fr_FR';
-    url += '&access_token=' + responseAuth.access_token;
+    // url += '&access_token=' + responseAuth.access_token;
 
     console.log('getCommodities');
 
-    return this.httpClient.get(url).toPromise();
+    const httpOptions = {
+      headers: new HttpHeaders({
+        // 'Content-Type': 'application/x-www-form-urlencoded',
+        'Authorization': `Bearer ${responseAuth.access_token}`
+      })
+    };
+
+    return this.httpClient.get(url, httpOptions).toPromise();
   }
 
   private getAuctions(responseAuth) {
@@ -112,11 +119,18 @@ export class AuctionsComponent {
     url += this.chogallConnected + '/auctions';
     url += '?namespace=dynamic-eu';
     url += '&locale=fr_FR';
-    url += '&access_token=' + responseAuth.access_token;
+    // url += '&access_token=' + responseAuth.access_token;
 
     console.log('Avant 3ème requete');
 
-    return this.httpClient.get(url).toPromise();
+    const httpOptions = {
+      headers: new HttpHeaders({
+        // 'Content-Type': 'application/x-www-form-urlencoded',
+        'Authorization': `Bearer ${responseAuth.access_token}`
+      })
+    };
+
+    return this.httpClient.get(url, httpOptions).toPromise();
   }
 
   private processAuctionsItems(auctionItems) {
