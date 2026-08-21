@@ -69,6 +69,73 @@ class BackgroundsComponent {
     constructor() {
         this.backgrounds = [
             {
+                name: 'Elwing pluie d’étoiles',
+                concept: 'Mercenaire - D&D',
+                owner: 'MaFeRyT',
+                date: '2022-09-24',
+                description: `
+      Ma grand-mère
+
+Ma grand-mère est Fengarie, Grande Oracle de Selûne.
+J’ai vécu avec elle la plupart de ma vie lorsqu’elle revint de ses aventures héroïques.
+Elle m’a enseigné les coutumes du clergé de Selûne.
+J’essaie de marcher dans ses pas et de lui ressembler, c’est mon héroïne depuis toujours.
+
+
+Fengarie est aussi une Grande Ménéstrel de l’organisation des Ménéstrels.
+Elle fait partie du cercle des dirigeants et prend part aux décisions pour aider les régions à lutter contre le Mal.
+Cependant elle est absente depuis quelques années, étant partie en quête d’un ancien artefact pour aider à la lutte contre certaines divinités.
+
+Mes habitudes
+
+Tous ceux qui vénèrent Selûne sont considérés comme mes meilleurs amis.
+
+
+Lorsque la lune est pleine, je prends toujours un temps pour adresser mes prières à la Dame d’Argent.
+
+
+J’essaie de rester humble et de savoir me débrouiller seul.
+
+
+Je n’ai aucune honte à voler au riches pour donner aux pauvres.
+
+
+Il m’arrive aussi de rentrer par effraction chez des gens afin de récupérer des informations pour les Ménéstrels.
+
+Récemment
+
+J’ai rejoint la Fondation S.C.E (Sécuriser, Contenir, Éradiquer) afin d’aider les autres à plus grande échelle.
+
+
+J’ai suffisement développé mes compétences pour devenir une grande mercenaire indispensable.
+
+
+Partir à l’aventure me permet aussi d’effectuer des missions secrètes pour les Ménéstrels.
+
+Visuel
+
+Je suis une haute-elfe de petite taille.
+
+
+Cheveux blonds, yeux bleux, mais pas spécialement attirante.
+
+
+Vétue d’une armure de cuir classique, un havresac, une cape elfique, d’un arc long magique et d’un carquois.
+
+
+Souvent accompagnée de sa fidèle chouette “hiboux”.
+
+Potentiel plot-hook pour le DM
+
+Je me suis fait prendre la main dans le sac (malgrès ma discrétion légendaire) en allant voler un riche protagoniste qui ne cherche qu’à s’enrichir sur le dos des autres et ne fait rien de “bien” dans sa vie, comme maltraitance envers ses domestiques et détournement de fonds.
+
+
+Il m’a libéré en me faisant bien comprendre que j’avais une dette envers lui qu’un jour viendra où je devrais lui régler.
+
+
+Il se trouve que ce riche protagoniste fait parti des gros financeurs qui ont permi l’émergence de la S.C.E.
+`
+            }, {
                 name: 'Alexander Barca',
                 concept: 'Terran Marine - Starcraft RPG',
                 owner: 'Carl T.',

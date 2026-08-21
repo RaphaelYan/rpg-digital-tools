@@ -492,6 +492,26 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       _classCallCheck(this, ResumesComponent);
 
       this.resumes = [{
+        date: '18 Juillet 2026',
+        title: 'Le calm delilah - partie 7',
+        chars: 'MaFeRyT, Noëlie, Romain, Syccor, Yaz',
+        dm: 'Dreagann'
+      }, {
+        date: '23 Mai 2026',
+        title: 'Le calm delilah - partie 6',
+        chars: 'MaFeRyT, Noëlie, Romain, Syccor, Yaz',
+        dm: 'Dreagann'
+      }, {
+        date: '25 Avril 2026',
+        title: 'Le calm delilah - partie 5',
+        chars: 'MaFeRyT, Noëlie, Romain, Syccor, Yaz',
+        dm: 'Dreagann'
+      }, {
+        date: '28 Mars 2026',
+        title: 'Le calm delilah - partie 4',
+        chars: 'MaFeRyT, Noëlie, Romain, Syccor, Yaz',
+        dm: 'Dreagann'
+      }, {
         date: '31 Janvier 2026',
         title: 'Le calm delilah - partie 3',
         chars: 'MaFeRyT, Noëlie, Romain, Syccor, Yaz',
@@ -518,7 +538,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
         dm: 'Dreagann'
       }, {
         date: '14 Décembre 2023',
-        title: 'Les tarides',
+        title: 'Gardiens du temps - Les tarides',
         chars: 'Dreagann, Noëlie, Syccor, Yaz',
         dm: 'MaFeRyT'
       }, {
